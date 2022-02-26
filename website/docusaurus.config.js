@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'thanhpp',
-  tagline: 'thanhpp',
+  tagline: 'cerca trova',
   url: 'https://thanhpp.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -24,15 +24,18 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          id: 'algorithm',
+          path: 'algorithm',
+          routeBasePath: 'algorithm',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/thanhpp.github.io/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/thanhpp.github.io/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -41,25 +44,46 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'system-design',
+        path: 'system-design',
+        routeBasePath: 'system-design',
+        sidebarPath: require.resolve('./sidebars.js'),
+        // ... other options
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'thanhpp',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'thanhpp\'s Logo',
+          src: 'img/gopherme-removebg.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            to: '/blog', 
+            label: 'Blog', 
+            position: 'left'
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            to: '/algorithm/intro',
+            label: 'Algorithm',
+            position: 'left',
+          },
+          {
+            to: '/system-design/intro',
+            label: 'System Design',
+            position: 'left',
+          },
+          {
+            href: 'https://github.com/thanhpp.github.io',
             label: 'GitHub',
             position: 'right',
           },
@@ -72,43 +96,38 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Algorithm',
+                to: '/algorithm/intro',
+              },
+              {
+                label: 'System Design',
+                to: '/system-design/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Contact me',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/thanhpp/',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/thanhpp/',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/yBhpfSKJqq/',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/100004238202227/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} thanhpp. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
