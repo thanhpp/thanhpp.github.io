@@ -29,13 +29,12 @@ const config = {
           routeBasePath: 'algorithm',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/thanhpp/thanhpp.github.io/',
+          // editUrl: 'https://github.com/thanhpp/thanhpp.github.io/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/thanhpp/thanhpp.github.io/',
+          // editUrl: 'https://github.com/thanhpp/thanhpp.github.io/tree/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
