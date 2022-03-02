@@ -29,13 +29,13 @@ const config = {
           routeBasePath: 'algorithm',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/thanhpp.github.io/',
+          editUrl: 'https://github.com/thanhpp/thanhpp.github.io/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/thanhpp.github.io/',
+            'https://github.com/thanhpp/thanhpp.github.io/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -83,7 +83,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/thanhpp.github.io',
+            href: 'https://github.com/thanhpp/thanhpp.github.io',
             label: 'GitHub',
             position: 'right',
           },
