@@ -29,3 +29,8 @@ tags: [crypto, finance]
 - **Cliff**:
   - Khoảng thời gian token bị khóa
   - Những người nằm trong danh mục này sẽ không nhận được bất cứ token nào
+
+- **Fiat** (money):
+  - Tiền tệ hợp pháp
+  - Giá trị gắn liền với (được bảo trợ bởi) chính phủ (USD, VND) 
+  - Được làm ra với các vật liệu giá trị thấp (giấy, đồng)
