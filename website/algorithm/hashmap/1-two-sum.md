@@ -1,13 +1,13 @@
 ---
-sidebar_position: 1
 id: two-sum
-title: [Easy] Two sum
+title: "[EASY] Two sum"
+sidebar_position: 1
 tags:
-  - HashMap
-  - Array
+    - Array
+    - HashTable
 ---
 
-# info
+## info
 - Link: https://leetcode.com/problems/two-sum/
 - Level: Easy
 - Tags: Array, Hashmap
