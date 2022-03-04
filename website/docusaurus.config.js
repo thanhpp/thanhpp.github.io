@@ -132,6 +132,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      image: "static/img/gopherme.png",
     }),
 };
 

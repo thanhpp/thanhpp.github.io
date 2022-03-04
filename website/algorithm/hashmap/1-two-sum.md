@@ -12,6 +12,8 @@ tags:
 - Level: Easy
 - Tags: Array, Hashmap
 
+
+## Solution
 ```go
 func twoSum(nums []int, target int) []int {
     /*
