@@ -1,3 +1,11 @@
+---
+sidebar_position: 1
+id: two-sum
+title: [Easy] Two sum
+tags:
+  - HashMap
+  - Array
+---
 
 # info
 - Link: https://leetcode.com/problems/two-sum/

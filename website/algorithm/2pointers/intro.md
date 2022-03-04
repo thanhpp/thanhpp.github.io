@@ -1,7 +1,10 @@
 ---
 sidebar_position: 1
+id: two-pointers-intro
+title: Two Pointers Intro
+tags:
+  - TwoPointers
 ---
-
 
 - Kỹ thuật này được áp dụng bằng cách tạo ra 2 con trỏ trên cùng một mảng, và với mỗi vòng lặp vị trí các con trỏ này sẽ được thay đổi theo các điều kiện đặt sẵn.
 - Các cách áp dụng thường thấy:
