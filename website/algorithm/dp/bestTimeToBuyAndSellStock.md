@@ -24,3 +24,26 @@ func maxProfit(prices []int) int {
     return highestProfit
 }
 ```
+
+```rust
+impl Solution {
+    pub fn max_profit(prices: Vec<i32>) -> i32 {
+        let mut lowestPrice = prices[0];
+        let mut highestProfit = 0;
+        
+        for i in 1..prices.len() {
+            let profit = prices[i] - lowestPrice;
+            if profit >  highestProfit {
+                highestProfit = profit
+            } 
+            
+            if prices[i] < lowestPrice {
+                lowestPrice = prices[i]
+            }
+            
+        }
+        
+        return highestProfit
+    }
+}
+```
