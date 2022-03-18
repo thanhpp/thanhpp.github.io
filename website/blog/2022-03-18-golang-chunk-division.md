@@ -7,7 +7,6 @@ tags: [golang]
 
 
 ```go
-// https://go.dev/play/p/cI2Omh2RPA3
 package main
 
 import "fmt"
@@ -15,17 +14,9 @@ import "fmt"
 func main() {
 	var (
 		actual    = 9
-		limit     = 301
+		limit     = 1001
 		chunkSize = 100
 	)
-
-	if limit < chunkSize {
-		if actual < limit {
-			fmt.Println("actual < limit", actual)
-			return
-		}
-		fmt.Println("actual >= limit", limit)
-	}
 
 	chunkNo := limit/chunkSize + 1
 	fmt.Println("Got chunk number:", chunkNo)
@@ -50,5 +41,4 @@ func main() {
 		fmt.Printf("chunk %d: %d -> %d \n", i, start, end)
 	}
 }
-
 ```
