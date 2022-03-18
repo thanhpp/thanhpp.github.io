@@ -1,6 +1,6 @@
 ---
 slug: go-worker-pool
-title: [Golang] Worker pool
+title: Golang Worker pool
 authors: thanhpp
 tags: [golang]
 ---
