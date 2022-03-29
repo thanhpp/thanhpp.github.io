@@ -74,10 +74,6 @@ pub fn is_anagram(s: String, t: String) -> bool {
         *counter -= 1;
     }
 
-    for (k, v) in &m {
-        print!("{} {}", k, v)
-    }
-
     for elem in m.iter() {
         if !elem.1 != 0 {
             return false;
