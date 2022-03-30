@@ -1,3 +1,18 @@
+---
+id: best-time-to-buy-and-sell-stock
+title: "[EASY] Best time to buy and sell stock"
+sidebar_position: 1
+tags:
+    - Array
+    - DynamicProgramming
+---
+
+## Info
+
+- Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+## Solution
+
 ```go
 func maxProfit(prices []int) int {
     /*
