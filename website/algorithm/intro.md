@@ -202,7 +202,7 @@ sidebar_position: 1
 | Longest Increasing Subsequence | https://leetcode.com/problems/longest-increasing-subsequence | Medium     |        |      |
 | Partition Equal Subset Sum     | https://leetcode.com/problems/partition-equal-subset-sum     | Medium     |        |      |
 
-## 2-D Dunamic Programming
+## 2-D Dynamic Programming
 
 | NAME                                      | LINK                                                                    | DIFFICULTY | Golang | Rust |
 |-------------------------------------------|-------------------------------------------------------------------------|:----------:|:------:|:----:|
@@ -217,3 +217,56 @@ sidebar_position: 1
 | Edit Distance                             | https://leetcode.com/problems/edit-distance                             | Hard       |        |      |
 | Burst Balloons                            | https://leetcode.com/problems/burst-balloons                            | Hard       |        |      |
 | Regular Expression Matching               | https://leetcode.com/problems/regular-expression-matching               | Medium     |        |      |
+
+## Greedy
+
+| NAME                                  | LINK                                                                | DIFFICULTY | Golang | Rust |
+|---------------------------------------|---------------------------------------------------------------------|:----------:|:------:|:----:|
+| Maximum Subarray                      | https://leetcode.com/problems/maximum-subarray                      | Easy       |    -   |   -  |
+| Jump Game                             | https://leetcode.com/problems/jump-game                             | Medium     |        |      |
+| Jump Game II                          | https://leetcode.com/problems/jump-game-ii                          | Medium     |        |      |
+| Gas Station                           | https://leetcode.com/problems/gas-station                           | Medium     |        |      |
+| Hand of Straights                     | https://leetcode.com/problems/hand-of-straights                     | Medium     |        |      |
+| Merge Triplets to Form Target Triplet | https://leetcode.com/problems/merge-triplets-to-form-target-triplet | Medium     |        |      |
+| Partition Labels                      | https://leetcode.com/problems/partition-labels                      | Medium     |        |      |
+| Valid Parenthesis String              | https://leetcode.com/problems/valid-parenthesis-string              | Hard       |        |      |
+
+## Intervals
+
+| NAME                                   | LINK                                                                 | DIFFICULTY | Golang | Rust |
+|----------------------------------------|----------------------------------------------------------------------|:----------:|:------:|:----:|
+| Insert Interval                        | https://leetcode.com/problems/insert-interval                        | Medium     |    -   |   -  |
+| Merge Intervals                        | https://leetcode.com/problems/merge-intervals                        | Medium     |        |      |
+| Non-Overlapping Intervals              | https://leetcode.com/problems/non-overlapping-intervals              | Medium     |        |      |
+| Meeting Rooms                          | https://leetcode.com/problems/meeting-rooms                          | Easy       |        |      |
+| Meeting Rooms II                       | https://leetcode.com/problems/meeting-rooms-ii                       | Medium     |        |      |
+| Minimum Interval to Include Each Query | https://leetcode.com/problems/minimum-interval-to-include-each-query | Medium     |        |      |
+
+## Math & Geometry
+
+| NAME              | LINK                                            | DIFFICULTY | Golang | Rust |
+|-------------------|-------------------------------------------------|:----------:|:------:|:----:|
+| Rotate Image      | https://leetcode.com/problems/rotate-image      | Medium     |    -   |   -  |
+| Spiral Matrix     | https://leetcode.com/problems/spiral-matrix     | Medium     |        |      |
+| Set Matrix Zeroes | https://leetcode.com/problems/set-matrix-zeroes | Medium     |        |      |
+| Happy Number      | https://leetcode.com/problems/happy-number      | Easy       |        |      |
+| Plus One          | https://leetcode.com/problems/plus-one          | Easy       |        |      |
+| Pow(x, n)         | https://leetcode.com/problems/pow(x,-n)         | Medium     |        |      |
+| Multiply Strings  | https://leetcode.com/problems/multiply-strings  | Medium     |        |      |
+| Detect Squares    | https://leetcode.com/problems/detect-squares    | Hard       |        |      |
+
+## Bit Manipulation
+
+| NAME                | LINK                                              | DIFFICULTY | Golang | Rust |
+|---------------------|---------------------------------------------------|:----------:|:------:|:----:|
+| Single Number       | https://leetcode.com/problems/single-number       | Easy       |    -   |   -  |
+| Number of 1 Bits    | https://leetcode.com/problems/number-of-1-bits    | Easy       |        |      |
+| Counting Bits       | https://leetcode.com/problems/counting-bits       | Easy       |        |      |
+| Reverse Bits        | https://leetcode.com/problems/reverse-bits        | Easy       |        |      |
+| Missing Number      | https://leetcode.com/problems/missing-number      | Easy       |        |      |
+| Sum of Two Integers | https://leetcode.com/problems/sum-of-two-integers | Medium     |        |      |
+| Reverse Integer     | https://leetcode.com/problems/reverse-integer     | Medium     |        |      |
+
+# References
+
+- https://neetcode.io/
