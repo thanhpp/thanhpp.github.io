@@ -4,7 +4,7 @@ title: "[EASY] Best time to buy and sell stock"
 sidebar_position: 1
 tags:
     - Array
-    - DynamicProgramming
+    - Dynamic Programming
 ---
 
 ## Info

@@ -79,7 +79,7 @@ sidebar_position: 1
 
 | NAME                                           | LINK                                                                         | DIFFICULTY | Golang | Rust |
 |------------------------------------------------|------------------------------------------------------------------------------|:----------:|:------:|:----:|
-| Best Time to Buy & Sell Stock                  | https://leetcode.com/problems/best-time-to-buy-&-sell-stock                  | Easy       |        |      |
+| Best Time to Buy & Sell Stock                  | https://leetcode.com/problems/best-time-to-buy-and-sell-stock                | Easy       |   x    |      |
 | Longest Substring Without Repeating Characters | https://leetcode.com/problems/longest-substring-without-repeating-characters | Medium     |        |      |
 | Longest Repeating Character Replacement        | https://leetcode.com/problems/longest-repeating-character-replacement        | Medium     |        |      |
 | Permutation in String                          | https://leetcode.com/problems/permutation-in-string                          | Medium     |        |      |

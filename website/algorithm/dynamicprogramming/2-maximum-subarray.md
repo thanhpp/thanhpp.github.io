@@ -4,7 +4,7 @@ title: "[EASY] Maximum subarray"
 sidebar_position: 2
 tags:
     - Array
-    - DynamicProgramming
+    - Dynamic Programming
 ---
 
 ## Info 
