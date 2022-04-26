@@ -1,3 +1,12 @@
+---
+id: 1-binary-search
+title: "[EASY] Binary Search"
+sidebar_position: 2
+tags:
+    - Array
+    - Binary Search
+---
+
 ## Info
 
 - Link: https://leetcode.com/problems/binary-search/

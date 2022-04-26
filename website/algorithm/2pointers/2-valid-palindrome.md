@@ -1,3 +1,12 @@
+---
+id: 2-valid-palindrome
+title: "[EASY] Valid Palindrome"
+sidebar_position: 2
+tags:
+    - String
+    - Two Pointers
+---
+
 ## Info
 - https://leetcode.com/problems/valid-palindrome/
 

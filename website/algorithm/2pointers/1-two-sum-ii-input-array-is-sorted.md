@@ -1,3 +1,12 @@
+---
+id: two-sum-ii-input-array-is-sorted
+title: "[Medium] Two Sum II - Input Array Is Sorted"
+sidebar_position: 1
+tags:
+    - Array
+    - Two Pointers
+---
+
 ## Info
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 

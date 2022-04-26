@@ -1,6 +1,7 @@
 ---
 id: valid-anagram
 title: "[EASY] Valid Anagram"
+sidebar_position: 2
 tags:
     - Array
     - HashTable

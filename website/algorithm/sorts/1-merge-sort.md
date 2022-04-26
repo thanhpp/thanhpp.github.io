@@ -1,3 +1,10 @@
+---
+id: 1-merge-sort
+title: "Merge Sort"
+tags:
+    - Sorts
+---
+
 ```go
 package main
 
