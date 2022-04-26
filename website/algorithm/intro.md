@@ -2,6 +2,29 @@
 sidebar_position: 1
 ---
 
+- [Các dạng thuật toán](#các-dạng-thuật-toán)
+- [Tổng hợp các câu hỏi](#tổng-hợp-các-câu-hỏi)
+- [Tracking](#tracking)
+  - [Array & Hashing](#array--hashing)
+  - [Two Pointers](#two-pointers)
+  - [Sliding Windows](#sliding-windows)
+  - [Stack](#stack)
+  - [Binary Search](#binary-search)
+  - [Linked List](#linked-list)
+  - [Trees](#trees)
+  - [Tries](#tries)
+  - [Heap / Priority Queue](#heap--priority-queue)
+  - [Backtracking](#backtracking)
+  - [Graphs](#graphs)
+  - [Advanced Graphs](#advanced-graphs)
+  - [1-D Dynamic Programming](#1-d-dynamic-programming)
+  - [2-D Dynamic Programming](#2-d-dynamic-programming)
+  - [Greedy](#greedy)
+  - [Intervals](#intervals)
+  - [Math & Geometry](#math--geometry)
+  - [Bit Manipulation](#bit-manipulation)
+- [References](#references)
+
 # Các dạng thuật toán
 - Theo như trang [Algo.monster](https://algo.monster/problems/stats), các topic thuật toán được phân loại theo độ khó và ROI như bảng sau
     - | Topic               | Difficulty | ROI    |
