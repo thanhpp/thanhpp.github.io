@@ -130,8 +130,8 @@ sidebar_position: 1
 
 | NAME                                               | LINK                                                                             | DIFFICULTY | Golang | Rust |
 |----------------------------------------------------|----------------------------------------------------------------------------------|:----------:|:------:|:----:|
-| Invert Binary Tree                                 | https://leetcode.com/problems/invert-binary-tree                                 | Easy       |    x   |   -  |
-| Maximum Depth of Binary Tree                       | https://leetcode.com/problems/maximum-depth-of-binary-tree                       | Easy       |        |      |
+| Invert Binary Tree                                 | https://leetcode.com/problems/invert-binary-tree                                 | Easy       |    -   |   -  |
+| Maximum Depth of Binary Tree                       | https://leetcode.com/problems/maximum-depth-of-binary-tree                       | Easy       |    x   |      |
 | Diameter of a Binary Tree                          | https://leetcode.com/problems/diameter-of-a-binary-tree                          | Easy       |        |      |
 | Balanced Binary Tree                               | https://leetcode.com/problems/balanced-binary-tree                               | Easy       |        |      |
 | Same Tree                                          | https://leetcode.com/problems/same-tree                                          | Easy       |        |      |
