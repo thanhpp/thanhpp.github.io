@@ -91,7 +91,7 @@ sidebar_position: 1
 | NAME                             | LINK                                                           | DIFFICULTY |  Golang  | Rust  |
 |----------------------------------|----------------------------------------------------------------|:----------:|:--------:|:-----:|
 | Valid Parentheses                | https://leetcode.com/problems/valid-parentheses                | Easy       |    x     |   x   |
-| Min Stack                        | https://leetcode.com/problems/min-stack                        | Easy       |          |       |
+| Min Stack                        | https://leetcode.com/problems/min-stack                        | Easy       |    x     |       |
 | Evaluate Reverse Polish Notation | https://leetcode.com/problems/evaluate-reverse-polish-notation | Medium     |          |       |
 | Generate Parentheses             | https://leetcode.com/problems/generate-parentheses             | Medium     |          |       |
 | Daily Temperatures               | https://leetcode.com/problems/daily-temperatures               | Medium     |          |       |
