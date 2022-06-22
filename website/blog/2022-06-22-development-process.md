@@ -8,6 +8,7 @@ tags: [work]
 ## Notion
 
 - Everything as Database
+- Thiếu automation với Github -> Cần m.n tham gia thay đổi trên notion
 
 ## Vấn đề
 
@@ -35,3 +36,37 @@ tags: [work]
   - Product specification
 - Kick-off
   - Giải quyết specification (Chi tiết hóa, loại bỏ sự mập mờ)
+  - Xác định scope
+- Design
+  - Tài liệu thiết kế (services, apis)
+  - Cần sự xem xét của các thành viên cấp cao (có kinh nghiệm)
+- Break task:
+  - Chia nhỏ design
+- Refinement:
+- Sprint:
+  - Planning
+  - Daily Meeting: catchup
+  - Retro: Phản hồi
+
+## Vận hành bằng notion
+
+- Sử dụng template: dạng kanban
+- Cập nhật tự động các metrics
+
+```
+Câu hỏi
+1. Thời gian cần thiết cho mỗi công việc:
+- Pre-sprint: Làm gối đầu nhau, thường dài 2 tuần
+
+2. Memo-communication (daily meetings):
+
+3. Phân công người take note, monitor việc take note?
+
+4. Nên có outline cho 1 notion page
+
+5. Cách phân chia notion?
+- Tuy link vào 1 page nhưng các level rất sâu
+
+6. Kinh nghiệm estimate task?
+- Sử dụng effort (trọng số để estimate)
+```
