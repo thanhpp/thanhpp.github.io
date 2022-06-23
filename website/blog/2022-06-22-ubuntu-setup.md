@@ -10,3 +10,7 @@ tags: [ubuntu]
 - copy fonts to `/usr/local/share/fonts`
 - run: `fc-cache -f -v`
 - [ref](https://askubuntu.com/questions/3697/how-do-i-install-fonts#)
+
+## Fix flickering cursor
+
+- https://unix.stackexchange.com/questions/358992/cursor-flickers-with-xrandr-scaling
