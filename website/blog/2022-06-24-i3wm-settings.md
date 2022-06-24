@@ -15,3 +15,7 @@ tags: [i3wm]
 
 - settings transform multiple screen
 - https://superuser.com/questions/522453/xrandr-dpi-on-multihead-linux#:~:text=It%20is%20not%20possible%20to,on%20the%20up%2Dscaled%20monitor.
+
+## Persistent chrome flags
+
+- https://wiki.archlinux.org/title/Chromium#Making_flags_persistent
