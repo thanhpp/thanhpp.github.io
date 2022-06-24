@@ -19,3 +19,7 @@ tags: [i3wm]
 ## Persistent chrome flags
 
 - https://wiki.archlinux.org/title/Chromium#Making_flags_persistent
+
+## Wayland Fractional Scalling
+
+- https://wiki.archlinux.org/title/HiDPI#Wayland
