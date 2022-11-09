@@ -20,10 +20,10 @@ jobs:
       id: node-modules-cache
       with:
         path: |
-          node_modules
-          .next/*
-          !.next/.next/cache
-          !.next/.env.*
+          docs/node_modules
+          docs/.next/*
+          docs/!.next/.next/cache
+          docs/!.next/.env.*
         key: ${{ runner.os }}-dendronv2-${{ hashFiles('**/yarn.lock', '**/package-lock.json') }}
 
     - name: Install dependencies
@@ -40,13 +40,13 @@ jobs:
         key: ${{ runner.os }}-nextjs-${{ hashFiles('.next/yarn.lock', '.next/package-lock.json') }}-${{ hashFiles('.next/**.[jt]s', '.next/**.[jt]sx') }}
 
     - name: Export notes
-      run: yarn dendron publish export --target github --yes
+      run: cd docs && yarn dendron publish export --target github --yes
 
     - name: Deploy site
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GH_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: docs/
+        publish_dir: pages/
         force_orphan: true
         #cname: example.com
