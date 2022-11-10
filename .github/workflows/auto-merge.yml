@@ -36,5 +36,6 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           merge-method: merge
           do-not-merge-labels: never-merge
+          required-labels: sync
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true
