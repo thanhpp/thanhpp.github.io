@@ -91,8 +91,8 @@ publishing:
     writeStubs: false
     siteRootDir: docs
     seo:
-        title: Dendron
-        description: Personal Knowledge Space
+        title: thanhpp
+        description: thanhpp
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub
@@ -110,3 +110,8 @@ publishing:
         payload:
             - docs
     siteUrl:  https://thanhpp.github.io
+site:
+    siteHierarchies:
+        - root
+    siteRootDir: docs
+    logo: https://avatars.githubusercontent.com/u/33785414
