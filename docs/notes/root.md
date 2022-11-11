@@ -2,19 +2,20 @@
 id: xfkxbponh0sohobo6pual15
 title: Root
 desc: ''
-updated: 1663481872547
+updated: 1668137379975
 created: 1663481872547
 ---
-# Welcome to Dendron
+# Welcome to my page
 
-This is the root of your dendron vault. If you decide to publish your entire vault, this will be your landing page. You are free to customize any part of this page except the frontmatter on top.
+- This is a place where I write my knowledge in both Vietnamese and English.
+- Please feel free to correct me if there is anything not right.
 
-## Lookup
+## Contacts
 
-This section contains useful links to related resources.
+- [Github](https://github.com/thanhpp)
+- [Discord](https://discord.gg/ugNRjFNqjp)
+- [LinkedIn](https://www.linkedin.com/in/thanhpp/)
 
-- [Getting Started Guide](https://link.dendron.so/6b25)
-- [Discord](https://link.dendron.so/6b23)
+## Dendron
+
 - [Home Page](https://wiki.dendron.so/)
-- [Github](https://link.dendron.so/6b24)
-- [Developer Docs](https://docs.dendron.so/)
