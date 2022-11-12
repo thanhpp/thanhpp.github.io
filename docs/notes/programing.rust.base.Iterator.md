@@ -2,7 +2,7 @@
 id: 4sslaiv02e24j98fkj9n725
 title: Iterator
 desc: ''
-updated: 1668103830013
+updated: 1668281557323
 created: 1668099415947
 ---
 # Iterator
@@ -145,3 +145,20 @@ mod tests {
     }
 }
 ```
+
+## Performance vs Loops
+
+> https://doc.rust-lang.org/book/ch13-04-performance.html
+
+- Case query by string from a book
+    - iterator is slightly faster than loop
+- Iterators are 1 of `Rust's zero-cost abstraction`
+    - compiled to low-level code
+    - no overhead
+
+> `Zero overhead principle:` if you don't use, you don't pay for it.
+> What you do use, you couldn't hand code any better
+
+- `Unrolling`: Rust's optimization
+    - remove overhead of the **loop controlling code** -> remove runtime bound check
+    - generate **repeatative code** for each iteration of the loop    
