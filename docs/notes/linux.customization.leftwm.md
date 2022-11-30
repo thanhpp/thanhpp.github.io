@@ -2,7 +2,7 @@
 id: r0wj411y1iqdz8n8ecseh06
 title: Leftwm
 desc: ''
-updated: 1669456475817
+updated: 1669736779009
 created: 1669455858355
 ---
 # LeftWM - ubuntu
@@ -38,4 +38,9 @@ created: 1669455858355
 
 > https://github.com/leftwm/leftwm#configuring
 
+- Install dependencies
+    - picom
+    - polybar 
+- Themes: use current symlink
 - Location: ~/.config/leftwm/config.ron
+
