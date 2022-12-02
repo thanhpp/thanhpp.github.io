@@ -2,7 +2,7 @@
 id: z2hgvaw2rpz93g3ije3zxmd
 title: Arch
 desc: ''
-updated: 1669777863094
+updated: 1669965094977
 created: 1669695426013
 ---
 # Arch linux
@@ -40,3 +40,11 @@ $ systemctl --user status pulseaudio
 
 - Install pipewire
     - https://www.reddit.com/r/archlinux/comments/lv5ihv/what_is_the_most_proper_way_to_replace_pulseaudio/
+
+## Dark theme
+
+> https://wiki.archlinux.org/title/GTK#Dark_theme_variant
+
+- GTK
+    - gtk: `gtk-application-prefer-dark-theme = true`
+    - gtk4: `gsettings set org.gnome.desktop.interface color-scheme prefer-dark`
