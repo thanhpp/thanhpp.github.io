@@ -2,7 +2,7 @@
 id: oh5egsjgrfha84o768262hu
 title: Guides
 desc: ''
-updated: 1664275480421
+updated: 1670227729147
 created: 1664273232760
 ---
 
@@ -19,3 +19,15 @@ created: 1664273232760
     - Build failed: could not find system library 'openssl'
         - https://github.com/sfackler/rust-openssl/issues/855 
         - `sudo apt-get install pkg-config libssl-dev`
+
+
+# Cargo
+
+## Import dependencies
+
+- version only
+    - edit the Cargo.toml file
+        ```toml
+        [dependencies]
+        reqwest= "0.11"
+        ```
