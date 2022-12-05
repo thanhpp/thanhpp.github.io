@@ -1,6 +1,6 @@
 ---
 id: sowk0fhutabmkscksl6rweb
-title: Memory Leak by Reference Cycle
+title: Memory-Leak-by-Reference-Cycle
 desc: ''
 updated: 1670154000502
 created: 1670152738118
