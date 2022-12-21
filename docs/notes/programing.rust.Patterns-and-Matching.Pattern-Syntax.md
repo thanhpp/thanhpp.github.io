@@ -2,7 +2,7 @@
 id: 01uj2rs9m4ssfy3qaqguoas
 title: Pattern-Syntax
 desc: ''
-updated: 1671367933878
+updated: 1671417820960
 created: 1671364597469
 ---
 # Pattern Syntax
@@ -347,7 +347,7 @@ fn main() {
         Message::Hello { id: 10..=12 } => {
             println!("Found an id in another range")
         }
-        // shorthand syntax -> bind to the id var
+        // shorthand syntax -> bind to the id varO
         Message::Hello { id } => println!("Found some other id: {}", id),
     } // Found an id in range: 5
 }
