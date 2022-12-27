@@ -2,7 +2,7 @@
 id: 10w7bddtwwaew1kvj45xiqz
 title: Macros
 desc: ''
-updated: 1672053852029
+updated: 1672078666827
 created: 1672049225370
 ---
 # Macros
@@ -82,6 +82,111 @@ pub fn some_name(input: TokenStream) -> TokenStream {
     // the function also has an attribute attached to it that specifies with kind of procedural macro we're creating
 }
 ```
+
+## Write a custom derive Macro
+
+- The first step is to make a new library crate 
+    ```
+    $ cargo new hello_macro --lib
+    ```
+- Next, we'll define the `HelloMacro` trait and its associated function
+    ```rust
+    // src/lib.rs
+    pub trait HelloMacro {
+        fn hello_macro();
+    }
+    ```
+- Define the procedural macro, it need to be in its own crate. Let's start a new crate called `hello_macro_derive` inside the project
+    ```
+    $ cargo new hello_macro_derive --lib
+    ```
+- Manage the procedural macro crate dependencies
+    ```toml
+    # hello_macro_derive/Cargo.toml
+    [lib]
+    proc-macro = true
+
+    [dependencies]
+    syn = "1.0"
+    quote = "1.0"
+    ```
+- Define the procedural macro
+    ```rust
+    // hello_macro_derive/src/lib.rs
+    
+    use proc_macro::TokenStream; // the compiler API that allow us to read and manipulate Rust code
+    use quote::quote; // turns syn data structures back into Rust code
+    use syn; // parse Rust code from a string into a data structure
+
+    #[proc_macro_derive(HelloMacro)]
+    pub fn hello_macro_derive(input: TokenStream) -> TokenStream {
+        // Construct a representation of Rust code as a syntax tree
+        // that we can manipulate
+        let ast = syn::parse(input).unwrap(); // panic if fail
+
+        // Build the trait implementation
+        impl_hello_macro(&ast)
+    }
+    /*
+    DeriveInput {
+        // --snip--
+
+        ident: Ident {
+            ident: "Pancakes", // -> identifier ~ name
+            span: #0 bytes(95..103)
+        },
+        data: Struct(
+            DataStruct {
+                struct_token: Struct,
+                fields: Unit,
+                semi_token: Some(
+                    Semi
+                )
+            }
+        )
+    }
+    */
+    fn impl_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
+        let name = &ast.ident; // get struct name
+        // quote! macro let us define the Rust code
+        let gen = quote! {
+            impl HelloMacro for #name { // #name -> templating mechanic (replace with the variable name)
+                fn hello_macro() {
+                    // stringtify!: at compile time turns the expression into a string
+                    println!("Hello, Macro! My name is {}!", stringify!(#name));
+                }
+            }
+        };
+        gen.into() // convert to a TokenStream
+    }
+    ```
+
+## Atribute-like macros
+
+- Allow us to create new attributes
+- Can apply to structs, enums and other items (functions,...)
+    ```rust
+    #[route(GET, "/")]
+    fn index() {}
+
+    // macro
+    #[proc_macro_attribute]
+    pub fn route(attr: TokenStream, item: TokenStream) -> TokenStream {}
+    // takes 2 parameters
+    ```
+
+## Function-like macros
+
+- Look like function calls
+- Thay can take unknown number of arguments
+    ```rust
+    let sql = sql!(SELECT * FROM posts WHERE id=1);
+
+    // macro
+    #[proc_macro]
+    pub fn sql(input: TokenStream) -> TokenStream {}
+    // we receive the tokens and return the code we wnat to generate
+    ```
 
 ## Vocab
 
