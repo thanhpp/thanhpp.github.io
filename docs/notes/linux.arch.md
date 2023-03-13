@@ -2,7 +2,7 @@
 id: z2hgvaw2rpz93g3ije3zxmd
 title: Arch
 desc: ''
-updated: 1669965094977
+updated: 1678415449403
 created: 1669695426013
 ---
 # Arch linux
@@ -48,3 +48,13 @@ $ systemctl --user status pulseaudio
 - GTK
     - gtk: `gtk-application-prefer-dark-theme = true`
     - gtk4: `gsettings set org.gnome.desktop.interface color-scheme prefer-dark`
+
+## Natural scrolling
+
+> https://bbs.archlinux.org/viewtopic.php?id=240950
+
+```
+# /etc/X11/xorg.conf.d/40-libinput.conf || /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+Option "NaturalScrolling" "true"
+```
