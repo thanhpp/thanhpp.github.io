@@ -1,0 +1,97 @@
+<h1 id="setup-new-machine">Setup New Machine<a aria-hidden="true" class="anchor-heading icon-link" href="#setup-new-machine"></a></h1>
+<h1 id="set-up-a-new-machine">Set up a new machine<a aria-hidden="true" class="anchor-heading icon-link" href="#set-up-a-new-machine"></a></h1>
+<h2 id="set-user-as-sudo">Set user as sudo<a aria-hidden="true" class="anchor-heading icon-link" href="#set-user-as-sudo"></a></h2>
+<ul>
+<li>Switch to an another login account
+<ul>
+<li>ctrl + alt + &#x3C;F2/F12></li>
+<li>add user to the sudo group: <code>sudo add &#x3C;username> sudo</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="awesome-wm">Awesome WM<a aria-hidden="true" class="anchor-heading icon-link" href="#awesome-wm"></a></h2>
+<ul>
+<li>
+<p>Setup: <a href="https://wiki.debian.org/Awesome">https://wiki.debian.org/Awesome</a></p>
+<ul>
+<li>add <code>exec awesome</code> to your ~/.xinitrc</li>
+<li>find this <code>rc.lua</code> file in <code>/etc/xdg/awesome/</code>. Copy it to <code>~/.config/awesome/</code></li>
+</ul>
+</li>
+<li>
+<p>High DPI</p>
+<ul>
+<li><a href="https://www.reddit.com/r/awesomewm/comments/inv3p8/how_to_set_scaleresolution_of_awesomewm/?rdt=59604">https://www.reddit.com/r/awesomewm/comments/inv3p8/how_to_set_scaleresolution_of_awesomewm/?rdt=59604</a></li>
+</ul>
+</li>
+<li>
+<p>Set mouse scroll</p>
+<ul>
+<li>
+<p>Update <code>/usr/share/X11/xorg.conf.d/40-libinput.conf</code>:</p>
+<ul>
+<li>
+<pre><code>  # Match on all types of devices but joysticks
+  Section "InputClass"
+          Identifier "libinput pointer catchall"
+          MatchIsPointer "on"
+          MatchDevicePath "/dev/input/event*"
+          Driver "libinput"
+          Option "NaturalScrolling" "True"
+  EndSection
+
+  ...
+
+  Section "InputClass"
+      Identifier "libinput touchpad catchall"
+      MatchIsTouchpad "on"
+      MatchDevicePath "/dev/input/event*"
+      Driver "libinput"
+      Option "NaturalScrolling" "True"
+  EndSection
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="zsh-setup">Zsh setup<a aria-hidden="true" class="anchor-heading icon-link" href="#zsh-setup"></a></h2>
+<ul>
+<li>Install zsh: <code>sudo apt install zsh</code>
+<ul>
+<li>change shell: <code>chsh -s $(which zsh)</code></li>
+</ul>
+</li>
+<li>Install oh-my-zsh: <a href="https://ohmyz.sh/#install">https://ohmyz.sh/#install</a></li>
+<li>Link (hard link)
+<ul>
+<li>custom/themes/*</li>
+<li>.zshrc</li>
+<li>aliases.zsh</li>
+<li>my_command.zsh</li>
+</ul>
+</li>
+</ul>
+<h2 id="fonts">Fonts<a aria-hidden="true" class="anchor-heading icon-link" href="#fonts"></a></h2>
+<ul>
+<li>Ubuntu mono nerd fonts: <a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></li>
+<li>Intel one mono: <a href="https://github.com/intel/intel-one-mono">https://github.com/intel/intel-one-mono</a></li>
+</ul>
+<h2 id="hidpi-grub">HiDPI Grub<a aria-hidden="true" class="anchor-heading icon-link" href="#hidpi-grub"></a></h2>
+<blockquote>
+<p><a href="https://www.dedoimedo.com/computers/grub-hd-scaling-resolution.html">https://www.dedoimedo.com/computers/grub-hd-scaling-resolution.html</a></p>
+</blockquote>
+<ul>
+<li>update <code>/etc/default/grub</code>
+<ul>
+<li>
+<pre><code>  GRUB_GFXMODE=640x480
+  GRUB_GFXPAYLOAD=keep
+  GRUB_TERMINAL=gfxterm 
+</code></pre>
+</li>
+</ul>
+</li>
+<li>update the grub config: <code>sudo-update-grub</code></li>
+</ul>

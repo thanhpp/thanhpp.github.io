@@ -1,0 +1,22 @@
+<h1 id="gnome-dark-theme">Gnome Dark Theme<a aria-hidden="true" class="anchor-heading icon-link" href="#gnome-dark-theme"></a></h1>
+<h1 id="set-gtk-dark-theme">Set GTK dark theme<a aria-hidden="true" class="anchor-heading icon-link" href="#set-gtk-dark-theme"></a></h1>
+<blockquote>
+<p><a href="https://unix.stackexchange.com/questions/655790/how-to-switch-to-system-wide-dark-theme-in-i3-or-sway">https://unix.stackexchange.com/questions/655790/how-to-switch-to-system-wide-dark-theme-in-i3-or-sway</a></p>
+</blockquote>
+<ul>
+<li>Modify the System default theme</li>
+<li>update GTK 3 settings
+<ul>
+<li>edit <code>~/.config/gtk-3.0/settings.ini</code></li>
+<li>Add
+<pre><code>[Settings]
+gtk-application-prefer-dark-theme=1
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Set gnome interface
+<pre><code>gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+</code></pre>
+</li>
+</ul>

@@ -1,0 +1,44 @@
+<h1 id="openvpn3">Openvpn3<a aria-hidden="true" class="anchor-heading icon-link" href="#openvpn3"></a></h1>
+<h1 id="openvpn3-1">OpenVPN3<a aria-hidden="true" class="anchor-heading icon-link" href="#openvpn3-1"></a></h1>
+<ul>
+<li>used to access the <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">kyber (Private)</a> dev environment</li>
+</ul>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<blockquote>
+<p><a href="https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux?__cf_chl_jschl_tk__=8242c8ca4f6aec5ca5596d45ae0208a68ad5edc0-1616667818-0-ATzy_Y6a7l84X7ALx0iFoIW9DWpak-xag5ue93rFf57I8zEVYY353f0q-pZUnQsRxCJGtYQAz-ov3JCP_qZrVMJDgJzZaSbZPPvDn4EOLDRyqSfIWY8QIWGAVBd-BHYirKKgZ7FPkASeg8gQwH1tPEJ58Zb3sZeNTP6N9xUjM4fZAkHHElPlQzI8mLUevwCnAID9jQpzeyshpp2rOP6avmnIPk1_nj0obWnB53LrT75Wy0v-E9mouaUhkRulzkK3k41ZCDLzXpMzvLpsikjb97ZK1jXq7P4UoGfJjgcvAN_i4KIjCnqAOC_UReoEGZni_uTkCSuvLq_0dOD_qzgy5OYu3Wml3Q3MlPDqEG-rNM3N">https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux?__cf_chl_jschl_tk__=8242c8ca4f6aec5ca5596d45ae0208a68ad5edc0-1616667818-0-ATzy_Y6a7l84X7ALx0iFoIW9DWpak-xag5ue93rFf57I8zEVYY353f0q-pZUnQsRxCJGtYQAz-ov3JCP_qZrVMJDgJzZaSbZPPvDn4EOLDRyqSfIWY8QIWGAVBd-BHYirKKgZ7FPkASeg8gQwH1tPEJ58Zb3sZeNTP6N9xUjM4fZAkHHElPlQzI8mLUevwCnAID9jQpzeyshpp2rOP6avmnIPk1_nj0obWnB53LrT75Wy0v-E9mouaUhkRulzkK3k41ZCDLzXpMzvLpsikjb97ZK1jXq7P4UoGfJjgcvAN_i4KIjCnqAOC_UReoEGZni_uTkCSuvLq_0dOD_qzgy5OYu3Wml3Q3MlPDqEG-rNM3N</a>
+<a href="https://github.com/OpenVPN/openvpn3-linux/issues/113">https://github.com/OpenVPN/openvpn3-linux/issues/113</a></p>
+</blockquote>
+<ul>
+<li>Ubuntu
+<ul>
+<li>https transport: <code>sudo apt install apt-transport-https</code> </li>
+<li>add source key
+<pre><code>sudo wget https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub
+sudo apt-key add openvpn-repo-pkg-key.pub
+</code></pre>
+</li>
+<li>set up source
+<pre><code>sudo bash -c 'curl -fsSL https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-focal.list > /etc/apt/sources.list.d/openvpn3.list'
+</code></pre>
+<ul>
+<li>focal: Ubuntu 20.04</li>
+</ul>
+</li>
+<li>update &#x26; install: <code>sudo apt update &#x26;&#x26; sudo apt install openvpn3</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="simple-start">Simple start<a aria-hidden="true" class="anchor-heading icon-link" href="#simple-start"></a></h2>
+<pre><code>openvpn3 session-start --config ${MY_CONFIGURATION_FILE}
+</code></pre>
+<h2 id="commands">Commands<a aria-hidden="true" class="anchor-heading icon-link" href="#commands"></a></h2>
+<ul>
+<li>show sessions
+<pre><code>openvpn3 session-list
+</code></pre>
+</li>
+<li>disconnet
+<pre><code>openvpn3 session-manage --config ${MY_CONFIGURATION_FILE} --disconnect
+</code></pre>
+</li>
+</ul>

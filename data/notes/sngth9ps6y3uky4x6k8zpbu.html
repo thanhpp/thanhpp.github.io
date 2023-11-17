@@ -1,0 +1,47 @@
+<h1 id="zsh">Zsh<a aria-hidden="true" class="anchor-heading icon-link" href="#zsh"></a></h1>
+<h2 id="install-zsh">Install zsh<a aria-hidden="true" class="anchor-heading icon-link" href="#install-zsh"></a></h2>
+<ul>
+<li>through <a href="https://github.com/ohmyzsh/ohmyzsh">oh my zsh</a></li>
+</ul>
+<pre><code>sudo apt install zsh
+</code></pre>
+<ul>
+<li>change default shell <code>chsh -s $(which zsh)</code></li>
+</ul>
+<h2 id="install-omz">Install Omz<a aria-hidden="true" class="anchor-heading icon-link" href="#install-omz"></a></h2>
+<blockquote>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh">https://github.com/ohmyzsh/ohmyzsh</a></p>
+</blockquote>
+<p><code>sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></p>
+<h2 id="config">Config<a aria-hidden="true" class="anchor-heading icon-link" href="#config"></a></h2>
+<ul>
+<li>the .omz folder is a git repository 
+<ul>
+<li>Not suitable for creating soft link</li>
+<li>just creating soft link for neccesary files</li>
+</ul>
+</li>
+<li><code>.zshrc</code>: replacement for <code>.bashrc</code>
+<ul>
+<li>move additional commands from <code>bash.rc</code> -> <code>zsh.rc</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="themes">Themes<a aria-hidden="true" class="anchor-heading icon-link" href="#themes"></a></h3>
+<ul>
+<li>place custome theme <strong>files</strong> in <code>$HOME/.oh-my-zsh/custom/themes</code></li>
+</ul>
+<h3 id="scripts--aliases">Scripts &#x26; Aliases<a aria-hidden="true" class="anchor-heading icon-link" href="#scripts--aliases"></a></h3>
+<ul>
+<li><code>$HOME/.oh-my-zsh/custom</code></li>
+<li>each file must have the <code>.zsh</code> extension</li>
+</ul>
+<h3 id="completions">Completions<a aria-hidden="true" class="anchor-heading icon-link" href="#completions"></a></h3>
+<ul>
+<li><code>$HOME/.oh-my-zsh/completions</code></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6heqjju0cm02y0rjgk9kajk">Install Checklist</a></li>
+</ul>

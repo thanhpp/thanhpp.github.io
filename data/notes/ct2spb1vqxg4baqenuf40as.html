@@ -1,0 +1,90 @@
+<h1 id="sway">Sway<a aria-hidden="true" class="anchor-heading icon-link" href="#sway"></a></h1>
+<h1 id="sway---i3-compatible-wayland-compositor">Sway - i3-compatible Wayland compositor<a aria-hidden="true" class="anchor-heading icon-link" href="#sway---i3-compatible-wayland-compositor"></a></h1>
+<blockquote>
+<p><a href="https://github.com/swaywm/sway">https://github.com/swaywm/sway</a></p>
+</blockquote>
+<ul>
+<li><a href="#sway---i3-compatible-wayland-compositor">Sway - i3-compatible Wayland compositor</a>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#config">Config</a></li>
+<li><a href="#hidpi">HiDPI</a>
+<ul>
+<li><a href="#application-support">Application support</a></li>
+</ul>
+</li>
+<li><a href="#natural-scrolling">Natural scrolling</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<pre><code>sudo apt install sway
+</code></pre>
+<h2 id="config">Config<a aria-hidden="true" class="anchor-heading icon-link" href="#config"></a></h2>
+<blockquote>
+<p>Compatible with i3wm</p>
+</blockquote>
+<ul>
+<li>location: <code>~/.config/sway/config</code></li>
+</ul>
+<h2 id="hidpi">HiDPI<a aria-hidden="true" class="anchor-heading icon-link" href="#hidpi"></a></h2>
+<blockquote>
+<p><a href="https://github.com/swaywm/sway/wiki#hidpi">https://github.com/swaywm/sway/wiki#hidpi</a></p>
+</blockquote>
+<ul>
+<li>show output settings
+<pre><code>swaymsg -t get_output
+</code></pre>
+</li>
+</ul>
+<pre><code>output &#x3C;id> &#x3C;config
+</code></pre>
+<h3 id="application-support">Application support<a aria-hidden="true" class="anchor-heading icon-link" href="#application-support"></a></h3>
+<ul>
+<li>already support:
+<ul>
+<li>telegram-desktop</li>
+<li>alacrity </li>
+</ul>
+</li>
+<li>Chrome:
+<ul>
+<li>chrome://flags</li>
+<li>Preferred Ozone platform => Wayland</li>
+</ul>
+</li>
+<li>Vscode
+<ul>
+<li>command flags:
+<ul>
+<li>--enable-features=UseOzonePlatform --ozone-platform=wayland  </li>
+<li>--ozone-platform-hint=auto</li>
+<li>--enable-features=WaylandWindowDecorations</li>
+</ul>
+</li>
+<li><a href="https://wiki.archlinux.org/title/Visual_Studio_Code#Running_natively_under_Wayland">https://wiki.archlinux.org/title/Visual_Studio_Code#Running_natively_under_Wayland</a>  </li>
+</ul>
+</li>
+</ul>
+<h2 id="natural-scrolling">Natural scrolling<a aria-hidden="true" class="anchor-heading icon-link" href="#natural-scrolling"></a></h2>
+<blockquote>
+<p><a href="https://wiki.archlinux.org/title/sway">https://wiki.archlinux.org/title/sway</a></p>
+</blockquote>
+<ul>
+<li>get inputs
+<pre><code>swaymsg -t get_inputs
+</code></pre>
+</li>
+<li>edit the config file
+<pre><code>input type:touchpad {
+  tap enabled
+  natural_scroll enabled
+}
+</code></pre>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/notes/dkfh510xhhdkee9koyvnfc0">Fcitx5</a></li>
+</ol>

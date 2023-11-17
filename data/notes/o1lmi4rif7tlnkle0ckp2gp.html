@@ -1,0 +1,63 @@
+<h1 id="systemd">Systemd<a aria-hidden="true" class="anchor-heading icon-link" href="#systemd"></a></h1>
+<h1 id="systemd-system-and-service-manager">Systemd system and service manager<a aria-hidden="true" class="anchor-heading icon-link" href="#systemd-system-and-service-manager"></a></h1>
+<blockquote>
+<p><a href="https://wiki.debian.org/systemd">https://wiki.debian.org/systemd</a>
+<a href="https://www.computernetworkingnotes.com/linux-tutorials/systemd-unit-configuration-files-explained.html">https://www.computernetworkingnotes.com/linux-tutorials/systemd-unit-configuration-files-explained.html</a></p>
+</blockquote>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<pre><code>sudo apt update
+sudo apt install systemd
+</code></pre>
+<h2 id="setup-a-service">Setup a service<a aria-hidden="true" class="anchor-heading icon-link" href="#setup-a-service"></a></h2>
+<blockquote>
+<p><a href="https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/">https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/</a></p>
+</blockquote>
+<ol>
+<li>
+<p>cd <code>/etc/systemd/system</code></p>
+</li>
+<li>
+<p>create a config file <code>&#x3C;service-name>.service</code></p>
+<pre><code>[Unit]
+Description=&#x3C;description about this service>
+
+[Service]
+User=&#x3C;user e.g. root>
+WorkingDirectory=&#x3C;directory_of_script e.g. /root>
+ExecStart=&#x3C;script which needs to be executed>
+Restart=always
+StandardError=journal
+StandardOutput=journal
+StandardInput=null
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+</li>
+<li>
+<p>reload all service <code>sudo systemctl daemon-reload</code></p>
+</li>
+<li>
+<p>start your service <code>sudo systemctl start &#x3C;service-name>.service</code></p>
+</li>
+</ol>
+<h2 id="other-commands">Other commands<a aria-hidden="true" class="anchor-heading icon-link" href="#other-commands"></a></h2>
+<ul>
+<li>Stop a service (not on every boot): <code>sudo systemctl stop &#x3C;service-name>.service</code></li>
+<li>Check status <code>sudo systemctl status &#x3C;service-name>.service</code></li>
+<li>Enable every boot <code>sudo systemctl enable &#x3C;service-name>.service</code></li>
+<li>Disable every boot <code>sudo systemctl disable &#x3C;service-name>.service</code></li>
+</ul>
+<h2 id="read-logs">Read logs<a aria-hidden="true" class="anchor-heading icon-link" href="#read-logs"></a></h2>
+<blockquote>
+<p><a href="https://unix.stackexchange.com/questions/225401/how-to-see-full-log-from-systemctl-status-service">https://unix.stackexchange.com/questions/225401/how-to-see-full-log-from-systemctl-status-service</a></p>
+</blockquote>
+<pre><code>journalctl -u &#x3C;service-name>.service
+</code></pre>
+<ul>
+<li>Must add to the config 
+<pre><code>StandardError=journal
+StandardOutput=journal
+</code></pre>
+</li>
+</ul>

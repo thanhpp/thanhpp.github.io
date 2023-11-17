@@ -1,0 +1,33 @@
+<h1 id="guides">Guides<a aria-hidden="true" class="anchor-heading icon-link" href="#guides"></a></h1>
+<h1 id="guides-1">Guides<a aria-hidden="true" class="anchor-heading icon-link" href="#guides-1"></a></h1>
+<h2 id="http">HTTP<a aria-hidden="true" class="anchor-heading icon-link" href="#http"></a></h2>
+<h3 id="http-request">HTTP Request<a aria-hidden="true" class="anchor-heading icon-link" href="#http-request"></a></h3>
+<blockquote>
+<p>hyper: <a href="https://hyper.rs/guides/client/basic/">https://hyper.rs/guides/client/basic/</a>
+reqwest: <a href="https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html">https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html</a></p>
+</blockquote>
+<ul>
+<li>Reqwest
+<ul>
+<li>Build failed: could not find system library 'openssl'
+<ul>
+<li><a href="https://github.com/sfackler/rust-openssl/issues/855">https://github.com/sfackler/rust-openssl/issues/855</a> </li>
+<li><code>sudo apt-get install pkg-config libssl-dev</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="cargo">Cargo<a aria-hidden="true" class="anchor-heading icon-link" href="#cargo"></a></h1>
+<h2 id="import-dependencies">Import dependencies<a aria-hidden="true" class="anchor-heading icon-link" href="#import-dependencies"></a></h2>
+<ul>
+<li>version only
+<ul>
+<li>edit the Cargo.toml file
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">dependencies</span><span class="token punctuation">]</span>
+<span class="token key property">reqwest</span><span class="token punctuation">=</span> <span class="token string">"0.11"</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>

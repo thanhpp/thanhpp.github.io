@@ -1,0 +1,22 @@
+<h1 id="grub-resolution">Grub Resolution<a aria-hidden="true" class="anchor-heading icon-link" href="#grub-resolution"></a></h1>
+<h1 id="update-the-grub-resolution">Update the grub resolution<a aria-hidden="true" class="anchor-heading icon-link" href="#update-the-grub-resolution"></a></h1>
+<ul>
+<li>grub config file: <code>/etc/default/grub</code></li>
+<li>Add
+<pre><code>GRUB_GFXMODE=640x480
+GRUB_GFXPAYLOAD=keep
+GRUB_TERMINAL=gfxterm
+</code></pre>
+</li>
+<li>update the grub menu
+<pre><code>sudo update-grub
+</code></pre>
+</li>
+<li>Explain
+<ul>
+<li>GFXMODE: the resolution of the grub menu </li>
+<li>GFXPAYLOAD: use the same parameters as defined during the initial startup</li>
+<li>TERMINAL: use a graphical device</li>
+</ul>
+</li>
+</ul>

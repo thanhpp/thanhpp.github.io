@@ -1,0 +1,51 @@
+<h1 id="polybar">Polybar<a aria-hidden="true" class="anchor-heading icon-link" href="#polybar"></a></h1>
+<h1 id="polybar-is-customizable-status-bar-integrate-with-i3">polybar is customizable status bar, integrate with i3<a aria-hidden="true" class="anchor-heading icon-link" href="#polybar-is-customizable-status-bar-integrate-with-i3"></a></h1>
+<blockquote>
+<p><a href="https://github.com/polybar/polybar">https://github.com/polybar/polybar</a></p>
+</blockquote>
+<h2 id="install">install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<ul>
+<li>command <code>sudo apt install polybar</code> -> <strong>unable to locate</strong></li>
+<li><a href="https://github.com/polybar/polybar/wiki/Compiling">Compile</a>
+<ul>
+<li>Dependencies (apt)
+<pre><code>sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+</code></pre>
+<pre><code>sudo apt install -y libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Compiling
+<ul>
+<li>clone the repo <a href="https://github.com/polybar/polybar">https://github.com/polybar/polybar</a> (have to clone all <strong>submodules</strong>)
+<code>git clone --recursive https://github.com/polybar/polybar</code></li>
+<li>cd to the folder</li>
+<li>run
+<pre><code>mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+# Optional. This will install the polybar executable in /usr/local/bin
+sudo make install
+</code></pre>
+</li>
+</ul>
+</li>
+<li>error
+<ul>
+<li>/home/thanhpp/github.com/polybar/polybar/lib/xpp does not contain a CMakeLists.txt file. Target xpp not generated</li>
+<li>Didn't clone submodules -> missing file</li>
+</ul>
+</li>
+</ul>
+<h2 id="config">config<a aria-hidden="true" class="anchor-heading icon-link" href="#config"></a></h2>
+<ul>
+<li>placed in <code>$HOME/.config/polybar</code></li>
+<li>soft link</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6heqjju0cm02y0rjgk9kajk">Install Checklist</a></li>
+</ul>

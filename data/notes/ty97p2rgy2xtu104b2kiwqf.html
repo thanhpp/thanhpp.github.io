@@ -1,0 +1,75 @@
+<h1 id="signing-commit">Signing Commit<a aria-hidden="true" class="anchor-heading icon-link" href="#signing-commit"></a></h1>
+<h1 id="use-gpg-key-to-sign-commit">Use gpg key to sign commit<a aria-hidden="true" class="anchor-heading icon-link" href="#use-gpg-key-to-sign-commit"></a></h1>
+<blockquote>
+<p><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification">https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification</a></p>
+</blockquote>
+<h2 id="genrate-gpg-key"><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key">Genrate GPG key</a><a aria-hidden="true" class="anchor-heading icon-link" href="#genrate-gpg-key"></a></h2>
+<h2 id="import-exsiting-gpg-key">Import exsiting gpg key<a aria-hidden="true" class="anchor-heading icon-link" href="#import-exsiting-gpg-key"></a></h2>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Export Gpg</span></div>
+<a href="/notes/2gi29jkx904kfzav2vav9ab" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="import">Import<a aria-hidden="true" class="anchor-heading icon-link" href="#import"></a></h2>
+<p><code>gpg --import &#x3C;private key file location>.key</code></p>
+</div></div><p></p><p></p>
+<h2 id="set-up-git-gpg-key">Set up git gpg key<a aria-hidden="true" class="anchor-heading icon-link" href="#set-up-git-gpg-key"></a></h2>
+<ul>
+<li>
+<p>Show current gpg keys</p>
+<pre><code>gpg --list-secret-keys --keyid-format=long
+</code></pre>
+</li>
+<li>
+<p>add gpg key to Github</p>
+<ul>
+<li>Settings</li>
+<li>Access</li>
+<li>SSH &#x26; GPG keys</li>
+<li>New GPG key</li>
+<li>Paste the key</li>
+<li>Add GPG Key</li>
+</ul>
+</li>
+<li>
+<p>Add gpg key to Git</p>
+<ul>
+<li>
+<p>list existing key</p>
+<pre><code>$ gpg --list-secret-keys --keyid-format=long
+
+### EXAMPLE RESPONSE
+/Users/hubot/.gnupg/secring.gpg
+------------------------------------
+sec   4096R/&#x3C;em>3AA5C34371567BD2&#x3C;/em> 2016-03-10 [expires: 2017-03-10]
+uid                          Hubot &#x3C;hubot@example.com>
+ssb   4096R/42B317FD4BA89E7A 2016-03-10
+</code></pre>
+<p>=> key id: <strong>3AA5C34371567BD2</strong></p>
+</li>
+<li>
+<p>Add to Git</p>
+<pre><code>git config --global user.signingkey &#x3C;key id>
+git config --global commit.gpgsign true
+</code></pre>
+</li>
+<li>
+<p>Add to <code>.bashrc</code> for startup setting</p>
+<pre><code>$ [ -f ~/.bashrc ] &#x26;&#x26; echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="set-up-vs-code">Set up VS Code<a aria-hidden="true" class="anchor-heading icon-link" href="#set-up-vs-code"></a></h2>
+<ul>
+<li>Enable auto signing
+<pre><code># settings.json
+"git.enableCommitSigning": true
+</code></pre>
+</li>
+</ul>

@@ -1,0 +1,36 @@
+<h1 id="golang">Golang<a aria-hidden="true" class="anchor-heading icon-link" href="#golang"></a></h1>
+<h2 id="slice-modify">slice modify<a aria-hidden="true" class="anchor-heading icon-link" href="#slice-modify"></a></h2>
+<pre class="language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestModifySlice</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fn1 <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>a <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		a <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	a1 <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
+	<span class="token function">fn1</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+
+	assert<span class="token punctuation">.</span><span class="token function">NotEqual</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> a1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	fn2 <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>a <span class="token operator">*</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token operator">*</span>a <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	a2 <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
+	<span class="token function">fn2</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>a2<span class="token punctuation">)</span>
+
+	assert<span class="token punctuation">.</span><span class="token function">Equal</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/notes/kvuxwlmleasgyat6p0lr4kj">Garbarge-Collector</a></li>
+<li><a href="/notes/68cau6m6oum741mwy15yih6">Google Style Guide</a></li>
+<li><a href="/notes/dvbzg9g2szs6irm26ax0i71">Switch Case</a></li>
+<li><a href="/notes/zjr5i3yyqo3to9mwfsx4f6k">Test Coverage</a></li>
+<li><a href="/notes/7olrlk5xigyzi2r1umkjte0">Timezone</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6g647fy4ijl714fmsg6hl3z">Multiple Accounts</a></li>
+</ul>

@@ -1,0 +1,41 @@
+<h1 id="smart-pointer">Smart-Pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#smart-pointer"></a></h1>
+<h1 id="smart-pointer-1">Smart Pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#smart-pointer-1"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch15-00-smart-pointers.html">https://doc.rust-lang.org/book/ch15-00-smart-pointers.html</a></p>
+</blockquote>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<ul>
+<li><strong>Pointer:</strong> A variable that contains an address in memory</li>
+<li><strong>Smart pointer</strong>: A data structure 
+<ul>
+<li>Act like a pointer</li>
+<li>Has metadata &#x26; other capabilities</li>
+<li>Can own the data that it points to (references don't own the data)</li>
+</ul>
+</li>
+</ul>
+<h2 id="implementation">Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a></h2>
+<ul>
+<li>Using traits:
+<ul>
+<li><code>Deref</code>: behave like a reference</li>
+<li><code>Drop</code>: custom code that run when an instance is </li>
+</ul>
+</li>
+</ul>
+<h2 id="famous-smart-pointers">Famous smart pointers<a aria-hidden="true" class="anchor-heading icon-link" href="#famous-smart-pointers"></a></h2>
+<ul>
+<li><code>Box&#x3C;T></code>: allocation value on the heap</li>
+<li><code>Rc&#x3C;T></code>: a reference couting -> enable multiple ownership</li>
+<li><code>Ref&#x3C;T></code> &#x26; <code>RefMut&#x3C;T></code>, accessed through <code>RefCell&#x3C;T></code>, a type that <strong>enforce the borrowing rules at runtime instead of compile time</strong></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/notes/5irsjg77tl67tytvpuvff8b">Box</a></li>
+<li><a href="/notes/zz7psvosiudfugqnvakue6l">Deref</a></li>
+<li><a href="/notes/eudq6211w4eat9r7c73smm9">Drop</a></li>
+<li><a href="/notes/sowk0fhutabmkscksl6rweb">Memory-Leak-by-Reference-Cycle</a></li>
+<li><a href="/notes/twhygbpbnqjfyzhpdgz878r">RefCell</a></li>
+<li><a href="/notes/07jw7rf43we9fv2oldtor3r">Reference-Counted</a></li>
+</ol>

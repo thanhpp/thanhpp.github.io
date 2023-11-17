@@ -1,0 +1,54 @@
+<h1 id="trait-objects">Trait-Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#trait-objects"></a></h1>
+<h1 id="trait-objects---allow-for-values-of-different-types">Trait Objects - Allow for Values of Different Types<a aria-hidden="true" class="anchor-heading icon-link" href="#trait-objects---allow-for-values-of-different-types"></a></h1>
+<h2 id="trait-for-common-behavior">Trait for Common Behavior<a aria-hidden="true" class="anchor-heading icon-link" href="#trait-for-common-behavior"></a></h2>
+<ul>
+<li>A trait object point to both an instance of a type implementing our specified trait and a table used to look up trait method on that type at runtume.
+<ul>
+<li>We create a trait object by specifying <strong>some sort of pointer</strong></li>
+<li>Rust's type system will ensure at compile time that any value used a trait object will implement the trait object's trait.</li>
+<li>We can't add data to a trait object</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">trait</span> <span class="token type-definition class-name">Draw</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">draw</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">Screen</span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> components<span class="token punctuation">:</span> <span class="token class-name">Vec</span><span class="token operator">&#x3C;</span><span class="token class-name">Box</span><span class="token operator">&#x3C;</span><span class="token keyword">dyn</span> <span class="token class-name">Draw</span><span class="token operator">>></span><span class="token punctuation">,</span> <span class="token comment">// vector of values that implement the Draw trait</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// use the draw trait</span>
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">Screen</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span>
+<span class="token keyword">where</span>
+    <span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Draw</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> component <span class="token keyword">in</span> <span class="token keyword">self</span><span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token function">iter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            component<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="implementing-the-trait">Implementing the Trait<a aria-hidden="true" class="anchor-heading icon-link" href="#implementing-the-trait"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">gui<span class="token punctuation">::</span></span><span class="token class-name">Draw</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token type-definition class-name">SelectBox</span> <span class="token punctuation">{</span>
+    width<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token punctuation">,</span>
+    height<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token class-name">Vec</span><span class="token operator">&#x3C;</span><span class="token class-name">String</span><span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// implement trait for a struct</span>
+<span class="token keyword">impl</span> <span class="token class-name">Draw</span> <span class="token keyword">for</span> <span class="token class-name">SelectBox</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">draw</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// code to actually draw a select box</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="dynamic-dispatch">Dynamic dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#dynamic-dispatch"></a></h2>
+<ul>
+<li>When we use trait objects, Rust must use <strong>dynamic dispatch</strong>. The compiler doesn't know all the types that might be used -> at runtime, Rust uses the <strong>pointers</strong> inside the trait object to know which method to call.</li>
+<li>This lookup incurs a runtime cost.</li>
+<li>Trade-off: Performance vs Flexibility</li>
+</ul>

@@ -1,0 +1,44 @@
+<h1 id="leftwm">Leftwm<a aria-hidden="true" class="anchor-heading icon-link" href="#leftwm"></a></h1>
+<h1 id="leftwm---ubuntu">LeftWM - ubuntu<a aria-hidden="true" class="anchor-heading icon-link" href="#leftwm---ubuntu"></a></h1>
+<blockquote>
+<p><a href="https://leftwm.org/">https://leftwm.org/</a>
+<a href="https://github.com/leftwm/leftwm">https://github.com/leftwm/leftwm</a></p>
+</blockquote>
+<h2 id="install---ubuntu-install-from-source">Install - Ubuntu (install from source)<a aria-hidden="true" class="anchor-heading icon-link" href="#install---ubuntu-install-from-source"></a></h2>
+<ul>
+<li><a href="https://rustup.rs/">Install Rust &#x26; Cargo</a>
+<pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+</li>
+<li>Get source code
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/leftwm/leftwm
+$ <span class="token builtin class-name">cd</span> leftwm
+</code></pre>
+</li>
+<li>Build
+<pre><code>cargo build --profile optimized
+</code></pre>
+</li>
+<li>Make leftwm executable
+<pre><code>sudo install -s -Dm755 ./target/release/leftwm ./target/release/leftwm-worker ./target/release/lefthk-worker ./target/release/leftwm-state ./target/release/leftwm-check ./target/release/leftwm-command -t /usr/bin
+</code></pre>
+</li>
+<li>Create a desktop file
+<pre><code>sudo cp leftwm.desktop /usr/share/xsessions/
+</code></pre>
+</li>
+</ul>
+<h2 id="config">Config<a aria-hidden="true" class="anchor-heading icon-link" href="#config"></a></h2>
+<blockquote>
+<p><a href="https://github.com/leftwm/leftwm#configuring">https://github.com/leftwm/leftwm#configuring</a></p>
+</blockquote>
+<ul>
+<li>Install dependencies
+<ul>
+<li>picom</li>
+<li>polybar </li>
+</ul>
+</li>
+<li>Themes: use current symlink</li>
+<li>Location: ~/.config/leftwm/config.ron</li>
+</ul>

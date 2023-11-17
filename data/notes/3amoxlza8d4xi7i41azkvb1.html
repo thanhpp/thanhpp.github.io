@@ -1,0 +1,110 @@
+<h1 id="chat-gpt">Chat Gpt<a aria-hidden="true" class="anchor-heading icon-link" href="#chat-gpt"></a></h1>
+<h2 id="chatgpt">ChatGPT?<a aria-hidden="true" class="anchor-heading icon-link" href="#chatgpt"></a></h2>
+<h3 id="text-generative-models">Text Generative Models<a aria-hidden="true" class="anchor-heading icon-link" href="#text-generative-models"></a></h3>
+<ul>
+<li>ML algo to create coherent &#x26; contextually relevant text based on learned patterns</li>
+<li>Predict the next sequence token using <strong>probability</strong>
+<ul>
+<li>=> hallucunation: unexpected or illogical outputs </li>
+</ul>
+</li>
+<li>Probabilities
+<ul>
+<li>Word to vector</li>
+<li>Context: Vectors for a sequence of words are adjusted -> <strong>contextualized vectors</strong></li>
+</ul>
+</li>
+<li>Predicting the Next word
+<ul>
+<li>contextualized vectors -> estimate the <strong>likelihood</strong> of what the next word might be</li>
+<li>How to end: 
+<ul>
+<li>Readched the end token</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="intro">Intro<a aria-hidden="true" class="anchor-heading icon-link" href="#intro"></a></h3>
+<ul>
+<li>RLHF: Reinforcement Learning from <strong>Human Feedback</strong>
+<ul>
+<li>collect large datasets -> Supervieed policy</li>
+<li>collect comparision data -> reward model</li>
+<li>policy + reward model -> auto training</li>
+</ul>
+</li>
+<li>Number of params: 
+<ul>
+<li>GPT 3/3.5: 175 B</li>
+<li>GPT 4: 1_000 B</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-chatgpt-doing">What ChatGPT doing<a aria-hidden="true" class="anchor-heading icon-link" href="#what-chatgpt-doing"></a></h3>
+<ul>
+<li>Tokenize question -> predict the next words based on probability</li>
+</ul>
+<h2 id="prompts">Prompts<a aria-hidden="true" class="anchor-heading icon-link" href="#prompts"></a></h2>
+<ul>
+<li>Prompts: instructions &#x26; context passed
+<ul>
+<li>Elements
+<ul>
+<li><strong>Instruction</strong></li>
+<li><strong>Context</strong></li>
+<li>Input data</li>
+<li>Output indicator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="basic-tasks">Basic tasks<a aria-hidden="true" class="anchor-heading icon-link" href="#basic-tasks"></a></h2>
+<ul>
+<li>Text summarization</li>
+<li>Text generation</li>
+<li>Code generation</li>
+<li>Role playing</li>
+</ul>
+<h2 id="risks">Risks<a aria-hidden="true" class="anchor-heading icon-link" href="#risks"></a></h2>
+<ul>
+<li>No reasoning ability: 
+<ul>
+<li>GPT 4 reasoning ability >> 3/3.5</li>
+</ul>
+</li>
+<li>Data/prompt leaking
+<ul>
+<li>Hijak LM's output</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h2>
+<ul>
+<li>English: larger dataset</li>
+<li>Reasoning
+<ul>
+<li>Alias to common knowing: eat ~ subtract</li>
+</ul>
+</li>
+<li>Chain-of-thought
+<ul>
+<li>Instructions step by step</li>
+<li>Zero-shot: <strong>let's think step by step</strong></li>
+</ul>
+</li>
+<li>Self-Consistency
+<ul>
+<li>sample multiple, diverse reasoning paths -> most consisten answer</li>
+</ul>
+</li>
+<li>GPT 4: Advanced Data Analysis
+<ul>
+<li>Use code to cover <strong>reasoning skills</strong></li>
+<li>Datasheet, image analysis</li>
+<li>Image generation</li>
+<li>Browser: Browsing data</li>
+</ul>
+</li>
+</ul>

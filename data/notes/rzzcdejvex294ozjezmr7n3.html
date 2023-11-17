@@ -1,0 +1,65 @@
+<h1 id="log-structured-merge-tree">Log Structured Merge Tree<a aria-hidden="true" class="anchor-heading icon-link" href="#log-structured-merge-tree"></a></h1>
+<h1 id="log-structured-merge-tree-lsmt">Log structured merge tree (LSMT)<a aria-hidden="true" class="anchor-heading icon-link" href="#log-structured-merge-tree-lsmt"></a></h1>
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=I6jB0nM9SKU">https://www.youtube.com/watch?v=I6jB0nM9SKU</a></p>
+</blockquote>
+<h2 id="overview">Overview<a aria-hidden="true" class="anchor-heading icon-link" href="#overview"></a></h2>
+<ul>
+<li>Used for <a href="/notes/7kfh5gzgi0chi9t1l4mi0sd">No SQL</a></li>
+<li>Optimized for <strong>fast writes</strong></li>
+</ul>
+<h2 id="write-operation">Write operation<a aria-hidden="true" class="anchor-heading icon-link" href="#write-operation"></a></h2>
+<ul>
+<li><strong>Writes are batched in memory</strong> using the memtable
+<ul>
+<li>memtable: ordered by object key
+<ul>
+<li>implemented as a Balanced Binary tree</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When the memtable reach a size, it will be sort &#x26; flush to the Sorted String Table (SSTable)
+<ul>
+<li>K-V in a sorted sequence => sequential I/O</li>
+<li>Most recent segment of the LSMT</li>
+<li>immutable</li>
+</ul>
+</li>
+</ul>
+<h2 id="update-existing-keys">Update existing keys<a aria-hidden="true" class="anchor-heading icon-link" href="#update-existing-keys"></a></h2>
+<ul>
+<li>new entry is written to the most recent SSTable => Suspendes entries in the old SSTable</li>
+</ul>
+<h2 id="delete">Delete<a aria-hidden="true" class="anchor-heading icon-link" href="#delete"></a></h2>
+<ul>
+<li>Add a <strong>marker (a tombstone)</strong> to the most recent SSTable for the object key</li>
+</ul>
+<h2 id="read">Read<a aria-hidden="true" class="anchor-heading icon-link" href="#read"></a></h2>
+<ul>
+<li>Find in the Memtable => Find in the SSTable sequentially</li>
+</ul>
+<h2 id="save-disk-space">Save disk space<a aria-hidden="true" class="anchor-heading icon-link" href="#save-disk-space"></a></h2>
+<ul>
+<li>Periodical merges &#x26; compact
+<ul>
+<li>delete unused</li>
+</ul>
+</li>
+<li>Sorted => Fast</li>
+</ul>
+<h2 id="merges--compaction">Merges &#x26; Compaction<a aria-hidden="true" class="anchor-heading icon-link" href="#merges--compaction"></a></h2>
+<ul>
+<li>The SSTables are organized into levels</li>
+<li>Strategies
+<ul>
+<li>Size Tiered Compaction: Write (Cassandra)</li>
+<li>Leveld Compaction: Read (RocksDB)</li>
+</ul>
+</li>
+</ul>
+<h2 id="optimization">Optimization<a aria-hidden="true" class="anchor-heading icon-link" href="#optimization"></a></h2>
+<ul>
+<li>Summary table: skip </li>
+<li>Bloom filter: prevent searching for non existing key</li>
+</ul>

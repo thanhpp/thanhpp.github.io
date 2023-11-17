@@ -1,0 +1,21 @@
+<h1 id="sync-and-send">Sync-and-Send<a aria-hidden="true" class="anchor-heading icon-link" href="#sync-and-send"></a></h1>
+<h1 id="sync-and-send-traits">Sync and Send Traits<a aria-hidden="true" class="anchor-heading icon-link" href="#sync-and-send-traits"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch16-04-extensible-concurrency-sync-and-send.html">https://doc.rust-lang.org/book/ch16-04-extensible-concurrency-sync-and-send.html</a></p>
+</blockquote>
+<h2 id="send---transfering-ownership-between-threads">Send - Transfering ownership between threads<a aria-hidden="true" class="anchor-heading icon-link" href="#send---transfering-ownership-between-threads"></a></h2>
+<ul>
+<li>The <code>Send</code> <em>marker trait</em> indicates that ownership of values of the type implementing it can be <strong>transfered between threads</strong>.</li>
+<li>Any type composed entirely of <code>Send</code> types is automatically marked as <code>Send</code></li>
+<li>Almost all primitive types are <code>Send</code> (aside from raw pointers)</li>
+</ul>
+<h2 id="sync---allowing-access-from-multiple-threads">Sync - Allowing access from multiple threads<a aria-hidden="true" class="anchor-heading icon-link" href="#sync---allowing-access-from-multiple-threads"></a></h2>
+<ul>
+<li>The <code>Sync</code> <em>market trait</em> indicates that it is safe for the type implementing it to be <strong>referenced from multiple threads</strong>.</li>
+<li>Any type <code>T</code> is <code>Sync</code> if <code>&#x26;T</code> (immutable reference) is <code>Send</code></li>
+<li>Primitive types are <code>Sync</code></li>
+<li>Types composed entirely of types that are <code>Sync</code> are also <code>Sync</code></li>
+</ul>
+<blockquote>
+<p>Implementing Send &#x26; Sync manually is Unsafe</p>
+</blockquote>

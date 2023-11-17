@@ -1,0 +1,1411 @@
+{
+  "roots": [
+    {
+      "key": "u5a2e2vvfn3x7k0shuvmb1b",
+      "title": "Blockchain",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "htnb0jl9cmmsba0gaxoj8e1",
+          "title": "Deploy-Smart-Contracts-Using-Hardhat",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "2y5rbgw6i5ub5wwea98oc7d",
+          "title": "Account Abstraction",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "qoxc41o8xfr8bpjpm57j8sa",
+          "title": "New Wallet",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "u60mwin3uue7il508kuhf40",
+          "title": "Sign Message",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "qw8y69zxn8wr7tzz4gtcrrv",
+      "title": "Database",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "hu0uohby11fpkzl0vmjhztj",
+          "title": "Dynamodb",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "7kfh5gzgi0chi9t1l4mi0sd",
+          "title": "No SQL",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "7lcj6lb5akw2u1f57ecgb2w",
+          "title": "Postgresql",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "nycwvxwduwxfjokad56kinf",
+              "title": "Quotes",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "zrogwjgtze8ne5joqpz8ty9",
+      "title": "Dendron",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "fmifatf42hwmbclxwnlmalk",
+          "title": "Templates",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "2izwudyy52viztwutdewp76",
+              "title": "Meeting Notes Template",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "q7qw45jglqwmynary64q67c",
+      "title": "Finance",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "r14l1p79lmvmmdqsl8qr44v",
+          "title": "Creditcard",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "6z08wtv2x4jci9ng1gh720x",
+          "title": "Passive Investing",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "fmx84bzyr973odjerjsu5lq",
+          "title": "Terms",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "title": "Linux",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "phh329wgik4nmti5o5ny6po",
+          "title": "Applications",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "359kuswvs74ufyh92re9s8q",
+              "title": "Openvpn3",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "z2hgvaw2rpz93g3ije3zxmd",
+          "title": "Arch",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "qtktd7329d9m69svdgniohf",
+              "title": "Corrupted Db",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "j8n4v1ohwrnlfm37verspi6",
+              "title": "Font",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "tbz5axmptocdnvjci817klz",
+              "title": "Pipewire",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "85aqkgk7kkt6fd70n289ybz",
+          "title": "Command",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "2gi29jkx904kfzav2vav9ab",
+              "title": "Export Gpg",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "5928n0ch12x660p7wqn31yu",
+              "title": "Install Fonts",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "0dcz8bz1ladgjebaljq61w7",
+          "title": "Customization",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "r6y8esvpkjlhvpllg12iw2m",
+              "title": "Start-Up-Logs",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "vvuvc14wq7aayq2axvblvkh",
+              "title": "Alacritty",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "qs3cywvxr9kkkb8gsn3hcx7",
+              "title": "Dunst",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "978u4p0fjwxdedy0l1gwq53",
+              "title": "Grub Resolution",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "u35q71uwtvqy41vrbd5pmit",
+              "title": "I3",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "kf9ce7bxm51l2lu4xgnq679",
+                  "title": "Gnome Dark Theme",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "aswyqkz89eftmbljy0uz8ht",
+                  "title": "hiDPI",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "bsapx5j9awppirs1af4ccvr",
+                  "title": "Natural Scroll",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "6heqjju0cm02y0rjgk9kajk",
+              "title": "Install Checklist",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "r0wj411y1iqdz8n8ecseh06",
+              "title": "Leftwm",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "1mt5am4uwnvwb6oeym9weke",
+              "title": "Polybar",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "itegqlal4wec0t6smz7mn51",
+              "title": "Rofi",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "ct2spb1vqxg4baqenuf40as",
+              "title": "Sway",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "dkfh510xhhdkee9koyvnfc0",
+                  "title": "Fcitx5",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "jnkkl73dpn706gt3h04lvzw",
+                  "title": "Issues",
+                  "icon": "plusOutlined",
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": [
+                    {
+                      "key": "cbkf6wgsz4dg8igzv97x5it",
+                      "title": "Large Cursor",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "docs",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "szoftx2gwbyhzholdig6yz2",
+              "title": "Terminal",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "imoz5y4wbmj60k7ff65t1og",
+                  "title": "Cool Apps",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "sngth9ps6y3uky4x6k8zpbu",
+                  "title": "Zsh",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "tdn31rcl0l8818om4d2uj9s",
+          "title": "Service",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "ctghka60xavkhyt9ow6eazd",
+              "title": "Ibus Bamboo",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "h35nie9w3zmz2g2pgjuezhy",
+              "title": "Supervisord",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "o1lmi4rif7tlnkle0ckp2gp",
+              "title": "Systemd",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "fhz8f7z30ezy00bz3pdet0j",
+          "title": "Setup New Machine",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "ja38h1kpr0pizpzgpifp4nu",
+          "title": "Tips",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "lsdowxbs8rosa1s8qxolpe3",
+              "title": "Dual Boot Timezone",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3ervbn5we7t8v2l2vwtx847",
+      "title": "Marketing",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "lb13v51ovudumswv6n3tgrd",
+          "title": "customer-insight-through-IDIs",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "4qi2z0z9fquupbd651xausx",
+      "title": "Programing",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "cofr5ys1b8soeutiv8ymi4x",
+          "title": "Networking",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "07n6ona7qq51jjs29ecs87c",
+              "title": "Protocols",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "znfuseyklud4dm9nn81kgja",
+              "title": "X509Certificate",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "h6k2840bqxaytrdzca5j3ku",
+          "title": "OS",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "k0eosn94e6nyw26apgcrm6b",
+              "title": "Process-and-Thread",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "3amoxlza8d4xi7i41azkvb1",
+          "title": "Chat Gpt",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "gh86pk8lz1ybjj6oekhypj0",
+          "title": "Datastructure",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "8rpsjfi5sisf8j7ttkx2tzb",
+              "title": "Tree",
+              "icon": "plusOutlined",
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "rzzcdejvex294ozjezmr7n3",
+                  "title": "Log Structured Merge Tree",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "6e2ho1hbe3wrt78uo63bkix",
+          "title": "Docker",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "z70kjoz28s8p41pgxrounpu",
+          "title": "Golang",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "kvuxwlmleasgyat6p0lr4kj",
+              "title": "Garbarge-Collector",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "73jjvuj59pnsyvmrfq1y41r",
+              "title": "Blockchain",
+              "icon": "plusOutlined",
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "kjmox0kwqq0ri6rvjiiwovb",
+                  "title": "Abigen",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "68cau6m6oum741mwy15yih6",
+              "title": "Google Style Guide",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "dvbzg9g2szs6irm26ax0i71",
+              "title": "Switch Case",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "zjr5i3yyqo3to9mwfsx4f6k",
+              "title": "Test Coverage",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "7olrlk5xigyzi2r1umkjte0",
+              "title": "Timezone",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "d1g0vev6j77rhui42xsnq19",
+          "title": "Pattern",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "jzalm348m3jf9c9u7qog3x4",
+              "title": "Interactor",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "ooyqo2b6eqsrpr3igz3y8vv",
+              "title": "Repository",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "d81qplbgwaiawwudxe38xpf",
+          "title": "Rust",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "3gkgsu91j38lgc8300cqfxk",
+              "title": "Closures",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "ikux7kdtkym0buow03rwec7",
+              "title": "Concurrency",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "cofclxctdof873vlzv6psfy",
+                  "title": "Message-Passing",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "eqju4noqr2500qc4z1p2cga",
+                  "title": "Shared-State",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "4qfbc1w17nlx6arb6djhxx2",
+                  "title": "Sync-and-Send",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "46vwlhzivue6u1qhmdw9a4d",
+                  "title": "Threads",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "4sslaiv02e24j98fkj9n725",
+              "title": "Iterator",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "0wm1lzmclqft0lamxe6cfcz",
+              "title": "OOP",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "mu5z62gzma1l2d3ddoro770",
+                  "title": "State-Pattern",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "oc8gik1ujqpi3kzjx7fbo6p",
+                  "title": "Trait-Objects",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "fo825y6yvodbes7udn8hv43",
+              "title": "Ownership-and-Borrowing",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "cz07ovuehwn4h16op3j6dho",
+              "title": "Patterns-and-Matching",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "01uj2rs9m4ssfy3qaqguoas",
+                  "title": "Pattern-Syntax",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "lcvk4gxd3rvf6dtcuzh2j4q",
+                  "title": "Refutability",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "tacck847l0nk93b1abmioe0",
+                  "title": "Where-to-use",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "ig9bn8datv3s83u9g4a56tv",
+              "title": "Pin-and-Unpin",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "xpd7irdmeinvljufhfbgq6a",
+              "title": "Smart-Pointer",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "5irsjg77tl67tytvpuvff8b",
+                  "title": "Box",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "zz7psvosiudfugqnvakue6l",
+                  "title": "Deref",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "eudq6211w4eat9r7c73smm9",
+                  "title": "Drop",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "sowk0fhutabmkscksl6rweb",
+                  "title": "Memory-Leak-by-Reference-Cycle",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "twhygbpbnqjfyzhpdgz878r",
+                  "title": "RefCell",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "07jw7rf43we9fv2oldtor3r",
+                  "title": "Reference-Counted",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "ey8rquqb5xn9ovglgr54z80",
+              "title": "Advanced",
+              "icon": "plusOutlined",
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "7pq6ni7gujzvltlgqi1ag0k",
+                  "title": "Functions and Closures",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "10w7bddtwwaew1kvj45xiqz",
+                  "title": "Macros",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "jq0nk236khm225vcqr9vrdf",
+                  "title": "Traits",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "iptyzetmct98konuehjlmc3",
+                  "title": "Types",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                },
+                {
+                  "key": "ybrf9q7avhqrzsljz6c4kwr",
+                  "title": "Unsafe",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "key": "8dizeij41ps6wt16a6r8k8p",
+              "title": "Async Await",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "oh5egsjgrfha84o768262hu",
+              "title": "Guides",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "ogq55sjz2u4zgxhj90y2k5s",
+              "title": "Install",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "k4tajydmoc1vf0cuok1ckjq",
+              "title": "Projects",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "97byquf304s345mp9uuoqh2",
+                  "title": "GitHub Analyze",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "oesia0lbzh03fsoy124ck0k",
+      "title": "Reading",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "880jeqhb29f662hiclj6z7q",
+          "title": "Articles",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "ogwf9k7976o6tma0odnqdjc",
+              "title": "Self Help",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "t5grkmcwvu4nl43igsj4gxz",
+      "title": "Scratch",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "stvk819o909a6ylzxyg8joi",
+          "title": "2022",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "y1jc2f8c4fanx8xyzc1a8vy",
+              "title": "09",
+              "icon": "plusOutlined",
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": [
+                {
+                  "key": "lc4wghe6s8skj7cx6f04rwy",
+                  "title": "26",
+                  "icon": "plusOutlined",
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "docs",
+                  "children": [
+                    {
+                      "key": "bx85by3e24cvyn0zww7cjgz",
+                      "title": "112322",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "docs",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "sencgim78q74o1zuyvy1vz7",
+      "title": "Selfhelp",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "c4ziwzg51vibhlq3vkkvdjn",
+          "title": "Feynman Technique",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "usgdkk51sx7nsnus0b34r2q",
+          "title": "Habit Stacking",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "ly2qiwbj2tz8acmczhdjvw7",
+          "title": "Improve Concentration",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "vso0r6dvmcbz27dknsmxzny",
+          "title": "Learn Hard Subjects",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "el3p9zjue6h3b6zsl9oejkt",
+      "title": "Software",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "yg542aqfl2wvgdfyhkanzzg",
+          "title": "Git",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": [
+            {
+              "key": "frdksuyhb9akit53leg4lvu",
+              "title": "First Setup",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "6g647fy4ijl714fmsg6hl3z",
+              "title": "Multiple Accounts",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            },
+            {
+              "key": "ty97p2rgy2xtu104b2kiwqf",
+              "title": "Signing Commit",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "docs",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ue4oml1si982t3mmbthyxi9",
+      "title": "System Design",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "docs",
+      "children": [
+        {
+          "key": "wa8w1rh78h3wyeuab62brso",
+          "title": "RPC-gRPC",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "r5ee5da2e9ccswia2nes0fs",
+          "title": "Redis",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "guh75foo91jqzceptgepk08",
+          "title": "Scuba",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        },
+        {
+          "key": "n6xgrmlbbfmylomvzzj0so9",
+          "title": "API Gateway",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "docs",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "child2parent": {
+    "u5a2e2vvfn3x7k0shuvmb1b": null,
+    "htnb0jl9cmmsba0gaxoj8e1": "u5a2e2vvfn3x7k0shuvmb1b",
+    "2y5rbgw6i5ub5wwea98oc7d": "u5a2e2vvfn3x7k0shuvmb1b",
+    "qoxc41o8xfr8bpjpm57j8sa": "u5a2e2vvfn3x7k0shuvmb1b",
+    "u60mwin3uue7il508kuhf40": "u5a2e2vvfn3x7k0shuvmb1b",
+    "qw8y69zxn8wr7tzz4gtcrrv": null,
+    "hu0uohby11fpkzl0vmjhztj": "qw8y69zxn8wr7tzz4gtcrrv",
+    "7kfh5gzgi0chi9t1l4mi0sd": "qw8y69zxn8wr7tzz4gtcrrv",
+    "7lcj6lb5akw2u1f57ecgb2w": "qw8y69zxn8wr7tzz4gtcrrv",
+    "nycwvxwduwxfjokad56kinf": "7lcj6lb5akw2u1f57ecgb2w",
+    "zrogwjgtze8ne5joqpz8ty9": null,
+    "fmifatf42hwmbclxwnlmalk": "zrogwjgtze8ne5joqpz8ty9",
+    "2izwudyy52viztwutdewp76": "fmifatf42hwmbclxwnlmalk",
+    "q7qw45jglqwmynary64q67c": null,
+    "r14l1p79lmvmmdqsl8qr44v": "q7qw45jglqwmynary64q67c",
+    "6z08wtv2x4jci9ng1gh720x": "q7qw45jglqwmynary64q67c",
+    "fmx84bzyr973odjerjsu5lq": "q7qw45jglqwmynary64q67c",
+    "6wjqcjgkrpeqtmzb1o8o1q8": null,
+    "phh329wgik4nmti5o5ny6po": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "359kuswvs74ufyh92re9s8q": "phh329wgik4nmti5o5ny6po",
+    "z2hgvaw2rpz93g3ije3zxmd": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "qtktd7329d9m69svdgniohf": "z2hgvaw2rpz93g3ije3zxmd",
+    "j8n4v1ohwrnlfm37verspi6": "z2hgvaw2rpz93g3ije3zxmd",
+    "tbz5axmptocdnvjci817klz": "z2hgvaw2rpz93g3ije3zxmd",
+    "85aqkgk7kkt6fd70n289ybz": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "2gi29jkx904kfzav2vav9ab": "85aqkgk7kkt6fd70n289ybz",
+    "5928n0ch12x660p7wqn31yu": "85aqkgk7kkt6fd70n289ybz",
+    "0dcz8bz1ladgjebaljq61w7": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "r6y8esvpkjlhvpllg12iw2m": "0dcz8bz1ladgjebaljq61w7",
+    "vvuvc14wq7aayq2axvblvkh": "0dcz8bz1ladgjebaljq61w7",
+    "qs3cywvxr9kkkb8gsn3hcx7": "0dcz8bz1ladgjebaljq61w7",
+    "978u4p0fjwxdedy0l1gwq53": "0dcz8bz1ladgjebaljq61w7",
+    "u35q71uwtvqy41vrbd5pmit": "0dcz8bz1ladgjebaljq61w7",
+    "kf9ce7bxm51l2lu4xgnq679": "u35q71uwtvqy41vrbd5pmit",
+    "aswyqkz89eftmbljy0uz8ht": "u35q71uwtvqy41vrbd5pmit",
+    "bsapx5j9awppirs1af4ccvr": "u35q71uwtvqy41vrbd5pmit",
+    "6heqjju0cm02y0rjgk9kajk": "0dcz8bz1ladgjebaljq61w7",
+    "r0wj411y1iqdz8n8ecseh06": "0dcz8bz1ladgjebaljq61w7",
+    "1mt5am4uwnvwb6oeym9weke": "0dcz8bz1ladgjebaljq61w7",
+    "itegqlal4wec0t6smz7mn51": "0dcz8bz1ladgjebaljq61w7",
+    "ct2spb1vqxg4baqenuf40as": "0dcz8bz1ladgjebaljq61w7",
+    "dkfh510xhhdkee9koyvnfc0": "ct2spb1vqxg4baqenuf40as",
+    "jnkkl73dpn706gt3h04lvzw": "ct2spb1vqxg4baqenuf40as",
+    "cbkf6wgsz4dg8igzv97x5it": "jnkkl73dpn706gt3h04lvzw",
+    "szoftx2gwbyhzholdig6yz2": "0dcz8bz1ladgjebaljq61w7",
+    "imoz5y4wbmj60k7ff65t1og": "szoftx2gwbyhzholdig6yz2",
+    "sngth9ps6y3uky4x6k8zpbu": "szoftx2gwbyhzholdig6yz2",
+    "tdn31rcl0l8818om4d2uj9s": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "ctghka60xavkhyt9ow6eazd": "tdn31rcl0l8818om4d2uj9s",
+    "h35nie9w3zmz2g2pgjuezhy": "tdn31rcl0l8818om4d2uj9s",
+    "o1lmi4rif7tlnkle0ckp2gp": "tdn31rcl0l8818om4d2uj9s",
+    "fhz8f7z30ezy00bz3pdet0j": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "ja38h1kpr0pizpzgpifp4nu": "6wjqcjgkrpeqtmzb1o8o1q8",
+    "lsdowxbs8rosa1s8qxolpe3": "ja38h1kpr0pizpzgpifp4nu",
+    "3ervbn5we7t8v2l2vwtx847": null,
+    "lb13v51ovudumswv6n3tgrd": "3ervbn5we7t8v2l2vwtx847",
+    "4qi2z0z9fquupbd651xausx": null,
+    "cofr5ys1b8soeutiv8ymi4x": "4qi2z0z9fquupbd651xausx",
+    "07n6ona7qq51jjs29ecs87c": "cofr5ys1b8soeutiv8ymi4x",
+    "znfuseyklud4dm9nn81kgja": "cofr5ys1b8soeutiv8ymi4x",
+    "h6k2840bqxaytrdzca5j3ku": "4qi2z0z9fquupbd651xausx",
+    "k0eosn94e6nyw26apgcrm6b": "h6k2840bqxaytrdzca5j3ku",
+    "3amoxlza8d4xi7i41azkvb1": "4qi2z0z9fquupbd651xausx",
+    "gh86pk8lz1ybjj6oekhypj0": "4qi2z0z9fquupbd651xausx",
+    "8rpsjfi5sisf8j7ttkx2tzb": "gh86pk8lz1ybjj6oekhypj0",
+    "rzzcdejvex294ozjezmr7n3": "8rpsjfi5sisf8j7ttkx2tzb",
+    "6e2ho1hbe3wrt78uo63bkix": "4qi2z0z9fquupbd651xausx",
+    "z70kjoz28s8p41pgxrounpu": "4qi2z0z9fquupbd651xausx",
+    "kvuxwlmleasgyat6p0lr4kj": "z70kjoz28s8p41pgxrounpu",
+    "73jjvuj59pnsyvmrfq1y41r": "z70kjoz28s8p41pgxrounpu",
+    "kjmox0kwqq0ri6rvjiiwovb": "73jjvuj59pnsyvmrfq1y41r",
+    "68cau6m6oum741mwy15yih6": "z70kjoz28s8p41pgxrounpu",
+    "dvbzg9g2szs6irm26ax0i71": "z70kjoz28s8p41pgxrounpu",
+    "zjr5i3yyqo3to9mwfsx4f6k": "z70kjoz28s8p41pgxrounpu",
+    "7olrlk5xigyzi2r1umkjte0": "z70kjoz28s8p41pgxrounpu",
+    "d1g0vev6j77rhui42xsnq19": "4qi2z0z9fquupbd651xausx",
+    "jzalm348m3jf9c9u7qog3x4": "d1g0vev6j77rhui42xsnq19",
+    "ooyqo2b6eqsrpr3igz3y8vv": "d1g0vev6j77rhui42xsnq19",
+    "d81qplbgwaiawwudxe38xpf": "4qi2z0z9fquupbd651xausx",
+    "3gkgsu91j38lgc8300cqfxk": "d81qplbgwaiawwudxe38xpf",
+    "ikux7kdtkym0buow03rwec7": "d81qplbgwaiawwudxe38xpf",
+    "cofclxctdof873vlzv6psfy": "ikux7kdtkym0buow03rwec7",
+    "eqju4noqr2500qc4z1p2cga": "ikux7kdtkym0buow03rwec7",
+    "4qfbc1w17nlx6arb6djhxx2": "ikux7kdtkym0buow03rwec7",
+    "46vwlhzivue6u1qhmdw9a4d": "ikux7kdtkym0buow03rwec7",
+    "4sslaiv02e24j98fkj9n725": "d81qplbgwaiawwudxe38xpf",
+    "0wm1lzmclqft0lamxe6cfcz": "d81qplbgwaiawwudxe38xpf",
+    "mu5z62gzma1l2d3ddoro770": "0wm1lzmclqft0lamxe6cfcz",
+    "oc8gik1ujqpi3kzjx7fbo6p": "0wm1lzmclqft0lamxe6cfcz",
+    "fo825y6yvodbes7udn8hv43": "d81qplbgwaiawwudxe38xpf",
+    "cz07ovuehwn4h16op3j6dho": "d81qplbgwaiawwudxe38xpf",
+    "01uj2rs9m4ssfy3qaqguoas": "cz07ovuehwn4h16op3j6dho",
+    "lcvk4gxd3rvf6dtcuzh2j4q": "cz07ovuehwn4h16op3j6dho",
+    "tacck847l0nk93b1abmioe0": "cz07ovuehwn4h16op3j6dho",
+    "ig9bn8datv3s83u9g4a56tv": "d81qplbgwaiawwudxe38xpf",
+    "xpd7irdmeinvljufhfbgq6a": "d81qplbgwaiawwudxe38xpf",
+    "5irsjg77tl67tytvpuvff8b": "xpd7irdmeinvljufhfbgq6a",
+    "zz7psvosiudfugqnvakue6l": "xpd7irdmeinvljufhfbgq6a",
+    "eudq6211w4eat9r7c73smm9": "xpd7irdmeinvljufhfbgq6a",
+    "sowk0fhutabmkscksl6rweb": "xpd7irdmeinvljufhfbgq6a",
+    "twhygbpbnqjfyzhpdgz878r": "xpd7irdmeinvljufhfbgq6a",
+    "07jw7rf43we9fv2oldtor3r": "xpd7irdmeinvljufhfbgq6a",
+    "ey8rquqb5xn9ovglgr54z80": "d81qplbgwaiawwudxe38xpf",
+    "7pq6ni7gujzvltlgqi1ag0k": "ey8rquqb5xn9ovglgr54z80",
+    "10w7bddtwwaew1kvj45xiqz": "ey8rquqb5xn9ovglgr54z80",
+    "jq0nk236khm225vcqr9vrdf": "ey8rquqb5xn9ovglgr54z80",
+    "iptyzetmct98konuehjlmc3": "ey8rquqb5xn9ovglgr54z80",
+    "ybrf9q7avhqrzsljz6c4kwr": "ey8rquqb5xn9ovglgr54z80",
+    "8dizeij41ps6wt16a6r8k8p": "d81qplbgwaiawwudxe38xpf",
+    "oh5egsjgrfha84o768262hu": "d81qplbgwaiawwudxe38xpf",
+    "ogq55sjz2u4zgxhj90y2k5s": "d81qplbgwaiawwudxe38xpf",
+    "k4tajydmoc1vf0cuok1ckjq": "d81qplbgwaiawwudxe38xpf",
+    "97byquf304s345mp9uuoqh2": "k4tajydmoc1vf0cuok1ckjq",
+    "oesia0lbzh03fsoy124ck0k": null,
+    "880jeqhb29f662hiclj6z7q": "oesia0lbzh03fsoy124ck0k",
+    "ogwf9k7976o6tma0odnqdjc": "880jeqhb29f662hiclj6z7q",
+    "t5grkmcwvu4nl43igsj4gxz": null,
+    "stvk819o909a6ylzxyg8joi": "t5grkmcwvu4nl43igsj4gxz",
+    "y1jc2f8c4fanx8xyzc1a8vy": "stvk819o909a6ylzxyg8joi",
+    "lc4wghe6s8skj7cx6f04rwy": "y1jc2f8c4fanx8xyzc1a8vy",
+    "bx85by3e24cvyn0zww7cjgz": "lc4wghe6s8skj7cx6f04rwy",
+    "sencgim78q74o1zuyvy1vz7": null,
+    "c4ziwzg51vibhlq3vkkvdjn": "sencgim78q74o1zuyvy1vz7",
+    "usgdkk51sx7nsnus0b34r2q": "sencgim78q74o1zuyvy1vz7",
+    "ly2qiwbj2tz8acmczhdjvw7": "sencgim78q74o1zuyvy1vz7",
+    "vso0r6dvmcbz27dknsmxzny": "sencgim78q74o1zuyvy1vz7",
+    "el3p9zjue6h3b6zsl9oejkt": null,
+    "yg542aqfl2wvgdfyhkanzzg": "el3p9zjue6h3b6zsl9oejkt",
+    "frdksuyhb9akit53leg4lvu": "yg542aqfl2wvgdfyhkanzzg",
+    "6g647fy4ijl714fmsg6hl3z": "yg542aqfl2wvgdfyhkanzzg",
+    "ty97p2rgy2xtu104b2kiwqf": "yg542aqfl2wvgdfyhkanzzg",
+    "ue4oml1si982t3mmbthyxi9": null,
+    "wa8w1rh78h3wyeuab62brso": "ue4oml1si982t3mmbthyxi9",
+    "r5ee5da2e9ccswia2nes0fs": "ue4oml1si982t3mmbthyxi9",
+    "guh75foo91jqzceptgepk08": "ue4oml1si982t3mmbthyxi9",
+    "n6xgrmlbbfmylomvzzj0so9": "ue4oml1si982t3mmbthyxi9"
+  },
+  "notesLabelById": {
+    "u5a2e2vvfn3x7k0shuvmb1b": "Blockchain",
+    "htnb0jl9cmmsba0gaxoj8e1": "Deploy-Smart-Contracts-Using-Hardhat",
+    "2y5rbgw6i5ub5wwea98oc7d": "Account Abstraction",
+    "qoxc41o8xfr8bpjpm57j8sa": "New Wallet",
+    "u60mwin3uue7il508kuhf40": "Sign Message",
+    "qw8y69zxn8wr7tzz4gtcrrv": "Database",
+    "hu0uohby11fpkzl0vmjhztj": "Dynamodb",
+    "7kfh5gzgi0chi9t1l4mi0sd": "No SQL",
+    "7lcj6lb5akw2u1f57ecgb2w": "Postgresql",
+    "nycwvxwduwxfjokad56kinf": "Quotes",
+    "zrogwjgtze8ne5joqpz8ty9": "Dendron",
+    "fmifatf42hwmbclxwnlmalk": "Templates",
+    "2izwudyy52viztwutdewp76": "Meeting Notes Template",
+    "q7qw45jglqwmynary64q67c": "Finance",
+    "r14l1p79lmvmmdqsl8qr44v": "Creditcard",
+    "6z08wtv2x4jci9ng1gh720x": "Passive Investing",
+    "fmx84bzyr973odjerjsu5lq": "Terms",
+    "6wjqcjgkrpeqtmzb1o8o1q8": "Linux",
+    "phh329wgik4nmti5o5ny6po": "Applications",
+    "359kuswvs74ufyh92re9s8q": "Openvpn3",
+    "z2hgvaw2rpz93g3ije3zxmd": "Arch",
+    "qtktd7329d9m69svdgniohf": "Corrupted Db",
+    "j8n4v1ohwrnlfm37verspi6": "Font",
+    "tbz5axmptocdnvjci817klz": "Pipewire",
+    "85aqkgk7kkt6fd70n289ybz": "Command",
+    "2gi29jkx904kfzav2vav9ab": "Export Gpg",
+    "5928n0ch12x660p7wqn31yu": "Install Fonts",
+    "0dcz8bz1ladgjebaljq61w7": "Customization",
+    "r6y8esvpkjlhvpllg12iw2m": "Start-Up-Logs",
+    "vvuvc14wq7aayq2axvblvkh": "Alacritty",
+    "qs3cywvxr9kkkb8gsn3hcx7": "Dunst",
+    "978u4p0fjwxdedy0l1gwq53": "Grub Resolution",
+    "u35q71uwtvqy41vrbd5pmit": "I3",
+    "kf9ce7bxm51l2lu4xgnq679": "Gnome Dark Theme",
+    "aswyqkz89eftmbljy0uz8ht": "hiDPI",
+    "bsapx5j9awppirs1af4ccvr": "Natural Scroll",
+    "6heqjju0cm02y0rjgk9kajk": "Install Checklist",
+    "r0wj411y1iqdz8n8ecseh06": "Leftwm",
+    "1mt5am4uwnvwb6oeym9weke": "Polybar",
+    "itegqlal4wec0t6smz7mn51": "Rofi",
+    "ct2spb1vqxg4baqenuf40as": "Sway",
+    "dkfh510xhhdkee9koyvnfc0": "Fcitx5",
+    "jnkkl73dpn706gt3h04lvzw": "Issues",
+    "cbkf6wgsz4dg8igzv97x5it": "Large Cursor",
+    "szoftx2gwbyhzholdig6yz2": "Terminal",
+    "imoz5y4wbmj60k7ff65t1og": "Cool Apps",
+    "sngth9ps6y3uky4x6k8zpbu": "Zsh",
+    "tdn31rcl0l8818om4d2uj9s": "Service",
+    "ctghka60xavkhyt9ow6eazd": "Ibus Bamboo",
+    "h35nie9w3zmz2g2pgjuezhy": "Supervisord",
+    "o1lmi4rif7tlnkle0ckp2gp": "Systemd",
+    "fhz8f7z30ezy00bz3pdet0j": "Setup New Machine",
+    "ja38h1kpr0pizpzgpifp4nu": "Tips",
+    "lsdowxbs8rosa1s8qxolpe3": "Dual Boot Timezone",
+    "3ervbn5we7t8v2l2vwtx847": "Marketing",
+    "lb13v51ovudumswv6n3tgrd": "customer-insight-through-IDIs",
+    "4qi2z0z9fquupbd651xausx": "Programing",
+    "cofr5ys1b8soeutiv8ymi4x": "Networking",
+    "07n6ona7qq51jjs29ecs87c": "Protocols",
+    "znfuseyklud4dm9nn81kgja": "X509Certificate",
+    "h6k2840bqxaytrdzca5j3ku": "OS",
+    "k0eosn94e6nyw26apgcrm6b": "Process-and-Thread",
+    "3amoxlza8d4xi7i41azkvb1": "Chat Gpt",
+    "gh86pk8lz1ybjj6oekhypj0": "Datastructure",
+    "8rpsjfi5sisf8j7ttkx2tzb": "Tree",
+    "rzzcdejvex294ozjezmr7n3": "Log Structured Merge Tree",
+    "6e2ho1hbe3wrt78uo63bkix": "Docker",
+    "z70kjoz28s8p41pgxrounpu": "Golang",
+    "kvuxwlmleasgyat6p0lr4kj": "Garbarge-Collector",
+    "73jjvuj59pnsyvmrfq1y41r": "Blockchain",
+    "kjmox0kwqq0ri6rvjiiwovb": "Abigen",
+    "68cau6m6oum741mwy15yih6": "Google Style Guide",
+    "dvbzg9g2szs6irm26ax0i71": "Switch Case",
+    "zjr5i3yyqo3to9mwfsx4f6k": "Test Coverage",
+    "7olrlk5xigyzi2r1umkjte0": "Timezone",
+    "d1g0vev6j77rhui42xsnq19": "Pattern",
+    "jzalm348m3jf9c9u7qog3x4": "Interactor",
+    "ooyqo2b6eqsrpr3igz3y8vv": "Repository",
+    "d81qplbgwaiawwudxe38xpf": "Rust",
+    "3gkgsu91j38lgc8300cqfxk": "Closures",
+    "ikux7kdtkym0buow03rwec7": "Concurrency",
+    "cofclxctdof873vlzv6psfy": "Message-Passing",
+    "eqju4noqr2500qc4z1p2cga": "Shared-State",
+    "4qfbc1w17nlx6arb6djhxx2": "Sync-and-Send",
+    "46vwlhzivue6u1qhmdw9a4d": "Threads",
+    "4sslaiv02e24j98fkj9n725": "Iterator",
+    "0wm1lzmclqft0lamxe6cfcz": "OOP",
+    "mu5z62gzma1l2d3ddoro770": "State-Pattern",
+    "oc8gik1ujqpi3kzjx7fbo6p": "Trait-Objects",
+    "fo825y6yvodbes7udn8hv43": "Ownership-and-Borrowing",
+    "cz07ovuehwn4h16op3j6dho": "Patterns-and-Matching",
+    "01uj2rs9m4ssfy3qaqguoas": "Pattern-Syntax",
+    "lcvk4gxd3rvf6dtcuzh2j4q": "Refutability",
+    "tacck847l0nk93b1abmioe0": "Where-to-use",
+    "ig9bn8datv3s83u9g4a56tv": "Pin-and-Unpin",
+    "xpd7irdmeinvljufhfbgq6a": "Smart-Pointer",
+    "5irsjg77tl67tytvpuvff8b": "Box",
+    "zz7psvosiudfugqnvakue6l": "Deref",
+    "eudq6211w4eat9r7c73smm9": "Drop",
+    "sowk0fhutabmkscksl6rweb": "Memory-Leak-by-Reference-Cycle",
+    "twhygbpbnqjfyzhpdgz878r": "RefCell",
+    "07jw7rf43we9fv2oldtor3r": "Reference-Counted",
+    "ey8rquqb5xn9ovglgr54z80": "Advanced",
+    "7pq6ni7gujzvltlgqi1ag0k": "Functions and Closures",
+    "10w7bddtwwaew1kvj45xiqz": "Macros",
+    "jq0nk236khm225vcqr9vrdf": "Traits",
+    "iptyzetmct98konuehjlmc3": "Types",
+    "ybrf9q7avhqrzsljz6c4kwr": "Unsafe",
+    "8dizeij41ps6wt16a6r8k8p": "Async Await",
+    "oh5egsjgrfha84o768262hu": "Guides",
+    "ogq55sjz2u4zgxhj90y2k5s": "Install",
+    "k4tajydmoc1vf0cuok1ckjq": "Projects",
+    "97byquf304s345mp9uuoqh2": "GitHub Analyze",
+    "oesia0lbzh03fsoy124ck0k": "Reading",
+    "880jeqhb29f662hiclj6z7q": "Articles",
+    "ogwf9k7976o6tma0odnqdjc": "Self Help",
+    "t5grkmcwvu4nl43igsj4gxz": "Scratch",
+    "stvk819o909a6ylzxyg8joi": "2022",
+    "y1jc2f8c4fanx8xyzc1a8vy": "09",
+    "lc4wghe6s8skj7cx6f04rwy": "26",
+    "bx85by3e24cvyn0zww7cjgz": "112322",
+    "sencgim78q74o1zuyvy1vz7": "Selfhelp",
+    "c4ziwzg51vibhlq3vkkvdjn": "Feynman Technique",
+    "usgdkk51sx7nsnus0b34r2q": "Habit Stacking",
+    "ly2qiwbj2tz8acmczhdjvw7": "Improve Concentration",
+    "vso0r6dvmcbz27dknsmxzny": "Learn Hard Subjects",
+    "el3p9zjue6h3b6zsl9oejkt": "Software",
+    "yg542aqfl2wvgdfyhkanzzg": "Git",
+    "frdksuyhb9akit53leg4lvu": "First Setup",
+    "6g647fy4ijl714fmsg6hl3z": "Multiple Accounts",
+    "ty97p2rgy2xtu104b2kiwqf": "Signing Commit",
+    "ue4oml1si982t3mmbthyxi9": "System Design",
+    "wa8w1rh78h3wyeuab62brso": "RPC-gRPC",
+    "r5ee5da2e9ccswia2nes0fs": "Redis",
+    "guh75foo91jqzceptgepk08": "Scuba",
+    "n6xgrmlbbfmylomvzzj0so9": "API Gateway"
+  }
+}

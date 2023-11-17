@@ -1,0 +1,31 @@
+<h1 id="refutability">Refutability<a aria-hidden="true" class="anchor-heading icon-link" href="#refutability"></a></h1>
+<h1 id="refutability-whether-a-pattern-might-fail-to-match">Refutability: Whether a Pattern Might fail to Match<a aria-hidden="true" class="anchor-heading icon-link" href="#refutability-whether-a-pattern-might-fail-to-match"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch18-02-refutability.html">https://doc.rust-lang.org/book/ch18-02-refutability.html</a></p>
+</blockquote>
+<ul>
+<li>Patterns come in 2 forms:
+<ul>
+<li>refutable: Patterns that can <strong>fail to match for some possible value</strong>.</li>
+<li>inrrefutable: Patterns that will <strong>match for any possible value passed</strong> </li>
+</ul>
+</li>
+<li>Irrefutable patterns
+<ul>
+<li><code>let</code> statements</li>
+<li><code>for</code> loops</li>
+<li>function parameters</li>
+</ul>
+</li>
+<li>Refutable (with compiler warns) &#x26; irrefutable 
+<ul>
+<li><code>if let</code></li>
+<li><code>while let</code> </li>
+</ul>
+</li>
+<li><code>match</code> arms must be refutable patterns, except for the last arm (any remaining values with an irrefutable pattern)</li>
+</ul>
+<h2 id="translate">Translate<a aria-hidden="true" class="anchor-heading icon-link" href="#translate"></a></h2>
+<ul>
+<li>Refute /rɪˈfyut/: có thể bác bỏ (refute something to prove that something is wrong)</li>
+</ul>

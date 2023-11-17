@@ -1,0 +1,182 @@
+<h1 id="refcell">RefCell<a aria-hidden="true" class="anchor-heading icon-link" href="#refcell"></a></h1>
+<h1 id="refcell-t-and-the-interior-mutability-pattern"><code>RefCell &#x3C;T></code> and the Interior Mutability Pattern<a aria-hidden="true" class="anchor-heading icon-link" href="#refcell-t-and-the-interior-mutability-pattern"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch15-05-interior-mutability.html">https://doc.rust-lang.org/book/ch15-05-interior-mutability.html</a></p>
+</blockquote>
+<h2 id="iterior-mutability-pattern">Iterior mutability pattern<a aria-hidden="true" class="anchor-heading icon-link" href="#iterior-mutability-pattern"></a></h2>
+<ul>
+<li>Mutate data even when the are <strong>immutable references</strong> to that data.</li>
+<li>This pattern uses <strong>unsafe</strong> code inside a data structure</li>
+</ul>
+<h2 id="enforcing-borrowing-rules-at-runtime">Enforcing Borrowing Rules at Runtime<a aria-hidden="true" class="anchor-heading icon-link" href="#enforcing-borrowing-rules-at-runtime"></a></h2>
+<ul>
+<li>With <code>RefCell&#x3C;T></code>, the borrowing rules's invariants are enfored at <em>runtime</em>. If you break these rules, the program will <strong>panic &#x26; exit</strong>.</li>
+<li>You need to make sure your code follows the borrowing rules but the compiler is unable to understand &#x26; guarantee that.</li>
+<li><code>RefCell&#x3C;T></code> is only use in <strong>single-threaded</strong> scenarios.</li>
+</ul>
+<h2 id="a-mutable-borrow-to-an-immuatable-value">A Mutable borrow to an Immuatable value<a aria-hidden="true" class="anchor-heading icon-link" href="#a-mutable-borrow-to-an-immuatable-value"></a></h2>
+<h3 id="use-cases-mock-objects">Use cases: Mock objects<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases-mock-objects"></a></h3>
+<ul>
+<li>Test scenario
+<ul>
+<li>tracks a value against a maximum value</li>
+<li>sends messages based on how close to the maximum value the current value is</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">trait</span> <span class="token type-definition class-name">Messenger</span> <span class="token punctuation">{</span> <span class="token comment">// a trait that present an object that can deliver message</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">send</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">,</span> msg<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token keyword">str</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Messenger</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    messenger<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token comment">// implements the Messenger trait</span>
+    value<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span>
+    max<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span>
+<span class="token keyword">where</span>
+    <span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Messenger</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">new</span><span class="token punctuation">(</span>messenger<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token class-name">T</span><span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token class-name">LimitTracker</span> <span class="token punctuation">{</span>
+            messenger<span class="token punctuation">,</span>
+            value<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            max<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">set_value</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+
+        <span class="token keyword">let</span> percentage_of_max <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>value <span class="token keyword">as</span> <span class="token keyword">f64</span> <span class="token operator">/</span> <span class="token keyword">self</span><span class="token punctuation">.</span>max <span class="token keyword">as</span> <span class="token keyword">f64</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// send message based on value/maximum</span>
+        <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">1.0</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Error: You are over your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">0.9</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger
+                <span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Urgent warning: You've used up over 90% of your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">0.75</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger
+                <span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Warning: You've used up over 75% of your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">pub</span> <span class="token keyword">trait</span> <span class="token type-definition class-name">Messenger</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">send</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">,</span> msg<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token keyword">str</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Messenger</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    messenger<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token class-name">T</span><span class="token punctuation">,</span>
+    value<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span>
+    max<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span>
+<span class="token keyword">where</span>
+    <span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Messenger</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">new</span><span class="token punctuation">(</span>messenger<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token lifetime-annotation symbol">'a</span> <span class="token class-name">T</span><span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">LimitTracker</span><span class="token operator">&#x3C;</span><span class="token lifetime-annotation symbol">'a</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token class-name">LimitTracker</span> <span class="token punctuation">{</span>
+            messenger<span class="token punctuation">,</span>
+            value<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            max<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">set_value</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+
+        <span class="token keyword">let</span> percentage_of_max <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>value <span class="token keyword">as</span> <span class="token keyword">f64</span> <span class="token operator">/</span> <span class="token keyword">self</span><span class="token punctuation">.</span>max <span class="token keyword">as</span> <span class="token keyword">f64</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">1.0</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Error: You are over your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">0.9</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger
+                <span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Urgent warning: You've used up over 90% of your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> percentage_of_max <span class="token operator">>=</span> <span class="token number">0.75</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>messenger
+                <span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Warning: You've used up over 75% of your quota!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token attribute attr-name">#[cfg(test)]</span>
+<span class="token keyword">mod</span> <span class="token module-declaration namespace">tests</span> <span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token keyword">super</span><span class="token punctuation">::</span><span class="token operator">*</span><span class="token punctuation">;</span>
+    <span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>cell<span class="token punctuation">::</span></span><span class="token class-name">RefCell</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> <span class="token type-definition class-name">MockMessenger</span> <span class="token punctuation">{</span> <span class="token comment">// creates a Mock that implements the Messenger trait</span>
+        sent_messages<span class="token punctuation">:</span> <span class="token class-name">RefCell</span><span class="token operator">&#x3C;</span><span class="token class-name">Vec</span><span class="token operator">&#x3C;</span><span class="token class-name">String</span><span class="token operator">>></span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">impl</span> <span class="token class-name">MockMessenger</span> <span class="token punctuation">{</span>
+        <span class="token keyword">fn</span> <span class="token function-definition function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">MockMessenger</span> <span class="token punctuation">{</span>
+            <span class="token class-name">MockMessenger</span> <span class="token punctuation">{</span>
+                sent_messages<span class="token punctuation">:</span> <span class="token class-name">RefCell</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">impl</span> <span class="token class-name">Messenger</span> <span class="token keyword">for</span> <span class="token class-name">MockMessenger</span> <span class="token punctuation">{</span>
+        <span class="token keyword">fn</span> <span class="token function-definition function">send</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token keyword">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// takes an immuatable str as a parameter</span>
+            <span class="token comment">// stores the message inside the MockMessenger</span>
+            <span class="token comment">// borrow_mut(): get a mutable reference of the data inside it -> push can work</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>sent_messages<span class="token punctuation">.</span><span class="token function">borrow_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token attribute attr-name">#[test]</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">it_sends_an_over_75_percent_warning_message</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// --snip--</span>
+        <span class="token keyword">let</span> mock_messenger <span class="token operator">=</span> <span class="token class-name">MockMessenger</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> limit_tracker <span class="token operator">=</span> <span class="token class-name">LimitTracker</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>mock_messenger<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        limit_tracker<span class="token punctuation">.</span><span class="token function">set_value</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span>mock_messenger<span class="token punctuation">.</span>sent_messages<span class="token punctuation">.</span><span class="token function">borrow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="mutiple-owners-of-mutable-data-by-combining-rct--refcellt">Mutiple Owners of Mutable Data by Combining <code>Rc&#x3C;T></code> &#x26; <code>RefCell&#x3C;T></code><a aria-hidden="true" class="anchor-heading icon-link" href="#mutiple-owners-of-mutable-data-by-combining-rct--refcellt"></a></h3>
+<ul>
+<li>Recall
+<ul>
+<li><code>Rc&#x3C;T></code>: Multiple owner of immutable access data</li>
+<li><code>Rc&#x3C;RefCell&#x3C;T>></code>: Multiple owners and can mutate that data</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[derive(Debug)]</span>
+<span class="token keyword">enum</span> <span class="token type-definition class-name">List</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token class-name">Rc</span><span class="token operator">&#x3C;</span><span class="token class-name">RefCell</span><span class="token operator">&#x3C;</span><span class="token keyword">i32</span><span class="token operator">>></span><span class="token punctuation">,</span> <span class="token class-name">Rc</span><span class="token operator">&#x3C;</span><span class="token class-name">List</span><span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Nil</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">use</span> <span class="token keyword">crate</span><span class="token punctuation">::</span><span class="token class-name">List</span><span class="token punctuation">::</span><span class="token punctuation">{</span><span class="token class-name">Cons</span><span class="token punctuation">,</span> <span class="token class-name">Nil</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>cell<span class="token punctuation">::</span></span><span class="token class-name">RefCell</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>rc<span class="token punctuation">::</span></span><span class="token class-name">Rc</span><span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">RefCell</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">RefCell</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">RefCell</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Rc</span><span class="token punctuation">::</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">*</span>value<span class="token punctuation">.</span><span class="token function">borrow_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token comment">// *value -> RefCell value</span>
+    <span class="token comment">// *value.borrow_mut() -> mutable reference</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"a after = {:?}"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"b after = {:?}"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"c after = {:?}"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="vocab">Vocab<a aria-hidden="true" class="anchor-heading icon-link" href="#vocab"></a></h2>
+<ul>
+<li>Interior: The inside part of sth</li>
+</ul>

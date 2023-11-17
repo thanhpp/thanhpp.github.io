@@ -1,0 +1,65 @@
+<h1 id="drop">Drop<a aria-hidden="true" class="anchor-heading icon-link" href="#drop"></a></h1>
+<h1 id="cleanup-with-the-drop-trait">Cleanup with the <strong>Drop trait</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#cleanup-with-the-drop-trait"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch15-03-drop.html">https://doc.rust-lang.org/book/ch15-03-drop.html</a></p>
+</blockquote>
+<h2 id="intro">Intro<a aria-hidden="true" class="anchor-heading icon-link" href="#intro"></a></h2>
+<ul>
+<li>Customize the behaviour when a value is about to <strong>go out of scope</strong>.
+<ul>
+<li>In the <code>Smart Pointer</code> context: <strong>deallocate</strong> the space on the heap </li>
+</ul>
+</li>
+</ul>
+<h2 id="the-drop-traot">The Drop traot<a aria-hidden="true" class="anchor-heading icon-link" href="#the-drop-traot"></a></h2>
+<ul>
+<li>
+<p>implement 1 method named <code>drop</code>, that takes a mutable reference to <code>self</code></p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">struct</span> <span class="token type-definition class-name">CustomSmartPointer</span> <span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span> <span class="token class-name">Drop</span> <span class="token keyword">for</span> <span class="token class-name">CustomSmartPointer</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">drop</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Dropping CustomSmartPointer with data `{}`!"</span><span class="token punctuation">,</span> <span class="token keyword">self</span><span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token class-name">CustomSmartPointer</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"my stuff"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token class-name">CustomSmartPointer</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"other stuff"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"CustomSmartPointers created."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// print</span>
+    <span class="token comment">// Dropping CustomSmartPointer with data `other stuff`! --> d.drop()</span>
+    <span class="token comment">// Dropping CustomSmartPointer with data `my stuff`! --> c.drop()</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>Variables are dropped in the reverse order of their creation</p>
+</li>
+</ul>
+<h2 id="dropping-a-value-early-stdmemdrop">Dropping a value early <code>std::mem::drop</code><a aria-hidden="true" class="anchor-heading icon-link" href="#dropping-a-value-early-stdmemdrop"></a></h2>
+<ul>
+<li>Can not call the <code>drop</code> function explicitly --> Might lead to a <strong>double free error</strong>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token class-name">CustomSmartPointer</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"some data"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"CustomSmartPointer created."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">drop</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Dropping CustomSmartPointer with data `some data`! --> c.drop()</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"CustomSmartPointer dropped before the end of main."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>References are always valid
+<ul>
+<li>-> drop gets called only once when the value is no longer being used  </li>
+</ul>
+</li>
+</ul>

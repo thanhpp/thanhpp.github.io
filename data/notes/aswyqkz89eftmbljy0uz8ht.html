@@ -1,0 +1,25 @@
+<h1 id="hidpi">hiDPI<a aria-hidden="true" class="anchor-heading icon-link" href="#hidpi"></a></h1>
+<h1 id="set-up-i3-for-hidpi-screen">Set up <a href="/notes/u35q71uwtvqy41vrbd5pmit">I3</a> for hiDPI screen<a aria-hidden="true" class="anchor-heading icon-link" href="#set-up-i3-for-hidpi-screen"></a></h1>
+<blockquote>
+<p><a href="https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager-for-my-hidpi-display">https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager-for-my-hidpi-display</a>
+<a href="https://dougie.io/linux/hidpi-retina-i3wm/">https://dougie.io/linux/hidpi-retina-i3wm/</a></p>
+</blockquote>
+<h2 id="modify-xresources--xinitrc">Modify ~/.Xresources &#x26; ~/.xinitrc<a aria-hidden="true" class="anchor-heading icon-link" href="#modify-xresources--xinitrc"></a></h2>
+<p><code>~/.Xresources</code></p>
+<pre><code>Xft.dpi: 196
+</code></pre>
+<p><code>~/.xinitrc</code></p>
+<pre><code>xrdb -merge ~/.Xresources
+exec i3
+</code></pre>
+<h2 id="dpi">DPI<a aria-hidden="true" class="anchor-heading icon-link" href="#dpi"></a></h2>
+<ul>
+<li>Full HD: 96</li>
+<li>2K: 128</li>
+<li>4K: 192</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6heqjju0cm02y0rjgk9kajk">Install Checklist</a></li>
+</ul>

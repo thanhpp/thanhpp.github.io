@@ -1,0 +1,99 @@
+<h1 id="types">Types<a aria-hidden="true" class="anchor-heading icon-link" href="#types"></a></h1>
+<h1 id="advanced-types">Advanced Types<a aria-hidden="true" class="anchor-heading icon-link" href="#advanced-types"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch19-04-advanced-types.html">https://doc.rust-lang.org/book/ch19-04-advanced-types.html</a></p>
+</blockquote>
+<h2 id="using-the-newtype-pattern-for-type-safety-and-abstraction">Using the Newtype Pattern for Type Safety and Abstraction<a aria-hidden="true" class="anchor-heading icon-link" href="#using-the-newtype-pattern-for-type-safety-and-abstraction"></a></h2>
+<ul>
+<li>We can use the newtype pattern to abstract away some implementation details of a type: the new type can <strong>expose a public API</strong> that is different from the API of the private inner type.</li>
+<li>Newtypes can also hide internal implementation</li>
+</ul>
+<h2 id="creating-type-synonyms-with-type-aliases">Creating Type Synonyms with Type Aliases<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-type-synonyms-with-type-aliases"></a></h2>
+<ul>
+<li>Type alias: to give an <strong>exising type another name</strong>.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">type</span> <span class="token type-definition class-name">Kilometers</span> <span class="token operator">=</span> <span class="token keyword">i32</span><span class="token punctuation">;</span> <span class="token comment">// the type Kilometers will be treated the same as values of type i32</span>
+
+    <span class="token keyword">let</span> x<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> y<span class="token punctuation">:</span> <span class="token class-name">Kilometers</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"x + y = {}"</span><span class="token punctuation">,</span> x <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// the compiler will not give us an error when we mix up 2 types</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Thunk can be used as an alias for the type Box&#x3C;dyn Fn() + Send + 'static></span>
+    <span class="token keyword">type</span> <span class="token type-definition class-name">Thunk</span> <span class="token operator">=</span> <span class="token class-name">Box</span><span class="token operator">&#x3C;</span><span class="token keyword">dyn</span> <span class="token class-name">Fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token class-name">Send</span> <span class="token operator">+</span> <span class="token lifetime-annotation symbol">'static</span><span class="token operator">></span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> f<span class="token punctuation">:</span> <span class="token class-name">Thunk</span> <span class="token operator">=</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">fn</span> <span class="token function-definition function">takes_long_type</span><span class="token punctuation">(</span>f<span class="token punctuation">:</span> <span class="token class-name">Thunk</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// --snip--</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fn</span> <span class="token function-definition function">returns_long_type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Thunk</span> <span class="token punctuation">{</span>
+        <span class="token comment">// --snip--</span>
+        <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Common alias for the <code>Result</code>:
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// We can use any methods that work on Result&#x3C;T, E>, as well as special syntax like the ? operator</span>
+<span class="token keyword">type</span> <span class="token type-definition class-name">Result</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token namespace">std<span class="token punctuation">::</span>result<span class="token punctuation">::</span></span><span class="token class-name">Result</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token namespace">std<span class="token punctuation">::</span>io<span class="token punctuation">::</span></span><span class="token class-name">Error</span><span class="token operator">></span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="the-never-type-that-never-return">The Never Type that Never Return<a aria-hidden="true" class="anchor-heading icon-link" href="#the-never-type-that-never-return"></a></h2>
+<ul>
+<li><code>!</code> ~ <em>empty type</em> because it has no values, or the <em>never type</em> because it stands in the place of the return type when a function will <strong>never return</strong>.</li>
+<li>Functions that return never are called <em>diverging functions</em>.  
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// we can't create values of the type ! -> bar can never possibly return</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token operator">!</span> <span class="token punctuation">{</span>
+    <span class="token comment">// --snip--</span>
+    <span class="token macro property">panic!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="dynamically-sized-types-and-the-sized-trait">Dynamically Sized Types and the Sized Trait<a aria-hidden="true" class="anchor-heading icon-link" href="#dynamically-sized-types-and-the-sized-trait"></a></h2>
+<ul>
+<li>Rust needs to know certain details about its types, such as <strong>how much space to allocate</strong> for a value of a particular type.</li>
+<li>Dynamically sized types (unsized types): let us write code using values whose size we can know only at <strong>runtime</strong>.</li>
+<li>Dynamically sized types in Rust have an extra bit of <strong>metadata that stores the size</strong> of the dynamic information. (we must always put values of dynamically sized types <strong>behind a pointer</strong> of some kind)</li>
+<li>The <code>Sized</code> trait to determine whether or not a type's size is <strong>known at compile time</strong>. 
+<ul>
+<li>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">generic</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span><span class="token punctuation">(</span>t<span class="token punctuation">:</span> <span class="token class-name">T</span><span class="token punctuation">)</span>
+~
+<span class="token keyword">fn</span> <span class="token function-definition function">generic</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token class-name">Sized</span><span class="token operator">></span><span class="token punctuation">(</span>t<span class="token punctuation">:</span> <span class="token class-name">T</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>relax the restriction
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">generic</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">:</span> <span class="token operator">?</span><span class="token class-name">Sized</span><span class="token operator">></span><span class="token punctuation">(</span>t <span class="token operator">&#x26;</span><span class="token class-name">T</span><span class="token punctuation">)</span> <span class="token comment">// T may or may not be Sized</span>
+</code></pre>
+</li>
+<li>The <code>?Trait</code> syntax with this meaning is only available for <code>Sized</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="the-str-type">The <code>str</code> type<a aria-hidden="true" class="anchor-heading icon-link" href="#the-str-type"></a></h3>
+<ul>
+<li><code>str</code> is a <em>dynamically sized type</em>. We can't know how long the string until runtime</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// this will cause a compiler error</span>
+    <span class="token comment">// Rust need to know the data size of the str type, but s1 and s2 have different length</span>
+    <span class="token keyword">let</span> s1<span class="token punctuation">:</span> <span class="token keyword">str</span> <span class="token operator">=</span> <span class="token string">"Hello there!"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> s2<span class="token punctuation">:</span> <span class="token keyword">str</span> <span class="token operator">=</span> <span class="token string">"How's it going?"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><code>&#x26;T</code>: is a single value that <strong>stores the memory address</strong> of where the <code>T</code> is located.</li>
+<li><code>&#x26;str</code> has 2 value
+<ul>
+<li>the address if the str</li>
+<li>its length</li>
+</ul>
+</li>
+</ul>

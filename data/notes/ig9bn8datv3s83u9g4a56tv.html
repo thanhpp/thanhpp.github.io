@@ -1,0 +1,69 @@
+<h1 id="pin-and-unpin">Pin-and-Unpin<a aria-hidden="true" class="anchor-heading icon-link" href="#pin-and-unpin"></a></h1>
+<blockquote>
+<p><a href="https://blog.cloudflare.com/pin-and-unpin-in-rust/">https://blog.cloudflare.com/pin-and-unpin-in-rust/</a></p>
+</blockquote>
+<h1 id="pin-unpin-and-why-rust-needs-them">Pin, Unpin, and why Rust needs them<a aria-hidden="true" class="anchor-heading icon-link" href="#pin-unpin-and-why-rust-needs-them"></a></h1>
+<h2 id="future">Future<a aria-hidden="true" class="anchor-heading icon-link" href="#future"></a></h2>
+<ul>
+<li>The future trait
+<ul>
+<li>Can be polled</li>
+<li>When it's polled -> returns "Pending" || "Ready"
+<ul>
+<li>Pending -> Poll it later</li>
+<li>Ready -> Respond with a value ("resolving")</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="self-reference-in-method-receivers">Self-reference in method receivers<a aria-hidden="true" class="anchor-heading icon-link" href="#self-reference-in-method-receivers"></a></h2>
+<ul>
+<li>Method receiver types:
+<ul>
+<li>"self": take ownership of self</li>
+<li>"&#x26;self": borrow self</li>
+<li>"&#x26;mut self": mutably borrow self</li>
+</ul>
+</li>
+<li>The Rust compiler often move values around in memory
+<ul>
+<li>So the struct's fields can change their address, but not their value</li>
+<li>-> a pointer can be pointed to an invalid data</li>
+</ul>
+</li>
+</ul>
+<h2 id="unpin-and-unpin">Unpin and !Unpin<a aria-hidden="true" class="anchor-heading icon-link" href="#unpin-and-unpin"></a></h2>
+<ul>
+<li>Rust types
+<ul>
+<li>(1) Safe to move around in memory: most of the types</li>
+<li>(2) Self-referential types: not safe to move around in memory</li>
+<li>The Rust compiler (>= 1.33): automatically figure out which category any type is in.</li>
+</ul>
+</li>
+<li>Types in (1) implement the <code>Unpin</code> trait</li>
+<li>Types in (2) are named <code>!Unpin</code> (does not implement Unpin)
+<ul>
+<li>We can't use regular pointers for self-reference</li>
+<li>Need to use special pointers that <strong>"pin" their values into place</strong></li>
+<li>We can write self-referential structs safely</li>
+</ul>
+</li>
+</ul>
+<h2 id="using-pin--pin-project">Using Pin &#x26; pin-project<a aria-hidden="true" class="anchor-heading icon-link" href="#using-pin--pin-project"></a></h2>
+<ul>
+<li>Access to a pinned struct: write a helper function which give you references to the fields ("projection")</li>
+<li>The pin-project crate: generates safe projections</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[pin_project::pin_project]</span> <span class="token comment">// This generates a `project` method</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">TimedWrapper</span><span class="token operator">&#x3C;</span><span class="token class-name">Fut</span><span class="token punctuation">:</span> <span class="token class-name">Future</span><span class="token operator">></span> <span class="token punctuation">{</span>
+	<span class="token comment">// For each field, we need to choose whether `project` returns an</span>
+	<span class="token comment">// unpinned (&#x26;mut T) or pinned (Pin&#x3C;&#x26;mut T>) reference to the field.</span>
+	<span class="token comment">// By default, it assumes unpinned:</span>
+	start<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&#x3C;</span><span class="token class-name">Instant</span><span class="token operator">></span><span class="token punctuation">,</span>
+	<span class="token comment">// Opt into pinned references with this attribute:</span>
+	<span class="token attribute attr-name">#[pin]</span>
+	future<span class="token punctuation">:</span> <span class="token class-name">Fut</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>

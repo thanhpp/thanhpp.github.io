@@ -1,0 +1,20 @@
+<h1 id="test-coverage">Test Coverage<a aria-hidden="true" class="anchor-heading icon-link" href="#test-coverage"></a></h1>
+<h1 id="golang-test-coverage">Golang test coverage<a aria-hidden="true" class="anchor-heading icon-link" href="#golang-test-coverage"></a></h1>
+<blockquote>
+<p><a href="https://eloquentcode.com/create-an-html-test-coverage-report-in-go">https://eloquentcode.com/create-an-html-test-coverage-report-in-go</a>
+<a href="https://blog.seriesci.com/how-to-measure-code-coverage-in-go/">https://blog.seriesci.com/how-to-measure-code-coverage-in-go/</a></p>
+</blockquote>
+<ul>
+<li>Run all tests
+<pre><code>go test -covermode=count -coverpkg=./... -coverprofile cover.out -v ./...
+</code></pre>
+</li>
+<li>Show coverage
+<pre><code>go tool cover -func cover.out
+</code></pre>
+</li>
+<li>Show html page
+<pre><code>go tool cover -html cover.out -o cover.html
+</code></pre>
+</li>
+</ul>

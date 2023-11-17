@@ -1,0 +1,38 @@
+<h1 id="supervisord">Supervisord<a aria-hidden="true" class="anchor-heading icon-link" href="#supervisord"></a></h1>
+<h1 id="supervisord-a-process-control-system">Supervisord: A Process Control System<a aria-hidden="true" class="anchor-heading icon-link" href="#supervisord-a-process-control-system"></a></h1>
+<blockquote>
+<p><a href="http://supervisord.org/">http://supervisord.org/</a></p>
+</blockquote>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<ul>
+<li>Ubuntu: <code>sudo apt install supervisor</code></li>
+</ul>
+<h2 id="configuration-files">Configuration files<a aria-hidden="true" class="anchor-heading icon-link" href="#configuration-files"></a></h2>
+<ul>
+<li>Folder: <code>/etc/supervisor/supervisord.conf</code></li>
+<li>Files: <code>/etc/supervisor/conf.d/*.conf</code></li>
+<li>Program config
+<pre><code>[program:&#x3C;program name>]
+command=&#x3C;absolute or relative>
+autostart=&#x3C;true/false>
+autorestart=&#x3C;true/false/unexpected>
+user=&#x3C;username>
+stdout_logfile=&#x3C;/var/log/supervisord/...>
+stderr_logfile=&#x3C;/var/log/supervisord/...>
+directory=&#x3C;exec folder>
+</code></pre>
+</li>
+</ul>
+<h2 id="command">Command<a aria-hidden="true" class="anchor-heading icon-link" href="#command"></a></h2>
+<ul>
+<li>Enter the supervisord controller mode: <code>sudo supervisorctl</code></li>
+<li>Get status: <code>sudo supervisorctl status all</code></li>
+<li>Reload config: <code>sudo supervisorctl update</code>
+<ul>
+<li>add/remove config</li>
+<li>restart affected program</li>
+</ul>
+</li>
+<li>Read logs: <code>sudo supervisorctl tail -f &#x3C;program name> [stdout|stderr]</code></li>
+<li>Restart a service: <code>sudo supervisorctl restart &#x3C;program name></code></li>
+</ul>

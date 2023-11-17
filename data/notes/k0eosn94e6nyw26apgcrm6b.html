@@ -1,0 +1,46 @@
+<h1 id="process-and-thread">Process-and-Thread<a aria-hidden="true" class="anchor-heading icon-link" href="#process-and-thread"></a></h1>
+<h1 id="process-vs-thread">Process vs Thread<a aria-hidden="true" class="anchor-heading icon-link" href="#process-vs-thread"></a></h1>
+<blockquote>
+<p><a href="https://youtube.com/watch?v=4rLW7zg21gI&#x26;feature=shares">https://youtube.com/watch?v=4rLW7zg21gI&#x26;feature=shares</a></p>
+</blockquote>
+<ul>
+<li>A program: <strong>code</strong> (a set of of processor instructions), that is stored as a file on disk.</li>
+<li>A process: an executing program
+<ul>
+<li>the program code is loaded into the memory, and executed by the processor</li>
+<li>the process <strong>resources</strong> is managed by the Operating System</li>
+<li>each process has it own <strong>memory address space</strong>.</li>
+</ul>
+</li>
+<li>A thread: the <strong>unit of execution</strong> within a process
+<ul>
+<li>Main thread: a process has at least 1 thread (1 process ~ 1 thread)</li>
+<li>A thread has stack, register, program counters</li>
+<li>Threads within a process share the <strong>same address space</strong>
+<ul>
+<li>-> communication</li>
+<li>-> no isolation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Context switching:
+<ul>
+<li>The OS saves the current state of a process</li>
+<li>Then the OS switches to run another process (resume at the running point)</li>
+<li>between process: expensive (save/load data)</li>
+<li>between thread: much cheaper
+<ul>
+<li>fewer states to track</li>
+<li>no need to save/load virtual pages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reduce context switching cost (trade complexity vs context-switching cost)
+<ul>
+<li>fiber: application manage the task scheduling</li>
+<li>co-routines</li>
+</ul>
+</li>
+</ul>

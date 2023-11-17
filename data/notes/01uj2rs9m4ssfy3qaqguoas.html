@@ -1,0 +1,294 @@
+<h1 id="pattern-syntax">Pattern-Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#pattern-syntax"></a></h1>
+<h1 id="pattern-syntax-1">Pattern Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#pattern-syntax-1"></a></h1>
+<h2 id="matching-literals">Matching literals<a aria-hidden="true" class="anchor-heading icon-link" href="#matching-literals"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">match</span> x <span class="token punctuation">{</span>
+    <span class="token number">1</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token number">2</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token number">3</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"anything"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// one</span>
+</code></pre>
+<h2 id="matching-named-variables">Matching named variables<a aria-hidden="true" class="anchor-heading icon-link" href="#matching-named-variables"></a></h2>
+<ul>
+<li><code>match</code> starts a <strong>new scope</strong>, variables declared as part of a pattern inside the <code>match</code> expression will <strong>shadow</strong> those with the same name outside the <code>match</code> construct, as is the case with all variables.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">match</span> x <span class="token punctuation">{</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Got 50"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Matched, y = {y}"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token comment">// shadow y = x (matching type)</span>
+    _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Default case, x = {:?}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"at the end: x = {:?}, y = {y}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+Matched, y = 5
+at the end: x = Some(5), y = 10
+*/</span>
+</code></pre>
+<h2 id="multiple-patterns">Multiple Patterns<a aria-hidden="true" class="anchor-heading icon-link" href="#multiple-patterns"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">match</span> x <span class="token punctuation">{</span>
+    <span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"one or two"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 1 or 2</span>
+    <span class="token number">3</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"anything"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="matching-rages-of-values">Matching Rages of Values<a aria-hidden="true" class="anchor-heading icon-link" href="#matching-rages-of-values"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+<span class="token keyword">match</span> x <span class="token punctuation">{</span>
+    <span class="token number">1</span><span class="token punctuation">..=</span><span class="token number">5</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"one through five"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 1 | 2 | 3 | 4 | 5</span>
+    _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"something else"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token char">'c'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// char values (ASCII?)</span>
+<span class="token keyword">match</span> x <span class="token punctuation">{</span>
+    <span class="token char">'a'</span><span class="token punctuation">..=</span><span class="token char">'j'</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"early ASCII letter"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token char">'k'</span><span class="token punctuation">..=</span><span class="token char">'z'</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"late ASCII letter"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"something else"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="destructuring">Destructuring<a aria-hidden="true" class="anchor-heading icon-link" href="#destructuring"></a></h2>
+<h3 id="structs">Structs<a aria-hidden="true" class="anchor-heading icon-link" href="#structs"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">struct</span> <span class="token type-definition class-name">Point</span> <span class="token punctuation">{</span>
+    x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
+    y<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> a<span class="token punctuation">,</span> y<span class="token punctuation">:</span> b <span class="token punctuation">}</span> <span class="token operator">=</span> p<span class="token punctuation">;</span>   <span class="token comment">// matching a, b -> p.x, p.y</span>
+    <span class="token comment">// let Point { x, y } = p;      // alternative</span>
+    <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// matching by fixing 1 value of the struct</span>
+    <span class="token keyword">match</span> p <span class="token punctuation">{</span>
+        <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"On the x axis at {x}"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"On the y axis at {y}"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> y <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"On neither axis: ({x}, {y})"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token comment">// On the y axis at 7</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="enums">Enums<a aria-hidden="true" class="anchor-heading icon-link" href="#enums"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">enum</span> <span class="token type-definition class-name">Message</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Quit</span><span class="token punctuation">,</span>
+    <span class="token class-name">Move</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token class-name">Write</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> msg <span class="token operator">=</span> <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// match by enum types &#x26; define variables that the matched enum contains</span>
+    <span class="token keyword">match</span> msg <span class="token punctuation">{</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Quit</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The Quit variant has no data to destructure."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Move</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> y <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span>
+                <span class="token string">"Move in the x direction {x} and in the y direction {y}"</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Write</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Text message: {text}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">ChangeColor</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span>
+            <span class="token string">"Change the color to red {r}, green {g}, and blue {b}"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> <span class="token comment">// Change the color to red 0, green 160, and blue 255</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="nested-structs-and-enums">Nested Structs and Enums<a aria-hidden="true" class="anchor-heading icon-link" href="#nested-structs-and-enums"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">enum</span> <span class="token type-definition class-name">Color</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Rgb</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Hsv</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">i32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">enum</span> <span class="token type-definition class-name">Message</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Quit</span><span class="token punctuation">,</span>
+    <span class="token class-name">Move</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token class-name">Write</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> msg <span class="token operator">=</span> <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">::</span><span class="token class-name">Hsv</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// match nested enums. Message -> Color</span>
+    <span class="token keyword">match</span> msg <span class="token punctuation">{</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">::</span><span class="token class-name">Rgb</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Change color to red {r}, green {g}, and blue {b}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">ChangeColor</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">::</span><span class="token class-name">Hsv</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> s<span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span>
+            <span class="token string">"Change color to hue {h}, saturation {s}, value {v}"</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        _ <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="structs-and-tuples">Structs and Tuples<a aria-hidden="true" class="anchor-heading icon-link" href="#structs-and-tuples"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// matching a tuple of a tuple and a struct</span>
+<span class="token keyword">let</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>feet<span class="token punctuation">,</span> inches<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> y <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="ignoring-values">Ignoring Values<a aria-hidden="true" class="anchor-heading icon-link" href="#ignoring-values"></a></h2>
+<h3 id="entire-value-with-_">Entire Value with <code>_</code><a aria-hidden="true" class="anchor-heading icon-link" href="#entire-value-with-_"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// ignore the first parameter</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">foo</span><span class="token punctuation">(</span>_<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"This code only uses the y parameter: {}"</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="parts-of-a-value-with-a-nested-_">Parts of a Value with a Nested <code>_</code><a aria-hidden="true" class="anchor-heading icon-link" href="#parts-of-a-value-with-a-nested-_"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> <span class="token keyword">mut</span> setting_value <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> new_setting_value <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">match</span> <span class="token punctuation">(</span>setting_value<span class="token punctuation">,</span> new_setting_value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// matched by type, but not using the inner value</span>
+    <span class="token punctuation">(</span><span class="token class-name">Some</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Can't overwrite an existing customized value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    _ <span class="token operator">=></span> <span class="token punctuation">{</span>
+        setting_value <span class="token operator">=</span> new_setting_value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"setting is {:?}"</span><span class="token punctuation">,</span> setting_value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+Can't overwrite an existing customized value
+setting is Some(5)
+*/</span>
+</code></pre>
+<h3 id="an-unsed-variable-by-starting-its-name-with-_">An unsed variable by starting its name with <code>_</code><a aria-hidden="true" class="anchor-heading icon-link" href="#an-unsed-variable-by-starting-its-name-with-_"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> _x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// no warning unused</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// get warning unused</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>The syntax <code>_x</code> still binds the value to the variable, whereas <code>_</code> doens't bind at all.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// if let Some(_) = s -> s doesn't get moved into _</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>_s<span class="token punctuation">)</span> <span class="token operator">=</span> s <span class="token punctuation">{</span> <span class="token comment">// the s value has been moved into _s</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"found a string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{:?}"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// error</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="remaining-parts-of-a-value-with-">Remaining parts of a value with <code>..</code><a aria-hidden="true" class="anchor-heading icon-link" href="#remaining-parts-of-a-value-with-"></a></h3>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token type-definition class-name">Point</span> <span class="token punctuation">{</span>
+        x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
+        y<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
+        z<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> origin <span class="token operator">=</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> origin <span class="token punctuation">{</span>
+        <span class="token comment">// skips y and z - the remaining</span>
+        <span class="token class-name">Point</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> <span class="token punctuation">..</span> <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"x is {}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// x is 0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> numbers <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> numbers <span class="token punctuation">{</span>
+        <span class="token comment">// ignore the middle value</span>
+        <span class="token punctuation">(</span>first<span class="token punctuation">,</span> <span class="token punctuation">..</span><span class="token punctuation">,</span> last<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Some numbers: {first}, {last}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="extra-conditionals-with-match-guards">Extra conditionals with Match Guards<a aria-hidden="true" class="anchor-heading icon-link" href="#extra-conditionals-with-match-guards"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// the compiler doesn't try to check for exhaustiveness when match guard expressions are involved</span>
+<span class="token keyword">match</span> num <span class="token punctuation">{</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">if</span> x <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The number {} is even"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The number {} is odd"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// Some(5) will matches this arm</span>
+    <span class="token class-name">None</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token comment">// The number 4 is even</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> x <span class="token punctuation">{</span>
+        <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Got 50"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// the guard condition doesn't introduce a new variable, so y still keeping its value</span>
+        <span class="token class-name">Some</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">if</span> n <span class="token operator">==</span> y <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Matched, n = {n}"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Default case, x = {:?}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"at the end: x = {:?}, y = {y}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+Matched, n = 10
+at the end: x = Some(10), y = 10
+*/</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> x <span class="token punctuation">{</span>
+        <span class="token comment">// (4 | 5 | 6) if y => ...</span>
+        <span class="token number">4</span> <span class="token operator">|</span> <span class="token number">5</span> <span class="token operator">|</span> <span class="token number">6</span> <span class="token keyword">if</span> y <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"yes"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        _ <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// prints no</span>
+</code></pre>
+<h2 id="-at-bindings">@ (at) Bindings<a aria-hidden="true" class="anchor-heading icon-link" href="#-at-bindings"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> <span class="token type-definition class-name">Message</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Hello</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> msg <span class="token operator">=</span> <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Hello</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> msg <span class="token punctuation">{</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Hello</span> <span class="token punctuation">{</span>
+            <span class="token comment">// check if id in range [3, 7], then bind the value to id_variable</span>
+            id<span class="token punctuation">:</span> id_variable <span class="token operator">@</span> <span class="token number">3</span><span class="token punctuation">..=</span><span class="token number">7</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Found an id in range: {}"</span><span class="token punctuation">,</span> id_variable<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// doesn't bind the id value to use, only checks its value</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Hello</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">..=</span><span class="token number">12</span> <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Found an id in another range"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// shorthand syntax -> bind to the id varO</span>
+        <span class="token class-name">Message</span><span class="token punctuation">::</span><span class="token class-name">Hello</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Found some other id: {}"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> <span class="token comment">// Found an id in range: 5</span>
+<span class="token punctuation">}</span>
+</code></pre>

@@ -1,0 +1,36 @@
+<h1 id="fcitx5">Fcitx5<a aria-hidden="true" class="anchor-heading icon-link" href="#fcitx5"></a></h1>
+<h1 id="fcitx---langugae-input">Fcitx - langugae input<a aria-hidden="true" class="anchor-heading icon-link" href="#fcitx---langugae-input"></a></h1>
+<blockquote>
+<p><a href="https://fcitx-im.org/wiki/Install_Fcitx_5">https://fcitx-im.org/wiki/Install_Fcitx_5</a></p>
+</blockquote>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<ul>
+<li>Search on Ubuntu apt: <code>apt-cache search fcitx5</code></li>
+<li>install
+<pre><code>sudo apt-get install fcitx5
+</code></pre>
+</li>
+<li>Vietnamese support:
+<pre><code>wget http://archive.ubuntu.com/ubuntu/pool/universe/f/fcitx5-unikey/fcitx5-unikey_5.0.8-1_amd64.deb
+sudo dpkg -i fcitx5-unikey_5.0.8-1_amd64.deb
+sudo apt --fix-broken install
+</code></pre>
+</li>
+<li>Install FE
+<pre><code>sudo apt install fcitx5-frontend-gtk3
+sudo apt install fcitx-config-gtk
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://fcitx-im.org/wiki/Input_method_engines#Vietnamese">https://fcitx-im.org/wiki/Input_method_engines#Vietnamese</a>
+<a href="https://pkgs.org/search/?q=fcitx5-unikey">https://pkgs.org/search/?q=fcitx5-unikey</a>
+<a href="https://ubuntu.pkgs.org/22.04/ubuntu-universe-amd64/fcitx5-unikey_5.0.8-1_amd64.deb.html">https://ubuntu.pkgs.org/22.04/ubuntu-universe-amd64/fcitx5-unikey_5.0.8-1_amd64.deb.html</a></p>
+</blockquote>
+<h2 id="setup-ubuntu-2004">Setup (ubuntu 20.04)<a aria-hidden="true" class="anchor-heading icon-link" href="#setup-ubuntu-2004"></a></h2>
+<blockquote>
+<p><a href="https://fcitx-im.org/wiki/Setup_Fcitx_5#im-config_.28Debian.2FDebian-based.2FUbuntu.29">https://fcitx-im.org/wiki/Setup_Fcitx_5#im-config_.28Debian.2FDebian-based.2FUbuntu.29</a></p>
+</blockquote>
+<ul>
+<li>Run <code>im-config</code> &#x26; select fcitx5 </li>
+</ul>

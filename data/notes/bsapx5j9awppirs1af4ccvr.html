@@ -1,0 +1,37 @@
+<h1 id="natural-scroll">Natural Scroll<a aria-hidden="true" class="anchor-heading icon-link" href="#natural-scroll"></a></h1>
+<blockquote>
+<p><a href="https://askubuntu.com/questions/1122513/how-to-add-natural-inverted-mouse-scrolling-in-i3-window-manager">https://askubuntu.com/questions/1122513/how-to-add-natural-inverted-mouse-scrolling-in-i3-window-manager</a></p>
+</blockquote>
+<ul>
+<li>Edit <code>/usr/share/X11/xorg.conf.d/40-libinput.conf</code>
+<ul>
+<li>Mouse
+<pre><code># Match on all types of devices but joysticks
+  Section "InputClass"
+          Identifier "libinput pointer catchall"
+          MatchIsPointer "on"
+          MatchDevicePath "/dev/input/event*"
+          Driver "libinput"
+          Option "NaturalScrolling" "True"
+  EndSection
+</code></pre>
+</li>
+<li>Touchpad
+<pre><code>  Section "InputClass"
+      Identifier "libinput touchpad catchall"
+      MatchIsTouchpad "on"
+      MatchDevicePath "/dev/input/event*"
+      Driver "libinput"
+      Option "NaturalScrolling" "True"
+  EndSection
+```ode
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6heqjju0cm02y0rjgk9kajk">Install Checklist</a></li>
+</ul>

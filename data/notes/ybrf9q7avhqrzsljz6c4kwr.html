@@ -1,0 +1,189 @@
+<h1 id="unsafe">Unsafe<a aria-hidden="true" class="anchor-heading icon-link" href="#unsafe"></a></h1>
+<h1 id="unsafe-rust">Unsafe Rust<a aria-hidden="true" class="anchor-heading icon-link" href="#unsafe-rust"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html">https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html</a></p>
+</blockquote>
+<ul>
+<li>If the Rust compiler doesn't have enough information, it will reject the code. You can use <strong>unsafe</strong> code to tell the compiler "Trust me, I know what I'm doing"</li>
+<li>Unsafe Rust allow developers to do low-level system programming (underlying computer hardware is inherently unsafe)</li>
+</ul>
+<h2 id="powers">Powers<a aria-hidden="true" class="anchor-heading icon-link" href="#powers"></a></h2>
+<ul>
+<li><em>Unsafe superpowers</em>:
+<ul>
+<li>Dereference a raw pointer</li>
+<li>Call an unsafe function or method</li>
+<li>Access or modify a mutable static variable</li>
+<li>Implement an unsafe trait</li>
+<li>Access fields of <code>union</code> S</li>
+</ul>
+</li>
+<li>unsafe doesn't turn off the <strong>borrow checker</strong> or disable any other of <strong>Rust's safety</strong> checks.</li>
+<li>Keep <code>unsafe</code> blocks small.</li>
+</ul>
+<h2 id="dereferencing-a-raw-pointer">Dereferencing a Raw Pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#dereferencing-a-raw-pointer"></a></h2>
+<ul>
+<li>Unsafe Rust has 2 new types called
+<ul>
+<li>raw pointers (simillar to references): can be immutable <code>*const T</code> and mutable <code>*mut T</code>
+<ul>
+<li>immutable: the pointer can't be directly assigned to after being dereferenced.</li>
+</ul>
+</li>
+<li>the <code>*</code> isn't the dereference operator; it's part of the type name</li>
+</ul>
+</li>
+<li>Raw pointers
+<ul>
+<li>Are allowed to <strong>ignore the borrowing rules</strong>: having both immutable &#x26; mutable pointers or multiple mutable pointers to the same location</li>
+<li>Aren't guaranteed to point to valid memomry (<strong>might be invalid</strong>)</li>
+<li>Are allowed to be <strong>null</strong></li>
+<li>Don't implement any automatic cleanup (<strong>manual cleanup</strong>)</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> num <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> r1 <span class="token operator">=</span> <span class="token operator">&#x26;</span>num <span class="token keyword">as</span> <span class="token operator">*</span><span class="token keyword">const</span> <span class="token keyword">i32</span><span class="token punctuation">;</span>    <span class="token comment">// immutable raw pointer</span>
+    <span class="token keyword">let</span> r2 <span class="token operator">=</span> <span class="token operator">&#x26;</span><span class="token keyword">mut</span> num <span class="token keyword">as</span> <span class="token operator">*</span><span class="token keyword">mut</span> <span class="token keyword">i32</span><span class="token punctuation">;</span>  <span class="token comment">// mutable raw pointer</span>
+
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"r1 is: {}"</span><span class="token punctuation">,</span> <span class="token operator">*</span>r1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"r2 is: {}"</span><span class="token punctuation">,</span> <span class="token operator">*</span>r2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/*
+    r1 is: 5
+    r2 is: 5
+    */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="calling-unsafe-function-or-method">Calling unsafe function or method<a aria-hidden="true" class="anchor-heading icon-link" href="#calling-unsafe-function-or-method"></a></h2>
+<ul>
+<li>The unsafe function has <strong>requirements</strong> we need to uphold when we call this function, because Rust can't guarantee we've met these requirements</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// we can perform other unsafe operations within an unsafe function</span>
+    <span class="token keyword">unsafe</span> <span class="token keyword">fn</span> <span class="token function-definition function">dangerous</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token function">dangerous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="creating-a-safe-abstraction-over-unsafe-code">Creating a <strong>safe abstraction</strong> over unsafe code<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-a-safe-abstraction-over-unsafe-code"></a></h3>
+<ul>
+<li>Wrapping unsafe code in a safe function is a common abstraction</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span>slice<span class="token punctuation">;</span>
+
+<span class="token comment">// returns 2 mutable slices in a tuple</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">split_at_mut</span><span class="token punctuation">(</span>values<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">,</span> mid<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&#x26;</span><span class="token keyword">mut</span> <span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> len <span class="token operator">=</span> values<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> ptr <span class="token operator">=</span> values<span class="token punctuation">.</span><span class="token function">as_mut_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ptr = *mut i32 - immutable raw pointer</span>
+
+    <span class="token macro property">assert!</span><span class="token punctuation">(</span>mid <span class="token operator">&#x3C;=</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// return (&#x26;mut values[..mid], &#x26;mut values[mid..]);</span>
+    <span class="token comment">// the borrow checker would raise an error that we're borrowing from the same slice twice,</span>
+    <span class="token comment">// and it can't know that we're borrowing different parts of the slice</span>
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span>
+            <span class="token comment">// from_raw_parts_mut must trust that the ptr is valid</span>
+            <span class="token namespace">slice<span class="token punctuation">::</span></span><span class="token function">from_raw_parts_mut</span><span class="token punctuation">(</span>ptr<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// creates a slice from the start of the ptr, length = mid</span>
+            <span class="token namespace">slice<span class="token punctuation">::</span></span><span class="token function">from_raw_parts_mut</span><span class="token punctuation">(</span>ptr<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">,</span> len <span class="token operator">-</span> mid<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// creates a slice from (ptr + mid), length (len - mid)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> vector <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">split_at_mut</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">mut</span> vector<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="using-extern-functions-to-call-external-code">Using <code>extern</code> functions to call external code<a aria-hidden="true" class="anchor-heading icon-link" href="#using-extern-functions-to-call-external-code"></a></h2>
+<ul>
+<li>the keyword <code>extern</code> that facilitates the creation and use of a <em>Foreign Function Interface (FFI)</em>
+<ul>
+<li>FFI: is a way for programming language to define functions and enable a different (foreign) programming language to call those functions</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// set up an integration with the `abs` function from the C standard library</span>
+<span class="token comment">// lists the names and signatures of external functions from another language we want to call</span>
+<span class="token comment">// "C": which ABI (application binary interface - how to call the function at the assembly level) the external function uses</span>
+<span class="token keyword">extern</span> <span class="token string">"C"</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">fn</span> <span class="token function-definition function">abs</span><span class="token punctuation">(</span>input<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Absolute value of -3 according to C: {}"</span><span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Absolute value of -3 according to C: 3</span>
+</code></pre>
+<ul>
+<li><code>extern</code> can also create an interface that allows other languages to call Rust functions</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[no_mangle]</span> <span class="token comment">// tells rust compiler not to mangle the name of the function</span>
+<span class="token keyword">pub</span> <span class="token keyword">extern</span> <span class="token string">"C"</span> <span class="token keyword">fn</span> <span class="token function-definition function">call_from_c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Just called a Rust function from C!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="accessing-or-modifying-a-mutable-static-variable">Accessing or Modifying a Mutable Static Variable<a aria-hidden="true" class="anchor-heading icon-link" href="#accessing-or-modifying-a-mutable-static-variable"></a></h2>
+<ul>
+<li>In Rust, <strong>global variables are called static variables</strong>.</li>
+<li>Static variable have a <strong>fixed address</strong> in memory, using the value will always access thee same data
+<ul>
+<li>static variable can be mutable</li>
+<li>a constant is allowed to duplicate their data whenever they are used</li>
+</ul>
+</li>
+<li>Rust consider a mutable global data is unsafe because it's difficult to ensure there are no data race.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">static</span> <span class="token keyword">mut</span> <span class="token constant">COUNTER</span><span class="token punctuation">:</span> <span class="token keyword">u32</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// mutable static variable</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">add_to_count</span><span class="token punctuation">(</span>inc<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token constant">COUNTER</span> <span class="token operator">+=</span> inc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">add_to_count</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsafe</span> <span class="token punctuation">{</span>
+        <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"COUNTER: {}"</span><span class="token punctuation">,</span> <span class="token constant">COUNTER</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// COUNTER: 3</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="implementing-an-unsafe-trait">Implementing an Unsafe Trait<a aria-hidden="true" class="anchor-heading icon-link" href="#implementing-an-unsafe-trait"></a></h2>
+<ul>
+<li>A trait is unsafe when at least one of its methos has some invariant that <strong>the compiler can't verify</strong>.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">unsafe</span> <span class="token keyword">trait</span> <span class="token type-definition class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token comment">// methods go here</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">unsafe</span> <span class="token keyword">impl</span> <span class="token class-name">Foo</span> <span class="token keyword">for</span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    <span class="token comment">// method implementations go here</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<h2 id="access-fields-of-a-union">Access Fields of a Union<a aria-hidden="true" class="anchor-heading icon-link" href="#access-fields-of-a-union"></a></h2>
+<ul>
+<li>A union: 
+<ul>
+<li>similar to a struct</li>
+<li>only one declared field is used in a particular instance at one time</li>
+<li>Rust can't guarantee the type of the data currently being stored in the union instance</li>
+</ul>
+</li>
+<li>Unions are primarily used to <strong>interface with unions in C code</strong>.</li>
+</ul>
+<h2 id="keywords">Keywords<a aria-hidden="true" class="anchor-heading icon-link" href="#keywords"></a></h2>
+<ul>
+<li>Mangling: when a compiler changes the name we've given a function to a <strong>different name that contains more information</strong> for other parts of the compilation process to consume</li>
+</ul>

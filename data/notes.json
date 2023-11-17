@@ -1,0 +1,7253 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214418124,
+      "created": 1700214418124,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "xfkxbponh0sohobo6pual15": {
+      "id": "xfkxbponh0sohobo6pual15",
+      "title": "Root",
+      "desc": "",
+      "updated": 1668137379975,
+      "created": 1663481872547,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "cb44915142ec96bef8f764f3dc90389e",
+      "links": [],
+      "anchors": {
+        "welcome-to-my-page": {
+          "type": "header",
+          "text": "Welcome to my page",
+          "value": "welcome-to-my-page",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "contacts": {
+          "type": "header",
+          "text": "Contacts",
+          "value": "contacts",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "dendron": {
+          "type": "header",
+          "text": "Dendron",
+          "value": "dendron",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "u5a2e2vvfn3x7k0shuvmb1b",
+        "qw8y69zxn8wr7tzz4gtcrrv",
+        "q7qw45jglqwmynary64q67c",
+        "6wjqcjgkrpeqtmzb1o8o1q8",
+        "3ervbn5we7t8v2l2vwtx847",
+        "4qi2z0z9fquupbd651xausx",
+        "sencgim78q74o1zuyvy1vz7",
+        "ue4oml1si982t3mmbthyxi9",
+        "zrogwjgtze8ne5joqpz8ty9",
+        "oesia0lbzh03fsoy124ck0k",
+        "el3p9zjue6h3b6zsl9oejkt",
+        "t5grkmcwvu4nl43igsj4gxz"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "t5grkmcwvu4nl43igsj4gxz": {
+      "fname": "scratch",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416997,
+      "created": 1700214416997,
+      "id": "t5grkmcwvu4nl43igsj4gxz",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "stvk819o909a6ylzxyg8joi"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Scratch"
+    },
+    "stvk819o909a6ylzxyg8joi": {
+      "fname": "scratch.2022",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416997,
+      "created": 1700214416997,
+      "id": "stvk819o909a6ylzxyg8joi",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "y1jc2f8c4fanx8xyzc1a8vy"
+      ],
+      "parent": "t5grkmcwvu4nl43igsj4gxz",
+      "data": {},
+      "title": "2022"
+    },
+    "y1jc2f8c4fanx8xyzc1a8vy": {
+      "fname": "scratch.2022.09",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416997,
+      "created": 1700214416997,
+      "id": "y1jc2f8c4fanx8xyzc1a8vy",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "lc4wghe6s8skj7cx6f04rwy"
+      ],
+      "parent": "stvk819o909a6ylzxyg8joi",
+      "data": {},
+      "title": "09"
+    },
+    "lc4wghe6s8skj7cx6f04rwy": {
+      "fname": "scratch.2022.09.26",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416997,
+      "created": 1700214416997,
+      "id": "lc4wghe6s8skj7cx6f04rwy",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "bx85by3e24cvyn0zww7cjgz"
+      ],
+      "parent": "y1jc2f8c4fanx8xyzc1a8vy",
+      "data": {},
+      "title": "26"
+    },
+    "bx85by3e24cvyn0zww7cjgz": {
+      "id": "bx85by3e24cvyn0zww7cjgz",
+      "title": "112322",
+      "desc": "",
+      "updated": 1664166229799,
+      "created": 1664166207138,
+      "custom": {},
+      "fname": "scratch.2022.09.26.112322",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "bd8c0b5a9d1f4198e4617ae033760a09",
+      "links": [],
+      "anchors": {
+        "binance-errors": {
+          "type": "header",
+          "text": "Binance errors",
+          "value": "binance-errors",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "lc4wghe6s8skj7cx6f04rwy",
+      "data": {}
+    },
+    "el3p9zjue6h3b6zsl9oejkt": {
+      "fname": "software",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416990,
+      "created": 1700214416990,
+      "id": "el3p9zjue6h3b6zsl9oejkt",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "yg542aqfl2wvgdfyhkanzzg"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Software"
+    },
+    "yg542aqfl2wvgdfyhkanzzg": {
+      "fname": "software.git",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416990,
+      "created": 1700214416990,
+      "id": "yg542aqfl2wvgdfyhkanzzg",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "frdksuyhb9akit53leg4lvu",
+        "6g647fy4ijl714fmsg6hl3z",
+        "ty97p2rgy2xtu104b2kiwqf"
+      ],
+      "parent": "el3p9zjue6h3b6zsl9oejkt",
+      "data": {},
+      "title": "Git"
+    },
+    "ty97p2rgy2xtu104b2kiwqf": {
+      "id": "ty97p2rgy2xtu104b2kiwqf",
+      "title": "Signing Commit",
+      "desc": "",
+      "updated": 1662143359203,
+      "created": 1662141421220,
+      "custom": {},
+      "fname": "software.git.signing-commit",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "57ba696b78396ad1c86bf3d82e991d2e",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "software.git.signing-commit",
+            "id": "ty97p2rgy2xtu104b2kiwqf",
+            "vaultName": "docs"
+          },
+          "value": "linux.command.export-gpg",
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 1,
+              "offset": 309
+            },
+            "end": {
+              "line": 11,
+              "column": 37,
+              "offset": 345
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "linux.command.export-gpg",
+            "anchorHeader": "import"
+          }
+        }
+      ],
+      "anchors": {
+        "use-gpg-key-to-sign-commit": {
+          "type": "header",
+          "text": "Use gpg key to sign commit",
+          "value": "use-gpg-key-to-sign-commit",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "genrate-gpg-key": {
+          "type": "header",
+          "text": "Genrate GPG key",
+          "value": "genrate-gpg-key",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "import-exsiting-gpg-key": {
+          "type": "header",
+          "text": "Import exsiting gpg key",
+          "value": "import-exsiting-gpg-key",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "set-up-git-gpg-key": {
+          "type": "header",
+          "text": "Set up git gpg key",
+          "value": "set-up-git-gpg-key",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "set-up-vs-code": {
+          "type": "header",
+          "text": "Set up VS Code",
+          "value": "set-up-vs-code",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "yg542aqfl2wvgdfyhkanzzg",
+      "data": {}
+    },
+    "6g647fy4ijl714fmsg6hl3z": {
+      "id": "6g647fy4ijl714fmsg6hl3z",
+      "title": "Multiple Accounts",
+      "desc": "",
+      "updated": 1662568538052,
+      "created": 1662568186611,
+      "custom": {},
+      "fname": "software.git.multiple-accounts",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "a8a2fac8d3d4f19d3179d21d3420af1c",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "software.git.multiple-accounts",
+            "id": "6g647fy4ijl714fmsg6hl3z",
+            "vaultName": "docs"
+          },
+          "value": "programing.golang",
+          "position": {
+            "start": {
+              "line": 28,
+              "column": 14,
+              "offset": 638
+            },
+            "end": {
+              "line": 28,
+              "column": 35,
+              "offset": 659
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "programing.golang"
+          }
+        }
+      ],
+      "anchors": {
+        "set-up-multiple-git-accounts": {
+          "type": "header",
+          "text": "Set up multiple git accounts",
+          "value": "set-up-multiple-git-accounts",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "using-includeif": {
+          "type": "header",
+          "text": "Using includeIf",
+          "value": "using-includeif",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "using-insteadof": {
+          "type": "header",
+          "text": "Using insteadOf",
+          "value": "using-insteadof",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "yg542aqfl2wvgdfyhkanzzg",
+      "data": {}
+    },
+    "frdksuyhb9akit53leg4lvu": {
+      "id": "frdksuyhb9akit53leg4lvu",
+      "title": "First Setup",
+      "desc": "",
+      "updated": 1662135559189,
+      "created": 1662135432068,
+      "custom": {},
+      "fname": "software.git.first-setup",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "c0ee4ca58762e179cb8ccc5c7eb67ebf",
+      "links": [],
+      "anchors": {
+        "github-setup": {
+          "type": "header",
+          "text": "Github setup",
+          "value": "github-setup",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "basic-information": {
+          "type": "header",
+          "text": "Basic information",
+          "value": "basic-information",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "auth": {
+          "type": "header",
+          "text": "Auth",
+          "value": "auth",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "yg542aqfl2wvgdfyhkanzzg",
+      "data": {}
+    },
+    "oesia0lbzh03fsoy124ck0k": {
+      "fname": "reading",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416990,
+      "created": 1700214416990,
+      "id": "oesia0lbzh03fsoy124ck0k",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "880jeqhb29f662hiclj6z7q"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Reading"
+    },
+    "880jeqhb29f662hiclj6z7q": {
+      "fname": "reading.articles",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416990,
+      "created": 1700214416990,
+      "id": "880jeqhb29f662hiclj6z7q",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "ogwf9k7976o6tma0odnqdjc"
+      ],
+      "parent": "oesia0lbzh03fsoy124ck0k",
+      "data": {},
+      "title": "Articles"
+    },
+    "ogwf9k7976o6tma0odnqdjc": {
+      "id": "ogwf9k7976o6tma0odnqdjc",
+      "title": "Self Help",
+      "desc": "",
+      "updated": 1661741507070,
+      "created": 1661741475757,
+      "custom": {},
+      "fname": "reading.articles.self-help",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "d7a2aee10c96f8470f450ad9e6d864e4",
+      "links": [],
+      "anchors": {
+        "working-efficency": {
+          "type": "header",
+          "text": "Working efficency",
+          "value": "working-efficency",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "880jeqhb29f662hiclj6z7q",
+      "data": {}
+    },
+    "zrogwjgtze8ne5joqpz8ty9": {
+      "fname": "dendron",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416982,
+      "created": 1700214416982,
+      "id": "zrogwjgtze8ne5joqpz8ty9",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "fmifatf42hwmbclxwnlmalk"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Dendron"
+    },
+    "fmifatf42hwmbclxwnlmalk": {
+      "fname": "dendron.templates",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416982,
+      "created": 1700214416982,
+      "id": "fmifatf42hwmbclxwnlmalk",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "2izwudyy52viztwutdewp76"
+      ],
+      "parent": "zrogwjgtze8ne5joqpz8ty9",
+      "data": {},
+      "title": "Templates"
+    },
+    "2izwudyy52viztwutdewp76": {
+      "id": "2izwudyy52viztwutdewp76",
+      "title": "Meeting Notes Template",
+      "desc": "",
+      "updated": 1661137612985,
+      "created": 1661137612985,
+      "custom": {},
+      "fname": "dendron.templates.meet",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "fcdb233ef7c8fadbb1f42246d6e6aea9",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "dendron.templates.meet",
+            "id": "2izwudyy52viztwutdewp76",
+            "vaultName": "docs"
+          },
+          "value": "dendron.templates.meet",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 11,
+              "offset": 10
+            },
+            "end": {
+              "line": 1,
+              "column": 37,
+              "offset": 36
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "dendron.templates.meet"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "dendron.templates.meet",
+            "id": "2izwudyy52viztwutdewp76",
+            "vaultName": "docs"
+          },
+          "value": "user.JohnDoe",
+          "alias": "@JohnDoe",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 3,
+              "offset": 255
+            },
+            "end": {
+              "line": 6,
+              "column": 11,
+              "offset": 263
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "user.JohnDoe"
+          }
+        },
+        {
+          "from": {
+            "fname": "dendron.templates.meet",
+            "id": "2izwudyy52viztwutdewp76",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 11,
+              "offset": 10
+            },
+            "end": {
+              "line": 1,
+              "column": 37,
+              "offset": 36
+            },
+            "indent": []
+          },
+          "value": "dendron.templates.meet"
+        }
+      ],
+      "anchors": {
+        "attendees": {
+          "type": "header",
+          "text": "Attendees",
+          "value": "attendees",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "goals": {
+          "type": "header",
+          "text": "Goals",
+          "value": "goals",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "agenda": {
+          "type": "header",
+          "text": "Agenda",
+          "value": "agenda",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "minutes": {
+          "type": "header",
+          "text": "Minutes",
+          "value": "minutes",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "action-items": {
+          "type": "header",
+          "text": "Action Items",
+          "value": "action-items",
+          "line": 23,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "fmifatf42hwmbclxwnlmalk",
+      "data": {}
+    },
+    "ue4oml1si982t3mmbthyxi9": {
+      "fname": "system-design",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416981,
+      "created": 1700214416981,
+      "id": "ue4oml1si982t3mmbthyxi9",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "wa8w1rh78h3wyeuab62brso",
+        "r5ee5da2e9ccswia2nes0fs",
+        "guh75foo91jqzceptgepk08",
+        "n6xgrmlbbfmylomvzzj0so9"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "System Design"
+    },
+    "n6xgrmlbbfmylomvzzj0so9": {
+      "id": "n6xgrmlbbfmylomvzzj0so9",
+      "title": "API Gateway",
+      "desc": "",
+      "updated": 1667968658643,
+      "created": 1667967055292,
+      "custom": {},
+      "fname": "system-design.api-gateway",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "0c2eacd054ff8bc8f1a0185821b607cd",
+      "links": [],
+      "anchors": {
+        "api-gateway": {
+          "type": "header",
+          "text": "API Gateway",
+          "value": "api-gateway",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "def": {
+          "type": "header",
+          "text": "Def",
+          "value": "def",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "functions": {
+          "type": "header",
+          "text": "Functions",
+          "value": "functions",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ue4oml1si982t3mmbthyxi9",
+      "data": {}
+    },
+    "guh75foo91jqzceptgepk08": {
+      "id": "guh75foo91jqzceptgepk08",
+      "title": "Scuba",
+      "desc": "",
+      "updated": 1669191809384,
+      "created": 1669190670892,
+      "custom": {},
+      "fname": "system-design.Scuba",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "88794b4fde3faf9771a26010c23f9ae1",
+      "links": [],
+      "anchors": {
+        "scuba---metas-monitoring-system": {
+          "type": "header",
+          "text": "Scuba - Meta's monitoring system",
+          "value": "scuba---metas-monitoring-system",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "architecture": {
+          "type": "header",
+          "text": "Architecture",
+          "value": "architecture",
+          "line": 28,
+          "column": 0,
+          "depth": 2
+        },
+        "ui": {
+          "type": "header",
+          "text": "UI",
+          "value": "ui",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        },
+        "integration": {
+          "type": "header",
+          "text": "Integration",
+          "value": "integration",
+          "line": 44,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ue4oml1si982t3mmbthyxi9",
+      "data": {}
+    },
+    "r5ee5da2e9ccswia2nes0fs": {
+      "id": "r5ee5da2e9ccswia2nes0fs",
+      "title": "Redis",
+      "desc": "",
+      "updated": 1697425370049,
+      "created": 1697424929954,
+      "custom": {},
+      "fname": "system-design.Redis",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "222e1da639c93bcaac0e67d08ef323ba",
+      "links": [],
+      "anchors": {
+        "redis": {
+          "type": "header",
+          "text": "Redis",
+          "value": "redis",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "redis-is-fast": {
+          "type": "header",
+          "text": "Redis is fast",
+          "value": "redis-is-fast",
+          "line": 12,
+          "column": 0,
+          "depth": 3
+        },
+        "caching": {
+          "type": "header",
+          "text": "Caching",
+          "value": "caching",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        },
+        "session-store": {
+          "type": "header",
+          "text": "Session store",
+          "value": "session-store",
+          "line": 22,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "ue4oml1si982t3mmbthyxi9",
+      "data": {}
+    },
+    "wa8w1rh78h3wyeuab62brso": {
+      "id": "wa8w1rh78h3wyeuab62brso",
+      "title": "RPC-gRPC",
+      "desc": "",
+      "updated": 1670214387962,
+      "created": 1670213980267,
+      "custom": {},
+      "fname": "system-design.RPC-gRPC",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "bc523e2889433a377cd0e5762834b38b",
+      "links": [],
+      "anchors": {
+        "rpc--grpc": {
+          "type": "header",
+          "text": "RPC & gRPC",
+          "value": "rpc--grpc",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "rpc---remote-procedure-call": {
+          "type": "header",
+          "text": "RPC - Remote Procedure Call",
+          "value": "rpc---remote-procedure-call",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "grpc": {
+          "type": "header",
+          "text": "gRPC",
+          "value": "grpc",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ue4oml1si982t3mmbthyxi9",
+      "data": {}
+    },
+    "sencgim78q74o1zuyvy1vz7": {
+      "fname": "selfhelp",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416980,
+      "created": 1700214416980,
+      "id": "sencgim78q74o1zuyvy1vz7",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "c4ziwzg51vibhlq3vkkvdjn",
+        "usgdkk51sx7nsnus0b34r2q",
+        "ly2qiwbj2tz8acmczhdjvw7",
+        "vso0r6dvmcbz27dknsmxzny"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Selfhelp"
+    },
+    "vso0r6dvmcbz27dknsmxzny": {
+      "id": "vso0r6dvmcbz27dknsmxzny",
+      "title": "Learn Hard Subjects",
+      "desc": "",
+      "updated": 1662480743648,
+      "created": 1662478440883,
+      "custom": {},
+      "fname": "selfhelp.learn-hard-subjects",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "42acff5a1a965583bd230f3edeff1820",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "selfhelp.learn-hard-subjects",
+            "id": "vso0r6dvmcbz27dknsmxzny",
+            "vaultName": "docs"
+          },
+          "value": "selfhelp.feynman-technique",
+          "position": {
+            "start": {
+              "line": 15,
+              "column": 7,
+              "offset": 259
+            },
+            "end": {
+              "line": 15,
+              "column": 37,
+              "offset": 289
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "selfhelp.feynman-technique"
+          }
+        }
+      ],
+      "anchors": {
+        "how-to-learn-really-hard-subjects": {
+          "type": "header",
+          "text": "How to Learn Really Hard Subjects",
+          "value": "how-to-learn-really-hard-subjects",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "mindset": {
+          "type": "header",
+          "text": "Mindset",
+          "value": "mindset",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "method": {
+          "type": "header",
+          "text": "Method",
+          "value": "method",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "sencgim78q74o1zuyvy1vz7",
+      "data": {}
+    },
+    "ly2qiwbj2tz8acmczhdjvw7": {
+      "id": "ly2qiwbj2tz8acmczhdjvw7",
+      "title": "Improve Concentration",
+      "desc": "",
+      "updated": 1664683867191,
+      "created": 1664683555922,
+      "custom": {},
+      "fname": "selfhelp.improve-concentration",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "116fdcfa384c72e7fd9c91c33724c65e",
+      "links": [],
+      "anchors": {
+        "improve-concentration": {
+          "type": "header",
+          "text": "Improve concentration",
+          "value": "improve-concentration",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "active--passive-task": {
+          "type": "header",
+          "text": "Active & Passive task",
+          "value": "active--passive-task",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "concentration-is-a-skill-can-be-improved": {
+          "type": "header",
+          "text": "Concentration is a skill (can be improved)",
+          "value": "concentration-is-a-skill-can-be-improved",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "sencgim78q74o1zuyvy1vz7",
+      "data": {}
+    },
+    "usgdkk51sx7nsnus0b34r2q": {
+      "id": "usgdkk51sx7nsnus0b34r2q",
+      "title": "Habit Stacking",
+      "desc": "",
+      "updated": 1662573021649,
+      "created": 1662480869303,
+      "custom": {},
+      "fname": "selfhelp.habit-stacking",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "278c743453eaef457f3e9474b2a18921",
+      "links": [],
+      "anchors": {
+        "habit-stacking": {
+          "type": "header",
+          "text": "Habit stacking",
+          "value": "habit-stacking",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "minimal-habits": {
+          "type": "header",
+          "text": "Minimal habits",
+          "value": "minimal-habits",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "overlapping-tasks": {
+          "type": "header",
+          "text": "Overlapping tasks",
+          "value": "overlapping-tasks",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "summarize": {
+          "type": "header",
+          "text": "Summarize",
+          "value": "summarize",
+          "line": 34,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "sencgim78q74o1zuyvy1vz7",
+      "data": {}
+    },
+    "c4ziwzg51vibhlq3vkkvdjn": {
+      "id": "c4ziwzg51vibhlq3vkkvdjn",
+      "title": "Feynman Technique",
+      "desc": "",
+      "updated": 1662479201230,
+      "created": 1662478671490,
+      "custom": {},
+      "fname": "selfhelp.feynman-technique",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "74ae95b182a4aee7770e290bd7659356",
+      "links": [
+        {
+          "from": {
+            "fname": "selfhelp.learn-hard-subjects",
+            "id": "vso0r6dvmcbz27dknsmxzny",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 15,
+              "column": 7,
+              "offset": 259
+            },
+            "end": {
+              "line": 15,
+              "column": 37,
+              "offset": 289
+            },
+            "indent": []
+          },
+          "value": "selfhelp.feynman-technique"
+        }
+      ],
+      "anchors": {
+        "feynman-technique": {
+          "type": "header",
+          "text": "Feynman technique",
+          "value": "feynman-technique",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "ideas": {
+          "type": "header",
+          "text": "Ideas",
+          "value": "ideas",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "method": {
+          "type": "header",
+          "text": "Method",
+          "value": "method",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "sencgim78q74o1zuyvy1vz7",
+      "data": {}
+    },
+    "4qi2z0z9fquupbd651xausx": {
+      "fname": "programing",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416979,
+      "created": 1700214416979,
+      "id": "4qi2z0z9fquupbd651xausx",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "cofr5ys1b8soeutiv8ymi4x",
+        "h6k2840bqxaytrdzca5j3ku",
+        "3amoxlza8d4xi7i41azkvb1",
+        "6e2ho1hbe3wrt78uo63bkix",
+        "z70kjoz28s8p41pgxrounpu",
+        "d81qplbgwaiawwudxe38xpf",
+        "d1g0vev6j77rhui42xsnq19",
+        "gh86pk8lz1ybjj6oekhypj0"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Programing"
+    },
+    "gh86pk8lz1ybjj6oekhypj0": {
+      "fname": "programing.datastructure",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416992,
+      "created": 1700214416992,
+      "id": "gh86pk8lz1ybjj6oekhypj0",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "8rpsjfi5sisf8j7ttkx2tzb"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {},
+      "title": "Datastructure"
+    },
+    "8rpsjfi5sisf8j7ttkx2tzb": {
+      "fname": "programing.datastructure.tree",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416992,
+      "created": 1700214416992,
+      "id": "8rpsjfi5sisf8j7ttkx2tzb",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "rzzcdejvex294ozjezmr7n3"
+      ],
+      "parent": "gh86pk8lz1ybjj6oekhypj0",
+      "data": {},
+      "title": "Tree"
+    },
+    "rzzcdejvex294ozjezmr7n3": {
+      "id": "rzzcdejvex294ozjezmr7n3",
+      "title": "Log Structured Merge Tree",
+      "desc": "",
+      "updated": 1662347805055,
+      "created": 1662346854641,
+      "custom": {},
+      "fname": "programing.datastructure.tree.log-structured-merge-tree",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "af9e3ab87812082b36d69d072334eed7",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "programing.datastructure.tree.log-structured-merge-tree",
+            "id": "rzzcdejvex294ozjezmr7n3",
+            "vaultName": "docs"
+          },
+          "value": "database.no-sql",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 12,
+              "offset": 108
+            },
+            "end": {
+              "line": 8,
+              "column": 31,
+              "offset": 127
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "database.no-sql"
+          }
+        }
+      ],
+      "anchors": {
+        "log-structured-merge-tree-lsmt": {
+          "type": "header",
+          "text": "Log structured merge tree (LSMT)",
+          "value": "log-structured-merge-tree-lsmt",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "overview": {
+          "type": "header",
+          "text": "Overview",
+          "value": "overview",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "write-operation": {
+          "type": "header",
+          "text": "Write operation",
+          "value": "write-operation",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "update-existing-keys": {
+          "type": "header",
+          "text": "Update existing keys",
+          "value": "update-existing-keys",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "delete": {
+          "type": "header",
+          "text": "Delete",
+          "value": "delete",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "read": {
+          "type": "header",
+          "text": "Read",
+          "value": "read",
+          "line": 35,
+          "column": 0,
+          "depth": 2
+        },
+        "save-disk-space": {
+          "type": "header",
+          "text": "Save disk space",
+          "value": "save-disk-space",
+          "line": 39,
+          "column": 0,
+          "depth": 2
+        },
+        "merges--compaction": {
+          "type": "header",
+          "text": "Merges & Compaction",
+          "value": "merges--compaction",
+          "line": 45,
+          "column": 0,
+          "depth": 2
+        },
+        "optimization": {
+          "type": "header",
+          "text": "Optimization",
+          "value": "optimization",
+          "line": 52,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "8rpsjfi5sisf8j7ttkx2tzb",
+      "data": {}
+    },
+    "d1g0vev6j77rhui42xsnq19": {
+      "fname": "programing.pattern",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416987,
+      "created": 1700214416987,
+      "id": "d1g0vev6j77rhui42xsnq19",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "jzalm348m3jf9c9u7qog3x4",
+        "ooyqo2b6eqsrpr3igz3y8vv"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {},
+      "title": "Pattern"
+    },
+    "ooyqo2b6eqsrpr3igz3y8vv": {
+      "id": "ooyqo2b6eqsrpr3igz3y8vv",
+      "title": "Repository",
+      "desc": "",
+      "updated": 1662569928275,
+      "created": 1662569636264,
+      "custom": {},
+      "fname": "programing.pattern.repository",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "30a67e5510c5a9d89c9ea7837071797f",
+      "links": [],
+      "anchors": {
+        "repository-pattern": {
+          "type": "header",
+          "text": "Repository pattern",
+          "value": "repository-pattern",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "tldr": {
+          "type": "header",
+          "text": "TLDR",
+          "value": "tldr",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "definition": {
+          "type": "header",
+          "text": "Definition",
+          "value": "definition",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d1g0vev6j77rhui42xsnq19",
+      "data": {}
+    },
+    "jzalm348m3jf9c9u7qog3x4": {
+      "id": "jzalm348m3jf9c9u7qog3x4",
+      "title": "Interactor",
+      "desc": "",
+      "updated": 1662570198075,
+      "created": 1662570052906,
+      "custom": {},
+      "fname": "programing.pattern.interactor",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "ec594a0aa756e08f7e1d110737ce1bf8",
+      "links": [],
+      "anchors": {
+        "interactor-pattern---a-layer-of-the-clean-architecture": {
+          "type": "header",
+          "text": "Interactor pattern - A layer of the Clean Architecture",
+          "value": "interactor-pattern---a-layer-of-the-clean-architecture",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "tldr": {
+          "type": "header",
+          "text": "TLDR",
+          "value": "tldr",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d1g0vev6j77rhui42xsnq19",
+      "data": {}
+    },
+    "d81qplbgwaiawwudxe38xpf": {
+      "id": "d81qplbgwaiawwudxe38xpf",
+      "title": "Rust",
+      "desc": "",
+      "updated": 1664274936147,
+      "created": 1664270384615,
+      "custom": {},
+      "fname": "programing.rust",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "ca31f1debc731e5a00b481b292c30b2a",
+      "links": [],
+      "anchors": {
+        "rust": {
+          "type": "header",
+          "text": "Rust",
+          "value": "rust",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "ref": {
+          "type": "header",
+          "text": "Ref",
+          "value": "ref",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "3gkgsu91j38lgc8300cqfxk",
+        "ikux7kdtkym0buow03rwec7",
+        "4sslaiv02e24j98fkj9n725",
+        "0wm1lzmclqft0lamxe6cfcz",
+        "fo825y6yvodbes7udn8hv43",
+        "cz07ovuehwn4h16op3j6dho",
+        "ig9bn8datv3s83u9g4a56tv",
+        "xpd7irdmeinvljufhfbgq6a",
+        "8dizeij41ps6wt16a6r8k8p",
+        "oh5egsjgrfha84o768262hu",
+        "ogq55sjz2u4zgxhj90y2k5s",
+        "k4tajydmoc1vf0cuok1ckjq",
+        "ey8rquqb5xn9ovglgr54z80"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "ey8rquqb5xn9ovglgr54z80": {
+      "fname": "programing.rust.advanced",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416995,
+      "created": 1700214416995,
+      "id": "ey8rquqb5xn9ovglgr54z80",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "7pq6ni7gujzvltlgqi1ag0k",
+        "10w7bddtwwaew1kvj45xiqz",
+        "jq0nk236khm225vcqr9vrdf",
+        "iptyzetmct98konuehjlmc3",
+        "ybrf9q7avhqrzsljz6c4kwr"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {},
+      "title": "Advanced"
+    },
+    "ybrf9q7avhqrzsljz6c4kwr": {
+      "id": "ybrf9q7avhqrzsljz6c4kwr",
+      "title": "Unsafe",
+      "desc": "",
+      "updated": 1671651022752,
+      "created": 1671640328393,
+      "custom": {},
+      "fname": "programing.rust.advanced.unsafe",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "188f900fc24188ae4300f028d7a12257",
+      "links": [],
+      "anchors": {
+        "unsafe-rust": {
+          "type": "header",
+          "text": "Unsafe Rust",
+          "value": "unsafe-rust",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "powers": {
+          "type": "header",
+          "text": "Powers",
+          "value": "powers",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "dereferencing-a-raw-pointer": {
+          "type": "header",
+          "text": "Dereferencing a Raw Pointer",
+          "value": "dereferencing-a-raw-pointer",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        },
+        "calling-unsafe-function-or-method": {
+          "type": "header",
+          "text": "Calling unsafe function or method",
+          "value": "calling-unsafe-function-or-method",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "creating-a-safe-abstraction-over-unsafe-code": {
+          "type": "header",
+          "text": "Creating a safe abstraction over unsafe code",
+          "value": "creating-a-safe-abstraction-over-unsafe-code",
+          "line": 70,
+          "column": 0,
+          "depth": 3
+        },
+        "using-extern-functions-to-call-external-code": {
+          "type": "header",
+          "text": "Using extern functions to call external code",
+          "value": "using-extern-functions-to-call-external-code",
+          "line": 102,
+          "column": 0,
+          "depth": 2
+        },
+        "accessing-or-modifying-a-mutable-static-variable": {
+          "type": "header",
+          "text": "Accessing or Modifying a Mutable Static Variable",
+          "value": "accessing-or-modifying-a-mutable-static-variable",
+          "line": 132,
+          "column": 0,
+          "depth": 2
+        },
+        "implementing-an-unsafe-trait": {
+          "type": "header",
+          "text": "Implementing an Unsafe Trait",
+          "value": "implementing-an-unsafe-trait",
+          "line": 158,
+          "column": 0,
+          "depth": 2
+        },
+        "access-fields-of-a-union": {
+          "type": "header",
+          "text": "Access Fields of a Union",
+          "value": "access-fields-of-a-union",
+          "line": 174,
+          "column": 0,
+          "depth": 2
+        },
+        "keywords": {
+          "type": "header",
+          "text": "Keywords",
+          "value": "keywords",
+          "line": 182,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ey8rquqb5xn9ovglgr54z80",
+      "data": {}
+    },
+    "iptyzetmct98konuehjlmc3": {
+      "id": "iptyzetmct98konuehjlmc3",
+      "title": "Types",
+      "desc": "",
+      "updated": 1671814716487,
+      "created": 1671811133127,
+      "custom": {},
+      "fname": "programing.rust.advanced.types",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "cbe40303bea1f4873b2abfc3842131fc",
+      "links": [],
+      "anchors": {
+        "advanced-types": {
+          "type": "header",
+          "text": "Advanced Types",
+          "value": "advanced-types",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "using-the-newtype-pattern-for-type-safety-and-abstraction": {
+          "type": "header",
+          "text": "Using the Newtype Pattern for Type Safety and Abstraction",
+          "value": "using-the-newtype-pattern-for-type-safety-and-abstraction",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "creating-type-synonyms-with-type-aliases": {
+          "type": "header",
+          "text": "Creating Type Synonyms with Type Aliases",
+          "value": "creating-type-synonyms-with-type-aliases",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "the-never-type-that-never-return": {
+          "type": "header",
+          "text": "The Never Type that Never Return",
+          "value": "the-never-type-that-never-return",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "dynamically-sized-types-and-the-sized-trait": {
+          "type": "header",
+          "text": "Dynamically Sized Types and the Sized Trait",
+          "value": "dynamically-sized-types-and-the-sized-trait",
+          "line": 67,
+          "column": 0,
+          "depth": 2
+        },
+        "the-str-type": {
+          "type": "header",
+          "text": "The str type",
+          "value": "the-str-type",
+          "line": 84,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "ey8rquqb5xn9ovglgr54z80",
+      "data": {}
+    },
+    "jq0nk236khm225vcqr9vrdf": {
+      "id": "jq0nk236khm225vcqr9vrdf",
+      "title": "Traits",
+      "desc": "",
+      "updated": 1671720723028,
+      "created": 1671718007562,
+      "custom": {},
+      "fname": "programing.rust.advanced.traits",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "707a90bffb32f47791a611fc24b1316e",
+      "links": [],
+      "anchors": {
+        "advanced-traits": {
+          "type": "header",
+          "text": "Advanced Traits",
+          "value": "advanced-traits",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "associated-types": {
+          "type": "header",
+          "text": "Associated Types",
+          "value": "associated-types",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "default-generic-type-parameters-and-operator-overloading": {
+          "type": "header",
+          "text": "Default Generic Type parameters and Operator Overloading",
+          "value": "default-generic-type-parameters-and-operator-overloading",
+          "line": 58,
+          "column": 0,
+          "depth": 2
+        },
+        "calling-methos-with-the-same-name": {
+          "type": "header",
+          "text": "Calling Methos with the same name",
+          "value": "calling-methos-with-the-same-name",
+          "line": 120,
+          "column": 0,
+          "depth": 2
+        },
+        "using-supertraits-to-require-one-traits-functionality-within-another-trait": {
+          "type": "header",
+          "text": "Using Supertraits to require one trait's functionality within another trait",
+          "value": "using-supertraits-to-require-one-traits-functionality-within-another-trait",
+          "line": 201,
+          "column": 0,
+          "depth": 2
+        },
+        "using-the-newtype-pattern-to-implement-external-traits-on-external-types": {
+          "type": "header",
+          "text": "Using the Newtype Pattern to implement external traits on external types",
+          "value": "using-the-newtype-pattern-to-implement-external-traits-on-external-types",
+          "line": 237,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ey8rquqb5xn9ovglgr54z80",
+      "data": {}
+    },
+    "10w7bddtwwaew1kvj45xiqz": {
+      "id": "10w7bddtwwaew1kvj45xiqz",
+      "title": "Macros",
+      "desc": "",
+      "updated": 1672078666827,
+      "created": 1672049225370,
+      "custom": {},
+      "fname": "programing.rust.advanced.macros",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3c098599ced4fe3002e66d93750c613a",
+      "links": [],
+      "anchors": {
+        "macros": {
+          "type": "header",
+          "text": "Macros",
+          "value": "macros",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "macros-vs-functions": {
+          "type": "header",
+          "text": "Macros vs Functions",
+          "value": "macros-vs-functions",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "declarative-macros-with-macro_rules-for-general-metaprogramming": {
+          "type": "header",
+          "text": "Declarative Macros with macro_rules! for General Metaprogramming",
+          "value": "declarative-macros-with-macro_rules-for-general-metaprogramming",
+          "line": 26,
+          "column": 0,
+          "depth": 2
+        },
+        "procedural-macros-for-generating-code-from-attributes": {
+          "type": "header",
+          "text": "Procedural Macros for Generating Code from Attributes",
+          "value": "procedural-macros-for-generating-code-from-attributes",
+          "line": 67,
+          "column": 0,
+          "depth": 2
+        },
+        "write-a-custom-derive-macro": {
+          "type": "header",
+          "text": "Write a custom derive Macro",
+          "value": "write-a-custom-derive-macro",
+          "line": 85,
+          "column": 0,
+          "depth": 2
+        },
+        "atribute-like-macros": {
+          "type": "header",
+          "text": "Atribute-like macros",
+          "value": "atribute-like-macros",
+          "line": 163,
+          "column": 0,
+          "depth": 2
+        },
+        "function-like-macros": {
+          "type": "header",
+          "text": "Function-like macros",
+          "value": "function-like-macros",
+          "line": 177,
+          "column": 0,
+          "depth": 2
+        },
+        "vocab": {
+          "type": "header",
+          "text": "Vocab",
+          "value": "vocab",
+          "line": 190,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ey8rquqb5xn9ovglgr54z80",
+      "data": {}
+    },
+    "7pq6ni7gujzvltlgqi1ag0k": {
+      "id": "7pq6ni7gujzvltlgqi1ag0k",
+      "title": "Functions and Closures",
+      "desc": "",
+      "updated": 1671967417585,
+      "created": 1671966284880,
+      "custom": {},
+      "fname": "programing.rust.advanced.functions-and-closures",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "e632b360c27a195f0f933a3dab833716",
+      "links": [],
+      "anchors": {
+        "advanced-functions-and-closures": {
+          "type": "header",
+          "text": "Advanced Functions and Closures",
+          "value": "advanced-functions-and-closures",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "function-pointers": {
+          "type": "header",
+          "text": "Function Pointers",
+          "value": "function-pointers",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "returning-closures": {
+          "type": "header",
+          "text": "Returning Closures",
+          "value": "returning-closures",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ey8rquqb5xn9ovglgr54z80",
+      "data": {}
+    },
+    "k4tajydmoc1vf0cuok1ckjq": {
+      "id": "k4tajydmoc1vf0cuok1ckjq",
+      "title": "Projects",
+      "desc": "",
+      "updated": 1664272502003,
+      "created": 1664270786444,
+      "custom": {},
+      "fname": "programing.rust.projects",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "cd4a1f1b24602ce4ba61192c543e0e58",
+      "links": [],
+      "anchors": {
+        "projects-manage": {
+          "type": "header",
+          "text": "Projects manage",
+          "value": "projects-manage",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "new-project": {
+          "type": "header",
+          "text": "New project",
+          "value": "new-project",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "build": {
+          "type": "header",
+          "text": "Build",
+          "value": "build",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "97byquf304s345mp9uuoqh2"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "97byquf304s345mp9uuoqh2": {
+      "id": "97byquf304s345mp9uuoqh2",
+      "title": "GitHub Analyze",
+      "desc": "",
+      "updated": 1664735789404,
+      "created": 1664272636038,
+      "custom": {},
+      "fname": "programing.rust.projects.github-analyze",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "7822bed03dd05c97b73cf28b0844fecb",
+      "links": [],
+      "anchors": {
+        "github-analyze": {
+          "type": "header",
+          "text": "Github Analyze",
+          "value": "github-analyze",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "how": {
+          "type": "header",
+          "text": "How?",
+          "value": "how",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "todo": {
+          "type": "header",
+          "text": "Todo",
+          "value": "todo",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "k4tajydmoc1vf0cuok1ckjq",
+      "data": {}
+    },
+    "ogq55sjz2u4zgxhj90y2k5s": {
+      "id": "ogq55sjz2u4zgxhj90y2k5s",
+      "title": "Install",
+      "desc": "",
+      "updated": 1661063216686,
+      "created": 1661063187778,
+      "custom": {},
+      "fname": "programing.rust.install",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3347bb694bef42e678a71f395b4bc68c",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.alacritty",
+            "id": "vvuvc14wq7aayq2axvblvkh",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 16,
+              "offset": 128
+            },
+            "end": {
+              "line": 8,
+              "column": 43,
+              "offset": 155
+            },
+            "indent": []
+          },
+          "value": "programing.rust.install"
+        }
+      ],
+      "anchors": {
+        "httpswwwrust-langorgtoolsinstall": {
+          "type": "header",
+          "text": "https://www.rust-lang.org/tools/install",
+          "value": "httpswwwrust-langorgtoolsinstall",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "rustup": {
+          "type": "header",
+          "text": "Rustup",
+          "value": "rustup",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "oh5egsjgrfha84o768262hu": {
+      "id": "oh5egsjgrfha84o768262hu",
+      "title": "Guides",
+      "desc": "",
+      "updated": 1670227729147,
+      "created": 1664273232760,
+      "custom": {},
+      "fname": "programing.rust.guides",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "be2d4f9d2c67de022b97d99701414c0b",
+      "links": [],
+      "anchors": {
+        "guides": {
+          "type": "header",
+          "text": "Guides",
+          "value": "guides",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "http": {
+          "type": "header",
+          "text": "HTTP",
+          "value": "http",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "http-request": {
+          "type": "header",
+          "text": "HTTP Request",
+          "value": "http-request",
+          "line": 12,
+          "column": 0,
+          "depth": 3
+        },
+        "cargo": {
+          "type": "header",
+          "text": "Cargo",
+          "value": "cargo",
+          "line": 23,
+          "column": 0,
+          "depth": 1
+        },
+        "import-dependencies": {
+          "type": "header",
+          "text": "Import dependencies",
+          "value": "import-dependencies",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "8dizeij41ps6wt16a6r8k8p": {
+      "id": "8dizeij41ps6wt16a6r8k8p",
+      "title": "Async Await",
+      "desc": "",
+      "updated": 1664357621249,
+      "created": 1664305287465,
+      "custom": {},
+      "fname": "programing.rust.async-await",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "bf744f6de2546e60db11518d41c16f55",
+      "links": [],
+      "anchors": {
+        "asyncawait-primer": {
+          "type": "header",
+          "text": "Async/.await Primer",
+          "value": "asyncawait-primer",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "what": {
+          "type": "header",
+          "text": "What?",
+          "value": "what",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "how": {
+          "type": "header",
+          "text": "How?",
+          "value": "how",
+          "line": 28,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "xpd7irdmeinvljufhfbgq6a": {
+      "id": "xpd7irdmeinvljufhfbgq6a",
+      "title": "Smart-Pointer",
+      "desc": "",
+      "updated": 1668621128714,
+      "created": 1668620581077,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "587e635457c7b95159c5ca3179263a46",
+      "links": [],
+      "anchors": {
+        "smart-pointer": {
+          "type": "header",
+          "text": "Smart Pointer",
+          "value": "smart-pointer",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "definition": {
+          "type": "header",
+          "text": "Definition",
+          "value": "definition",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "implementation": {
+          "type": "header",
+          "text": "Implementation",
+          "value": "implementation",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "famous-smart-pointers": {
+          "type": "header",
+          "text": "Famous smart pointers",
+          "value": "famous-smart-pointers",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "5irsjg77tl67tytvpuvff8b",
+        "zz7psvosiudfugqnvakue6l",
+        "eudq6211w4eat9r7c73smm9",
+        "sowk0fhutabmkscksl6rweb",
+        "twhygbpbnqjfyzhpdgz878r",
+        "07jw7rf43we9fv2oldtor3r"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "07jw7rf43we9fv2oldtor3r": {
+      "id": "07jw7rf43we9fv2oldtor3r",
+      "title": "Reference-Counted",
+      "desc": "",
+      "updated": 1669145133099,
+      "created": 1669144019066,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.Reference-Counted",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "c8d6f8b521e256763f4004f780ba556b",
+      "links": [],
+      "anchors": {
+        "reference-counted-smart-pointer-rct": {
+          "type": "header",
+          "text": "Reference Counted Smart Pointer Rc<T>",
+          "value": "reference-counted-smart-pointer-rct",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "share-data": {
+          "type": "header",
+          "text": "Share data",
+          "value": "share-data",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "cloning-an-rct-increases-the-reference-count": {
+          "type": "header",
+          "text": "Cloning an Rc<T> increases the Reference Count",
+          "value": "cloning-an-rct-increases-the-reference-count",
+          "line": 34,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "twhygbpbnqjfyzhpdgz878r": {
+      "id": "twhygbpbnqjfyzhpdgz878r",
+      "title": "RefCell",
+      "desc": "",
+      "updated": 1669459621096,
+      "created": 1669457977246,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.RefCell",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "ede5a5fc82cf6be63c2ebed55ddaadaa",
+      "links": [],
+      "anchors": {
+        "refcell-t-and-the-interior-mutability-pattern": {
+          "type": "header",
+          "text": "RefCell <T> and the Interior Mutability Pattern",
+          "value": "refcell-t-and-the-interior-mutability-pattern",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "iterior-mutability-pattern": {
+          "type": "header",
+          "text": "Iterior mutability pattern",
+          "value": "iterior-mutability-pattern",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "enforcing-borrowing-rules-at-runtime": {
+          "type": "header",
+          "text": "Enforcing Borrowing Rules at Runtime",
+          "value": "enforcing-borrowing-rules-at-runtime",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "a-mutable-borrow-to-an-immuatable-value": {
+          "type": "header",
+          "text": "A Mutable borrow to an Immuatable value",
+          "value": "a-mutable-borrow-to-an-immuatable-value",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "use-cases-mock-objects": {
+          "type": "header",
+          "text": "Use cases: Mock objects",
+          "value": "use-cases-mock-objects",
+          "line": 24,
+          "column": 0,
+          "depth": 3
+        },
+        "mutiple-owners-of-mutable-data-by-combining-rct--refcellt": {
+          "type": "header",
+          "text": "Mutiple Owners of Mutable Data by Combining Rc<T> & RefCell<T>",
+          "value": "mutiple-owners-of-mutable-data-by-combining-rct--refcellt",
+          "line": 148,
+          "column": 0,
+          "depth": 3
+        },
+        "vocab": {
+          "type": "header",
+          "text": "Vocab",
+          "value": "vocab",
+          "line": 184,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "sowk0fhutabmkscksl6rweb": {
+      "id": "sowk0fhutabmkscksl6rweb",
+      "title": "Memory-Leak-by-Reference-Cycle",
+      "desc": "",
+      "updated": 1670154000502,
+      "created": 1670152738118,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.Memory-Leak-by-Reference-Cycle",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "90da891497d987e86ecf8e0ca21cd128",
+      "links": [],
+      "anchors": {
+        "reference-cycle": {
+          "type": "header",
+          "text": "Reference Cycle",
+          "value": "reference-cycle",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "using-weak-instead-of-rc": {
+          "type": "header",
+          "text": "Using Weak instead of Rc",
+          "value": "using-weak-instead-of-rc",
+          "line": 63,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "eudq6211w4eat9r7c73smm9": {
+      "id": "eudq6211w4eat9r7c73smm9",
+      "title": "Drop",
+      "desc": "",
+      "updated": 1669044223732,
+      "created": 1669043079584,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.Drop",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "bfd7385ca1a3047b08c8d350adc2ae17",
+      "links": [],
+      "anchors": {
+        "cleanup-with-the-drop-trait": {
+          "type": "header",
+          "text": "Cleanup with the Drop trait",
+          "value": "cleanup-with-the-drop-trait",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "the-drop-traot": {
+          "type": "header",
+          "text": "The Drop traot",
+          "value": "the-drop-traot",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "dropping-a-value-early-stdmemdrop": {
+          "type": "header",
+          "text": "Dropping a value early std::mem::drop",
+          "value": "dropping-a-value-early-stdmemdrop",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "zz7psvosiudfugqnvakue6l": {
+      "id": "zz7psvosiudfugqnvakue6l",
+      "title": "Deref",
+      "desc": "",
+      "updated": 1668871552511,
+      "created": 1668867656839,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.Deref",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "0b3d37f660420c6ab01bc13ad64086c8",
+      "links": [],
+      "anchors": {
+        "deref-trait---smart-pointer-as-reference": {
+          "type": "header",
+          "text": "Deref trait - Smart pointer as reference",
+          "value": "deref-trait---smart-pointer-as-reference",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "box-like-a-reference": {
+          "type": "header",
+          "text": "Box Like a reference",
+          "value": "box-like-a-reference",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "define-a-smart-pointer": {
+          "type": "header",
+          "text": "Define a smart pointer",
+          "value": "define-a-smart-pointer",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "implicit-deref-coercions": {
+          "type": "header",
+          "text": "Implicit Deref Coercions",
+          "value": "implicit-deref-coercions",
+          "line": 52,
+          "column": 0,
+          "depth": 2
+        },
+        "deref-coercion-with-mutability": {
+          "type": "header",
+          "text": "Deref Coercion with Mutability",
+          "value": "deref-coercion-with-mutability",
+          "line": 59,
+          "column": 0,
+          "depth": 2
+        },
+        "vocab": {
+          "type": "header",
+          "text": "Vocab",
+          "value": "vocab",
+          "line": 70,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "5irsjg77tl67tytvpuvff8b": {
+      "id": "5irsjg77tl67tytvpuvff8b",
+      "title": "Box",
+      "desc": "",
+      "updated": 1668800580443,
+      "created": 1668796776558,
+      "custom": {},
+      "fname": "programing.rust.Smart-Pointer.Box",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "dde9fe80c0f5783f4f52a2801c9b6e0a",
+      "links": [],
+      "anchors": {
+        "box-----point-to-data-on-the-heap": {
+          "type": "header",
+          "text": "Box  -  Point to data on the Heap",
+          "value": "box-----point-to-data-on-the-heap",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "definition--use-cases": {
+          "type": "header",
+          "text": "Definition & Use cases",
+          "value": "definition--use-cases",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "traits": {
+          "type": "header",
+          "text": "Traits",
+          "value": "traits",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        },
+        "recursive-type": {
+          "type": "header",
+          "text": "Recursive type",
+          "value": "recursive-type",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "the-cons-list": {
+          "type": "header",
+          "text": "The cons list",
+          "value": "the-cons-list",
+          "line": 33,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "xpd7irdmeinvljufhfbgq6a",
+      "data": {}
+    },
+    "ig9bn8datv3s83u9g4a56tv": {
+      "id": "ig9bn8datv3s83u9g4a56tv",
+      "title": "Pin-and-Unpin",
+      "desc": "",
+      "updated": 1678359954645,
+      "created": 1678356408632,
+      "custom": {},
+      "fname": "programing.rust.Pin-and-Unpin",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "447bdebc454c7481651432a1c430082d",
+      "links": [],
+      "anchors": {
+        "pin-unpin-and-why-rust-needs-them": {
+          "type": "header",
+          "text": "Pin, Unpin, and why Rust needs them",
+          "value": "pin-unpin-and-why-rust-needs-them",
+          "line": 10,
+          "column": 0,
+          "depth": 1
+        },
+        "future": {
+          "type": "header",
+          "text": "Future",
+          "value": "future",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "self-reference-in-method-receivers": {
+          "type": "header",
+          "text": "Self-reference in method receivers",
+          "value": "self-reference-in-method-receivers",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "unpin-and-unpin": {
+          "type": "header",
+          "text": "Unpin and !Unpin",
+          "value": "unpin-and-unpin",
+          "line": 30,
+          "column": 0,
+          "depth": 2
+        },
+        "using-pin--pin-project": {
+          "type": "header",
+          "text": "Using Pin & pin-project",
+          "value": "using-pin--pin-project",
+          "line": 42,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "cz07ovuehwn4h16op3j6dho": {
+      "id": "cz07ovuehwn4h16op3j6dho",
+      "title": "Patterns-and-Matching",
+      "desc": "",
+      "updated": 1670943010839,
+      "created": 1670942525817,
+      "custom": {},
+      "fname": "programing.rust.Patterns-and-Matching",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "5d48c5cf48e91b4bcc182aae6e88c51a",
+      "links": [],
+      "anchors": {
+        "patterns-and-matching": {
+          "type": "header",
+          "text": "Patterns and Matching",
+          "value": "patterns-and-matching",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "01uj2rs9m4ssfy3qaqguoas",
+        "lcvk4gxd3rvf6dtcuzh2j4q",
+        "tacck847l0nk93b1abmioe0"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "tacck847l0nk93b1abmioe0": {
+      "id": "tacck847l0nk93b1abmioe0",
+      "title": "Where-to-use",
+      "desc": "",
+      "updated": 1670946061700,
+      "created": 1670943361659,
+      "custom": {},
+      "fname": "programing.rust.Patterns-and-Matching.Where-to-use",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "92be49eda51abc6efa6b753f4d9dd071",
+      "links": [],
+      "anchors": {
+        "all-the-places-patterns-can-be-used": {
+          "type": "header",
+          "text": "All the Places Patterns can be used",
+          "value": "all-the-places-patterns-can-be-used",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "match-arms": {
+          "type": "header",
+          "text": "match Arms",
+          "value": "match-arms",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "if-let-expressions": {
+          "type": "header",
+          "text": "if let expressions",
+          "value": "if-let-expressions",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "while-let-conditional-loops": {
+          "type": "header",
+          "text": "while let Conditional Loops",
+          "value": "while-let-conditional-loops",
+          "line": 60,
+          "column": 0,
+          "depth": 2
+        },
+        "for-loops": {
+          "type": "header",
+          "text": "for Loops",
+          "value": "for-loops",
+          "line": 85,
+          "column": 0,
+          "depth": 2
+        },
+        "let-statements": {
+          "type": "header",
+          "text": "let Statements",
+          "value": "let-statements",
+          "line": 105,
+          "column": 0,
+          "depth": 2
+        },
+        "function-parameters": {
+          "type": "header",
+          "text": "Function parameters",
+          "value": "function-parameters",
+          "line": 119,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "cz07ovuehwn4h16op3j6dho",
+      "data": {}
+    },
+    "lcvk4gxd3rvf6dtcuzh2j4q": {
+      "id": "lcvk4gxd3rvf6dtcuzh2j4q",
+      "title": "Refutability",
+      "desc": "",
+      "updated": 1671034421383,
+      "created": 1671033821979,
+      "custom": {},
+      "fname": "programing.rust.Patterns-and-Matching.Refutability",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "50e93d09a7d7b5199698b63e5b7d1463",
+      "links": [],
+      "anchors": {
+        "refutability-whether-a-pattern-might-fail-to-match": {
+          "type": "header",
+          "text": "Refutability: Whether a Pattern Might fail to Match",
+          "value": "refutability-whether-a-pattern-might-fail-to-match",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "translate": {
+          "type": "header",
+          "text": "Translate",
+          "value": "translate",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "cz07ovuehwn4h16op3j6dho",
+      "data": {}
+    },
+    "01uj2rs9m4ssfy3qaqguoas": {
+      "id": "01uj2rs9m4ssfy3qaqguoas",
+      "title": "Pattern-Syntax",
+      "desc": "",
+      "updated": 1671417820960,
+      "created": 1671364597469,
+      "custom": {},
+      "fname": "programing.rust.Patterns-and-Matching.Pattern-Syntax",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "11f2b931b906a80d9b630cf910c61d51",
+      "links": [],
+      "anchors": {
+        "pattern-syntax": {
+          "type": "header",
+          "text": "Pattern Syntax",
+          "value": "pattern-syntax",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "matching-literals": {
+          "type": "header",
+          "text": "Matching literals",
+          "value": "matching-literals",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "matching-named-variables": {
+          "type": "header",
+          "text": "Matching named variables",
+          "value": "matching-named-variables",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        },
+        "multiple-patterns": {
+          "type": "header",
+          "text": "Multiple Patterns",
+          "value": "multiple-patterns",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "matching-rages-of-values": {
+          "type": "header",
+          "text": "Matching Rages of Values",
+          "value": "matching-rages-of-values",
+          "line": 58,
+          "column": 0,
+          "depth": 2
+        },
+        "destructuring": {
+          "type": "header",
+          "text": "Destructuring",
+          "value": "destructuring",
+          "line": 80,
+          "column": 0,
+          "depth": 2
+        },
+        "structs": {
+          "type": "header",
+          "text": "Structs",
+          "value": "structs",
+          "line": 82,
+          "column": 0,
+          "depth": 3
+        },
+        "enums": {
+          "type": "header",
+          "text": "Enums",
+          "value": "enums",
+          "line": 115,
+          "column": 0,
+          "depth": 3
+        },
+        "nested-structs-and-enums": {
+          "type": "header",
+          "text": "Nested Structs and Enums",
+          "value": "nested-structs-and-enums",
+          "line": 148,
+          "column": 0,
+          "depth": 3
+        },
+        "structs-and-tuples": {
+          "type": "header",
+          "text": "Structs and Tuples",
+          "value": "structs-and-tuples",
+          "line": 179,
+          "column": 0,
+          "depth": 3
+        },
+        "ignoring-values": {
+          "type": "header",
+          "text": "Ignoring Values",
+          "value": "ignoring-values",
+          "line": 186,
+          "column": 0,
+          "depth": 2
+        },
+        "entire-value-with-_": {
+          "type": "header",
+          "text": "Entire Value with _",
+          "value": "entire-value-with-_",
+          "line": 188,
+          "column": 0,
+          "depth": 3
+        },
+        "parts-of-a-value-with-a-nested-_": {
+          "type": "header",
+          "text": "Parts of a Value with a Nested _",
+          "value": "parts-of-a-value-with-a-nested-_",
+          "line": 201,
+          "column": 0,
+          "depth": 3
+        },
+        "an-unsed-variable-by-starting-its-name-with-_": {
+          "type": "header",
+          "text": "An unsed variable by starting its name with _",
+          "value": "an-unsed-variable-by-starting-its-name-with-_",
+          "line": 225,
+          "column": 0,
+          "depth": 3
+        },
+        "remaining-parts-of-a-value-with-": {
+          "type": "header",
+          "text": "Remaining parts of a value with ..",
+          "value": "remaining-parts-of-a-value-with-",
+          "line": 249,
+          "column": 0,
+          "depth": 3
+        },
+        "extra-conditionals-with-match-guards": {
+          "type": "header",
+          "text": "Extra conditionals with Match Guards",
+          "value": "extra-conditionals-with-match-guards",
+          "line": 281,
+          "column": 0,
+          "depth": 2
+        },
+        "-at-bindings": {
+          "type": "header",
+          "text": "@ (at) Bindings",
+          "value": "-at-bindings",
+          "line": 330,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "cz07ovuehwn4h16op3j6dho",
+      "data": {}
+    },
+    "fo825y6yvodbes7udn8hv43": {
+      "id": "fo825y6yvodbes7udn8hv43",
+      "title": "Ownership-and-Borrowing",
+      "desc": "",
+      "updated": 1671364199622,
+      "created": 1671363315924,
+      "custom": {},
+      "fname": "programing.rust.Ownership-and-Borrowing",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "ac85b1e5e77ad9c21ce42722242acfee",
+      "links": [],
+      "anchors": {
+        "ownership-and-borrowing": {
+          "type": "header",
+          "text": "Ownership and Borrowing",
+          "value": "ownership-and-borrowing",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "ownership": {
+          "type": "header",
+          "text": "Ownership",
+          "value": "ownership",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "references-and-borrowing": {
+          "type": "header",
+          "text": "References and Borrowing",
+          "value": "references-and-borrowing",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "0wm1lzmclqft0lamxe6cfcz": {
+      "id": "0wm1lzmclqft0lamxe6cfcz",
+      "title": "OOP",
+      "desc": "",
+      "updated": 1670696224807,
+      "created": 1670695470789,
+      "custom": {},
+      "fname": "programing.rust.OOP",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "5be5d140a2ecea3cdedb0e44c11fae9b",
+      "links": [],
+      "anchors": {
+        "object-oriented-programming": {
+          "type": "header",
+          "text": "Object-Oriented Programming",
+          "value": "object-oriented-programming",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "objects-contain-data--behavior": {
+          "type": "header",
+          "text": "Objects contain data & behavior",
+          "value": "objects-contain-data--behavior",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "encapsulation---hides-implementation-details": {
+          "type": "header",
+          "text": "Encapsulation - Hides implementation details",
+          "value": "encapsulation---hides-implementation-details",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "inheritance---type-system--code-sharing": {
+          "type": "header",
+          "text": "Inheritance - type system & code sharing",
+          "value": "inheritance---type-system--code-sharing",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "mu5z62gzma1l2d3ddoro770",
+        "oc8gik1ujqpi3kzjx7fbo6p"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "oc8gik1ujqpi3kzjx7fbo6p": {
+      "id": "oc8gik1ujqpi3kzjx7fbo6p",
+      "title": "Trait-Objects",
+      "desc": "",
+      "updated": 1670841445193,
+      "created": 1670840408579,
+      "custom": {},
+      "fname": "programing.rust.OOP.Trait-Objects",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "d8122c678ae9cdf589118528fad06742",
+      "links": [],
+      "anchors": {
+        "trait-objects---allow-for-values-of-different-types": {
+          "type": "header",
+          "text": "Trait Objects - Allow for Values of Different Types",
+          "value": "trait-objects---allow-for-values-of-different-types",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "trait-for-common-behavior": {
+          "type": "header",
+          "text": "Trait for Common Behavior",
+          "value": "trait-for-common-behavior",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "implementing-the-trait": {
+          "type": "header",
+          "text": "Implementing the Trait",
+          "value": "implementing-the-trait",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        },
+        "dynamic-dispatch": {
+          "type": "header",
+          "text": "Dynamic dispatch",
+          "value": "dynamic-dispatch",
+          "line": 57,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0wm1lzmclqft0lamxe6cfcz",
+      "data": {}
+    },
+    "mu5z62gzma1l2d3ddoro770": {
+      "id": "mu5z62gzma1l2d3ddoro770",
+      "title": "State-Pattern",
+      "desc": "",
+      "updated": 1670866234381,
+      "created": 1670864359854,
+      "custom": {},
+      "fname": "programing.rust.OOP.State-Pattern",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "1342731f1c30d08eb12f7abdda79eee3",
+      "links": [],
+      "anchors": {
+        "implementing-an-objet-oriented-design-pattern": {
+          "type": "header",
+          "text": "Implementing an Objet-Oriented Design Pattern",
+          "value": "implementing-an-objet-oriented-design-pattern",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "implementation": {
+          "type": "header",
+          "text": "Implementation",
+          "value": "implementation",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "trade-off-of-the-state-pattern": {
+          "type": "header",
+          "text": "Trade-off of the State Pattern",
+          "value": "trade-off-of-the-state-pattern",
+          "line": 108,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0wm1lzmclqft0lamxe6cfcz",
+      "data": {}
+    },
+    "4sslaiv02e24j98fkj9n725": {
+      "id": "4sslaiv02e24j98fkj9n725",
+      "title": "Iterator",
+      "desc": "",
+      "updated": 1668281557323,
+      "created": 1668099415947,
+      "custom": {},
+      "fname": "programing.rust.Iterator",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "5d3e35ff1c3851b1b6af8e4e74bb0728",
+      "links": [],
+      "anchors": {
+        "iterator": {
+          "type": "header",
+          "text": "Iterator",
+          "value": "iterator",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "processing-a-series-of-items": {
+          "type": "header",
+          "text": "Processing a Series of Items",
+          "value": "processing-a-series-of-items",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "the-iterator-trait--the-next-method": {
+          "type": "header",
+          "text": "The Iterator Trait & the next Method",
+          "value": "the-iterator-trait--the-next-method",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "consume-the-iterator": {
+          "type": "header",
+          "text": "Consume the Iterator",
+          "value": "consume-the-iterator",
+          "line": 57,
+          "column": 0,
+          "depth": 2
+        },
+        "produce-other-iterators": {
+          "type": "header",
+          "text": "Produce other iterators",
+          "value": "produce-other-iterators",
+          "line": 74,
+          "column": 0,
+          "depth": 2
+        },
+        "using-closures-that-capture-the-environment": {
+          "type": "header",
+          "text": "Using closures that capture the environment",
+          "value": "using-closures-that-capture-the-environment",
+          "line": 91,
+          "column": 0,
+          "depth": 2
+        },
+        "performance-vs-loops": {
+          "type": "header",
+          "text": "Performance vs Loops",
+          "value": "performance-vs-loops",
+          "line": 148,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "ikux7kdtkym0buow03rwec7": {
+      "id": "ikux7kdtkym0buow03rwec7",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1670227870229,
+      "created": 1670227870229,
+      "custom": {},
+      "fname": "programing.rust.Concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "57ff267d34337a24040d3c3126048142",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "cofclxctdof873vlzv6psfy",
+        "eqju4noqr2500qc4z1p2cga",
+        "4qfbc1w17nlx6arb6djhxx2",
+        "46vwlhzivue6u1qhmdw9a4d"
+      ],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "46vwlhzivue6u1qhmdw9a4d": {
+      "id": "46vwlhzivue6u1qhmdw9a4d",
+      "title": "Threads",
+      "desc": "",
+      "updated": 1670228809781,
+      "created": 1670227879589,
+      "custom": {},
+      "fname": "programing.rust.Concurrency.Threads",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "32a81fdb0abadb3beec608a6e6c299c6",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "programing.rust.Concurrency.Threads",
+            "id": "46vwlhzivue6u1qhmdw9a4d",
+            "vaultName": "docs"
+          },
+          "value": "programing.rust.Closures",
+          "position": {
+            "start": {
+              "line": 83,
+              "column": 3,
+              "offset": 2051
+            },
+            "end": {
+              "line": 83,
+              "column": 31,
+              "offset": 2079
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "programing.rust.Closures"
+          }
+        }
+      ],
+      "anchors": {
+        "threads": {
+          "type": "header",
+          "text": "Threads",
+          "value": "threads",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "create--wait-a-new-thread": {
+          "type": "header",
+          "text": "Create & Wait a New Thread",
+          "value": "create--wait-a-new-thread",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "using-move-closures": {
+          "type": "header",
+          "text": "Using move Closures",
+          "value": "using-move-closures",
+          "line": 87,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ikux7kdtkym0buow03rwec7",
+      "data": {}
+    },
+    "4qfbc1w17nlx6arb6djhxx2": {
+      "id": "4qfbc1w17nlx6arb6djhxx2",
+      "title": "Sync-and-Send",
+      "desc": "",
+      "updated": 1670569908647,
+      "created": 1670568874758,
+      "custom": {},
+      "fname": "programing.rust.Concurrency.Sync-and-Send",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "dd212778a201937f2fe05016bf7976e4",
+      "links": [],
+      "anchors": {
+        "sync-and-send-traits": {
+          "type": "header",
+          "text": "Sync and Send Traits",
+          "value": "sync-and-send-traits",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "send---transfering-ownership-between-threads": {
+          "type": "header",
+          "text": "Send - Transfering ownership between threads",
+          "value": "send---transfering-ownership-between-threads",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "sync---allowing-access-from-multiple-threads": {
+          "type": "header",
+          "text": "Sync - Allowing access from multiple threads",
+          "value": "sync---allowing-access-from-multiple-threads",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ikux7kdtkym0buow03rwec7",
+      "data": {}
+    },
+    "eqju4noqr2500qc4z1p2cga": {
+      "id": "eqju4noqr2500qc4z1p2cga",
+      "title": "Shared-State",
+      "desc": "",
+      "updated": 1670486296144,
+      "created": 1670485208993,
+      "custom": {},
+      "fname": "programing.rust.Concurrency.Shared-State",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "d008d2b1246ba32d1df3a3032a3fed5a",
+      "links": [],
+      "anchors": {
+        "shared-state-concurrency": {
+          "type": "header",
+          "text": "Shared-State Concurrency",
+          "value": "shared-state-concurrency",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "using-mutexes": {
+          "type": "header",
+          "text": "Using mutexes",
+          "value": "using-mutexes",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "mutext": {
+          "type": "header",
+          "text": "Mutex<T>",
+          "value": "mutext",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "mutiple-ownership-with-multiple-threads-using-arct": {
+          "type": "header",
+          "text": "Mutiple Ownership with Multiple Threads using Arc<T>",
+          "value": "mutiple-ownership-with-multiple-threads-using-arct",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ikux7kdtkym0buow03rwec7",
+      "data": {}
+    },
+    "cofclxctdof873vlzv6psfy": {
+      "id": "cofclxctdof873vlzv6psfy",
+      "title": "Message-Passing",
+      "desc": "",
+      "updated": 1670436869348,
+      "created": 1670410147689,
+      "custom": {},
+      "fname": "programing.rust.Concurrency.Message-Passing",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "159bdae1343948dfbc8131c3670a01b0",
+      "links": [],
+      "anchors": {
+        "message-passing": {
+          "type": "header",
+          "text": "Message passing",
+          "value": "message-passing",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "channels": {
+          "type": "header",
+          "text": "Channels",
+          "value": "channels",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "channels--ownership-transference": {
+          "type": "header",
+          "text": "Channels & Ownership Transference",
+          "value": "channels--ownership-transference",
+          "line": 41,
+          "column": 0,
+          "depth": 2
+        },
+        "sending-multiple-values": {
+          "type": "header",
+          "text": "Sending multiple values",
+          "value": "sending-multiple-values",
+          "line": 61,
+          "column": 0,
+          "depth": 2
+        },
+        "multiple-producers": {
+          "type": "header",
+          "text": "Multiple Producers",
+          "value": "multiple-producers",
+          "line": 97,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ikux7kdtkym0buow03rwec7",
+      "data": {}
+    },
+    "3gkgsu91j38lgc8300cqfxk": {
+      "id": "3gkgsu91j38lgc8300cqfxk",
+      "title": "Closures",
+      "desc": "",
+      "updated": 1668002934780,
+      "created": 1667989119566,
+      "custom": {},
+      "fname": "programing.rust.Closures",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "281430d3fcebc776da84655ec92f3afc",
+      "links": [
+        {
+          "from": {
+            "fname": "programing.rust.Concurrency.Threads",
+            "id": "46vwlhzivue6u1qhmdw9a4d",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 83,
+              "column": 3,
+              "offset": 2051
+            },
+            "end": {
+              "line": 83,
+              "column": 31,
+              "offset": 2079
+            },
+            "indent": []
+          },
+          "value": "programing.rust.Closures"
+        }
+      ],
+      "anchors": {
+        "closures": {
+          "type": "header",
+          "text": "Closures",
+          "value": "closures",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "definition": {
+          "type": "header",
+          "text": "Definition",
+          "value": "definition",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "capturing-the-environment": {
+          "type": "header",
+          "text": "Capturing the environment",
+          "value": "capturing-the-environment",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "inference--annotation": {
+          "type": "header",
+          "text": "Inference & annotation",
+          "value": "inference--annotation",
+          "line": 23,
+          "column": 0,
+          "depth": 2
+        },
+        "capturing-references-or-moving-ownership": {
+          "type": "header",
+          "text": "Capturing References or Moving Ownership",
+          "value": "capturing-references-or-moving-ownership",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "moving-captured-values-out-of-closures": {
+          "type": "header",
+          "text": "Moving captured values out of closures",
+          "value": "moving-captured-values-out-of-closures",
+          "line": 100,
+          "column": 0,
+          "depth": 2
+        },
+        "translate": {
+          "type": "header",
+          "text": "Translate",
+          "value": "translate",
+          "line": 170,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "d81qplbgwaiawwudxe38xpf",
+      "data": {}
+    },
+    "z70kjoz28s8p41pgxrounpu": {
+      "id": "z70kjoz28s8p41pgxrounpu",
+      "title": "Golang",
+      "desc": "",
+      "updated": 1680756053883,
+      "created": 1680749074288,
+      "custom": {},
+      "fname": "programing.golang",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "901994f0b1564e03a70955250289f7dd",
+      "links": [
+        {
+          "from": {
+            "fname": "software.git.multiple-accounts",
+            "id": "6g647fy4ijl714fmsg6hl3z",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 28,
+              "column": 14,
+              "offset": 638
+            },
+            "end": {
+              "line": 28,
+              "column": 35,
+              "offset": 659
+            },
+            "indent": []
+          },
+          "value": "programing.golang"
+        }
+      ],
+      "anchors": {
+        "slice-modify": {
+          "type": "header",
+          "text": "slice modify",
+          "value": "slice-modify",
+          "line": 7,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "kvuxwlmleasgyat6p0lr4kj",
+        "68cau6m6oum741mwy15yih6",
+        "dvbzg9g2szs6irm26ax0i71",
+        "zjr5i3yyqo3to9mwfsx4f6k",
+        "7olrlk5xigyzi2r1umkjte0",
+        "73jjvuj59pnsyvmrfq1y41r"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "73jjvuj59pnsyvmrfq1y41r": {
+      "fname": "programing.golang.blockchain",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416992,
+      "created": 1700214416992,
+      "id": "73jjvuj59pnsyvmrfq1y41r",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "kjmox0kwqq0ri6rvjiiwovb"
+      ],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {},
+      "title": "Blockchain"
+    },
+    "kjmox0kwqq0ri6rvjiiwovb": {
+      "id": "kjmox0kwqq0ri6rvjiiwovb",
+      "title": "Abigen",
+      "desc": "",
+      "updated": 1663180019817,
+      "created": 1663171009332,
+      "custom": {},
+      "fname": "programing.golang.blockchain.abigen",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3289cbdbb3a5b82801f07d14ade84c79",
+      "links": [],
+      "anchors": {
+        "setup": {
+          "type": "header",
+          "text": "Setup",
+          "value": "setup",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "73jjvuj59pnsyvmrfq1y41r",
+      "data": {}
+    },
+    "7olrlk5xigyzi2r1umkjte0": {
+      "id": "7olrlk5xigyzi2r1umkjte0",
+      "title": "Timezone",
+      "desc": "",
+      "updated": 1661741468958,
+      "created": 1661653208669,
+      "custom": {},
+      "fname": "programing.golang.timezone",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "df910c99be4190f5a0312f40141a96b7",
+      "links": [],
+      "anchors": {
+        "show-available-timezone": {
+          "type": "header",
+          "text": "Show available timezone",
+          "value": "show-available-timezone",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {}
+    },
+    "zjr5i3yyqo3to9mwfsx4f6k": {
+      "id": "zjr5i3yyqo3to9mwfsx4f6k",
+      "title": "Test Coverage",
+      "desc": "",
+      "updated": 1669357976228,
+      "created": 1669357101811,
+      "custom": {},
+      "fname": "programing.golang.test-coverage",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "0ead4abb785fe1fe960cb9c209ddf4b1",
+      "links": [],
+      "anchors": {
+        "golang-test-coverage": {
+          "type": "header",
+          "text": "Golang test coverage",
+          "value": "golang-test-coverage",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {}
+    },
+    "dvbzg9g2szs6irm26ax0i71": {
+      "id": "dvbzg9g2szs6irm26ax0i71",
+      "title": "Switch Case",
+      "desc": "",
+      "updated": 1660640175625,
+      "created": 1660640107550,
+      "custom": {},
+      "fname": "programing.golang.switch-case",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "465c7e859ddc3d8cdd60c6c14008e073",
+      "links": [],
+      "anchors": {
+        "multiple-cases-1-hanlder": {
+          "type": "header",
+          "text": "Multiple cases, 1 hanlder",
+          "value": "multiple-cases-1-hanlder",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {}
+    },
+    "68cau6m6oum741mwy15yih6": {
+      "id": "68cau6m6oum741mwy15yih6",
+      "title": "Google Style Guide",
+      "desc": "",
+      "updated": 1689567649958,
+      "created": 1689567595691,
+      "custom": {},
+      "fname": "programing.golang.google-style-guide",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "6f967557b3d9775ce45d188887e4435f",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {}
+    },
+    "kvuxwlmleasgyat6p0lr4kj": {
+      "id": "kvuxwlmleasgyat6p0lr4kj",
+      "title": "Garbarge-Collector",
+      "desc": "",
+      "updated": 1681981114945,
+      "created": 1681981081953,
+      "custom": {},
+      "fname": "programing.golang.Garbarge-Collector",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "0dbfd44e08ad85fc9cf404153ea9994c",
+      "links": [],
+      "anchors": {
+        "resources": {
+          "type": "header",
+          "text": "Resources",
+          "value": "resources",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "z70kjoz28s8p41pgxrounpu",
+      "data": {}
+    },
+    "6e2ho1hbe3wrt78uo63bkix": {
+      "id": "6e2ho1hbe3wrt78uo63bkix",
+      "title": "Docker",
+      "desc": "",
+      "updated": 1699585576527,
+      "created": 1699585243723,
+      "custom": {},
+      "fname": "programing.docker",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "f0093aff9ad2d6a151f3a2889bf75292",
+      "links": [],
+      "anchors": {
+        "lightweight-containerization": {
+          "type": "header",
+          "text": "Lightweight containerization",
+          "value": "lightweight-containerization",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "application-packaging": {
+          "type": "header",
+          "text": "Application packaging",
+          "value": "application-packaging",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "kubernetes-k8s": {
+          "type": "header",
+          "text": "Kubernetes (K8s)",
+          "value": "kubernetes-k8s",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "3amoxlza8d4xi7i41azkvb1": {
+      "id": "3amoxlza8d4xi7i41azkvb1",
+      "title": "Chat Gpt",
+      "desc": "",
+      "updated": 1699525838994,
+      "created": 1699524259819,
+      "custom": {},
+      "fname": "programing.chat-gpt",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "eaedb236c8b830052bc4cf328c7c0dad",
+      "links": [],
+      "anchors": {
+        "chatgpt": {
+          "type": "header",
+          "text": "ChatGPT?",
+          "value": "chatgpt",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "text-generative-models": {
+          "type": "header",
+          "text": "Text Generative Models",
+          "value": "text-generative-models",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 23,
+          "column": 0,
+          "depth": 3
+        },
+        "what-chatgpt-doing": {
+          "type": "header",
+          "text": "What ChatGPT doing",
+          "value": "what-chatgpt-doing",
+          "line": 33,
+          "column": 0,
+          "depth": 3
+        },
+        "prompts": {
+          "type": "header",
+          "text": "Prompts",
+          "value": "prompts",
+          "line": 37,
+          "column": 0,
+          "depth": 2
+        },
+        "basic-tasks": {
+          "type": "header",
+          "text": "Basic tasks",
+          "value": "basic-tasks",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "risks": {
+          "type": "header",
+          "text": "Risks",
+          "value": "risks",
+          "line": 53,
+          "column": 0,
+          "depth": 2
+        },
+        "tips": {
+          "type": "header",
+          "text": "Tips",
+          "value": "tips",
+          "line": 60,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "h6k2840bqxaytrdzca5j3ku": {
+      "id": "h6k2840bqxaytrdzca5j3ku",
+      "title": "OS",
+      "desc": "",
+      "updated": 1668050709384,
+      "created": 1668050671127,
+      "custom": {},
+      "fname": "programing.OS",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "e265f25d2d7b80355b78eb6c771a07ad",
+      "links": [],
+      "anchors": {
+        "os": {
+          "type": "header",
+          "text": "OS",
+          "value": "os",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "k0eosn94e6nyw26apgcrm6b"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "k0eosn94e6nyw26apgcrm6b": {
+      "id": "k0eosn94e6nyw26apgcrm6b",
+      "title": "Process-and-Thread",
+      "desc": "",
+      "updated": 1671684531621,
+      "created": 1671683921505,
+      "custom": {},
+      "fname": "programing.OS.Process-and-Thread",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "5b337c97d26addb603b75981555088a8",
+      "links": [],
+      "anchors": {
+        "process-vs-thread": {
+          "type": "header",
+          "text": "Process vs Thread",
+          "value": "process-vs-thread",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "h6k2840bqxaytrdzca5j3ku",
+      "data": {}
+    },
+    "cofr5ys1b8soeutiv8ymi4x": {
+      "id": "cofr5ys1b8soeutiv8ymi4x",
+      "title": "Networking",
+      "desc": "",
+      "updated": 1668050754425,
+      "created": 1668050726676,
+      "custom": {},
+      "fname": "programing.Networking",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "58f9ced5865efde947524d7c8a0a404f",
+      "links": [],
+      "anchors": {
+        "networking": {
+          "type": "header",
+          "text": "Networking",
+          "value": "networking",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "07n6ona7qq51jjs29ecs87c",
+        "znfuseyklud4dm9nn81kgja"
+      ],
+      "parent": "4qi2z0z9fquupbd651xausx",
+      "data": {}
+    },
+    "znfuseyklud4dm9nn81kgja": {
+      "id": "znfuseyklud4dm9nn81kgja",
+      "title": "X509Certificate",
+      "desc": "",
+      "updated": 1689221572959,
+      "created": 1689221408548,
+      "custom": {},
+      "fname": "programing.Networking.X509Certificate",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "6d269d229c96eed555c660c55ab5cc46",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "cofr5ys1b8soeutiv8ymi4x",
+      "data": {}
+    },
+    "07n6ona7qq51jjs29ecs87c": {
+      "id": "07n6ona7qq51jjs29ecs87c",
+      "title": "Protocols",
+      "desc": "",
+      "updated": 1689921492452,
+      "created": 1689921441385,
+      "custom": {},
+      "fname": "programing.Networking.Protocols",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "6eea856c1a3aaac6f2b6d084f75dc9f7",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "cofr5ys1b8soeutiv8ymi4x",
+      "data": {}
+    },
+    "3ervbn5we7t8v2l2vwtx847": {
+      "fname": "marketing",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416979,
+      "created": 1700214416979,
+      "id": "3ervbn5we7t8v2l2vwtx847",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "lb13v51ovudumswv6n3tgrd"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Marketing"
+    },
+    "lb13v51ovudumswv6n3tgrd": {
+      "id": "lb13v51ovudumswv6n3tgrd",
+      "title": "customer-insight-through-IDIs",
+      "desc": "",
+      "updated": 1663991883754,
+      "created": 1663985699277,
+      "custom": {},
+      "fname": "marketing.customer-insight-through-IDIs",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "be5d1575152583b6c275a9c0da4abbe3",
+      "links": [],
+      "anchors": {
+        "customer-insight-through-idis---marketing-research": {
+          "type": "header",
+          "text": "Customer Insight through IDIs - Marketing Research",
+          "value": "customer-insight-through-idis---marketing-research",
+          "line": 12,
+          "column": 0,
+          "depth": 1
+        },
+        "definitions": {
+          "type": "header",
+          "text": "Definitions",
+          "value": "definitions",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "question": {
+          "type": "header",
+          "text": "Question",
+          "value": "question",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "3ervbn5we7t8v2l2vwtx847",
+      "data": {}
+    },
+    "6wjqcjgkrpeqtmzb1o8o1q8": {
+      "fname": "linux",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416964,
+      "created": 1700214416964,
+      "id": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "phh329wgik4nmti5o5ny6po",
+        "z2hgvaw2rpz93g3ije3zxmd",
+        "fhz8f7z30ezy00bz3pdet0j",
+        "85aqkgk7kkt6fd70n289ybz",
+        "0dcz8bz1ladgjebaljq61w7",
+        "tdn31rcl0l8818om4d2uj9s",
+        "ja38h1kpr0pizpzgpifp4nu"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Linux"
+    },
+    "ja38h1kpr0pizpzgpifp4nu": {
+      "fname": "linux.tips",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416986,
+      "created": 1700214416986,
+      "id": "ja38h1kpr0pizpzgpifp4nu",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "lsdowxbs8rosa1s8qxolpe3"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {},
+      "title": "Tips"
+    },
+    "lsdowxbs8rosa1s8qxolpe3": {
+      "id": "lsdowxbs8rosa1s8qxolpe3",
+      "title": "Dual Boot Timezone",
+      "desc": "",
+      "updated": 1662141275866,
+      "created": 1662140885186,
+      "custom": {},
+      "fname": "linux.tips.dual-boot-timezone",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "4f07b5c9aabb220dbbf126547fc87907",
+      "links": [],
+      "anchors": {
+        "fix-wrong-time-dual-boot-between-ubuntu--windows": {
+          "type": "header",
+          "text": "Fix wrong time dual boot between Ubuntu & Windows",
+          "value": "fix-wrong-time-dual-boot-between-ubuntu--windows",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "explain": {
+          "type": "header",
+          "text": "Explain",
+          "value": "explain",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ja38h1kpr0pizpzgpifp4nu",
+      "data": {}
+    },
+    "tdn31rcl0l8818om4d2uj9s": {
+      "fname": "linux.service",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416985,
+      "created": 1700214416985,
+      "id": "tdn31rcl0l8818om4d2uj9s",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "ctghka60xavkhyt9ow6eazd",
+        "h35nie9w3zmz2g2pgjuezhy",
+        "o1lmi4rif7tlnkle0ckp2gp"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {},
+      "title": "Service"
+    },
+    "o1lmi4rif7tlnkle0ckp2gp": {
+      "id": "o1lmi4rif7tlnkle0ckp2gp",
+      "title": "Systemd",
+      "desc": "",
+      "updated": 1661420028102,
+      "created": 1661361194018,
+      "custom": {},
+      "fname": "linux.service.systemd",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "031e25d57aff617e42bca21018859b4f",
+      "links": [],
+      "anchors": {
+        "systemd-system-and-service-manager": {
+          "type": "header",
+          "text": "Systemd system and service manager",
+          "value": "systemd-system-and-service-manager",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "setup-a-service": {
+          "type": "header",
+          "text": "Setup a service",
+          "value": "setup-a-service",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "other-commands": {
+          "type": "header",
+          "text": "Other commands",
+          "value": "other-commands",
+          "line": 45,
+          "column": 0,
+          "depth": 2
+        },
+        "read-logs": {
+          "type": "header",
+          "text": "Read logs",
+          "value": "read-logs",
+          "line": 52,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "tdn31rcl0l8818om4d2uj9s",
+      "data": {}
+    },
+    "h35nie9w3zmz2g2pgjuezhy": {
+      "id": "h35nie9w3zmz2g2pgjuezhy",
+      "title": "Supervisord",
+      "desc": "",
+      "updated": 1661644185295,
+      "created": 1661642884247,
+      "custom": {},
+      "fname": "linux.service.supervisord",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "dd4e978d468839f197e035c2bea336a3",
+      "links": [],
+      "anchors": {
+        "supervisord-a-process-control-system": {
+          "type": "header",
+          "text": "Supervisord: A Process Control System",
+          "value": "supervisord-a-process-control-system",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "configuration-files": {
+          "type": "header",
+          "text": "Configuration files",
+          "value": "configuration-files",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "command": {
+          "type": "header",
+          "text": "Command",
+          "value": "command",
+          "line": 32,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "tdn31rcl0l8818om4d2uj9s",
+      "data": {}
+    },
+    "ctghka60xavkhyt9ow6eazd": {
+      "id": "ctghka60xavkhyt9ow6eazd",
+      "title": "Ibus Bamboo",
+      "desc": "",
+      "updated": 1662220526387,
+      "created": 1662220473098,
+      "custom": {},
+      "fname": "linux.service.ibus-bamboo",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "533a5648c7e40397d5be15d52bb80734",
+      "links": [],
+      "anchors": {
+        "ibus-bamboo---bộ-gõ-tiếng-việt-cho-linux": {
+          "type": "header",
+          "text": "Ibus-bamboo - Bộ gõ tiếng Việt cho Linux",
+          "value": "ibus-bamboo---bộ-gõ-tiếng-việt-cho-linux",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "ubuntu-install": {
+          "type": "header",
+          "text": "Ubuntu install",
+          "value": "ubuntu-install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "tdn31rcl0l8818om4d2uj9s",
+      "data": {}
+    },
+    "0dcz8bz1ladgjebaljq61w7": {
+      "fname": "linux.customization",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416983,
+      "created": 1700214416983,
+      "id": "0dcz8bz1ladgjebaljq61w7",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "r6y8esvpkjlhvpllg12iw2m",
+        "vvuvc14wq7aayq2axvblvkh",
+        "qs3cywvxr9kkkb8gsn3hcx7",
+        "978u4p0fjwxdedy0l1gwq53",
+        "u35q71uwtvqy41vrbd5pmit",
+        "6heqjju0cm02y0rjgk9kajk",
+        "r0wj411y1iqdz8n8ecseh06",
+        "1mt5am4uwnvwb6oeym9weke",
+        "itegqlal4wec0t6smz7mn51",
+        "ct2spb1vqxg4baqenuf40as",
+        "szoftx2gwbyhzholdig6yz2"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {},
+      "title": "Customization"
+    },
+    "szoftx2gwbyhzholdig6yz2": {
+      "id": "szoftx2gwbyhzholdig6yz2",
+      "title": "Terminal",
+      "desc": "",
+      "updated": 1661062233435,
+      "created": 1661062233435,
+      "custom": {},
+      "fname": "linux.customization.terminal",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "8be8091a26d8276e1878e3f9b6278b6a",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "imoz5y4wbmj60k7ff65t1og",
+        "sngth9ps6y3uky4x6k8zpbu"
+      ],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "sngth9ps6y3uky4x6k8zpbu": {
+      "id": "sngth9ps6y3uky4x6k8zpbu",
+      "title": "Zsh",
+      "desc": "",
+      "updated": 1662139490532,
+      "created": 1661057988414,
+      "custom": {},
+      "fname": "linux.customization.terminal.zsh",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "9b84045b66b93d27ae21f1f537a6aba6",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 7,
+              "offset": 473
+            },
+            "end": {
+              "line": 19,
+              "column": 43,
+              "offset": 509
+            },
+            "indent": []
+          },
+          "value": "linux.customization.terminal.zsh"
+        }
+      ],
+      "anchors": {
+        "install-zsh": {
+          "type": "header",
+          "text": "Install zsh",
+          "value": "install-zsh",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "install-omz": {
+          "type": "header",
+          "text": "Install Omz",
+          "value": "install-omz",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        },
+        "themes": {
+          "type": "header",
+          "text": "Themes",
+          "value": "themes",
+          "line": 32,
+          "column": 0,
+          "depth": 3
+        },
+        "scripts--aliases": {
+          "type": "header",
+          "text": "Scripts & Aliases",
+          "value": "scripts--aliases",
+          "line": 36,
+          "column": 0,
+          "depth": 3
+        },
+        "completions": {
+          "type": "header",
+          "text": "Completions",
+          "value": "completions",
+          "line": 42,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "szoftx2gwbyhzholdig6yz2",
+      "data": {}
+    },
+    "imoz5y4wbmj60k7ff65t1og": {
+      "id": "imoz5y4wbmj60k7ff65t1og",
+      "title": "Cool Apps",
+      "desc": "",
+      "updated": 1662216127922,
+      "created": 1661058378541,
+      "custom": {},
+      "fname": "linux.customization.terminal.cool-apps",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "836f07ce94b840f201436449b62ec5e5",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 26,
+              "column": 7,
+              "offset": 649
+            },
+            "end": {
+              "line": 26,
+              "column": 49,
+              "offset": 691
+            },
+            "indent": []
+          },
+          "value": "linux.customization.terminal.cool-apps"
+        }
+      ],
+      "anchors": {
+        "neofetch-show-computer-information": {
+          "type": "header",
+          "text": "neofetch: show computer information",
+          "value": "neofetch-show-computer-information",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "fortune-show-random-quote": {
+          "type": "header",
+          "text": "fortune: show random quote",
+          "value": "fortune-show-random-quote",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "lolcat-makes-rainbow-text": {
+          "type": "header",
+          "text": "lolcat: makes rainbow text",
+          "value": "lolcat-makes-rainbow-text",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "logo-ls": {
+          "type": "header",
+          "text": "logo-ls",
+          "value": "logo-ls",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "szoftx2gwbyhzholdig6yz2",
+      "data": {}
+    },
+    "ct2spb1vqxg4baqenuf40as": {
+      "id": "ct2spb1vqxg4baqenuf40as",
+      "title": "Sway",
+      "desc": "",
+      "updated": 1663606040508,
+      "created": 1663483434511,
+      "custom": {},
+      "fname": "linux.customization.sway",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3e3babdfeee8e644ad49e8ee9363c778",
+      "links": [],
+      "anchors": {
+        "sway---i3-compatible-wayland-compositor": {
+          "type": "header",
+          "text": "Sway - i3-compatible Wayland compositor",
+          "value": "sway---i3-compatible-wayland-compositor",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        },
+        "hidpi": {
+          "type": "header",
+          "text": "HiDPI",
+          "value": "hidpi",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "application-support": {
+          "type": "header",
+          "text": "Application support",
+          "value": "application-support",
+          "line": 44,
+          "column": 0,
+          "depth": 3
+        },
+        "natural-scrolling": {
+          "type": "header",
+          "text": "Natural scrolling",
+          "value": "natural-scrolling",
+          "line": 59,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "dkfh510xhhdkee9koyvnfc0",
+        "jnkkl73dpn706gt3h04lvzw"
+      ],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "jnkkl73dpn706gt3h04lvzw": {
+      "fname": "linux.customization.sway.issues",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416997,
+      "created": 1700214416997,
+      "id": "jnkkl73dpn706gt3h04lvzw",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "cbkf6wgsz4dg8igzv97x5it"
+      ],
+      "parent": "ct2spb1vqxg4baqenuf40as",
+      "data": {},
+      "title": "Issues"
+    },
+    "cbkf6wgsz4dg8igzv97x5it": {
+      "id": "cbkf6wgsz4dg8igzv97x5it",
+      "title": "Large Cursor",
+      "desc": "",
+      "updated": 1663604755441,
+      "created": 1663601942490,
+      "custom": {},
+      "fname": "linux.customization.sway.issues.large-cursor",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "f64bdd856a42fab77fc0beee95ce6cfd",
+      "links": [],
+      "anchors": {
+        "inconsistent-cursor-size": {
+          "type": "header",
+          "text": "Inconsistent cursor size",
+          "value": "inconsistent-cursor-size",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "set-sway-cursor-size": {
+          "type": "header",
+          "text": "Set Sway cursor size",
+          "value": "set-sway-cursor-size",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "use-xdefaults-file": {
+          "type": "header",
+          "text": "Use Xdefaults file",
+          "value": "use-xdefaults-file",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        },
+        "update-gtk-settings": {
+          "type": "header",
+          "text": "Update gtk settings",
+          "value": "update-gtk-settings",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "jnkkl73dpn706gt3h04lvzw",
+      "data": {}
+    },
+    "dkfh510xhhdkee9koyvnfc0": {
+      "id": "dkfh510xhhdkee9koyvnfc0",
+      "title": "Fcitx5",
+      "desc": "",
+      "updated": 1663610610080,
+      "created": 1663609400125,
+      "custom": {},
+      "fname": "linux.customization.sway.fcitx5",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "bb3e75b19fafdbd20264ca57db2247eb",
+      "links": [],
+      "anchors": {
+        "fcitx---langugae-input": {
+          "type": "header",
+          "text": "Fcitx - langugae input",
+          "value": "fcitx---langugae-input",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "setup-ubuntu-2004": {
+          "type": "header",
+          "text": "Setup (ubuntu 20.04)",
+          "value": "setup-ubuntu-2004",
+          "line": 35,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ct2spb1vqxg4baqenuf40as",
+      "data": {}
+    },
+    "itegqlal4wec0t6smz7mn51": {
+      "id": "itegqlal4wec0t6smz7mn51",
+      "title": "Rofi",
+      "desc": "",
+      "updated": 1661057916016,
+      "created": 1661057745449,
+      "custom": {},
+      "fname": "linux.customization.rofi",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "33aedf8c8856eca5353fbe9376ddbad7",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 16,
+              "column": 7,
+              "offset": 409
+            },
+            "end": {
+              "line": 16,
+              "column": 35,
+              "offset": 437
+            },
+            "indent": []
+          },
+          "value": "linux.customization.rofi"
+        }
+      ],
+      "anchors": {
+        "rofi-a-window-switcher-application-launcher-and-dmenu-replacement": {
+          "type": "header",
+          "text": "Rofi: A window switcher, application launcher and dmenu replacement",
+          "value": "rofi-a-window-switcher-application-launcher-and-dmenu-replacement",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "1mt5am4uwnvwb6oeym9weke": {
+      "id": "1mt5am4uwnvwb6oeym9weke",
+      "title": "Polybar",
+      "desc": "",
+      "updated": 1661057661573,
+      "created": 1661056377835,
+      "custom": {},
+      "fname": "linux.customization.polybar",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "117b02b6a54898c31c8beabc6f693362",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 7,
+              "offset": 327
+            },
+            "end": {
+              "line": 13,
+              "column": 38,
+              "offset": 358
+            },
+            "indent": []
+          },
+          "value": "linux.customization.polybar"
+        }
+      ],
+      "anchors": {
+        "polybar-is-customizable-status-bar-integrate-with-i3": {
+          "type": "header",
+          "text": "polybar is customizable status bar, integrate with i3",
+          "value": "polybar-is-customizable-status-bar-integrate-with-i3",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "config",
+          "value": "config",
+          "line": 40,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "r0wj411y1iqdz8n8ecseh06": {
+      "id": "r0wj411y1iqdz8n8ecseh06",
+      "title": "Leftwm",
+      "desc": "",
+      "updated": 1669736779009,
+      "created": 1669455858355,
+      "custom": {},
+      "fname": "linux.customization.leftwm",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "abde8e8d2e5014719db0a35ac675494c",
+      "links": [],
+      "anchors": {
+        "leftwm---ubuntu": {
+          "type": "header",
+          "text": "LeftWM - ubuntu",
+          "value": "leftwm---ubuntu",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "install---ubuntu-install-from-source": {
+          "type": "header",
+          "text": "Install - Ubuntu (install from source)",
+          "value": "install---ubuntu-install-from-source",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "6heqjju0cm02y0rjgk9kajk": {
+      "id": "6heqjju0cm02y0rjgk9kajk",
+      "title": "Install Checklist",
+      "desc": "",
+      "updated": 1662262473021,
+      "created": 1662135621739,
+      "custom": {},
+      "fname": "linux.customization.install-checklist",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "8c6c64cc48a1b4c1d21c4366aeba543a",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.i3",
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 7,
+              "offset": 34
+            },
+            "end": {
+              "line": 4,
+              "column": 33,
+              "offset": 60
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.i3"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.i3.natural-scroll",
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 11,
+              "offset": 110
+            },
+            "end": {
+              "line": 7,
+              "column": 52,
+              "offset": 151
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.i3.natural-scroll"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.i3.hiDPI",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 11,
+              "offset": 162
+            },
+            "end": {
+              "line": 8,
+              "column": 43,
+              "offset": 194
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.i3.hiDPI"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.polybar",
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 7,
+              "offset": 327
+            },
+            "end": {
+              "line": 13,
+              "column": 38,
+              "offset": 358
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.polybar"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.rofi",
+          "position": {
+            "start": {
+              "line": 16,
+              "column": 7,
+              "offset": 409
+            },
+            "end": {
+              "line": 16,
+              "column": 35,
+              "offset": 437
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.rofi"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.terminal.zsh",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 7,
+              "offset": 473
+            },
+            "end": {
+              "line": 19,
+              "column": 43,
+              "offset": 509
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.terminal.zsh"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.alacritty",
+          "position": {
+            "start": {
+              "line": 22,
+              "column": 7,
+              "offset": 554
+            },
+            "end": {
+              "line": 22,
+              "column": 40,
+              "offset": 587
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.alacritty"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.terminal.cool-apps",
+          "position": {
+            "start": {
+              "line": 26,
+              "column": 7,
+              "offset": 649
+            },
+            "end": {
+              "line": 26,
+              "column": 49,
+              "offset": 691
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.terminal.cool-apps"
+          }
+        }
+      ],
+      "anchors": {
+        "install-apps--config": {
+          "type": "header",
+          "text": "Install apps && config",
+          "value": "install-apps--config",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "u35q71uwtvqy41vrbd5pmit": {
+      "id": "u35q71uwtvqy41vrbd5pmit",
+      "title": "I3",
+      "desc": "",
+      "updated": 1661063878218,
+      "created": 1661055610666,
+      "custom": {},
+      "fname": "linux.customization.i3",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "ccf08eff3870b55c1c6993ace8281988",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 7,
+              "offset": 34
+            },
+            "end": {
+              "line": 4,
+              "column": 33,
+              "offset": 60
+            },
+            "indent": []
+          },
+          "value": "linux.customization.i3"
+        },
+        {
+          "from": {
+            "fname": "linux.customization.i3.hiDPI",
+            "id": "aswyqkz89eftmbljy0uz8ht",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 10,
+              "offset": 10
+            },
+            "end": {
+              "line": 2,
+              "column": 36,
+              "offset": 36
+            },
+            "indent": []
+          },
+          "value": "linux.customization.i3"
+        }
+      ],
+      "anchors": {
+        "i3-is-a-window-tilting-manager": {
+          "type": "header",
+          "text": "i3 is a window tilting manager",
+          "value": "i3-is-a-window-tilting-manager",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install-i3": {
+          "type": "header",
+          "text": "Install i3",
+          "value": "install-i3",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "uninstall": {
+          "type": "header",
+          "text": "Uninstall",
+          "value": "uninstall",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "kf9ce7bxm51l2lu4xgnq679",
+        "aswyqkz89eftmbljy0uz8ht",
+        "bsapx5j9awppirs1af4ccvr"
+      ],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "bsapx5j9awppirs1af4ccvr": {
+      "id": "bsapx5j9awppirs1af4ccvr",
+      "title": "Natural Scroll",
+      "desc": "",
+      "updated": 1661909464505,
+      "created": 1661909270788,
+      "custom": {},
+      "fname": "linux.customization.i3.natural-scroll",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "28d7f7fdea47e6969083ddfc122995fe",
+      "links": [
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 11,
+              "offset": 110
+            },
+            "end": {
+              "line": 7,
+              "column": 52,
+              "offset": 151
+            },
+            "indent": []
+          },
+          "value": "linux.customization.i3.natural-scroll"
+        }
+      ],
+      "anchors": {},
+      "children": [],
+      "parent": "u35q71uwtvqy41vrbd5pmit",
+      "data": {}
+    },
+    "aswyqkz89eftmbljy0uz8ht": {
+      "id": "aswyqkz89eftmbljy0uz8ht",
+      "title": "hiDPI",
+      "desc": "",
+      "updated": 1662362064584,
+      "created": 1661907902950,
+      "custom": {},
+      "fname": "linux.customization.i3.hiDPI",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3041d8ccfe4fc55ee280f7cca52b1f3b",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.i3.hiDPI",
+            "id": "aswyqkz89eftmbljy0uz8ht",
+            "vaultName": "docs"
+          },
+          "value": "linux.customization.i3",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 10,
+              "offset": 10
+            },
+            "end": {
+              "line": 2,
+              "column": 36,
+              "offset": 36
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "linux.customization.i3"
+          }
+        },
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 11,
+              "offset": 162
+            },
+            "end": {
+              "line": 8,
+              "column": 43,
+              "offset": 194
+            },
+            "indent": []
+          },
+          "value": "linux.customization.i3.hiDPI"
+        }
+      ],
+      "anchors": {
+        "set-up--for-hidpi-screen": {
+          "type": "header",
+          "text": "Set up  for hiDPI screen",
+          "value": "set-up--for-hidpi-screen",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "modify-xresources--xinitrc": {
+          "type": "header",
+          "text": "Modify ~/.Xresources & ~/.xinitrc",
+          "value": "modify-xresources--xinitrc",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "dpi": {
+          "type": "header",
+          "text": "DPI",
+          "value": "dpi",
+          "line": 26,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "u35q71uwtvqy41vrbd5pmit",
+      "data": {}
+    },
+    "kf9ce7bxm51l2lu4xgnq679": {
+      "id": "kf9ce7bxm51l2lu4xgnq679",
+      "title": "Gnome Dark Theme",
+      "desc": "",
+      "updated": 1662224716225,
+      "created": 1662224381704,
+      "custom": {},
+      "fname": "linux.customization.i3.gnome-dark-theme",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "9182908ada32d6a0356865debc1c3474",
+      "links": [],
+      "anchors": {
+        "set-gtk-dark-theme": {
+          "type": "header",
+          "text": "Set GTK dark theme",
+          "value": "set-gtk-dark-theme",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "u35q71uwtvqy41vrbd5pmit",
+      "data": {}
+    },
+    "978u4p0fjwxdedy0l1gwq53": {
+      "id": "978u4p0fjwxdedy0l1gwq53",
+      "title": "Grub Resolution",
+      "desc": "",
+      "updated": 1662215620892,
+      "created": 1662215269904,
+      "custom": {},
+      "fname": "linux.customization.grub-resolution",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "1f43fea92d5aca6d29d14ac1d2168a40",
+      "links": [],
+      "anchors": {
+        "update-the-grub-resolution": {
+          "type": "header",
+          "text": "Update the grub resolution",
+          "value": "update-the-grub-resolution",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "qs3cywvxr9kkkb8gsn3hcx7": {
+      "id": "qs3cywvxr9kkkb8gsn3hcx7",
+      "title": "Dunst",
+      "desc": "",
+      "updated": 1662140727124,
+      "created": 1662140410038,
+      "custom": {},
+      "fname": "linux.customization.dunst",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "90f793c04d1256ef63af8d89e06df36e",
+      "links": [],
+      "anchors": {
+        "dunst-lightweight-and-customizable-notification-daemon": {
+          "type": "header",
+          "text": "Dunst Lightweight and customizable notification daemon",
+          "value": "dunst-lightweight-and-customizable-notification-daemon",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "ubuntu-dependencies": {
+          "type": "header",
+          "text": "Ubuntu dependencies",
+          "value": "ubuntu-dependencies",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "instal-with-package-manager": {
+          "type": "header",
+          "text": "Instal with package manager",
+          "value": "instal-with-package-manager",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "vvuvc14wq7aayq2axvblvkh": {
+      "id": "vvuvc14wq7aayq2axvblvkh",
+      "title": "Alacritty",
+      "desc": "",
+      "updated": 1662139783210,
+      "created": 1661065512347,
+      "custom": {},
+      "fname": "linux.customization.alacritty",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "0539373f76711500345421418572b157",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.customization.alacritty",
+            "id": "vvuvc14wq7aayq2axvblvkh",
+            "vaultName": "docs"
+          },
+          "value": "programing.rust.install",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 16,
+              "offset": 128
+            },
+            "end": {
+              "line": 8,
+              "column": 43,
+              "offset": 155
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "programing.rust.install"
+          }
+        },
+        {
+          "from": {
+            "fname": "linux.customization.install-checklist",
+            "id": "6heqjju0cm02y0rjgk9kajk",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 22,
+              "column": 7,
+              "offset": 554
+            },
+            "end": {
+              "line": 22,
+              "column": 40,
+              "offset": 587
+            },
+            "indent": []
+          },
+          "value": "linux.customization.alacritty"
+        }
+      ],
+      "anchors": {
+        "alacritty-a-cross-platform-opengl-terminal-emulator": {
+          "type": "header",
+          "text": "Alacritty: A cross-platform, OpenGL terminal emulator.",
+          "value": "alacritty-a-cross-platform-opengl-terminal-emulator",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "set-as-default-terminal": {
+          "type": "header",
+          "text": "Set as default terminal",
+          "value": "set-as-default-terminal",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        },
+        "config": {
+          "type": "header",
+          "text": "Config",
+          "value": "config",
+          "line": 43,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "r6y8esvpkjlhvpllg12iw2m": {
+      "id": "r6y8esvpkjlhvpllg12iw2m",
+      "title": "Start-Up-Logs",
+      "desc": "",
+      "updated": 1668050863345,
+      "created": 1668050801009,
+      "custom": {},
+      "fname": "linux.customization.Start-Up-Logs",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "d66a501c28edb48272020c162179ad76",
+      "links": [],
+      "anchors": {
+        "start-up-logs": {
+          "type": "header",
+          "text": "Start up logs",
+          "value": "start-up-logs",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "0dcz8bz1ladgjebaljq61w7",
+      "data": {}
+    },
+    "85aqkgk7kkt6fd70n289ybz": {
+      "fname": "linux.command",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416983,
+      "created": 1700214416983,
+      "id": "85aqkgk7kkt6fd70n289ybz",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "2gi29jkx904kfzav2vav9ab",
+        "5928n0ch12x660p7wqn31yu"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {},
+      "title": "Command"
+    },
+    "5928n0ch12x660p7wqn31yu": {
+      "id": "5928n0ch12x660p7wqn31yu",
+      "title": "Install Fonts",
+      "desc": "",
+      "updated": 1662215804558,
+      "created": 1661242442670,
+      "custom": {},
+      "fname": "linux.command.install-fonts",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "9c3b40d643ce55a7e88ad142fa74abc4",
+      "links": [],
+      "anchors": {
+        "user-space": {
+          "type": "header",
+          "text": "User space",
+          "value": "user-space",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "share-space": {
+          "type": "header",
+          "text": "Share space",
+          "value": "share-space",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "recommend-fonts": {
+          "type": "header",
+          "text": "Recommend fonts",
+          "value": "recommend-fonts",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "85aqkgk7kkt6fd70n289ybz",
+      "data": {}
+    },
+    "2gi29jkx904kfzav2vav9ab": {
+      "id": "2gi29jkx904kfzav2vav9ab",
+      "title": "Export Gpg",
+      "desc": "",
+      "updated": 1662111768881,
+      "created": 1662111244155,
+      "custom": {},
+      "fname": "linux.command.export-gpg",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "e13a5e7828803e17068e3184201d9773",
+      "links": [
+        {
+          "from": {
+            "fname": "software.git.signing-commit",
+            "id": "ty97p2rgy2xtu104b2kiwqf",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 1,
+              "offset": 309
+            },
+            "end": {
+              "line": 11,
+              "column": 37,
+              "offset": 345
+            },
+            "indent": []
+          },
+          "value": "linux.command.export-gpg"
+        }
+      ],
+      "anchors": {
+        "how-to-export-gpg-key-and-import-it-to-another-computer": {
+          "type": "header",
+          "text": "How to export gpg key and import it to another computer",
+          "value": "how-to-export-gpg-key-and-import-it-to-another-computer",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "export": {
+          "type": "header",
+          "text": "Export",
+          "value": "export",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "import": {
+          "type": "header",
+          "text": "Import",
+          "value": "import",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "85aqkgk7kkt6fd70n289ybz",
+      "data": {}
+    },
+    "fhz8f7z30ezy00bz3pdet0j": {
+      "custom": {},
+      "fname": "linux.setup-new-machine",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "d87ef268498f9afdee9946bd64ddff25",
+      "updated": 1700214416964,
+      "created": 1700214416964,
+      "id": "fhz8f7z30ezy00bz3pdet0j",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "set-up-a-new-machine": {
+          "type": "header",
+          "text": "Set up a new machine",
+          "value": "set-up-a-new-machine",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "set-user-as-sudo": {
+          "type": "header",
+          "text": "Set user as sudo",
+          "value": "set-user-as-sudo",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "awesome-wm": {
+          "type": "header",
+          "text": "Awesome WM",
+          "value": "awesome-wm",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "zsh-setup": {
+          "type": "header",
+          "text": "Zsh setup",
+          "value": "zsh-setup",
+          "line": 45,
+          "column": 0,
+          "depth": 2
+        },
+        "fonts": {
+          "type": "header",
+          "text": "Fonts",
+          "value": "fonts",
+          "line": 56,
+          "column": 0,
+          "depth": 2
+        },
+        "hidpi-grub": {
+          "type": "header",
+          "text": "HiDPI Grub",
+          "value": "hidpi-grub",
+          "line": 61,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {},
+      "title": "Setup New Machine"
+    },
+    "z2hgvaw2rpz93g3ije3zxmd": {
+      "id": "z2hgvaw2rpz93g3ije3zxmd",
+      "title": "Arch",
+      "desc": "",
+      "updated": 1678415449403,
+      "created": 1669695426013,
+      "custom": {},
+      "fname": "linux.arch",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "edc201afa3f9a855a1a951bd82c4c64b",
+      "links": [],
+      "anchors": {
+        "arch-linux": {
+          "type": "header",
+          "text": "Arch linux",
+          "value": "arch-linux",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "sound-card-not-found": {
+          "type": "header",
+          "text": "Sound card not found",
+          "value": "sound-card-not-found",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "freeze-youtube-firefox--chrome---can-not-play-video-with-sound": {
+          "type": "header",
+          "text": "Freeze youtube (firefox & chrome) - Can not play video with sound",
+          "value": "freeze-youtube-firefox--chrome---can-not-play-video-with-sound",
+          "line": 26,
+          "column": 0,
+          "depth": 2
+        },
+        "dark-theme": {
+          "type": "header",
+          "text": "Dark theme",
+          "value": "dark-theme",
+          "line": 43,
+          "column": 0,
+          "depth": 2
+        },
+        "natural-scrolling": {
+          "type": "header",
+          "text": "Natural scrolling",
+          "value": "natural-scrolling",
+          "line": 51,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "qtktd7329d9m69svdgniohf",
+        "j8n4v1ohwrnlfm37verspi6",
+        "tbz5axmptocdnvjci817klz"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {}
+    },
+    "tbz5axmptocdnvjci817klz": {
+      "id": "tbz5axmptocdnvjci817klz",
+      "title": "Pipewire",
+      "desc": "",
+      "updated": 1669777923244,
+      "created": 1669777877571,
+      "custom": {},
+      "fname": "linux.arch.pipewire",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "7f0be1e8bf9184f0501b2124418c1d9c",
+      "links": [],
+      "anchors": {
+        "pipewire": {
+          "type": "header",
+          "text": "Pipewire",
+          "value": "pipewire",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "update-output-source": {
+          "type": "header",
+          "text": "Update output source",
+          "value": "update-output-source",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "z2hgvaw2rpz93g3ije3zxmd",
+      "data": {}
+    },
+    "j8n4v1ohwrnlfm37verspi6": {
+      "id": "j8n4v1ohwrnlfm37verspi6",
+      "title": "Font",
+      "desc": "",
+      "updated": 1671968895465,
+      "created": 1671968881996,
+      "custom": {},
+      "fname": "linux.arch.fonts",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "696081ccc8ab69b118fa94531faeea64",
+      "links": [],
+      "anchors": {
+        "fonts-error": {
+          "type": "header",
+          "text": "Fonts error",
+          "value": "fonts-error",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "z2hgvaw2rpz93g3ije3zxmd",
+      "data": {}
+    },
+    "qtktd7329d9m69svdgniohf": {
+      "id": "qtktd7329d9m69svdgniohf",
+      "title": "Corrupted Db",
+      "desc": "",
+      "updated": 1678273325478,
+      "created": 1678250016700,
+      "custom": {},
+      "fname": "linux.arch.corrupted-db",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "42ed5f9716900341d0f25aa57138c19d",
+      "links": [],
+      "anchors": {
+        "issues": {
+          "type": "header",
+          "text": "Issues",
+          "value": "issues",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "fixes": {
+          "type": "header",
+          "text": "Fixes",
+          "value": "fixes",
+          "line": 14,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "z2hgvaw2rpz93g3ije3zxmd",
+      "data": {}
+    },
+    "phh329wgik4nmti5o5ny6po": {
+      "id": "phh329wgik4nmti5o5ny6po",
+      "title": "Applications",
+      "desc": "",
+      "updated": 1662224291863,
+      "created": 1662224276935,
+      "custom": {},
+      "fname": "linux.applications",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "45f8abba688de0206641014e510cba9c",
+      "links": [],
+      "anchors": {
+        "audio": {
+          "type": "header",
+          "text": "Audio",
+          "value": "audio",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "359kuswvs74ufyh92re9s8q"
+      ],
+      "parent": "6wjqcjgkrpeqtmzb1o8o1q8",
+      "data": {}
+    },
+    "359kuswvs74ufyh92re9s8q": {
+      "id": "359kuswvs74ufyh92re9s8q",
+      "title": "Openvpn3",
+      "desc": "",
+      "updated": 1662646271224,
+      "created": 1662644652415,
+      "custom": {},
+      "fname": "linux.applications.openvpn3",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "eabfb5e2fd4dcc4c4f703a142ac7c1a7",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "linux.applications.openvpn3",
+            "id": "359kuswvs74ufyh92re9s8q",
+            "vaultName": "docs"
+          },
+          "value": "kyber",
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 22,
+              "offset": 34
+            },
+            "end": {
+              "line": 4,
+              "column": 31,
+              "offset": 43
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "kyber"
+          }
+        }
+      ],
+      "anchors": {
+        "openvpn3": {
+          "type": "header",
+          "text": "OpenVPN3",
+          "value": "openvpn3",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "install": {
+          "type": "header",
+          "text": "Install",
+          "value": "install",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "simple-start": {
+          "type": "header",
+          "text": "Simple start",
+          "value": "simple-start",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "commands": {
+          "type": "header",
+          "text": "Commands",
+          "value": "commands",
+          "line": 37,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "phh329wgik4nmti5o5ny6po",
+      "data": {}
+    },
+    "q7qw45jglqwmynary64q67c": {
+      "fname": "finance",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416963,
+      "created": 1700214416963,
+      "id": "q7qw45jglqwmynary64q67c",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "r14l1p79lmvmmdqsl8qr44v",
+        "6z08wtv2x4jci9ng1gh720x",
+        "fmx84bzyr973odjerjsu5lq"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Finance"
+    },
+    "fmx84bzyr973odjerjsu5lq": {
+      "id": "fmx84bzyr973odjerjsu5lq",
+      "title": "Terms",
+      "desc": "",
+      "updated": 1661828064924,
+      "created": 1661828035628,
+      "custom": {},
+      "fname": "finance.terms",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "7e8bb5206127e624dbd9f95d9d404050",
+      "links": [],
+      "anchors": {
+        "terms": {
+          "type": "header",
+          "text": "Terms",
+          "value": "terms",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "q7qw45jglqwmynary64q67c",
+      "data": {}
+    },
+    "6z08wtv2x4jci9ng1gh720x": {
+      "id": "6z08wtv2x4jci9ng1gh720x",
+      "title": "Passive Investing",
+      "desc": "",
+      "updated": 1662399382673,
+      "created": 1662398522678,
+      "custom": {},
+      "fname": "finance.passive-investing",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "890d55de179e5d9994770920f8deebd8",
+      "links": [],
+      "anchors": {
+        "passive-investing": {
+          "type": "header",
+          "text": "Passive investing",
+          "value": "passive-investing",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "giới-thiệu": {
+          "type": "header",
+          "text": "Giới thiệu",
+          "value": "giới-thiệu",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "đầu-tư-vào-đâu": {
+          "type": "header",
+          "text": "Đầu tư vào đâu?",
+          "value": "đầu-tư-vào-đâu",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "tư-duy": {
+          "type": "header",
+          "text": "Tư duy",
+          "value": "tư-duy",
+          "line": 23,
+          "column": 0,
+          "depth": 2
+        },
+        "hiệu-quả": {
+          "type": "header",
+          "text": "Hiệu quả",
+          "value": "hiệu-quả",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "tần-suất": {
+          "type": "header",
+          "text": "Tần suất",
+          "value": "tần-suất",
+          "line": 35,
+          "column": 0,
+          "depth": 2
+        },
+        "nhược-điểm": {
+          "type": "header",
+          "text": "Nhược điểm",
+          "value": "nhược-điểm",
+          "line": 39,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "q7qw45jglqwmynary64q67c",
+      "data": {}
+    },
+    "r14l1p79lmvmmdqsl8qr44v": {
+      "id": "r14l1p79lmvmmdqsl8qr44v",
+      "title": "Creditcard",
+      "desc": "",
+      "updated": 1662003616002,
+      "created": 1662003614170,
+      "custom": {},
+      "fname": "finance.creditcard",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "12dc25bbdb7940a058c23d9a581d0992",
+      "links": [],
+      "anchors": {
+        "voz": {
+          "type": "header",
+          "text": "VOZ",
+          "value": "voz",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "1-link": {
+          "type": "header",
+          "text": "1. Link",
+          "value": "1-link",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "2-httpsvozvnttu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang26181post-19568902": {
+          "type": "header",
+          "text": "2. https://voz.vn/t/tu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang.26181/post-19568902",
+          "value": "2-httpsvozvnttu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang26181post-19568902",
+          "line": 42,
+          "column": 0,
+          "depth": 2
+        },
+        "3-httpsvozvnttu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang26181post-19566816": {
+          "type": "header",
+          "text": "3. https://voz.vn/t/tu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang.26181/post-19566816",
+          "value": "3-httpsvozvnttu-van-cac-van-de-ve-the-tin-dung-vay-tin-chap-cac-ngan-hang26181post-19566816",
+          "line": 53,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "q7qw45jglqwmynary64q67c",
+      "data": {}
+    },
+    "qw8y69zxn8wr7tzz4gtcrrv": {
+      "fname": "database",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416962,
+      "created": 1700214416962,
+      "id": "qw8y69zxn8wr7tzz4gtcrrv",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "hu0uohby11fpkzl0vmjhztj",
+        "7kfh5gzgi0chi9t1l4mi0sd",
+        "7lcj6lb5akw2u1f57ecgb2w"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Database"
+    },
+    "7lcj6lb5akw2u1f57ecgb2w": {
+      "fname": "database.postgresql",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416982,
+      "created": 1700214416982,
+      "id": "7lcj6lb5akw2u1f57ecgb2w",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "nycwvxwduwxfjokad56kinf"
+      ],
+      "parent": "qw8y69zxn8wr7tzz4gtcrrv",
+      "data": {},
+      "title": "Postgresql"
+    },
+    "nycwvxwduwxfjokad56kinf": {
+      "id": "nycwvxwduwxfjokad56kinf",
+      "title": "Quotes",
+      "desc": "",
+      "updated": 1689306522534,
+      "created": 1689306512186,
+      "custom": {},
+      "fname": "database.postgresql.quotes",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "40e1063fc733b6e5f01a7a19dfc5cec8",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "7lcj6lb5akw2u1f57ecgb2w",
+      "data": {}
+    },
+    "7kfh5gzgi0chi9t1l4mi0sd": {
+      "id": "7kfh5gzgi0chi9t1l4mi0sd",
+      "title": "No SQL",
+      "desc": "",
+      "updated": 1662346912612,
+      "created": 1662346912612,
+      "custom": {},
+      "fname": "database.no-sql",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "6298d897d28bfc41512050659d496d6c",
+      "links": [
+        {
+          "from": {
+            "fname": "database.dynamodb",
+            "id": "hu0uohby11fpkzl0vmjhztj",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 3,
+              "offset": 43
+            },
+            "end": {
+              "line": 6,
+              "column": 22,
+              "offset": 62
+            },
+            "indent": []
+          },
+          "value": "database.no-sql"
+        },
+        {
+          "from": {
+            "fname": "programing.datastructure.tree.log-structured-merge-tree",
+            "id": "rzzcdejvex294ozjezmr7n3",
+            "vaultName": "docs"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 12,
+              "offset": 108
+            },
+            "end": {
+              "line": 8,
+              "column": 31,
+              "offset": 127
+            },
+            "indent": []
+          },
+          "value": "database.no-sql"
+        }
+      ],
+      "anchors": {},
+      "children": [],
+      "parent": "qw8y69zxn8wr7tzz4gtcrrv",
+      "data": {}
+    },
+    "hu0uohby11fpkzl0vmjhztj": {
+      "id": "hu0uohby11fpkzl0vmjhztj",
+      "title": "Dynamodb",
+      "desc": "",
+      "updated": 1662734584249,
+      "created": 1662729084337,
+      "custom": {},
+      "fname": "database.dynamodb",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "e7f0afa73f2b984803238fc4693554f1",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "database.dynamodb",
+            "id": "hu0uohby11fpkzl0vmjhztj",
+            "vaultName": "docs"
+          },
+          "value": "database.no-sql",
+          "position": {
+            "start": {
+              "line": 6,
+              "column": 3,
+              "offset": 43
+            },
+            "end": {
+              "line": 6,
+              "column": 22,
+              "offset": 62
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "database.no-sql"
+          }
+        }
+      ],
+      "anchors": {
+        "dynamodb---amazon-dynamodb": {
+          "type": "header",
+          "text": "DynamoDB - Amazon DynamoDB",
+          "value": "dynamodb---amazon-dynamodb",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "features": {
+          "type": "header",
+          "text": "Features",
+          "value": "features",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "ref": {
+          "type": "header",
+          "text": "Ref",
+          "value": "ref",
+          "line": 29,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "qw8y69zxn8wr7tzz4gtcrrv",
+      "data": {}
+    },
+    "u5a2e2vvfn3x7k0shuvmb1b": {
+      "fname": "blockchain",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1700214416961,
+      "created": 1700214416961,
+      "id": "u5a2e2vvfn3x7k0shuvmb1b",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "htnb0jl9cmmsba0gaxoj8e1",
+        "2y5rbgw6i5ub5wwea98oc7d",
+        "qoxc41o8xfr8bpjpm57j8sa",
+        "u60mwin3uue7il508kuhf40"
+      ],
+      "parent": "xfkxbponh0sohobo6pual15",
+      "data": {},
+      "title": "Blockchain"
+    },
+    "u60mwin3uue7il508kuhf40": {
+      "id": "u60mwin3uue7il508kuhf40",
+      "title": "Sign Message",
+      "desc": "",
+      "updated": 1666259190365,
+      "created": 1666258473834,
+      "custom": {},
+      "fname": "blockchain.sign-message",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "3b5a4540f8570882c76b805aa09d2d4c",
+      "links": [],
+      "anchors": {
+        "sign-messagee": {
+          "type": "header",
+          "text": "Sign messagee",
+          "value": "sign-messagee",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "standard-eip-712": {
+          "type": "header",
+          "text": "Standard EIP-712",
+          "value": "standard-eip-712",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "abiencode-vs-abipack": {
+          "type": "header",
+          "text": "abi.Encode vs abi.Pack",
+          "value": "abiencode-vs-abipack",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "usecase": {
+          "type": "header",
+          "text": "Usecase",
+          "value": "usecase",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "u5a2e2vvfn3x7k0shuvmb1b",
+      "data": {}
+    },
+    "qoxc41o8xfr8bpjpm57j8sa": {
+      "id": "qoxc41o8xfr8bpjpm57j8sa",
+      "title": "New Wallet",
+      "desc": "",
+      "updated": 1663001669061,
+      "created": 1662923275929,
+      "custom": {},
+      "fname": "blockchain.new-wallet",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "e5eac71f86f3a30f21daeca13a3a1e63",
+      "links": [],
+      "anchors": {
+        "evm-wallet": {
+          "type": "header",
+          "text": "EVM wallet",
+          "value": "evm-wallet",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "ref": {
+          "type": "header",
+          "text": "Ref",
+          "value": "ref",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "u5a2e2vvfn3x7k0shuvmb1b",
+      "data": {}
+    },
+    "2y5rbgw6i5ub5wwea98oc7d": {
+      "id": "2y5rbgw6i5ub5wwea98oc7d",
+      "title": "Account Abstraction",
+      "desc": "",
+      "updated": 1699526196121,
+      "created": 1699351544536,
+      "custom": {},
+      "fname": "blockchain.account-abstraction",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "c1bf5f75e5ebaa6dce942ff601a6fe2e",
+      "links": [],
+      "anchors": {
+        "accounts-in-ethereum": {
+          "type": "header",
+          "text": "Accounts in Ethereum",
+          "value": "accounts-in-ethereum",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "erc-4337": {
+          "type": "header",
+          "text": "ERC-4337",
+          "value": "erc-4337",
+          "line": 26,
+          "column": 0,
+          "depth": 2
+        },
+        "intro": {
+          "type": "header",
+          "text": "Intro",
+          "value": "intro",
+          "line": 28,
+          "column": 0,
+          "depth": 3
+        },
+        "key-concepts": {
+          "type": "header",
+          "text": "Key concepts",
+          "value": "key-concepts",
+          "line": 35,
+          "column": 0,
+          "depth": 3
+        },
+        "verification--execution-sequence": {
+          "type": "header",
+          "text": "Verification & Execution Sequence",
+          "value": "verification--execution-sequence",
+          "line": 44,
+          "column": 0,
+          "depth": 3
+        },
+        "useroperation": {
+          "type": "header",
+          "text": "UserOperation",
+          "value": "useroperation",
+          "line": 50,
+          "column": 0,
+          "depth": 3
+        },
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 55,
+          "column": 0,
+          "depth": 3
+        },
+        "use-cases": {
+          "type": "header",
+          "text": "Use cases",
+          "value": "use-cases",
+          "line": 60,
+          "column": 0,
+          "depth": 2
+        },
+        "wallet-management": {
+          "type": "header",
+          "text": "Wallet management",
+          "value": "wallet-management",
+          "line": 62,
+          "column": 0,
+          "depth": 3
+        },
+        "defi": {
+          "type": "header",
+          "text": "Defi",
+          "value": "defi",
+          "line": 76,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "u5a2e2vvfn3x7k0shuvmb1b",
+      "data": {}
+    },
+    "htnb0jl9cmmsba0gaxoj8e1": {
+      "id": "htnb0jl9cmmsba0gaxoj8e1",
+      "title": "Deploy-Smart-Contracts-Using-Hardhat",
+      "desc": "",
+      "updated": 1668313452212,
+      "created": 1668313445238,
+      "custom": {},
+      "fname": "blockchain.Deploy-Smart-Contracts-Using-Hardhat",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "c7d612594f0d24a8264d38d21994c714",
+      "links": [],
+      "anchors": {
+        "deploy-smartcontract": {
+          "type": "header",
+          "text": "Deploy smartcontract",
+          "value": "deploy-smartcontract",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "install-hardhat": {
+          "type": "header",
+          "text": "Install hardhat",
+          "value": "install-hardhat",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "deploy-contract": {
+          "type": "header",
+          "text": "Deploy contract",
+          "value": "deploy-contract",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        },
+        "create-onchain-account": {
+          "type": "header",
+          "text": "Create onchain account",
+          "value": "create-onchain-account",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "install-dependencies": {
+          "type": "header",
+          "text": "Install dependencies",
+          "value": "install-dependencies",
+          "line": 30,
+          "column": 0,
+          "depth": 3
+        },
+        "get-fund": {
+          "type": "header",
+          "text": "Get fund",
+          "value": "get-fund",
+          "line": 39,
+          "column": 0,
+          "depth": 3
+        },
+        "deploy": {
+          "type": "header",
+          "text": "Deploy",
+          "value": "deploy",
+          "line": 45,
+          "column": 0,
+          "depth": 3
+        },
+        "verify": {
+          "type": "header",
+          "text": "Verify",
+          "value": "verify",
+          "line": 57,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "u5a2e2vvfn3x7k0shuvmb1b",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "xfkxbponh0sohobo6pual15",
+      "title": "Root",
+      "desc": "",
+      "updated": 1668137379975,
+      "created": 1663481872547,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "docs"
+      },
+      "contentHash": "cb44915142ec96bef8f764f3dc90389e",
+      "links": [],
+      "anchors": {
+        "welcome-to-my-page": {
+          "type": "header",
+          "text": "Welcome to my page",
+          "value": "welcome-to-my-page",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "contacts": {
+          "type": "header",
+          "text": "Contacts",
+          "value": "contacts",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "dendron": {
+          "type": "header",
+          "text": "Dendron",
+          "value": "dendron",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "u5a2e2vvfn3x7k0shuvmb1b",
+        "qw8y69zxn8wr7tzz4gtcrrv",
+        "q7qw45jglqwmynary64q67c",
+        "6wjqcjgkrpeqtmzb1o8o1q8",
+        "3ervbn5we7t8v2l2vwtx847",
+        "4qi2z0z9fquupbd651xausx",
+        "sencgim78q74o1zuyvy1vz7",
+        "ue4oml1si982t3mmbthyxi9",
+        "zrogwjgtze8ne5joqpz8ty9",
+        "oesia0lbzh03fsoy124ck0k",
+        "el3p9zjue6h3b6zsl9oejkt",
+        "t5grkmcwvu4nl43igsj4gxz"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "# Welcome to my page\n\n- This is a place where I write my knowledge in both Vietnamese and English.\n- Please feel free to correct me if there is anything not right.\n\n## Contacts\n\n- [Github](https://github.com/thanhpp)\n- [Discord](https://discord.gg/ugNRjFNqjp)\n- [LinkedIn](https://www.linkedin.com/in/thanhpp/)\n\n## Dendron\n\n- [Home Page](https://wiki.dendron.so/)"
+    }
+  ],
+  "noteIndex": {
+    "id": "xfkxbponh0sohobo6pual15",
+    "title": "Root",
+    "desc": "",
+    "updated": 1668137379975,
+    "created": 1663481872547,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "docs"
+    },
+    "contentHash": "cb44915142ec96bef8f764f3dc90389e",
+    "links": [],
+    "anchors": {
+      "welcome-to-my-page": {
+        "type": "header",
+        "text": "Welcome to my page",
+        "value": "welcome-to-my-page",
+        "line": 7,
+        "column": 0,
+        "depth": 1
+      },
+      "contacts": {
+        "type": "header",
+        "text": "Contacts",
+        "value": "contacts",
+        "line": 12,
+        "column": 0,
+        "depth": 2
+      },
+      "dendron": {
+        "type": "header",
+        "text": "Dendron",
+        "value": "dendron",
+        "line": 18,
+        "column": 0,
+        "depth": 2
+      }
+    },
+    "children": [
+      "u5a2e2vvfn3x7k0shuvmb1b",
+      "qw8y69zxn8wr7tzz4gtcrrv",
+      "q7qw45jglqwmynary64q67c",
+      "6wjqcjgkrpeqtmzb1o8o1q8",
+      "3ervbn5we7t8v2l2vwtx847",
+      "4qi2z0z9fquupbd651xausx",
+      "sencgim78q74o1zuyvy1vz7",
+      "ue4oml1si982t3mmbthyxi9",
+      "zrogwjgtze8ne5joqpz8ty9",
+      "oesia0lbzh03fsoy124ck0k",
+      "el3p9zjue6h3b6zsl9oejkt",
+      "t5grkmcwvu4nl43igsj4gxz"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "# Welcome to my page\n\n- This is a place where I write my knowledge in both Vietnamese and English.\n- Please feel free to correct me if there is anything not right.\n\n## Contacts\n\n- [Github](https://github.com/thanhpp)\n- [Discord](https://discord.gg/ugNRjFNqjp)\n- [LinkedIn](https://www.linkedin.com/in/thanhpp/)\n\n## Dendron\n\n- [Home Page](https://wiki.dendron.so/)"
+  },
+  "vaults": [
+    {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "docs"
+    }
+  ]
+}

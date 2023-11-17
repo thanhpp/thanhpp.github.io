@@ -1,0 +1,35 @@
+<h1 id="api-gateway">API Gateway<a aria-hidden="true" class="anchor-heading icon-link" href="#api-gateway"></a></h1>
+<h1 id="api-gateway-1">API Gateway<a aria-hidden="true" class="anchor-heading icon-link" href="#api-gateway-1"></a></h1>
+<blockquote>
+<p>Ref: <a href="https://youtu.be/6ULyxuHKxg8">https://youtu.be/6ULyxuHKxg8</a></p>
+</blockquote>
+<h2 id="def">Def<a aria-hidden="true" class="anchor-heading icon-link" href="#def"></a></h2>
+<ul>
+<li>A middle layer stands between the client and backend services</li>
+</ul>
+<h2 id="functions">Functions<a aria-hidden="true" class="anchor-heading icon-link" href="#functions"></a></h2>
+<ul>
+<li>Authentication &#x26; security enhancement</li>
+<li>routing &#x26; service discovery</li>
+<li>Optional:
+<ul>
+<li>protocol conversion (HTTP -> UDP/gRPC/TCP) </li>
+<li>logging</li>
+<li>monitoring
+<ul>
+<li>analytics </li>
+</ul>
+</li>
+<li>error handling
+<ul>
+<li>circuit breaker (Prevent overloaded service)</li>
+<li>default error handler</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>Parameter validation -> allow/deny list -> authen/author -> rate-limit ->
+-> service discovery -> protocol conversion ->
+-> BackEnd services
+</code></pre>

@@ -1,0 +1,35 @@
+<h1 id="github-analyze">GitHub Analyze<a aria-hidden="true" class="anchor-heading icon-link" href="#github-analyze"></a></h1>
+<h1 id="github-analyze-1">Github Analyze<a aria-hidden="true" class="anchor-heading icon-link" href="#github-analyze-1"></a></h1>
+<h2 id="why">Why?<a aria-hidden="true" class="anchor-heading icon-link" href="#why"></a></h2>
+<ul>
+<li>Need to analyze github PRs &#x26; commits in a range of time</li>
+</ul>
+<h2 id="how">How?<a aria-hidden="true" class="anchor-heading icon-link" href="#how"></a></h2>
+<ul>
+<li>Authorize Github request
+<ul>
+<li>Use <code>Authorization: Bearer &#x3C;Token></code> </li>
+</ul>
+</li>
+<li>Get github information in a time range
+<ul>
+<li><a href="https://docs.github.com/en/rest/commits/commits#list-commits">https://docs.github.com/en/rest/commits/commits#list-commits</a></li>
+<li>per owner, per repo => need to list repos &#x26; owners </li>
+</ul>
+</li>
+<li>List all Pull request
+<ul>
+<li><a href="https://docs.github.com/en/rest/pulls/pulls#list-pull-requests">https://docs.github.com/en/rest/pulls/pulls#list-pull-requests</a></li>
+<li>per owner, per repo => config</li>
+</ul>
+</li>
+</ul>
+<h2 id="todo">Todo<a aria-hidden="true" class="anchor-heading icon-link" href="#todo"></a></h2>
+<ul>
+<li>Create a HTTP client
+<ul>
+<li>basic client: <a href="https://hyper.rs/guides/client/basic/">https://hyper.rs/guides/client/basic/</a></li>
+<li></li>
+</ul>
+</li>
+</ul>

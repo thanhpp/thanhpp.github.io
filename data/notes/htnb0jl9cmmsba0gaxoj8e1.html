@@ -1,0 +1,75 @@
+<h1 id="deploy-smart-contracts-using-hardhat">Deploy-Smart-Contracts-Using-Hardhat<a aria-hidden="true" class="anchor-heading icon-link" href="#deploy-smart-contracts-using-hardhat"></a></h1>
+<h1 id="deploy-smartcontract">Deploy smartcontract<a aria-hidden="true" class="anchor-heading icon-link" href="#deploy-smartcontract"></a></h1>
+<h2 id="install-hardhat">Install hardhat<a aria-hidden="true" class="anchor-heading icon-link" href="#install-hardhat"></a></h2>
+<ul>
+<li>Install NodeJs: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04#option-3-installing-node-using-the-node-version-manager">https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04#option-3-installing-node-using-the-node-version-manager</a>
+<ul>
+<li><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash</code></li>
+<li><code>source ~/.bashrc</code>
+<ul>
+<li>
+<pre><code>export NVM_DIR="$HOME/.nvm"  
+  [ -s "$NVM_DIR/nvm.sh" ] &#x26;&#x26; \. "$NVM_DIR/nvm.sh"  # This loads nvm 
+  [ -s "$NVM_DIR/bash_completion" ] &#x26;&#x26; \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
+</code></pre>
+</li>
+</ul>
+</li>
+<li><code>nvm install v16.18.0</code></li>
+<li><code>nvm use v16.18.0</code></li>
+</ul>
+</li>
+<li>Ref: <a href="https://hardhat.org/hardhat-runner/docs/getting-started#installation">https://hardhat.org/hardhat-runner/docs/getting-started#installation</a>
+<ul>
+<li><code>npm install --save-dev hardhat</code> </li>
+</ul>
+</li>
+</ul>
+<h2 id="deploy-contract">Deploy contract<a aria-hidden="true" class="anchor-heading icon-link" href="#deploy-contract"></a></h2>
+<h3 id="create-onchain-account">Create onchain account<a aria-hidden="true" class="anchor-heading icon-link" href="#create-onchain-account"></a></h3>
+<ul>
+<li><a href="https://vanity-eth.tk/">https://vanity-eth.tk/</a></li>
+</ul>
+<h3 id="install-dependencies">Install dependencies<a aria-hidden="true" class="anchor-heading icon-link" href="#install-dependencies"></a></h3>
+<pre><code>npm install --save-dev @openzeppelin/contracts
+npm install --save-dev dotenv`
+npm install --save-dev @nomiclabs/hardhat-ethers 
+npm install --save-dev @nomiclabs/hardhat-etherscan
+</code></pre>
+<h3 id="get-fund">Get fund<a aria-hidden="true" class="anchor-heading icon-link" href="#get-fund"></a></h3>
+<ul>
+<li>faucet:
+<ul>
+<li><a href="https://faucet.polygon.technology/">https://faucet.polygon.technology/</a></li>
+<li><a href="https://mumbaifaucet.com/">https://mumbaifaucet.com/</a> </li>
+</ul>
+</li>
+</ul>
+<h3 id="deploy">Deploy<a aria-hidden="true" class="anchor-heading icon-link" href="#deploy"></a></h3>
+<ul>
+<li>Rename contract
+<ul>
+<li>update the Contract.deploy(<name>, <symbol>, <uri>) </uri></symbol></name></li>
+</ul>
+</li>
+<li>Update ENV value
+<ul>
+<li>API_URL: node API URL</li>
+<li>PRIVATE_KEY: deploy private key</li>
+<li>ETHERSCAN_API: etherscan's API_KEY of deploying network </li>
+</ul>
+</li>
+<li>RUN
+<ul>
+<li><code>npx hardhat run --network mumbai scripts/deploy.js</code> </li>
+<li>Output: <code>Contract deployed to address: &#x3C;contract address></code></li>
+</ul>
+</li>
+</ul>
+<h3 id="verify">Verify<a aria-hidden="true" class="anchor-heading icon-link" href="#verify"></a></h3>
+<ul>
+<li>Add ETHERSCAN_API (api_key)</li>
+<li>Update <code>args.js</code> to match the deployed contract constructor's value</li>
+<li><code>npx hardhat verify ----constructor-args ./scripts/args.js --network mumbai &#x3C;address></code></li>
+<li>Ref: <a href="https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-etherscan#complex-arguments">https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-etherscan#complex-arguments</a></li>
+</ul>

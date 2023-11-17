@@ -1,0 +1,49 @@
+<h1 id="rpc-grpc">RPC-gRPC<a aria-hidden="true" class="anchor-heading icon-link" href="#rpc-grpc"></a></h1>
+<h1 id="rpc--grpc">RPC &#x26; gRPC<a aria-hidden="true" class="anchor-heading icon-link" href="#rpc--grpc"></a></h1>
+<blockquote>
+<p><a href="https://youtu.be/gnchfOojMk4">https://youtu.be/gnchfOojMk4</a></p>
+</blockquote>
+<h2 id="rpc---remote-procedure-call">RPC - Remote Procedure Call<a aria-hidden="true" class="anchor-heading icon-link" href="#rpc---remote-procedure-call"></a></h2>
+<ul>
+<li>RPC: 
+<ul>
+<li>1 machine invoke some code on another machine</li>
+<li>as a local function from user perspective </li>
+</ul>
+</li>
+</ul>
+<h2 id="grpc">gRPC<a aria-hidden="true" class="anchor-heading icon-link" href="#grpc"></a></h2>
+<ul>
+<li><strong>Protobuf</strong>: protocol buffer
+<ul>
+<li>binanry encoding format</li>
+<li>strongly typed (using a proto type)
+<ul>
+<li>has tools: proto -> code</li>
+</ul>
+</li>
+<li>Support many languages
+<ul>
+<li>=> easy to choose</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>High performance
+<ul>
+<li>Protobuf: efficient binanry encoding format</li>
+<li>Build on HTTP/2 steams
+<ul>
+<li>multiple streams of message / TCP connection</li>
+</ul>
+</li>
+<li>~ 5 times faster than JSON</li>
+</ul>
+</li>
+<li>gRPC client/Server -> Encoding/Decoding -> (stub) -> gRPC runtime -> transport layer</li>
+<li>Cons
+<ul>
+<li>not supported from the browser </li>
+</ul>
+</li>
+</ul>

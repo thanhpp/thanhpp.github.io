@@ -1,0 +1,79 @@
+<h1 id="box">Box<a aria-hidden="true" class="anchor-heading icon-link" href="#box"></a></h1>
+<h1 id="box-----point-to-data-on-the-heap">Box <t> -  Point to data on the Heap</t><a aria-hidden="true" class="anchor-heading icon-link" href="#box-----point-to-data-on-the-heap"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch15-01-box.html">https://doc.rust-lang.org/book/ch15-01-box.html</a></p>
+</blockquote>
+<h2 id="definition--use-cases">Definition &#x26; Use cases<a aria-hidden="true" class="anchor-heading icon-link" href="#definition--use-cases"></a></h2>
+<ul>
+<li>Definition: allow user to store data on the heap instead of the stack
+<ul>
+<li>no overhead performance</li>
+<li>doesn't have many extra capabilitites</li>
+</ul>
+</li>
+<li>Usecases
+<ul>
+<li>type's size can't be known at <code>compile time</code>, use want to use a value of that type in a context that requires the exact size</li>
+<li>transfer ownership without copying</li>
+<li>own a value that implements <strong>a particular trait</strong> instead of a specific type</li>
+</ul>
+</li>
+</ul>
+<h2 id="traits">Traits<a aria-hidden="true" class="anchor-heading icon-link" href="#traits"></a></h2>
+<ul>
+<li><code>Box&#x3C;T></code> implements
+<ul>
+<li>Deref: treated like a reference</li>
+<li>Drop: clean up </li>
+</ul>
+</li>
+</ul>
+<h2 id="recursive-type">Recursive type<a aria-hidden="true" class="anchor-heading icon-link" href="#recursive-type"></a></h2>
+<ul>
+<li>A type that can have another value of the <strong>same type</strong> as <strong>part of itself</strong>.
+<ul>
+<li>problem: the compiler needs to know how much space a type takes up</li>
+<li>solution: using box (boxes have a known size)</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-cons-list">The cons list<a aria-hidden="true" class="anchor-heading icon-link" href="#the-cons-list"></a></h3>
+<ul>
+<li>
+<p>The cons list (cons = construct function)</p>
+</li>
+<li>
+<p>Example: <code>(1, (2, (3, Nil)))</code></p>
+<ul>
+<li>1 pair: value + next pair  </li>
+</ul>
+</li>
+<li>
+<p>Computing the Size of a <strong>Non-Recursive Type</strong></p>
+<ul>
+<li>Space of a value = largest variants</li>
+</ul>
+</li>
+<li>
+<p><code>Box&#x3C;T></code> is a pointer</p>
+<ul>
+<li>
+<p>Has a fixed space (only the pointer is located on the Stack)</p>
+</li>
+<li>
+<pre class="language-rust"><code class="language-rust">  <span class="token comment">// example of using Box to create a recursive type </span>
+  <span class="token keyword">enum</span> <span class="token type-definition class-name">List</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token class-name">Box</span><span class="token operator">&#x3C;</span><span class="token class-name">List</span><span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token class-name">Nil</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">use</span> <span class="token keyword">crate</span><span class="token punctuation">::</span><span class="token class-name">List</span><span class="token punctuation">::</span><span class="token punctuation">{</span><span class="token class-name">Cons</span><span class="token punctuation">,</span> <span class="token class-name">Nil</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Cons</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>

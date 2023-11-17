@@ -1,0 +1,13 @@
+<h1 id="ibus-bamboo">Ibus Bamboo<a aria-hidden="true" class="anchor-heading icon-link" href="#ibus-bamboo"></a></h1>
+<h1 id="ibus-bamboo---bộ-gõ-tiếng-việt-cho-linux">Ibus-bamboo - Bộ gõ tiếng Việt cho Linux<a aria-hidden="true" class="anchor-heading icon-link" href="#ibus-bamboo---bộ-gõ-tiếng-việt-cho-linux"></a></h1>
+<blockquote>
+<p><a href="https://github.com/BambooEngine/ibus-bamboo">https://github.com/BambooEngine/ibus-bamboo</a></p>
+</blockquote>
+<h2 id="ubuntu-install">Ubuntu install<a aria-hidden="true" class="anchor-heading icon-link" href="#ubuntu-install"></a></h2>
+<pre><code>sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get update
+sudo apt-get install ibus ibus-bamboo --install-recommends
+ibus restart
+# Đặt ibus-bamboo làm bộ gõ mặc định
+env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" &#x26;&#x26; gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
+</code></pre>

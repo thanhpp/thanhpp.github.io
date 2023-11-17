@@ -1,0 +1,39 @@
+<h1 id="large-cursor">Large Cursor<a aria-hidden="true" class="anchor-heading icon-link" href="#large-cursor"></a></h1>
+<h1 id="inconsistent-cursor-size">Inconsistent cursor size<a aria-hidden="true" class="anchor-heading icon-link" href="#inconsistent-cursor-size"></a></h1>
+<h2 id="set-sway-cursor-size">Set Sway cursor size<a aria-hidden="true" class="anchor-heading icon-link" href="#set-sway-cursor-size"></a></h2>
+<blockquote>
+<p><a href="https://wiki.archlinux.org/title/sway#Change_cursor_theme_and_size">https://wiki.archlinux.org/title/sway#Change_cursor_theme_and_size</a></p>
+</blockquote>
+<ul>
+<li>Add
+<pre><code># Cursor settings
+seat seat0 xcursor_theme default 16
+</code></pre>
+=> <strong>Not fix it</strong></li>
+</ul>
+<h2 id="use-xdefaults-file">Use Xdefaults file<a aria-hidden="true" class="anchor-heading icon-link" href="#use-xdefaults-file"></a></h2>
+<blockquote>
+<p><a href="https://github.com/swaywm/sway/issues/2014">https://github.com/swaywm/sway/issues/2014</a></p>
+</blockquote>
+<ul>
+<li>Update the <code>~/.Xdefaults</code> file
+<pre><code>```
+Xcursor.size: 16
+``` 
+</code></pre>
+=> <strong>Not fix it</strong></li>
+</ul>
+<h2 id="update-gtk-settings">Update gtk settings<a aria-hidden="true" class="anchor-heading icon-link" href="#update-gtk-settings"></a></h2>
+<ul>
+<li>
+<p>terminal</p>
+<pre><code>gsettings set org.gnome.desktop.interface cursor-size 16
+</code></pre>
+<p>=> <strong>Not fix it</strong></p>
+</li>
+<li>
+<p>update the <code>~/.config/gtk3.0/settings.ini</code></p>
+<pre><code>gtk-cursor-theme-size=16
+</code></pre>
+</li>
+</ul>

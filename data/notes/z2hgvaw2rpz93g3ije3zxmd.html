@@ -1,0 +1,68 @@
+<h1 id="arch">Arch<a aria-hidden="true" class="anchor-heading icon-link" href="#arch"></a></h1>
+<h1 id="arch-linux">Arch linux<a aria-hidden="true" class="anchor-heading icon-link" href="#arch-linux"></a></h1>
+<h2 id="install">Install<a aria-hidden="true" class="anchor-heading icon-link" href="#install"></a></h2>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/installation_guide">https://wiki.archlinux.org/title/installation_guide</a></li>
+<li><a href="https://itsfoss.com/install-arch-linux/">https://itsfoss.com/install-arch-linux/</a></li>
+</ul>
+<h2 id="sound-card-not-found">Sound card not found<a aria-hidden="true" class="anchor-heading icon-link" href="#sound-card-not-found"></a></h2>
+<blockquote>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=262135">https://bbs.archlinux.org/viewtopic.php?id=262135</a>
+<a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_Firmware">https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_Firmware</a></p>
+</blockquote>
+<ul>
+<li>Install ALSA firmware
+<pre><code>sudo pacman -S sof-firmware
+sudo pacman -S alsa-ucm-conf
+</code></pre>
+</li>
+</ul>
+<h2 id="freeze-youtube-firefox--chrome---can-not-play-video-with-sound">Freeze youtube (firefox &#x26; chrome) - Can not play video with sound<a aria-hidden="true" class="anchor-heading icon-link" href="#freeze-youtube-firefox--chrome---can-not-play-video-with-sound"></a></h2>
+<blockquote>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=155714">https://bbs.archlinux.org/viewtopic.php?id=155714</a>
+<a href="https://bbs.archlinux.org/viewtopic.php?id=274229">https://bbs.archlinux.org/viewtopic.php?id=274229</a></p>
+</blockquote>
+<pre><code>$ systemctl --user status pulseaudio
+    dbus-org.bluez.service NOT FOUND ERROR
+</code></pre>
+<ul>
+<li>
+<p>Install ffmpeg</p>
+</li>
+<li>
+<p>Install vulkan: <a href="https://archlinux.org/packages/?name=vulkan-intel">https://archlinux.org/packages/?name=vulkan-intel</a></p>
+</li>
+<li>
+<p>Install pipewire</p>
+<ul>
+<li><a href="https://www.reddit.com/r/archlinux/comments/lv5ihv/what_is_the_most_proper_way_to_replace_pulseaudio/">https://www.reddit.com/r/archlinux/comments/lv5ihv/what_is_the_most_proper_way_to_replace_pulseaudio/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="dark-theme">Dark theme<a aria-hidden="true" class="anchor-heading icon-link" href="#dark-theme"></a></h2>
+<blockquote>
+<p><a href="https://wiki.archlinux.org/title/GTK#Dark_theme_variant">https://wiki.archlinux.org/title/GTK#Dark_theme_variant</a></p>
+</blockquote>
+<ul>
+<li>GTK
+<ul>
+<li>gtk: <code>gtk-application-prefer-dark-theme = true</code></li>
+<li>gtk4: <code>gsettings set org.gnome.desktop.interface color-scheme prefer-dark</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="natural-scrolling">Natural scrolling<a aria-hidden="true" class="anchor-heading icon-link" href="#natural-scrolling"></a></h2>
+<blockquote>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=240950">https://bbs.archlinux.org/viewtopic.php?id=240950</a></p>
+</blockquote>
+<pre><code># /etc/X11/xorg.conf.d/40-libinput.conf || /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+Option "NaturalScrolling" "true"
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/notes/qtktd7329d9m69svdgniohf">Corrupted Db</a></li>
+<li><a href="/notes/j8n4v1ohwrnlfm37verspi6">Font</a></li>
+<li><a href="/notes/tbz5axmptocdnvjci817klz">Pipewire</a></li>
+</ol>

@@ -1,0 +1,24 @@
+<h1 id="redis">Redis<a aria-hidden="true" class="anchor-heading icon-link" href="#redis"></a></h1>
+<h2 id="redis-1">Redis<a aria-hidden="true" class="anchor-heading icon-link" href="#redis-1"></a></h2>
+<blockquote>
+<p><a href="https://blog.bytebytego.com/p/the-6-most-impactful-ways-redis-is">https://blog.bytebytego.com/p/the-6-most-impactful-ways-redis-is</a></p>
+</blockquote>
+<h3 id="redis-is-fast">Redis is fast<a aria-hidden="true" class="anchor-heading icon-link" href="#redis-is-fast"></a></h3>
+<ul>
+<li>In-mem storage &#x26; Single threaded</li>
+</ul>
+<h3 id="caching">Caching<a aria-hidden="true" class="anchor-heading icon-link" href="#caching"></a></h3>
+<ul>
+<li>Shortcut access to hot data (high frequent access)</li>
+<li>More complexity to manage cache coherence ("is the uniformity of shared resource data that ends up stored in multiple local caches")</li>
+<li>Tradeoff: Space vs time. Duplicate data -> faster access</li>
+</ul>
+<h3 id="session-store">Session store<a aria-hidden="true" class="anchor-heading icon-link" href="#session-store"></a></h3>
+<ul>
+<li>Store session in redis instead of in app -> better for load rebalancing
+<ul>
+<li>No "sticky-session"</li>
+</ul>
+</li>
+<li>Support expiration</li>
+</ul>

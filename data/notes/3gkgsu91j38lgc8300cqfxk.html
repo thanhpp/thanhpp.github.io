@@ -1,0 +1,186 @@
+<h1 id="closures">Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#closures"></a></h1>
+<h1 id="closures-1">Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#closures-1"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch13-01-closures.html">https://doc.rust-lang.org/book/ch13-01-closures.html</a></p>
+</blockquote>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<ul>
+<li>Anonymous functions that can be save in a variable or pass as arguments to other functions.</li>
+<li>Can capture value from the scope that they are defined</li>
+</ul>
+<h2 id="capturing-the-environment">Capturing the environment<a aria-hidden="true" class="anchor-heading icon-link" href="#capturing-the-environment"></a></h2>
+<ul>
+<li>Capture values from the environment they're defined in for <strong>later use</strong>.</li>
+<li>the <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap_or_else">unwrap_or_else</a> method
+<ul>
+<li>input: 1 closure without any arguments that returns a value <code>T</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="inference--annotation">Inference &#x26; annotation<a aria-hidden="true" class="anchor-heading icon-link" href="#inference--annotation"></a></h2>
+<ul>
+<li>closures vs functions
+<ul>
+<li>clousures: 
+<ul>
+<li>don't usually require you to annotate the types</li>
+<li>short &#x26; relevant only within a narrow context -> the compiler can inter the types of the parameters &#x26; the return type</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> expensive_closure <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>num<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">-></span> <span class="token keyword">u32</span> <span class="token punctuation">{</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"calculating slowly..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token namespace">thread<span class="token punctuation">::</span></span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token class-name">Duration</span><span class="token punctuation">::</span><span class="token function">from_secs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    num
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> add_one_v2 <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>x<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">-></span> <span class="token keyword">u32</span> <span class="token punctuation">{</span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> add_one_v3 <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>x<span class="token closure-punctuation punctuation">|</span></span>             <span class="token punctuation">{</span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// requires the closure to be evaluated to be able to compile</span>
+<span class="token keyword">let</span> add_one_v4 <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>x<span class="token closure-punctuation punctuation">|</span></span>               x <span class="token operator">+</span> <span class="token number">1</span>  <span class="token punctuation">;</span> <span class="token comment">// requires the closure to be evaluated to be able to compile</span>
+</code></pre>
+<ul>
+<li>The first time a closure is called, the compiler infers the type of arguments &#x26; return values, then locked it into the closure</li>
+</ul>
+<h2 id="capturing-references-or-moving-ownership">Capturing References or Moving Ownership<a aria-hidden="true" class="anchor-heading icon-link" href="#capturing-references-or-moving-ownership"></a></h2>
+<ul>
+<li>3 ways to capture values from their environment
+<ul>
+<li>borrowing immutably</li>
+<li>borrowing mutably</li>
+<li>taking ownership</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// CAPTURE IMMUTABLE REFERENCE</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Before defining closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> only_borrows <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"From closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// bind a variable to a closure definition</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Before calling closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">only_borrows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"After calling closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// CAPTURE MUTABLE REFERENCE</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> list <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Before defining closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> borrows_mutably <span class="token operator">=</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// alternate the variable</span>
+
+    <span class="token comment">// println!("Before calling closure: {:?}", list); this will cause an error because the `borrows_mutably` is borrowing the mut `list` variable, the variable is only returned after the closure is called</span>
+    <span class="token function">borrows_mutably</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// mutable borrow end here</span>
+    
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"After calling closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 7]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// use move keyword to take ownership</span>
+
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span>thread<span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Before defining closure: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// move the list owner to the new thread</span>
+    <span class="token comment">// list will be moved into the closure using the `move` keyword</span>
+    <span class="token namespace">thread<span class="token punctuation">::</span></span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token keyword">move</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"From thread: {:?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="moving-captured-values-out-of-closures">Moving captured values <strong>out of closures</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#moving-captured-values-out-of-closures"></a></h2>
+<ul>
+<li>
+<p>A closure body can do</p>
+<ul>
+<li>move a captured value out of the closure</li>
+<li>mutate the captured value</li>
+</ul>
+</li>
+<li>
+<p>Fn traits</p>
+<ul>
+<li><code>FnOnce</code>:
+<ul>
+<li>implemented for all closure </li>
+<li>applies to closures that can be called once</li>
+<li>the closure that move captured values out of it body will not implement other <code>Fn</code> trait</li>
+</ul>
+</li>
+<li><code>FnMut</code>:
+<ul>
+<li>don't move captured values out of their body + mutate the captured value  </li>
+<li>can be called more than once</li>
+</ul>
+</li>
+<li><code>Fn</code>:
+<ul>
+<li>don't move the captured values out of their body + don't mutate it</li>
+<li>capture nothing from the environment</li>
+<li>can be called more than once without mutating their environment (concurrently)   </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// example of the unwrap_or_else fn</span>
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">Option</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">unwrap_or_else</span><span class="token operator">&#x3C;</span><span class="token class-name">F</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span> f<span class="token punctuation">:</span> <span class="token class-name">F</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">T</span>
+    <span class="token keyword">where</span>
+        <span class="token class-name">F</span><span class="token punctuation">:</span> <span class="token class-name">FnOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">T</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">match</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=></span> x<span class="token punctuation">,</span>
+            <span class="token class-name">None</span> <span class="token operator">=></span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// Using FnMut but move the captured value out of the environment</span>
+<span class="token attribute attr-name">#[derive(Debug)]</span>
+<span class="token keyword">struct</span> <span class="token type-definition class-name">Rectangle</span> <span class="token punctuation">{</span>
+    width<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token punctuation">,</span>
+    height<span class="token punctuation">:</span> <span class="token keyword">u32</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> list <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> sort_operations <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"by key called"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/*
+    pub fn sort_by_key&#x3C;K, F>(&#x26;mut self, f: F)
+    where
+        F: FnMut(&#x26;T) -> K,
+        K: Ord,
+    */</span>
+    list<span class="token punctuation">.</span><span class="token function">sort_by_key</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>r<span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">{</span>
+        sort_operations<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// capture the `value` and moves it out of the closure by transfering it to the `sort_operations`</span>
+        r<span class="token punctuation">.</span>width
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// `sort_by_key` can be called once</span>
+    <span class="token comment">// but in the 2nd time, the value would no longer be in the environment</span>
+    
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{:#?}"</span><span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="translate">Translate<a aria-hidden="true" class="anchor-heading icon-link" href="#translate"></a></h1>
+<ul>
+<li>Inference: Sự suy luận</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/46vwlhzivue6u1qhmdw9a4d">Threads</a></li>
+</ul>

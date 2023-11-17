@@ -1,0 +1,61 @@
+<h1 id="shared-state">Shared-State<a aria-hidden="true" class="anchor-heading icon-link" href="#shared-state"></a></h1>
+<h1 id="shared-state-concurrency">Shared-State Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#shared-state-concurrency"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch16-03-shared-state.html">https://doc.rust-lang.org/book/ch16-03-shared-state.html</a></p>
+</blockquote>
+<ul>
+<li>Shared memory concurrency is like multiple ownership possible</li>
+</ul>
+<h2 id="using-mutexes">Using mutexes<a aria-hidden="true" class="anchor-heading icon-link" href="#using-mutexes"></a></h2>
+<ul>
+<li>Mutex: Mutual exclusion</li>
+<li>To access a data in a mutex, a thread must acquire the mutex's lock. When you're done with the data, you must unlock the data for other threads can acquire the lock.</li>
+</ul>
+<h2 id="mutext"><code>Mutex&#x3C;T></code><a aria-hidden="true" class="anchor-heading icon-link" href="#mutext"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// single thread context</span>
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>sync<span class="token punctuation">::</span></span><span class="token class-name">Mutex</span><span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token class-name">Mutex</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">{</span>
+        <span class="token comment">// m.lock() -> LockResult&#x3C;MutexGuard,...></span>
+        <span class="token comment">// MutexGuard is a smart pointer that implement the Drop trait to release the lock</span>
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> num <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token operator">*</span>num <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"m = {:?}"</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// m = Mutex { data: 6, poisoned: false, .. }</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="mutiple-ownership-with-multiple-threads-using-arct">Mutiple Ownership with Multiple Threads using <code>Arc&#x3C;T></code><a aria-hidden="true" class="anchor-heading icon-link" href="#mutiple-ownership-with-multiple-threads-using-arct"></a></h2>
+<ul>
+<li><code>Arc&#x3C;T></code> = atomic <code>Rc&#x3C;T></code></li>
+<li>Thread safe = performance penalty -> should use non-atomic</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>sync<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token class-name">Arc</span><span class="token punctuation">,</span> <span class="token class-name">Mutex</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span>thread<span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// counter is immutable, but we could get a mutable reference to the value inside it</span>
+    <span class="token comment">// -> **Mutex&#x3C;T> provides interior mutability**</span>
+    <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token class-name">Arc</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Mutex</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> handles <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token number">0</span><span class="token punctuation">..</span><span class="token number">10</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token class-name">Arc</span><span class="token punctuation">::</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// clone the reference</span>
+        <span class="token keyword">let</span> handle <span class="token operator">=</span> <span class="token namespace">thread<span class="token punctuation">::</span></span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token keyword">move</span> <span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> <span class="token keyword">mut</span> num <span class="token operator">=</span> counter<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token operator">*</span>num <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        handles<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> handle <span class="token keyword">in</span> handles <span class="token punctuation">{</span>
+        handle<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Result: {}"</span><span class="token punctuation">,</span> <span class="token operator">*</span>counter<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Result: 10</span>
+<span class="token punctuation">}</span>
+</code></pre>

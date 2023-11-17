@@ -1,0 +1,95 @@
+<h1 id="async-await">Async Await<a aria-hidden="true" class="anchor-heading icon-link" href="#async-await"></a></h1>
+<h1 id="asyncawait-primer">Async/.await Primer<a aria-hidden="true" class="anchor-heading icon-link" href="#asyncawait-primer"></a></h1>
+<blockquote>
+<p><a href="https://rust-lang.github.io/async-book/01_getting_started/04_async_await_primer.html">https://rust-lang.github.io/async-book/01_getting_started/04_async_await_primer.html</a></p>
+</blockquote>
+<h2 id="why">Why?<a aria-hidden="true" class="anchor-heading icon-link" href="#why"></a></h2>
+<ul>
+<li>Run multiple asynchronous functions</li>
+<li>Sync between them using .await </li>
+</ul>
+<h2 id="what">What?<a aria-hidden="true" class="anchor-heading icon-link" href="#what"></a></h2>
+<ul>
+<li>Built-in tool for writng asynchronous functions</li>
+<li>async:
+<ul>
+<li>A block of code -> a state machine (implements <code>Future trait</code>)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Blocked <code>Future</code> will yeild control of the thread, allowing other <code>Future</code> to run
+<code>Future</code> acts as a interupt whenever a determined event is received -> able to run multiple <code>Future</code></p>
+</blockquote>
+<blockquote>
+<p><strong><code>Future</code> needs to be run on an executor</strong>.</p>
+</blockquote>
+<h2 id="how">How?<a aria-hidden="true" class="anchor-heading icon-link" href="#how"></a></h2>
+<ul>
+<li>
+<p>dependencies: Cargo.toml</p>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">dependencies</span><span class="token punctuation">]</span>
+<span class="token key property">futures</span> <span class="token punctuation">=</span> <span class="token string">"0.3"</span>
+</code></pre>
+</li>
+<li>
+<p>Create an asynchronous function</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">do_sth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Returned a <code>Future</code></li>
+</ul>
+</li>
+<li>
+<p>Runs <strong>async fn</strong> on an executor</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">/*
+blocks the current thread until the provided future has run to completion
+*/</span>
+<span class="token keyword">use</span> <span class="token namespace">futures<span class="token punctuation">::</span>executor<span class="token punctuation">::</span></span>block_on<span class="token punctuation">;</span> 
+
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">hello_world</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"hello, world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> future <span class="token operator">=</span> <span class="token function">hello_world</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// assign a function</span>
+    <span class="token function">block_on</span><span class="token punctuation">(</span>future<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// runs future</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>using <code>.await</code> to wait for the <code>Future</code> trait</p>
+<ul>
+<li>
+<p>waits for the <code>future</code> to complete</p>
+</li>
+<li>
+<p>allows other tasks to run if the future is currently unable to make progress</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// dance can be executed at the same time as learn &#x26; sing song</span>
+<span class="token comment">// sing_song must wait for learn_song to complete</span>
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">learn_song</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Song</span> <span class="token punctuation">{</span> <span class="token comment">/**/</span> <span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">sing_song</span><span class="token punctuation">(</span>song<span class="token punctuation">:</span> <span class="token class-name">Song</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/**/</span> <span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">dance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/**/</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">learn_and_sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// using block_on blocks an entire thread</span>
+    <span class="token keyword">let</span> song <span class="token operator">=</span> <span class="token function">learn_song</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">await</span><span class="token punctuation">;</span>
+    <span class="token function">sing_song</span><span class="token punctuation">(</span>song<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">await</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">async_main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> f1 <span class="token operator">=</span> <span class="token function">learn_and_sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> f2 <span class="token operator">=</span> <span class="token function">dance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// join! waits for multiple futures concurrently</span>
+    <span class="token namespace">futures<span class="token punctuation">::</span></span><span class="token macro property">join!</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">block_on</span><span class="token punctuation">(</span><span class="token function">async_main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>

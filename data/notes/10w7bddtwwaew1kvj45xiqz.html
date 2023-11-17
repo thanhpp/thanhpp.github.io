@@ -1,0 +1,206 @@
+<h1 id="macros">Macros<a aria-hidden="true" class="anchor-heading icon-link" href="#macros"></a></h1>
+<h1 id="macros-1">Macros<a aria-hidden="true" class="anchor-heading icon-link" href="#macros-1"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch19-06-macros.html">https://doc.rust-lang.org/book/ch19-06-macros.html</a></p>
+</blockquote>
+<ul>
+<li>The term <em>macro</em> refers to a family of features in Rust: 
+<ul>
+<li><em>declarive macros</em> with <code>macro_rules!</code></li>
+<li>3 kinds of <em>procedural</em> macros
+<ul>
+<li>Custom <code>#[derive]</code> macros: that specify <strong>code added</strong> with the derive attribute used on structs and enums</li>
+<li>Attribute-like macros: that define <strong>custom attributes</strong> usable on any item</li>
+<li>Function-like macros: that <strong>look like function calls</strong> but operate on the tokens specified as their argument</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>macros are a way of writing code that writes other code (metaprogramming)</li>
+</ul>
+<h2 id="macros-vs-functions">Macros vs Functions<a aria-hidden="true" class="anchor-heading icon-link" href="#macros-vs-functions"></a></h2>
+<ul>
+<li>A function signature must declare the number and type of parameters tha function has.</li>
+<li>Macros can take a variable number of parameters.</li>
+<li>Marcos are expanded <strong>before the compiler interprets the meaning of code</strong>. A functions gets called at runtime &#x26; a trait needs to be implemented at compile time.</li>
+<li>Macros are more complex than function definitions.</li>
+</ul>
+<h2 id="declarative-macros-with-macro_rules-for-general-metaprogramming">Declarative Macros with <code>macro_rules!</code> for General Metaprogramming<a aria-hidden="true" class="anchor-heading icon-link" href="#declarative-macros-with-macro_rules-for-general-metaprogramming"></a></h2>
+<ul>
+<li>declarative ~ <code>macro_rules!</code> ~ macros by example ~ macros</li>
+<li>declarative macros allow you to write something similar to a Rust <code>match</code> expression
+<ul>
+<li>compare a value to patterns that are associated with particular code: the value iis the literal <strong>Rust source code</strong> passed to the macro</li>
+<li>the <strong>patterns are compared with the structure</strong> of that source code</li>
+<li>when matched, <strong>replaces the code passed to the macro</strong>.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> v<span class="token punctuation">:</span> <span class="token class-name">Vec</span><span class="token operator">&#x3C;</span><span class="token keyword">u32</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+{
+    let mut temp_vec = Vec::new();
+    temp_vec.push(1);
+    temp_vec.push(2);
+    temp_vec.push(3);
+    temp_vec
+}
+*/</span>
+
+<span class="token comment">// vec! macro: remove the preallocate the amount of memory upfront</span>
+<span class="token attribute attr-name">#[macro_export]</span>
+<span class="token macro property">macro_rules!</span> vec <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span> $<span class="token punctuation">(</span> <span class="token variable">$x</span><span class="token punctuation">:</span><span class="token fragment-specifier punctuation">expr</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token comment">// like a match arm ( $( $x:expr ),* ) is the pattern</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> <span class="token keyword">mut</span> temp_vec <span class="token operator">=</span> <span class="token class-name">Vec</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            $<span class="token punctuation">(</span>
+                temp_vec<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token variable">$x</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">)</span><span class="token operator">*</span>
+            temp_vec
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ( $( $x:expr ),* )</span>
+<span class="token comment">// $: declare a variable in the macro system that will contain the Rust code matching the pattern</span>
+<span class="token comment">// ( $x:expr ): captures values that match the pattern within the parentheses</span>
+<span class="token comment">// $x:expr: matches any Rust expression and gives the expression the name $x</span>
+<span class="token comment">// *: the pattern matches zero or more of whatever precedes the *</span>
+</code></pre>
+<h2 id="procedural-macros-for-generating-code-from-attributes">Procedural Macros for Generating Code from Attributes<a aria-hidden="true" class="anchor-heading icon-link" href="#procedural-macros-for-generating-code-from-attributes"></a></h2>
+<ul>
+<li>Procedural macros accept some code as input, operate on that code, and produce some code as an output.</li>
+<li>The procedural definitions must reside in their own crate with a <strong>special crate type</strong>.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> proc_macro<span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[some_attribute]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">some_name</span><span class="token punctuation">(</span>input<span class="token punctuation">:</span> <span class="token class-name">TokenStream</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">TokenStream</span> <span class="token punctuation">{</span>
+    <span class="token comment">// this function defines a procedural macro takes a TokenStream as an input and produces a TokenStream as an output</span>
+    <span class="token comment">// the TokenStream type represents a sequence of tokens</span>
+    <span class="token comment">// The source code that the macro is operating on makes up the input TokenStream</span>
+    <span class="token comment">// The code the macro produces is the output TokenStream</span>
+    <span class="token comment">// the function also has an attribute attached to it that specifies with kind of procedural macro we're creating</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="write-a-custom-derive-macro">Write a custom derive Macro<a aria-hidden="true" class="anchor-heading icon-link" href="#write-a-custom-derive-macro"></a></h2>
+<ul>
+<li>
+<p>The first step is to make a new library crate </p>
+<pre><code>$ cargo new hello_macro --lib
+</code></pre>
+</li>
+<li>
+<p>Next, we'll define the <code>HelloMacro</code> trait and its associated function</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// src/lib.rs</span>
+<span class="token keyword">pub</span> <span class="token keyword">trait</span> <span class="token type-definition class-name">HelloMacro</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">hello_macro</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>Define the procedural macro, it need to be in its own crate. Let's start a new crate called <code>hello_macro_derive</code> inside the project</p>
+<pre><code>$ cargo new hello_macro_derive --lib
+</code></pre>
+</li>
+<li>
+<p>Manage the procedural macro crate dependencies</p>
+<pre class="language-toml"><code class="language-toml"><span class="token comment"># hello_macro_derive/Cargo.toml</span>
+<span class="token punctuation">[</span><span class="token table class-name">lib</span><span class="token punctuation">]</span>
+<span class="token key property">proc-macro</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">dependencies</span><span class="token punctuation">]</span>
+<span class="token key property">syn</span> <span class="token punctuation">=</span> <span class="token string">"1.0"</span>
+<span class="token key property">quote</span> <span class="token punctuation">=</span> <span class="token string">"1.0"</span>
+</code></pre>
+</li>
+<li>
+<p>Define the procedural macro</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// hello_macro_derive/src/lib.rs</span>
+
+<span class="token keyword">use</span> <span class="token namespace">proc_macro<span class="token punctuation">::</span></span><span class="token class-name">TokenStream</span><span class="token punctuation">;</span> <span class="token comment">// the compiler API that allow us to read and manipulate Rust code</span>
+<span class="token keyword">use</span> <span class="token namespace">quote<span class="token punctuation">::</span></span>quote<span class="token punctuation">;</span> <span class="token comment">// turns syn data structures back into Rust code</span>
+<span class="token keyword">use</span> syn<span class="token punctuation">;</span> <span class="token comment">// parse Rust code from a string into a data structure</span>
+
+<span class="token attribute attr-name">#[proc_macro_derive(HelloMacro)]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">hello_macro_derive</span><span class="token punctuation">(</span>input<span class="token punctuation">:</span> <span class="token class-name">TokenStream</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">TokenStream</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Construct a representation of Rust code as a syntax tree</span>
+    <span class="token comment">// that we can manipulate</span>
+    <span class="token keyword">let</span> ast <span class="token operator">=</span> <span class="token namespace">syn<span class="token punctuation">::</span></span><span class="token function">parse</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// panic if fail</span>
+
+    <span class="token comment">// Build the trait implementation</span>
+    <span class="token function">impl_hello_macro</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span>ast<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
+DeriveInput {
+    // --snip--
+
+    ident: Ident {
+        ident: "Pancakes", // -> identifier ~ name
+        span: #0 bytes(95..103)
+    },
+    data: Struct(
+        DataStruct {
+            struct_token: Struct,
+            fields: Unit,
+            semi_token: Some(
+                Semi
+            )
+        }
+    )
+}
+*/</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">impl_hello_macro</span><span class="token punctuation">(</span>ast<span class="token punctuation">:</span> <span class="token operator">&#x26;</span><span class="token namespace">syn<span class="token punctuation">::</span></span><span class="token class-name">DeriveInput</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">TokenStream</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token operator">&#x26;</span>ast<span class="token punctuation">.</span>ident<span class="token punctuation">;</span> <span class="token comment">// get struct name</span>
+    <span class="token comment">// quote! macro let us define the Rust code</span>
+    <span class="token keyword">let</span> gen <span class="token operator">=</span> <span class="token macro property">quote!</span> <span class="token punctuation">{</span>
+        <span class="token keyword">impl</span> <span class="token class-name">HelloMacro</span> <span class="token keyword">for</span> #name <span class="token punctuation">{</span> <span class="token comment">// #name -> templating mechanic (replace with the variable name)</span>
+            <span class="token keyword">fn</span> <span class="token function-definition function">hello_macro</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// stringtify!: at compile time turns the expression into a string</span>
+                <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Hello, Macro! My name is {}!"</span><span class="token punctuation">,</span> <span class="token macro property">stringify!</span><span class="token punctuation">(</span>#name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    gen<span class="token punctuation">.</span><span class="token function">into</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// convert to a TokenStream</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="atribute-like-macros">Atribute-like macros<a aria-hidden="true" class="anchor-heading icon-link" href="#atribute-like-macros"></a></h2>
+<ul>
+<li>
+<p>Allow us to create new attributes</p>
+</li>
+<li>
+<p>Can apply to structs, enums and other items (functions,...)</p>
+<pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[route(GET, <span class="token string">"/"</span>)]</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// macro</span>
+<span class="token attribute attr-name">#[proc_macro_attribute]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">route</span><span class="token punctuation">(</span>attr<span class="token punctuation">:</span> <span class="token class-name">TokenStream</span><span class="token punctuation">,</span> item<span class="token punctuation">:</span> <span class="token class-name">TokenStream</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">TokenStream</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// takes 2 parameters</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="function-like-macros">Function-like macros<a aria-hidden="true" class="anchor-heading icon-link" href="#function-like-macros"></a></h2>
+<ul>
+<li>
+<p>Look like function calls</p>
+</li>
+<li>
+<p>Thay can take unknown number of arguments</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> sql <span class="token operator">=</span> <span class="token macro property">sql!</span><span class="token punctuation">(</span><span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> posts <span class="token constant">WHERE</span> id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// macro</span>
+<span class="token attribute attr-name">#[proc_macro]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">sql</span><span class="token punctuation">(</span>input<span class="token punctuation">:</span> <span class="token class-name">TokenStream</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">TokenStream</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// we receive the tokens and return the code we wnat to generate</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="vocab">Vocab<a aria-hidden="true" class="anchor-heading icon-link" href="#vocab"></a></h2>
+<ul>
+<li>procedural /prəˈsiːdʒərəl/: involving or following a formal procedure</li>
+<li>precede /prɪˈsiːd/: to happen before something or come before something/somebody in order (đứng trước)</li>
+</ul>

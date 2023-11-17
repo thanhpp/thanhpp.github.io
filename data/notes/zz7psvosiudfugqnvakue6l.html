@@ -1,0 +1,73 @@
+<h1 id="deref">Deref<a aria-hidden="true" class="anchor-heading icon-link" href="#deref"></a></h1>
+<h1 id="deref-trait---smart-pointer-as-reference">Deref trait - Smart pointer as reference<a aria-hidden="true" class="anchor-heading icon-link" href="#deref-trait---smart-pointer-as-reference"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch15-02-deref.html">https://doc.rust-lang.org/book/ch15-02-deref.html</a></p>
+</blockquote>
+<h2 id="intro">Intro<a aria-hidden="true" class="anchor-heading icon-link" href="#intro"></a></h2>
+<ul>
+<li><code>Deref</code> trait: customize the behavior of the dereference operatio <code>*</code></li>
+</ul>
+<h2 id="box-like-a-reference">Box<t> Like a reference</t><a aria-hidden="true" class="anchor-heading icon-link" href="#box-like-a-reference"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// pass</span>
+    <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// pass -> *y == 5 -> deref(y) = 5</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="define-a-smart-pointer">Define a smart pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#define-a-smart-pointer"></a></h2>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>ops<span class="token punctuation">::</span></span><span class="token class-name">Deref</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token type-definition class-name">MyBox</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">MyBox</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">new</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token class-name">T</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">MyBox</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token comment">// Mybox::new(T)</span>
+        <span class="token class-name">MyBox</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">Deref</span> <span class="token keyword">for</span> <span class="token class-name">MyBox</span><span class="token operator">&#x3C;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">type</span> <span class="token type-definition class-name">Target</span> <span class="token operator">=</span> <span class="token class-name">T</span><span class="token punctuation">;</span> <span class="token comment">// define an associated type for the Deref trait to use</span>
+
+    <span class="token comment">// borrows `self` -> returns a reference to the inner data</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">deref</span><span class="token punctuation">(</span><span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token operator">&#x26;</span><span class="token keyword">Self</span><span class="token punctuation">::</span><span class="token class-name">Target</span> <span class="token punctuation">{</span>
+        <span class="token operator">&#x26;</span><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token number">0</span> <span class="token comment">// first value of the tuple struct</span>
+        <span class="token comment">// *y -> *(y.deref())</span>
+        <span class="token comment">// NOTE: returning the value directly would transfer the ownership of the innter value</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="implicit-deref-coercions">Implicit Deref Coercions<a aria-hidden="true" class="anchor-heading icon-link" href="#implicit-deref-coercions"></a></h2>
+<ul>
+<li><strong>Deref coercion</strong>: converts a reference to a type that implements the <code>Deref</code> trait into a reference to a reference to another type
+<ul>
+<li>force the <code>Deref</code> type to another reference type</li>
+<li><code>&#x26;String</code> -> <code>str</code> (String implements the <code>Deref</code> trait)</li>
+</ul>
+</li>
+<li>Rust automatically call the <code>defef()</code> function to convert the input type to the parameter type</li>
+</ul>
+<h2 id="deref-coercion-with-mutability">Deref Coercion with Mutability<a aria-hidden="true" class="anchor-heading icon-link" href="#deref-coercion-with-mutability"></a></h2>
+<ul>
+<li><code>Deref</code>: override the <code>*</code> operator on immutable references</li>
+<li><code>DerefMut</code>: override the <code>*</code> operator on mutable references</li>
+<li>Rust does deref coercions when
+<ul>
+<li><code>&#x26;T</code> => <code>&#x26;U</code>: <code>T: Deref&#x3C;Target=U></code></li>
+<li><code>&#x26;mut T</code> => <code>&#x26;mut U</code>: <code>T: DerferMut&#x3C;Target=U></code></li>
+<li><code>&#x26;mut T</code> => <code>&#x26;U</code>: <code>T:Deref&#x3C;Target=U></code> </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Rust will also coerce a mutable reference to an immutable one</p>
+</blockquote>
+<h3 id="vocab">Vocab<a aria-hidden="true" class="anchor-heading icon-link" href="#vocab"></a></h3>
+<ul>
+<li>coercion <code>/kəʊˈɜː.ʃən//</code>: the practice of persuading someone to do something by using force or threats.
+<ul>
+<li>sự bắt buộc || sự cưỡng bách</li>
+</ul>
+</li>
+</ul>

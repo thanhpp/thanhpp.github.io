@@ -1,0 +1,28 @@
+<h1 id="docker">Docker<a aria-hidden="true" class="anchor-heading icon-link" href="#docker"></a></h1>
+<blockquote>
+<p><a href="https://blog.bytebytego.com/p/a-crash-course-in-docker">https://blog.bytebytego.com/p/a-crash-course-in-docker</a></p>
+</blockquote>
+<h2 id="lightweight-containerization">Lightweight containerization<a aria-hidden="true" class="anchor-heading icon-link" href="#lightweight-containerization"></a></h2>
+<ul>
+<li>The Docker engine does not virtualize OS resources
+<ul>
+<li>container achieve isolation through <strong>Linux namespaces &#x26; control groups</strong></li>
+</ul>
+</li>
+<li>Namespaces: separation for processes, networking, mounts,...</li>
+<li>cgroups (control groups): limit &#x26; meter usages of resources</li>
+<li>=> Sharing the OS kernel, not the host physical resources</li>
+</ul>
+<h2 id="application-packaging">Application packaging<a aria-hidden="true" class="anchor-heading icon-link" href="#application-packaging"></a></h2>
+<ul>
+<li>Docker is solving 
+<ul>
+<li>Bundling the app, configs, dependencies &#x26; OS -> single image</li>
+<li>Remain the environments (dev, runtime)</li>
+</ul>
+</li>
+</ul>
+<h2 id="kubernetes-k8s">Kubernetes (K8s)<a aria-hidden="true" class="anchor-heading icon-link" href="#kubernetes-k8s"></a></h2>
+<ul>
+<li>Cluster management taking advantages of the Docker engine</li>
+</ul>

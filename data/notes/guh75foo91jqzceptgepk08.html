@@ -1,0 +1,62 @@
+<h1 id="scuba">Scuba<a aria-hidden="true" class="anchor-heading icon-link" href="#scuba"></a></h1>
+<h1 id="scuba---metas-monitoring-system">Scuba - Meta's monitoring system<a aria-hidden="true" class="anchor-heading icon-link" href="#scuba---metas-monitoring-system"></a></h1>
+<blockquote>
+<p><a href="https://research.facebook.com/file/2964294030497318/scuba-diving-into-data-at-facebook.pdf">https://research.facebook.com/file/2964294030497318/scuba-diving-into-data-at-facebook.pdf</a>
+<a href="https://www.facebook.com/notes/10158791569947200">https://www.facebook.com/notes/10158791569947200</a>
+<a href="https://news.ycombinator.com/item?id=13463016">https://news.ycombinator.com/item?id=13463016</a></p>
+</blockquote>
+<h2 id="intro">Intro<a aria-hidden="true" class="anchor-heading icon-link" href="#intro"></a></h2>
+<ul>
+<li>Scuba
+<ul>
+<li>Realtime database: fast &#x26; scalable</li>
+<li>Ingestion framework: low latency </li>
+<li>Detectors framework: set up alert &#x26; detect metrics</li>
+<li>Query tools</li>
+</ul>
+</li>
+<li>Trade-offs
+<ul>
+<li>no joins, no global sorting -> need to use another tool</li>
+<li>flat schema (no nested)</li>
+<li>no consistency (best effort)</li>
+<li>Time partition only</li>
+<li>Time &#x26; Space retention limits (only serve in a limited range of time)</li>
+<li>not 4 high traffic</li>
+</ul>
+</li>
+</ul>
+<h2 id="architecture">Architecture<a aria-hidden="true" class="anchor-heading icon-link" href="#architecture"></a></h2>
+<p><img src="/assets/2022-11-23_15-11-scube-architecture.png"></p>
+<ul>
+<li>
+<p>Scuba UI: using SQL</p>
+</li>
+<li>
+<p>Fast query</p>
+<ul>
+<li><img src="/assets/2022-11-23_15-13-scuba-fast-query.png" alt="Fast Query"></li>
+<li>Divide a query to multiple nodes, data is splitted by levels</li>
+</ul>
+</li>
+</ul>
+<h2 id="ui">UI<a aria-hidden="true" class="anchor-heading icon-link" href="#ui"></a></h2>
+<ul>
+<li>Usecase: Monitor code performance 
+<ul>
+<li>compares latency by weeks </li>
+</ul>
+</li>
+<li>Each diagram is built from a single table (no joins supported)</li>
+</ul>
+<h2 id="integration">Integration<a aria-hidden="true" class="anchor-heading icon-link" href="#integration"></a></h2>
+<ul>
+<li>Scuba: Realtime database + UI + ingestion framework</li>
+<li>Strong point: pre-built supported metrics (created by the data team)</li>
+<li>Profiling: 
+<ul>
+<li>dump linux stack trace -> data</li>
+<li>the service team doesn't need to update their code</li>
+</ul>
+</li>
+</ul>

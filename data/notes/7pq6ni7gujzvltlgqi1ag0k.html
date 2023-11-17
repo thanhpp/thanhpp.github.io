@@ -1,0 +1,44 @@
+<h1 id="functions-and-closures">Functions and Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#functions-and-closures"></a></h1>
+<h1 id="advanced-functions-and-closures">Advanced Functions and Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#advanced-functions-and-closures"></a></h1>
+<blockquote>
+<p><a href="https://doc.rust-lang.org/book/ch19-05-advanced-functions-and-closures.html">https://doc.rust-lang.org/book/ch19-05-advanced-functions-and-closures.html</a></p>
+</blockquote>
+<h2 id="function-pointers">Function Pointers<a aria-hidden="true" class="anchor-heading icon-link" href="#function-pointers"></a></h2>
+<ul>
+<li>In rust, we can pass regular functions to functions rather than defining a new closure.</li>
+<li>The <code>fn</code> type is called a <em>function pointer</em></li>
+<li>Function pointer implement all three of the closure trait
+<ul>
+<li>Fn</li>
+<li>FnMut</li>
+<li>FnOnce</li>
+</ul>
+</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">add_one</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    x <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// execute the f twice </span>
+<span class="token keyword">fn</span> <span class="token function-definition function">do_twice</span><span class="token punctuation">(</span>f<span class="token punctuation">:</span> <span class="token keyword">fn</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span><span class="token punctuation">,</span> arg<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    <span class="token function">f</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">f</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// (5 + 1) + (5 + 1)</span>
+    <span class="token keyword">let</span> answer <span class="token operator">=</span> <span class="token function">do_twice</span><span class="token punctuation">(</span>add_one<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The answer is: {}"</span><span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// The answer is: 12</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="returning-closures">Returning Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#returning-closures"></a></h2>
+<ul>
+<li>Closures are represented by traits -> can't return closures <em>directly</em>. </li>
+<li>If we want to returns a trait, we can use the concrete type that implements the trait as the return value. But closures don't have a concrete type that is returnable.</li>
+</ul>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// Rust doesn't know how much space to store closure.</span>
+<span class="token comment">// -> use Box to stores the closures (alloc at run-time)</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">returns_closure</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Box</span><span class="token operator">&#x3C;</span><span class="token keyword">dyn</span> <span class="token class-name">Fn</span><span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>x<span class="token closure-punctuation punctuation">|</span></span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>

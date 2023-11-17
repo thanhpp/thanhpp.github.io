@@ -1,0 +1,18 @@
+<h1 id="export-gpg">Export Gpg<a aria-hidden="true" class="anchor-heading icon-link" href="#export-gpg"></a></h1>
+<h1 id="how-to-export-gpg-key-and-import-it-to-another-computer">How to export gpg key and import it to another computer<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-export-gpg-key-and-import-it-to-another-computer"></a></h1>
+<blockquote>
+<p><a href="https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine">https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine</a></p>
+</blockquote>
+<h2 id="export">Export<a aria-hidden="true" class="anchor-heading icon-link" href="#export"></a></h2>
+<ol>
+<li><code>gpg --list-secret-keys uid</code></li>
+<li>Get the key id</li>
+<li>export the private key <code>gpg --export-secret-keys &#x3C;key id> > &#x3C;private key file location>.key</code>  </li>
+</ol>
+<h2 id="import">Import<a aria-hidden="true" class="anchor-heading icon-link" href="#import"></a></h2>
+<p><code>gpg --import &#x3C;private key file location>.key</code></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/ty97p2rgy2xtu104b2kiwqf">Signing Commit</a></li>
+</ul>

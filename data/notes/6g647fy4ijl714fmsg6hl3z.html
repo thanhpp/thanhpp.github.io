@@ -1,0 +1,28 @@
+<h1 id="multiple-accounts">Multiple Accounts<a aria-hidden="true" class="anchor-heading icon-link" href="#multiple-accounts"></a></h1>
+<h1 id="set-up-multiple-git-accounts">Set up multiple git accounts<a aria-hidden="true" class="anchor-heading icon-link" href="#set-up-multiple-git-accounts"></a></h1>
+<h2 id="using-includeif">Using includeIf<a aria-hidden="true" class="anchor-heading icon-link" href="#using-includeif"></a></h2>
+<ul>
+<li>Edit the global git config (~/.gitconfig)
+<pre><code>[includeIf "gitdir:&#x3C;path to top level directory>"]
+  path = &#x3C;git config path>
+</code></pre>
+</li>
+<li><strong>only available for sub folders of the top level directory</strong></li>
+<li>Must below all config</li>
+<li>Global apply
+<pre><code>[include]
+  path = &#x3C;global git config>
+</code></pre>
+</li>
+</ul>
+<h2 id="using-insteadof">Using insteadOf<a aria-hidden="true" class="anchor-heading icon-link" href="#using-insteadof"></a></h2>
+<ul>
+<li>set multiple insteadOf based on pattern matching
+<pre><code>  [url "https://&#x3C;accessToken1>@github.com/&#x3C;org1>"]
+          insteadOf = https://github.com/&#x3C;org1>
+  [url "https://&#x3C;accessToken2>@github.com"]
+          insteadOf = https://github.com
+</code></pre>
+</li>
+<li>useful for <a href="/notes/z70kjoz28s8p41pgxrounpu">Golang</a> modules</li>
+</ul>

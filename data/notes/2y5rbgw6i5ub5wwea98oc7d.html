@@ -1,0 +1,157 @@
+<h1 id="account-abstraction">Account Abstraction<a aria-hidden="true" class="anchor-heading icon-link" href="#account-abstraction"></a></h1>
+<blockquote>
+<p><a href="https://docs.google.com/presentation/d/1iyrEmDsbUCpxIPEFPQEgsyyULRuQXnbFHj9srnlNmFk">https://docs.google.com/presentation/d/1iyrEmDsbUCpxIPEFPQEgsyyULRuQXnbFHj9srnlNmFk</a></p>
+</blockquote>
+<h2 id="accounts-in-ethereum">Accounts in Ethereum<a aria-hidden="true" class="anchor-heading icon-link" href="#accounts-in-ethereum"></a></h2>
+<ul>
+<li>Externally Owned: Private key -> originated transaction
+<ul>
+<li>Limitations
+<ul>
+<li>verification logic: Signature, Gas, Nonce</li>
+<li>Signature:
+<ul>
+<li>User must sign</li>
+<li>User must secure private key</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Smart Contract Account: Controlled by code -> Cannot originate tx (must be executed from a Externally Owned)</li>
+<li><strong>Account abstraction goals</strong>
+<ul>
+<li>Smart contract account
+<ul>
+<li>originate txs</li>
+<li>controlled by code</li>
+</ul>
+</li>
+<li>Specify arbitrary verificaion logic
+<ul>
+<li>use EVM code for verification</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="erc-4337">ERC-4337<a aria-hidden="true" class="anchor-heading icon-link" href="#erc-4337"></a></h2>
+<h3 id="intro">Intro<a aria-hidden="true" class="anchor-heading icon-link" href="#intro"></a></h3>
+<ul>
+<li>Mutual invalidation -> lead to node stress</li>
+<li>ERC-4337:
+<ul>
+<li>Create another layer</li>
+<li>Doesn't modify the Ethereum core (maintain security)</li>
+</ul>
+</li>
+</ul>
+<h3 id="key-concepts">Key concepts<a aria-hidden="true" class="anchor-heading icon-link" href="#key-concepts"></a></h3>
+<ul>
+<li>Creates a new mempool for <strong>UserOperation</strong></li>
+<li>UserOperation packages up user intent &#x26; data for verification</li>
+<li><strong>Bundler</strong> aggregates UserOperation into 1 single tx</li>
+<li><strong>Bundler</strong>:
+<pre><code>-  powerful nodes
+-  Handle the UserOperation mempool
+</code></pre>
+</li>
+</ul>
+<h3 id="verification--execution-sequence">Verification &#x26; Execution Sequence<a aria-hidden="true" class="anchor-heading icon-link" href="#verification--execution-sequence"></a></h3>
+<ul>
+<li>EntryPoint contract: verifies &#x26; executes the UserOperations bundles</li>
+<li>Paymaster Contract: repay tokens for the Bundler
+<ul>
+<li>Users don't need tokens to interact with the Ethereum</li>
+</ul>
+</li>
+</ul>
+<h3 id="useroperation">UserOperation<a aria-hidden="true" class="anchor-heading icon-link" href="#useroperation"></a></h3>
+<ul>
+<li>User intent + data for verifications</li>
+<li>Signature: can be customize</li>
+</ul>
+<h3 id="why">Why?<a aria-hidden="true" class="anchor-heading icon-link" href="#why"></a></h3>
+<ul>
+<li>Decentralizes the private bundler</li>
+<li>Saandardlizes AA -> annovation &#x26; adoption</li>
+</ul>
+<h2 id="use-cases">Use cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<h3 id="wallet-management">Wallet management<a aria-hidden="true" class="anchor-heading icon-link" href="#wallet-management"></a></h3>
+<ul>
+<li>Classical
+<ul>
+<li>Multi-sig</li>
+<li>Social Recovery</li>
+<li>Tiered Permissions</li>
+</ul>
+</li>
+<li>Novel
+<ul>
+<li>Custom signing scheme</li>
+<li>Device Primary Authentication: FaceID, TouchID,...</li>
+<li>Multi-factor</li>
+</ul>
+</li>
+<li>Regulative wallet
+<ul>
+<li>comply regulations
+<ul>
+<li>whitelist tokens &#x26; owners</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="defi">Defi<a aria-hidden="true" class="anchor-heading icon-link" href="#defi"></a></h3>
+<ul>
+<li>Gas fee payment: use other tokens</li>
+<li>Sponsored transaction: Paymaster</li>
+<li>Batch tx
+<ul>
+<li>Batch tx: sign once</li>
+</ul>
+</li>
+<li>Access control:
+<ul>
+<li>Session key: 
+<ul>
+<li>allow permissions in a limited time</li>
+<li>set max allowances, txs,....</li>
+</ul>
+</li>
+<li>Transaction Guard
+<ul>
+<li>3rd parties to monitor txs</li>
+</ul>
+</li>
+<li>Locking/Vesting
+<ul>
+<li>Lock token owned by the account contract</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>AA &#x26; PBS
+<ul>
+<li>PBS: Proposer Builder Separation</li>
+<li>Combine many operations into 1 tx
+<ul>
+<li>Off-chain computation:
+<ul>
+<li>User delegate builder to query from an input source</li>
+</ul>
+</li>
+<li>Off-chain storage:
+<ul>
+<li>move parts of Smart Contract storage to off-chain storage</li>
+<li>-> users need to include proof of storage each tx</li>
+<li>=> Builder can provide proof of storage &#x26; storage itself</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
