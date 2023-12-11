@@ -2,7 +2,7 @@
 id: 2ku1l067i7zdbkqb6u55c5p
 title: Storage
 desc: ''
-updated: 1701882690333
+updated: 1702303168569
 created: 1701881376619
 ---
 
@@ -10,7 +10,7 @@ created: 1701881376619
 
 ## Types
 
-- Block storage
+- [[Cloud.AWS.Storage.Block-Storage]]
     - Format: continuos segments (blocks) on the storage device 
     - a block = fixed storage unit
     - Usages: OS or application that has the capabilities to **manage the block storage directly**
