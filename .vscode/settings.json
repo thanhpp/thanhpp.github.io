@@ -20,5 +20,12 @@
   "files.insertFinalNewline": true,
   "markdown.styles": [
     ".vscode/custom-tag-style.css"
+  ],
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "docs/index.md"
+    }
   ]
 }
