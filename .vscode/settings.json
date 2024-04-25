@@ -26,6 +26,11 @@
       "language": "markdown",
       "scheme": "file",
       "pattern": "docs/index.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "docs/tools/docker/docker-compose-environment-quotes.md"
     }
   ]
 }
