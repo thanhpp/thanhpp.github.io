@@ -11,6 +11,8 @@ plugins:
         - '.*\.(tmp|bin|tar)$'
 theme:
   name: material
+  icon:
+    logo: material/fire-circle
   features:
     - navigation.instant
     - navigation.tabs
