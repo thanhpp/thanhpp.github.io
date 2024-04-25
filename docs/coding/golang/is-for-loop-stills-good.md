@@ -13,7 +13,8 @@
 - Code: [https://github.com/thanhpp/gopher/blob/main/cmd/bench-hashmap/bench-hashmap_test.go](https://github.com/thanhpp/gopher/blob/main/cmd/bench-hashmap/bench-hashmap_test.go)
 - Method: create slices and methods with different sizes, then choose a random number to search.
 - Result
-    - ```
+
+```
         go test -bench=. -benchmem
         goos: linux
         goarch: amd64
@@ -52,7 +53,8 @@
         BenchmarkMapString/size_50-12           37039489                32.53 ns/op            0 B/op          0 allocs/op
         PASS
         ok      github.com/thanhpp/gopher/bench-hashmap 45.370s
-      ```
+```
+
 - Analytic: 
     - The slice loop cost increases with the size of the slice (of course ^^).
     - When the sizes are small enough (1, 5, 10): the cost of searching in a slice is cheaper.
