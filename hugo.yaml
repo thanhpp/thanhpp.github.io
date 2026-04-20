@@ -1,0 +1,16 @@
+baseURL: "https://thanhpp.github.io/"
+languageCode: "en-us"
+title: "thanhpp"
+
+disableKinds:
+  - taxonomy
+  - term
+
+params:
+  intro:
+    avatar: "https://avatars.githubusercontent.com/u/33785414?v=4"
+    name: "thanhpp"
+    role: ""
+    link:
+      url: "https://github.com/thanhpp"
+      label: "github.com/thanhpp"

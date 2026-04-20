@@ -1,0 +1,64 @@
+{{ define "main" }}
+<div class="page">
+    <div class="intro">
+        {{ if hasPrefix .Site.Params.intro.avatar "http" }}
+        <div class="avatar"><img src="{{ .Site.Params.intro.avatar }}" alt="avatar"></div>
+        {{ else }}
+        <div class="avatar">{{ .Site.Params.intro.avatar }}</div>
+        {{ end }}
+        <h1>{{ .Site.Params.intro.name }}</h1>
+        <p>{{ .Site.Params.intro.role }}</p>
+        <p><a href="{{ .Site.Params.intro.link.url }}">{{ .Site.Params.intro.link.label }}</a></p>
+    </div>
+
+    <div class="section-label">Main quests</div>
+    <div class="main-quests">
+        {{ range hugo.Data.main_quests }}
+        <div class="mq-card">
+            <div class="mq-type">{{ .type }}</div>
+            <h3>{{ if .link }}<a href="{{ .link }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
+            <div class="mq-sub">{{ .subtitle }}</div>
+            <ul>
+                {{ range .bullets }}<li>{{ . }}</li>{{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="section-label">Side quests</div>
+    <div class="side-quests-grid">
+        <button class="tag-btn active" data-tag="all">All</button>
+        {{ $tags := slice }}
+        {{ range hugo.Data.side_quests }}
+            {{ $tags = $tags | append .tag }}
+        {{ end }}
+        {{ $tags = $tags | uniq }}
+        {{ range $tags }}
+        <button class="tag-btn" data-tag="{{ . }}">{{ . | humanize | title }}</button>
+        {{ end }}
+    </div>
+    <div class="sq-list">
+        {{ range hugo.Data.side_quests }}
+        {{ $total := len .checklist }}
+        {{ $done := 0 }}
+        {{ range .checklist }}{{ if .done }}{{ $done = add $done 1 }}{{ end }}{{ end }}
+        {{ $pct := mul (div (float $done) (float $total)) 100 | math.Round | int }}
+        <div class="sq-item" data-tag="{{ .tag }}">
+            <h4>{{ if .link }}<a href="{{ .link }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h4>
+            <div class="sq-meta">
+                <span class="sq-tag {{ .tag }}">{{ .label }}</span>
+                <span class="sq-pct">{{ $pct }}%</span>
+            </div>
+            <div class="sq-bar-wrap">
+                <div class="sq-bar" style="width:{{ $pct }}%"></div>
+            </div>
+            <div class="sq-checklist">
+                {{ range .checklist }}
+                <span class="sq-check{{ if .done }} done{{ end }}">{{ .text }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
