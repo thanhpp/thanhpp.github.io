@@ -1,0 +1,10 @@
+- title: "Learn Rust"
+  link: ""
+  tag: "learning"
+  label: "Learning"
+  checklist:
+    - { text: "Ownership", done: true }
+    - { text: "Traits", done: true }
+    - { text: "Error handling", done: true }
+    - { text: "Async", done: true }
+    - { text: "Macros", done: true }

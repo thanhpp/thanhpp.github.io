@@ -1,0 +1,15 @@
+- type: "Work"
+  title: "Software Engineer @ Kipseli Capital"
+  link: "https://www.kipseli.capital/"
+  subtitle: "Building scalable services"
+  bullets:
+    - "Microservices architecture"
+    - "High-throughput data pipelines"
+    - "API design & observability"
+
+- type: "Personal project"
+  title: "nothing"
+  link: ""
+  subtitle: "nothing"
+  bullets:
+    - "nothing"
