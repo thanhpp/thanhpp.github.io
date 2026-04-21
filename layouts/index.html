@@ -11,7 +11,7 @@
         <p><a href="{{ .Site.Params.intro.link.url }}">{{ .Site.Params.intro.link.label }}</a></p>
     </div>
 
-    <div class="section-label">Main quests</div>
+    <div class="section-label">Main Quests</div>
     <div class="main-quests">
         {{ range hugo.Data.main_quests }}
         <div class="mq-card">
@@ -25,7 +25,7 @@
         {{ end }}
     </div>
 
-    <div class="section-label">Side quests</div>
+    <div class="section-label">Side Quests</div>
     <div class="side-quests-grid">
         <button class="tag-btn active" data-tag="all">All</button>
         {{ $tags := slice }}
@@ -50,7 +50,10 @@
                 <span class="sq-pct">{{ $pct }}%</span>
             </div>
             <div class="sq-bar-wrap">
-                <div class="sq-bar" style="width:{{ $pct }}%"></div>
+                {{ $filled := div $pct 10 }}
+                {{ range seq 10 }}
+                <div class="seg{{ if le . $filled }} filled{{ end }}"></div>
+                {{ end }}
             </div>
             <div class="sq-checklist">
                 {{ range .checklist }}
