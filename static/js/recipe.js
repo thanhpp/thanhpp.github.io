@@ -1,4 +1,92 @@
-document.addEventListener('DOMContentLoaded', function () {
+function parseExif(ab) {
+    var out = { model: null, iso: null, fNumber: null, exposureTime: null, exposureBias: null };
+    var dv = new DataView(ab);
+    // locate APP1 "Exif\0\0"
+    var off = 2, tiff = -1;
+    try {
+        while (off + 4 < dv.byteLength) {
+            if (dv.getUint8(off) !== 0xFF) break;
+            var marker = dv.getUint8(off + 1);
+            var size = dv.getUint16(off + 2);
+            if (marker === 0xE1 &&
+                dv.getUint8(off + 4) === 0x45 && dv.getUint8(off + 5) === 0x78 &&
+                dv.getUint8(off + 6) === 0x69 && dv.getUint8(off + 7) === 0x66) { tiff = off + 10; break; }
+            off += 2 + size;
+        }
+        if (tiff < 0) return out;
+        var little = dv.getUint8(tiff) === 0x49 && dv.getUint8(tiff + 1) === 0x49;
+        var u16 = function (o) { return dv.getUint16(o, little); };
+        var u32 = function (o) { return dv.getUint32(o, little); };
+        var i32 = function (o) { return dv.getInt32(o, little); };
+        var TYPE_SIZE = { 1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 7: 1, 9: 4, 10: 8 };
+        function readIFD(ifdOff) {
+            var n = u16(ifdOff), e = {};
+            for (var i = 0; i < n; i++) {
+                var p = ifdOff + 2 + i * 12;
+                var tag = u16(p), type = u16(p + 2), cnt = u32(p + 4);
+                var byteLen = (TYPE_SIZE[type] || 1) * cnt;
+                var valOff = (byteLen > 4) ? tiff + u32(p + 8) : p + 8;
+                e[tag] = { type: type, cnt: cnt, valOff: valOff };
+            }
+            return e;
+        }
+        var rat = function (o) { return u32(o) / u32(o + 4); };
+        var srat = function (o) { return i32(o) / i32(o + 4); };
+        var ascii = function (en) {
+            var s = '';
+            for (var i = 0; i < en.cnt; i++) {
+                var c = dv.getUint8(en.valOff + i);
+                if (c) s += String.fromCharCode(c);
+            }
+            return s;
+        };
+        var readNum = function (en) { return en.type === 3 ? u16(en.valOff) : u32(en.valOff); }; // SHORT vs LONG (ISO type-aware)
+        var ifd0 = readIFD(tiff + u32(tiff + 4));
+        if (ifd0[0x0110]) out.model = ascii(ifd0[0x0110]);
+        var exifPtr = ifd0[0x8769];
+        if (exifPtr) {
+            var ex = readIFD(tiff + u32(exifPtr.valOff));
+            if (ex[0x8827]) out.iso = readNum(ex[0x8827]);
+            if (ex[0x829D]) out.fNumber = rat(ex[0x829D].valOff);
+            if (ex[0x829A]) out.exposureTime = rat(ex[0x829A].valOff);
+            if (ex[0x9204]) out.exposureBias = srat(ex[0x9204].valOff);
+        }
+    } catch (e) { /* malformed EXIF → return whatever we have */ }
+    return out;
+}
+
+function exifToRecipeFields(exif) {
+    var out = { iso: null, aperture: null, shutterSpeed: null, exposureComp: null };
+    if (!exif) return out;
+
+    if (exif.iso !== null && exif.iso !== undefined) {
+        out.iso = String(exif.iso);
+    }
+
+    if (exif.fNumber !== null && exif.fNumber !== undefined) {
+        var f = exif.fNumber;
+        var fStr = (Math.round(f) === f) ? String(f) : f.toFixed(1);
+        out.aperture = 'f/' + fStr;
+    }
+
+    if (exif.exposureTime !== null && exif.exposureTime !== undefined) {
+        var et = exif.exposureTime;
+        if (et < 1) {
+            out.shutterSpeed = '1/' + Math.round(1 / et);
+        } else {
+            out.shutterSpeed = String(Math.round(et * 10) / 10);
+        }
+    }
+
+    if (exif.exposureBias !== null && exif.exposureBias !== undefined) {
+        var r = Math.round(exif.exposureBias * 10) / 10;
+        out.exposureComp = (r > 0) ? ('+' + r) : String(r);
+    }
+
+    return out;
+}
+
+function main() {
     var canvas = document.getElementById('recipe-canvas');
     if (!canvas) return;
 
@@ -32,14 +120,17 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'highlight', label: 'Highlight', kind: 'number', big: false, default: '-2' },
         { id: 'shadow', label: 'Shadow', kind: 'number', big: false, default: '-1' },
         { id: 'color', label: 'Color', kind: 'number', big: false, default: '4' },
+        { id: 'colorChromeEffect', label: 'Color Chrome Effect', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off' },
+        { id: 'colorFxBlue', label: 'Color FX Blue', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off' },
         { id: 'sharpness', label: 'Sharpness', kind: 'number', big: false, default: '-2' },
+        { id: 'clarity', label: 'Clarity', kind: 'number', big: false, default: '0' },
         { id: 'noiseReduction', label: 'Noise Reduction', kind: 'number', big: false, default: '-4' },
         { id: 'grainEffect', label: 'Grain Effect', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Strong' },
         { id: 'iso', label: 'ISO', kind: 'text', big: false, default: 'Auto' },
         { id: 'exposureComp', label: 'Exposure Comp.', kind: 'text', big: false, default: '0' }
     ];
 
-    var SIGNED_FIELD_IDS = ['highlight', 'shadow', 'color', 'sharpness', 'noiseReduction'];
+    var SIGNED_FIELD_IDS = ['highlight', 'shadow', 'color', 'sharpness', 'clarity', 'noiseReduction'];
 
     // ---------------------------------------------------------------
     // 4.2 State & persistence
@@ -52,7 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
         isPortrait: false,
         ratio: 1.5,
         name: '',
-        values: {}
+        values: {},
+        hidden: {}
     };
 
     FIELDS.forEach(function (f) {
@@ -81,13 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     });
                 }
+                if (parsed.hidden && typeof parsed.hidden === 'object') {
+                    Object.keys(parsed.hidden).forEach(function (k) {
+                        state.hidden[k] = parsed.hidden[k];
+                    });
+                }
             }
         }
     } catch (e) { /* malformed JSON or unavailable, keep defaults */ }
 
     function saveData() {
         try {
-            localStorage.setItem(LS_DATA, JSON.stringify({ name: state.name, values: state.values }));
+            localStorage.setItem(LS_DATA, JSON.stringify({ name: state.name, values: state.values, hidden: state.hidden }));
         } catch (e) { /* quota / private mode */ }
     }
 
@@ -128,9 +225,28 @@ document.addEventListener('DOMContentLoaded', function () {
             var wrap = document.createElement('div');
             wrap.className = 'recipe-field';
 
+            var head = document.createElement('div');
+            head.className = 'recipe-field-head';
+
             var label = document.createElement('label');
             label.textContent = f.label;
-            wrap.appendChild(label);
+            head.appendChild(label);
+
+            var toggleLabel = document.createElement('label');
+            toggleLabel.className = 'recipe-toggle';
+            var toggleInp = document.createElement('input');
+            toggleInp.type = 'checkbox';
+            toggleInp.checked = !state.hidden[f.id];
+            toggleInp.addEventListener('change', function () {
+                state.hidden[f.id] = !toggleInp.checked;
+                saveData();
+                render();
+            });
+            toggleLabel.appendChild(toggleInp);
+            toggleLabel.appendChild(document.createTextNode('show'));
+            head.appendChild(toggleLabel);
+
+            wrap.appendChild(head);
 
             if (f.kind === 'select') {
                 var sel = document.createElement('select');
@@ -150,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (f.kind === 'text' || f.kind === 'number') {
                 var inp = document.createElement('input');
                 inp.type = 'text';
+                inp.setAttribute('data-field-id', f.id);
                 inp.value = state.values[f.id];
                 inp.addEventListener('input', function () {
                     state.values[f.id] = inp.value;
@@ -247,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var img = new Image();
             img.onload = function () {
                 var w = img.naturalWidth, h = img.naturalHeight;
-                var sc = Math.min(1, 1600 / Math.max(w, h));
+                var sc = Math.min(1, 2560 / Math.max(w, h));
                 var nw = Math.max(1, Math.round(w * sc));
                 var nh = Math.max(1, Math.round(h * sc));
 
@@ -274,6 +391,32 @@ document.addEventListener('DOMContentLoaded', function () {
             img.src = reader.result;
         };
         reader.readAsDataURL(file);
+
+        try {
+            var exifReader = new FileReader();
+            exifReader.onload = function () {
+                try {
+                    var exif = parseExif(exifReader.result);
+                    var fields = exifToRecipeFields(exif);
+                    var ids = ['iso', 'aperture', 'shutterSpeed', 'exposureComp'];
+                    var changed = false;
+                    ids.forEach(function (id) {
+                        var v = fields[id];
+                        if (v !== null && v !== undefined) {
+                            state.values[id] = v;
+                            var inputEl = formEl ? formEl.querySelector('[data-field-id="' + id + '"]') : null;
+                            if (inputEl) inputEl.value = v;
+                            changed = true;
+                        }
+                    });
+                    if (changed) {
+                        saveData();
+                        render();
+                    }
+                } catch (e) { /* EXIF parse failure must not block photo load */ }
+            };
+            exifReader.readAsArrayBuffer(file);
+        } catch (e) { /* FileReader unavailable */ }
     }
 
     // ---------------------------------------------------------------
@@ -317,6 +460,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var big = [];
         var small = [];
         FIELDS.forEach(function (f) {
+            if (state.hidden[f.id]) return;
             var d = fieldDisplayValue(f);
             if (!d) return;
             var box = { value: d.value, label: d.label, big: !!f.big };
@@ -347,7 +491,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---------------------------------------------------------------
     // 4.6 / 4.7 Renderer
     // ---------------------------------------------------------------
-    var SCALE = 2;
     var PAD = 28, COL_GAP = 12, ROW_GAP = 12, PANEL_GAP = 20;
     var BIG_H = 104, SMALL_H = 84, FRAME_R = 28, BOX_R = 22;
     var FONT_FAMILY = "-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif";
@@ -445,6 +588,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var ctx = canvas.getContext('2d');
         var layout = computeLayout();
         var totalW = layout.totalW, totalH = layout.totalH;
+        var SCALE = 2048 / Math.max(totalW, totalH);
 
         canvas.width = Math.round(totalW * SCALE);
         canvas.height = Math.round(totalH * SCALE);
@@ -667,4 +811,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     wireTabs();
     loadPhotoThenRender();
-});
+}
+
+if (typeof document !== 'undefined') document.addEventListener('DOMContentLoaded', main);
+if (typeof module !== 'undefined' && module.exports) module.exports = { parseExif: parseExif, exifToRecipeFields: exifToRecipeFields };
