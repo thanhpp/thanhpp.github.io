@@ -11,6 +11,12 @@
         <p><a href="{{ .Site.Params.intro.link.url }}">{{ .Site.Params.intro.link.label }}</a></p>
     </div>
 
+    <div class="tab-nav">
+        <button class="tab-link active" data-pane="pane-quests">Quests</button>
+        <button class="tab-link" data-pane="pane-recipe">Film Recipe</button>
+    </div>
+
+    <div id="pane-quests" class="tab-pane active">
     <div class="section-label">Main Quests</div>
     <div class="main-quests">
         {{ range hugo.Data.main_quests }}
@@ -62,6 +68,26 @@
             </div>
         </div>
         {{ end }}
+    </div>
+    </div>
+
+    <div id="pane-recipe" class="tab-pane">
+        <div class="section-label">Film Recipe Generator</div>
+
+        <div class="recipe-actions">
+            <button type="button" id="recipe-upload-btn" class="recipe-btn">Upload Photo</button>
+            <button type="button" id="recipe-save-btn" class="recipe-btn recipe-btn-primary">Generate &amp; Save</button>
+            <input type="file" id="recipe-file" accept="image/*" hidden>
+        </div>
+
+        <div id="recipe-preview-wrap" class="recipe-preview-wrap">
+            <canvas id="recipe-canvas" class="recipe-canvas"></canvas>
+            <div id="recipe-drop-hint" class="recipe-drop-hint">Click "Upload Photo" or drop an image here</div>
+        </div>
+
+        <div class="recipe-form" id="recipe-form">
+            <!-- fields injected by static/js/recipe.js -->
+        </div>
     </div>
 </div>
 {{ end }}
