@@ -493,7 +493,7 @@ function main() {
     // ---------------------------------------------------------------
     var PAD = 28, COL_GAP = 12, ROW_GAP = 12, PANEL_GAP = 20;
     var BIG_H = 104, SMALL_H = 84, FRAME_R = 28, BOX_R = 22;
-    var FONT_FAMILY = "-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif";
+    var FONT_FAMILY = "'Google Sans Code', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif";
 
     function roundRect(ctx, x, y, w, h, r) {
         if (typeof ctx.roundRect === 'function') {
@@ -684,19 +684,20 @@ function main() {
                 var valueSize = box.big ? 26 : 20;
                 var labelSize = box.big ? 13 : 11;
                 var padLeft = box.big ? 20 : 15;
-                var blockH = valueSize + 6 + labelSize;
-                var valueBaseline = box.y + (box.h - blockH) / 2 + valueSize;
-                var labelBaseline = valueBaseline + 6 + labelSize;
+                var padTop = box.big ? 14 : 10;
                 var textX = box.x + padLeft;
 
-                ctx.textBaseline = 'alphabetic';
-                ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
-                ctx.fillStyle = '#fff';
-                ctx.fillText(box.value, textX, valueBaseline);
-
+                // setting name — top-left of the box
+                ctx.textBaseline = 'top';
                 ctx.font = '500 ' + labelSize + 'px ' + FONT_FAMILY;
                 ctx.fillStyle = 'rgba(255,255,255,0.6)';
-                ctx.fillText(box.label, textX, labelBaseline);
+                ctx.fillText(box.label, textX, box.y + padTop);
+
+                // setting value — vertically centered, left-aligned
+                ctx.textBaseline = 'middle';
+                ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
+                ctx.fillStyle = '#fff';
+                ctx.fillText(box.value, textX, box.y + box.h / 2);
 
                 ctx.restore();
                 ctx.restore();
@@ -811,6 +812,14 @@ function main() {
 
     wireTabs();
     loadPhotoThenRender();
+
+    // Re-render once Google Sans Code is loaded so the card doesn't paint with a fallback font.
+    if (document.fonts && document.fonts.load) {
+        Promise.all([
+            document.fonts.load('600 26px "Google Sans Code"'),
+            document.fonts.load('500 13px "Google Sans Code"')
+        ]).then(function () { render(); }).catch(function () {});
+    }
 }
 
 if (typeof document !== 'undefined') document.addEventListener('DOMContentLoaded', main);
