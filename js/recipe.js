@@ -442,7 +442,7 @@ function main() {
             var blueRaw = (!raw || raw.blue === undefined || raw.blue === null || String(raw.blue).trim() === '') ? 0 : raw.blue;
             var red = formatSigned(redRaw);
             var blue = formatSigned(blueRaw);
-            return { value: val, label: 'Red: ' + red + '   Blue: ' + blue };
+            return { value: val, label: f.label, sub: 'Red: ' + red + '   Blue: ' + blue };
         }
 
         if (SIGNED_FIELD_IDS.indexOf(f.id) !== -1) {
@@ -463,7 +463,7 @@ function main() {
             if (state.hidden[f.id]) return;
             var d = fieldDisplayValue(f);
             if (!d) return;
-            var box = { value: d.value, label: d.label, big: !!f.big };
+            var box = { value: d.value, label: d.label, sub: d.sub, big: !!f.big };
             if (f.big) big.push(box); else small.push(box);
         });
         return { big: big, small: small };
@@ -494,6 +494,42 @@ function main() {
     var PAD = 28, COL_GAP = 12, ROW_GAP = 12, PANEL_GAP = 20;
     var BIG_H = 104, SMALL_H = 84, FRAME_R = 28, BOX_R = 22;
     var FONT_FAMILY = "'Google Sans Code', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif";
+
+    // Shorten a string with an ellipsis until it fits within maxWidth (font must be set on ctx).
+    function ellipsize(ctx, str, maxWidth) {
+        if (ctx.measureText(str).width <= maxWidth) return str;
+        while (str.length > 1 && ctx.measureText(str + '…').width > maxWidth) {
+            str = str.slice(0, -1);
+        }
+        return str + '…';
+    }
+
+    // Word-wrap text into at most maxLines lines fitting maxWidth (font must be set on ctx).
+    function wrapLines(ctx, text, maxWidth, maxLines) {
+        text = (text === undefined || text === null) ? '' : String(text);
+        if (ctx.measureText(text).width <= maxWidth) return [text];
+        var words = text.split(/\s+/);
+        var lines = [];
+        var cur = '';
+        for (var i = 0; i < words.length; i++) {
+            var test = cur ? cur + ' ' + words[i] : words[i];
+            if (cur !== '' && ctx.measureText(test).width > maxWidth) {
+                lines.push(cur);
+                if (lines.length === maxLines - 1) {
+                    cur = words.slice(i).join(' ');
+                    break;
+                }
+                cur = words[i];
+            } else {
+                cur = test;
+            }
+        }
+        lines.push(cur);
+        for (var j = 0; j < lines.length; j++) {
+            lines[j] = ellipsize(ctx, lines[j], maxWidth);
+        }
+        return lines;
+    }
 
     function roundRect(ctx, x, y, w, h, r) {
         if (typeof ctx.roundRect === 'function') {
@@ -683,21 +719,41 @@ function main() {
 
                 var valueSize = box.big ? 26 : 20;
                 var labelSize = box.big ? 13 : 11;
+                var subSize = box.big ? 12 : 10;
                 var padLeft = box.big ? 20 : 15;
                 var padTop = box.big ? 14 : 10;
                 var textX = box.x + padLeft;
+                var maxTextW = box.w - padLeft * 2;
 
-                // setting name — top-left of the box
+                // setting name — top-left, wraps to 2 lines when too long
                 ctx.textBaseline = 'top';
                 ctx.font = '500 ' + labelSize + 'px ' + FONT_FAMILY;
                 ctx.fillStyle = 'rgba(255,255,255,0.6)';
-                ctx.fillText(box.label, textX, box.y + padTop);
+                var nameLines = wrapLines(ctx, box.label, maxTextW, 2);
+                var nameLineH = labelSize + 3;
+                nameLines.forEach(function (line, i) {
+                    ctx.fillText(line, textX, box.y + padTop + i * nameLineH);
+                });
 
                 // setting value — vertically centered, left-aligned
-                ctx.textBaseline = 'middle';
-                ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
-                ctx.fillStyle = '#fff';
-                ctx.fillText(box.value, textX, box.y + box.h / 2);
+                if (box.sub) {
+                    // value on the main line, sub (e.g. WB shift) as a small line under it
+                    var subGap = 4;
+                    var blockH = valueSize + subGap + subSize;
+                    var blockTop = box.y + (box.h - blockH) / 2;
+                    ctx.textBaseline = 'top';
+                    ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
+                    ctx.fillStyle = '#fff';
+                    ctx.fillText(box.value, textX, blockTop);
+                    ctx.font = '500 ' + subSize + 'px ' + FONT_FAMILY;
+                    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+                    ctx.fillText(box.sub, textX, blockTop + valueSize + subGap);
+                } else {
+                    ctx.textBaseline = 'middle';
+                    ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
+                    ctx.fillStyle = '#fff';
+                    ctx.fillText(box.value, textX, box.y + box.h / 2);
+                }
 
                 ctx.restore();
                 ctx.restore();
