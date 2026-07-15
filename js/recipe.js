@@ -958,24 +958,31 @@ function main() {
                     ctx.fillText(line, textX, box.y + padTop + i * nameLineH);
                 });
 
-                // setting value — vertically centered, left-aligned
+                // setting value — anchored to the box center, left-aligned,
+                // but nudged down if a wrapped (2-line) label would collide with it
+                var labelBottom = box.y + padTop + nameLines.length * nameLineH;
+                var labelGap = 4;
                 if (box.sub) {
                     // value on the main line, sub (e.g. WB shift) as a small line under it
                     var subGap = 4;
-                    var blockH = valueSize + subGap + subSize;
-                    var blockTop = box.y + (box.h - blockH) / 2;
+                    var valueTop = box.y + box.h / 2 - valueSize / 2;
+                    if (valueTop < labelBottom + labelGap) valueTop = labelBottom + labelGap;
                     ctx.textBaseline = 'top';
                     ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
                     ctx.fillStyle = '#fff';
-                    ctx.fillText(box.value, textX, blockTop);
+                    ctx.fillText(box.value, textX, valueTop);
                     ctx.font = '500 ' + subSize + 'px ' + FONT_FAMILY;
                     ctx.fillStyle = 'rgba(255,255,255,0.6)';
-                    ctx.fillText(box.sub, textX, blockTop + valueSize + subGap);
+                    ctx.fillText(box.sub, textX, valueTop + valueSize + subGap);
                 } else {
+                    var centerY = box.y + box.h / 2;
+                    if (centerY - valueSize / 2 < labelBottom + labelGap) {
+                        centerY = labelBottom + labelGap + valueSize / 2;
+                    }
                     ctx.textBaseline = 'middle';
                     ctx.font = '600 ' + valueSize + 'px ' + FONT_FAMILY;
                     ctx.fillStyle = '#fff';
-                    ctx.fillText(box.value, textX, box.y + box.h / 2);
+                    ctx.fillText(box.value, textX, centerY);
                 }
 
                 ctx.restore();
