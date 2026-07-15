@@ -1,5 +1,5 @@
 function parseExif(ab) {
-    var out = { model: null, iso: null, fNumber: null, exposureTime: null, exposureBias: null };
+    var out = { model: null, iso: null, fNumber: null, exposureTime: null, exposureBias: null, fujiMakerNote: null };
     var dv = new DataView(ab);
     // locate APP1 "Exif\0\0"
     var off = 2, tiff = -1;
@@ -41,6 +41,63 @@ function parseExif(ab) {
             return s;
         };
         var readNum = function (en) { return en.type === 3 ? u16(en.valOff) : u32(en.valOff); }; // SHORT vs LONG (ISO type-aware)
+
+        // Fujifilm MakerNote (EXIF sub-IFD tag 0x927C). Offsets inside the MakerNote
+        // are relative to the MakerNote's own start (the "FUJIFILM" signature) and
+        // are ALWAYS little-endian, regardless of the outer TIFF byte order -- so
+        // this deliberately does not reuse u16/u32/i32/readIFD above.
+        function parseFujiMakerNote(mnStart) {
+            var sig = '';
+            for (var s = 0; s < 8; s++) sig += String.fromCharCode(dv.getUint8(mnStart + s));
+            if (sig !== 'FUJIFILM') return null;
+
+            var mnU16 = function (o) { return dv.getUint16(mnStart + o, true); };
+            var mnU32 = function (o) { return dv.getUint32(mnStart + o, true); };
+            var mnI32 = function (o) { return dv.getInt32(mnStart + o, true); };
+
+            var ifdOff = mnU32(8); // offset (from mnStart) to the tag-count / first tag entry
+            var n = mnU16(ifdOff);
+            var mn = {};
+            for (var i = 0; i < n; i++) {
+                var p = ifdOff + 2 + i * 12;
+                var tagId = mnU16(p);
+                var type = mnU16(p + 2);
+                var value;
+                if (type === 3) value = mnU16(p + 8);
+                else if (type === 4) value = mnU32(p + 8);
+                else if (type === 9) value = mnI32(p + 8);
+                else continue; // unhandled TIFF type for this tag set
+                mn[tagId] = value;
+            }
+
+            // WB shift (0x100A): two SLONG (int32 LE), stored at an offset (the tag's
+            // own value, relative to mnStart) rather than inline -- red/blue = value/10.
+            var wbRed = null, wbBlue = null;
+            if (mn[0x100A] !== undefined) {
+                wbRed = mnI32(mn[0x100A]) / 10;
+                wbBlue = mnI32(mn[0x100A] + 4) / 10;
+            }
+
+            return {
+                filmMode: mn[0x1401] !== undefined ? mn[0x1401] : null,
+                whiteBalance: mn[0x1002] !== undefined ? mn[0x1002] : null,
+                colorTemperature: mn[0x1005] !== undefined ? mn[0x1005] : null,
+                wbShiftRed: wbRed,
+                wbShiftBlue: wbBlue,
+                dynamicRangeSetting: mn[0x1402] !== undefined ? mn[0x1402] : null,
+                developmentDynamicRange: mn[0x1403] !== undefined ? mn[0x1403] : null,
+                highlightTone: mn[0x1041] !== undefined ? mn[0x1041] : null,
+                shadowTone: mn[0x1040] !== undefined ? mn[0x1040] : null,
+                saturation: mn[0x1003] !== undefined ? mn[0x1003] : null,
+                sharpness: mn[0x1001] !== undefined ? mn[0x1001] : null,
+                noiseReduction: mn[0x100E] !== undefined ? mn[0x100E] : null,
+                clarity: mn[0x100F] !== undefined ? mn[0x100F] : null,
+                grainEffectRoughness: mn[0x1047] !== undefined ? mn[0x1047] : null,
+                colorChromeEffect: mn[0x1048] !== undefined ? mn[0x1048] : null,
+                colorChromeFxBlue: mn[0x104E] !== undefined ? mn[0x104E] : null
+            };
+        }
+
         var ifd0 = readIFD(tiff + u32(tiff + 4));
         if (ifd0[0x0110]) out.model = ascii(ifd0[0x0110]);
         var exifPtr = ifd0[0x8769];
@@ -50,13 +107,21 @@ function parseExif(ab) {
             if (ex[0x829D]) out.fNumber = rat(ex[0x829D].valOff);
             if (ex[0x829A]) out.exposureTime = rat(ex[0x829A].valOff);
             if (ex[0x9204]) out.exposureBias = srat(ex[0x9204].valOff);
+            if (ex[0x927C]) out.fujiMakerNote = parseFujiMakerNote(ex[0x927C].valOff);
         }
     } catch (e) { /* malformed EXIF → return whatever we have */ }
     return out;
 }
 
 function exifToRecipeFields(exif) {
-    var out = { iso: null, aperture: null, shutterSpeed: null, exposureComp: null };
+    var out = {
+        iso: null, aperture: null, shutterSpeed: null, exposureComp: null,
+        filmSimulation: null, whiteBalance: null, dynamicRange: null,
+        highlight: null, shadow: null, color: null,
+        colorChromeEffect: null, colorFxBlue: null,
+        sharpness: null, clarity: null, noiseReduction: null,
+        grainEffect: null
+    };
     if (!exif) return out;
 
     if (exif.iso !== null && exif.iso !== undefined) {
@@ -81,6 +146,144 @@ function exifToRecipeFields(exif) {
     if (exif.exposureBias !== null && exif.exposureBias !== undefined) {
         var r = Math.round(exif.exposureBias * 10) / 10;
         out.exposureComp = (r > 0) ? ('+' + r) : String(r);
+    }
+
+    // --- Fujifilm recipe fields (from the MakerNote), mapped to recipe.js's own
+    // option-string vocabulary. Codes/tables sourced from fuji-recipes'
+    // src/constants.ts (thecuvii/fuji-recipes). A field is only set when its
+    // MakerNote tag was present AND maps to one of recipe.js's known options --
+    // otherwise it is left null so the caller never clobbers a default.
+    var mn = exif.fujiMakerNote;
+    if (mn) {
+        // FILM_MODE_VALUES codes that have a direct recipe.js FILM_SIM_OPTIONS match.
+        // Codes with no match (Studio Portrait 0x100/0x110/0x130, Studio Portrait Ex
+        // 0x300, Eterna 0x700, Classic Negative 0x800, Bleach Bypass 0x900,
+        // Nostalgic Neg 0xA00, Reala ACE 0xB00) are intentionally omitted -> skipped.
+        var FILM_MODE_TO_OPTION = {
+            0x0: 'Provia / Standard',
+            0x120: 'Astia / Soft',
+            0x200: 'Velvia / Vivid',
+            0x400: 'Velvia / Vivid',
+            0x500: 'PRO Neg. Std',
+            0x501: 'PRO Neg. Hi',
+            0x600: 'Classic Chrome'
+        };
+        // On real Fuji bodies, Acros/Monochrome/Sepia are signalled through the
+        // Saturation tag (0x1003), not FilmMode -- these 9 codes plus the 6 above
+        // account for all 15 FILM_SIM_OPTIONS.
+        var SATURATION_BW_TO_OPTION = {
+            0x300: 'Monochrome',
+            0x301: 'Mono + R Filter',
+            0x302: 'Mono + Ye Filter',
+            0x303: 'Mono + G Filter',
+            0x310: 'Sepia',
+            0x500: 'Acros',
+            0x501: 'Acros + R Filter',
+            0x502: 'Acros + Ye Filter',
+            0x503: 'Acros + G Filter'
+        };
+        // Plain +/- numeric saturation ("Color") levels -- 0x200 (Low) and 0x8000
+        // (Film Simulation) are valid Fuji codes but aren't numeric, so omitted.
+        var SATURATION_NUMERIC = {
+            0x0: '0', 0x80: '+1', 0xC0: '+3', 0xE0: '+4', 0x100: '+2',
+            0x180: '-1', 0x400: '-2', 0x4C0: '-3', 0x4E0: '-4'
+        };
+        // Off/Weak/Strong shares this 3-value code space across Grain Roughness,
+        // Color Chrome Effect and Color Chrome FX Blue.
+        var TRIPLE = { 0x0: 'Off', 0x20: 'Weak', 0x40: 'Strong' };
+        var WB_LABELS = {
+            0x0: 'Auto', 0x1: 'Auto (white priority)', 0x2: 'Auto (ambiance priority)',
+            0x100: 'Daylight', 0x200: 'Cloudy', 0x300: 'Daylight Fluorescent',
+            0x301: 'Day White Fluorescent', 0x302: 'White Fluorescent',
+            0x303: 'Warm White Fluorescent', 0x304: 'Living Room Warm White Fluorescent',
+            0x400: 'Incandescent', 0x500: 'Flash', 0x600: 'Underwater',
+            0xF00: 'Custom', 0xF01: 'Custom2', 0xF02: 'Custom3', 0xF03: 'Custom4', 0xF04: 'Custom5',
+            0xFF0: 'Kelvin'
+        };
+        var TONE_VALUES = {
+            '-64': '+4', '-56': '+3.5', '-48': '+3', '-40': '+2.5', '-32': '+2',
+            '-24': '+1.5', '-16': '+1', '-8': '+0.5', '0': '0',
+            '8': '-0.5', '16': '-1', '24': '-1.5', '32': '-2'
+        };
+        // 0x8000 (Film Simulation) / 0xFFFF (n/a) are valid Fuji codes but not
+        // numeric sharpness levels, so intentionally omitted.
+        var SHARPNESS_VALUES = { 0: '-4', 1: '-3', 2: '-2', 3: '0', 4: '+2', 5: '+3', 6: '+4', 0x82: '-1', 0x84: '+1' };
+        var NOISE_REDUCTION_VALUES = {
+            0: '0', 0x100: '+2', 0x180: '+1', 0x1C0: '+3', 0x1E0: '+4',
+            0x200: '-2', 0x280: '-1', 0x2C0: '-3', 0x2E0: '-4'
+        };
+        var CLARITY_VALUES = {
+            '-5000': '-5', '-4000': '-4', '-3000': '-3', '-2000': '-2', '-1000': '-1',
+            '0': '0', '1000': '+1', '2000': '+2', '3000': '+3'
+        };
+
+        // Film simulation: B&W/Acros (via Saturation) takes priority over the base
+        // color FilmMode, since it represents the more specific selected look.
+        var filmSim = null;
+        if (mn.saturation !== null && Object.prototype.hasOwnProperty.call(SATURATION_BW_TO_OPTION, mn.saturation)) {
+            filmSim = SATURATION_BW_TO_OPTION[mn.saturation];
+        } else if (mn.filmMode !== null && Object.prototype.hasOwnProperty.call(FILM_MODE_TO_OPTION, mn.filmMode)) {
+            filmSim = FILM_MODE_TO_OPTION[mn.filmMode];
+        }
+        if (filmSim !== null) out.filmSimulation = filmSim;
+
+        // Color (numeric saturation) -- only when the code is a plain +/- level.
+        if (mn.saturation !== null && Object.prototype.hasOwnProperty.call(SATURATION_NUMERIC, mn.saturation)) {
+            out.color = SATURATION_NUMERIC[mn.saturation];
+        }
+
+        // Dynamic range
+        if (mn.dynamicRangeSetting !== null) {
+            if (mn.dynamicRangeSetting === 1 &&
+                (mn.developmentDynamicRange === 100 || mn.developmentDynamicRange === 200 || mn.developmentDynamicRange === 400)) {
+                out.dynamicRange = 'DR' + mn.developmentDynamicRange;
+            } else {
+                out.dynamicRange = 'Auto';
+            }
+        }
+
+        // White balance + shift
+        if (mn.whiteBalance !== null && Object.prototype.hasOwnProperty.call(WB_LABELS, mn.whiteBalance)) {
+            var wbLabel = WB_LABELS[mn.whiteBalance];
+            if (mn.whiteBalance === 0xFF0) {
+                wbLabel = (mn.colorTemperature !== null && mn.colorTemperature !== undefined) ? (mn.colorTemperature + 'K') : 'Kelvin';
+            }
+            out.whiteBalance = {
+                value: wbLabel,
+                red: (mn.wbShiftRed !== null && mn.wbShiftRed !== undefined) ? mn.wbShiftRed : 0,
+                blue: (mn.wbShiftBlue !== null && mn.wbShiftBlue !== undefined) ? mn.wbShiftBlue : 0
+            };
+        }
+
+        // Highlight / shadow tone
+        if (mn.highlightTone !== null && Object.prototype.hasOwnProperty.call(TONE_VALUES, String(mn.highlightTone))) {
+            out.highlight = TONE_VALUES[String(mn.highlightTone)];
+        }
+        if (mn.shadowTone !== null && Object.prototype.hasOwnProperty.call(TONE_VALUES, String(mn.shadowTone))) {
+            out.shadow = TONE_VALUES[String(mn.shadowTone)];
+        }
+
+        // Sharpness / noise reduction / clarity
+        if (mn.sharpness !== null && Object.prototype.hasOwnProperty.call(SHARPNESS_VALUES, mn.sharpness)) {
+            out.sharpness = SHARPNESS_VALUES[mn.sharpness];
+        }
+        if (mn.noiseReduction !== null && Object.prototype.hasOwnProperty.call(NOISE_REDUCTION_VALUES, mn.noiseReduction)) {
+            out.noiseReduction = NOISE_REDUCTION_VALUES[mn.noiseReduction];
+        }
+        if (mn.clarity !== null && Object.prototype.hasOwnProperty.call(CLARITY_VALUES, String(mn.clarity))) {
+            out.clarity = CLARITY_VALUES[String(mn.clarity)];
+        }
+
+        // Grain effect / Color Chrome Effect / Color Chrome FX Blue
+        if (mn.grainEffectRoughness !== null && Object.prototype.hasOwnProperty.call(TRIPLE, mn.grainEffectRoughness)) {
+            out.grainEffect = TRIPLE[mn.grainEffectRoughness];
+        }
+        if (mn.colorChromeEffect !== null && Object.prototype.hasOwnProperty.call(TRIPLE, mn.colorChromeEffect)) {
+            out.colorChromeEffect = TRIPLE[mn.colorChromeEffect];
+        }
+        if (mn.colorChromeFxBlue !== null && Object.prototype.hasOwnProperty.call(TRIPLE, mn.colorChromeFxBlue)) {
+            out.colorFxBlue = TRIPLE[mn.colorChromeFxBlue];
+        }
     }
 
     return out;
@@ -120,10 +323,10 @@ function main() {
         { id: 'highlight', label: 'Highlight', kind: 'number', big: false, default: '-2' },
         { id: 'shadow', label: 'Shadow', kind: 'number', big: false, default: '-1' },
         { id: 'color', label: 'Color', kind: 'number', big: false, default: '4' },
-        { id: 'colorChromeEffect', label: 'Color Chrome Effect', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off' },
-        { id: 'colorFxBlue', label: 'Color FX Blue', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off' },
+        { id: 'colorChromeEffect', label: 'Color Chrome Effect', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off', hiddenByDefault: true },
+        { id: 'colorFxBlue', label: 'Color FX Blue', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Off', hiddenByDefault: true },
         { id: 'sharpness', label: 'Sharpness', kind: 'number', big: false, default: '-2' },
-        { id: 'clarity', label: 'Clarity', kind: 'number', big: false, default: '0' },
+        { id: 'clarity', label: 'Clarity', kind: 'number', big: false, default: '0', hiddenByDefault: true },
         { id: 'noiseReduction', label: 'Noise Reduction', kind: 'number', big: false, default: '-4' },
         { id: 'grainEffect', label: 'Grain Effect', kind: 'select', big: false, options: ['Off', 'Weak', 'Strong'], default: 'Strong' },
         { id: 'iso', label: 'ISO', kind: 'text', big: false, default: 'Auto' },
@@ -153,6 +356,10 @@ function main() {
         } else {
             state.values[f.id] = f.default;
         }
+    });
+
+    FIELDS.forEach(function (f) {
+        if (f.hiddenByDefault) state.hidden[f.id] = true;
     });
 
     try {
@@ -398,9 +605,15 @@ function main() {
                 try {
                     var exif = parseExif(exifReader.result);
                     var fields = exifToRecipeFields(exif);
-                    var ids = ['iso', 'aperture', 'shutterSpeed', 'exposureComp'];
+                    var textIds = ['iso', 'aperture', 'shutterSpeed', 'exposureComp'];
+                    var recipeIds = [
+                        'filmSimulation', 'whiteBalance', 'dynamicRange',
+                        'highlight', 'shadow', 'color',
+                        'colorChromeEffect', 'colorFxBlue',
+                        'sharpness', 'clarity', 'noiseReduction', 'grainEffect'
+                    ];
                     var changed = false;
-                    ids.forEach(function (id) {
+                    textIds.forEach(function (id) {
                         var v = fields[id];
                         if (v !== null && v !== undefined) {
                             state.values[id] = v;
@@ -409,7 +622,17 @@ function main() {
                             changed = true;
                         }
                     });
+                    recipeIds.forEach(function (id) {
+                        var v = fields[id];
+                        if (v !== null && v !== undefined) {
+                            state.values[id] = v;
+                            changed = true;
+                        }
+                    });
                     if (changed) {
+                        // Selects and the wb control have no [data-field-id] resync path,
+                        // so rebuild the whole form to pick up the newly-applied values.
+                        buildForm();
                         saveData();
                         render();
                     }
@@ -578,7 +801,7 @@ function main() {
                 var boxW = n > 0 ? (panelW - COL_GAP * (n - 1)) / n : panelW;
                 var x = panelX;
                 var positioned = row.boxes.map(function (b) {
-                    var r = { x: x, y: y, w: boxW, h: row.height, value: b.value, label: b.label, big: b.big };
+                    var r = { x: x, y: y, w: boxW, h: row.height, value: b.value, label: b.label, sub: b.sub, big: b.big };
                     x += boxW + COL_GAP;
                     return r;
                 });
@@ -604,7 +827,7 @@ function main() {
                 var boxW = n > 0 ? (panelW2 - COL_GAP * (n - 1)) / n : panelW2;
                 var x = panelX2;
                 var positioned = row.boxes.map(function (b) {
-                    var r = { x: x, y: y2, w: boxW, h: row.height, value: b.value, label: b.label, big: b.big };
+                    var r = { x: x, y: y2, w: boxW, h: row.height, value: b.value, label: b.label, sub: b.sub, big: b.big };
                     x += boxW + COL_GAP;
                     return r;
                 });
