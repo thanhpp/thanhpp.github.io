@@ -1029,29 +1029,7 @@ function main() {
     }
 
     // ---------------------------------------------------------------
-    // 4.10 Tab switching
-    // ---------------------------------------------------------------
-    function wireTabs() {
-        var tabLinks = document.querySelectorAll('.tab-link');
-        tabLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                tabLinks.forEach(function (l) { l.classList.remove('active'); });
-                var panes = document.querySelectorAll('.tab-pane');
-                panes.forEach(function (p) { p.classList.remove('active'); });
-
-                link.classList.add('active');
-                var paneId = link.getAttribute('data-pane');
-                var pane = paneId ? document.getElementById(paneId) : null;
-                if (pane) {
-                    pane.classList.add('active');
-                    if (pane.querySelector('#recipe-canvas')) render();
-                }
-            });
-        });
-    }
-
-    // ---------------------------------------------------------------
-    // 4.11 Init sequence
+    // 4.10 Init sequence
     // ---------------------------------------------------------------
     buildForm();
 
@@ -1096,7 +1074,6 @@ function main() {
         saveBtn.addEventListener('click', downloadCanvas);
     }
 
-    wireTabs();
     loadPhotoThenRender();
 
     // Re-render once Google Sans Code is loaded so the card doesn't paint with a fallback font.
