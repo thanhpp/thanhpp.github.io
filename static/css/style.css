@@ -371,6 +371,8 @@ body::after {
     color: var(--text-hint);
     cursor: pointer;
     letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
 }
 .tab-link:hover { border-color: var(--accent); color: var(--accent); }
 .tab-link.active {
@@ -378,8 +380,6 @@ body::after {
     color: var(--accent);
     border-color: var(--accent);
 }
-.tab-pane { display: none; }
-.tab-pane.active { display: block; }
 .recipe-actions {
     display: flex;
     flex-wrap: wrap;

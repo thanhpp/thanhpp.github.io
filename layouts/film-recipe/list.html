@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="page">
+    <div class="intro">
+        {{ if hasPrefix .Site.Params.intro.avatar "http" }}
+        <div class="avatar"><img src="{{ .Site.Params.intro.avatar }}" alt="avatar"></div>
+        {{ else }}
+        <div class="avatar">{{ .Site.Params.intro.avatar }}</div>
+        {{ end }}
+        <h1>{{ .Site.Params.intro.name }}</h1>
+        <p>{{ .Site.Params.intro.role }}</p>
+        <p><a href="{{ .Site.Params.intro.link.url }}">{{ .Site.Params.intro.link.label }}</a></p>
+    </div>
+
+    <div class="tab-nav">
+        <a class="tab-link" href="/">Quests</a>
+        <a class="tab-link active" href="/film-recipe/">Film Recipe</a>
+    </div>
+
+    <div class="section-label">Film Recipe Generator</div>
+
+    <div class="recipe-actions">
+        <button type="button" id="recipe-upload-btn" class="recipe-btn">Upload Photo</button>
+        <button type="button" id="recipe-save-btn" class="recipe-btn recipe-btn-primary">Generate &amp; Save</button>
+        <input type="file" id="recipe-file" accept="image/*" hidden>
+    </div>
+
+    <div id="recipe-preview-wrap" class="recipe-preview-wrap">
+        <canvas id="recipe-canvas" class="recipe-canvas"></canvas>
+        <div id="recipe-drop-hint" class="recipe-drop-hint">Click "Upload Photo" or drop an image here</div>
+    </div>
+
+    <div class="recipe-form" id="recipe-form">
+        <!-- fields injected by static/js/recipe.js -->
+    </div>
+</div>
+{{ end }}
